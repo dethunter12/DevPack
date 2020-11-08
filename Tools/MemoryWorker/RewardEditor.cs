@@ -1619,6 +1619,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
     {
         this.IniRead();
         int selectedIndex = listBox1.SelectedIndex;
+            //test comment
         if (MessageBox.Show("Do you want to Change Reward Head Data " + this.textBox24.Text.Trim() + " ?", "Please confirm.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
             return;
         MySqlConnection connection = new MySqlConnection("datasource=" + this.Database + ";port=3306;username=" + this.User + ";password=" + this.Password);
