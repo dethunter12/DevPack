@@ -1,0 +1,9 @@
+Bugs List:
+
+1. NPC MISSING TELEPORTER AGEHA (FIXED)
+2. ELIZABETH NEW PLAYER SUPPORTER DOESNT WORK
+3. MAP DISPLAY DOESNT DISPLAY THE PROPER MAP
+4. ESTELA QUEST ARE ALL BUGED NO NAMES TO THEM
+5. NPC SCROOL ONLY DISPLAY MONSTERS
+6. BAD QUEST STRING (FIXED)
+7. Healer Long Range Attack hits, but does no damage. Juno Map does not match Map View. Hunting Howling Quest ( No "Wolf" found in current Juno Map)

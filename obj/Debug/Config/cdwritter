@@ -1,0 +1,267 @@
+ F:\NEW 6-1-2015\SRCDesign\Engine\Contents\Login\UILoginNew.cpp(642):// CDWriter IP contact Barunson 14.63.127.144
+ 
+
+
+// CDWriter IP contact Barunson 14.63.127.144
+
+
+
+const unsigned char ip4 = 1;
+
+const unsigned char ip3 = 0;
+
+const unsigned char ip2 = 0;
+
+const unsigned char ip1 = 127;
+
+
+
+// reports to Barunson
+
+/*
+
+const unsigned char ip4 = 144;
+
+const unsigned char ip3 = 127;
+
+const unsigned char ip2 = 63;
+
+const unsigned char ip1 = 14;
+
+*/
+
+  F:\NEW 6-1-2015\SRCDesign\Engine\Graphics\GfxLibrary.h(46):#define    MAX_BTN        21  // CDWriter ItemBtn Max Value
+ 
+
+
+// Button element arrays
+
+// item button image count. [3/15/2012 rumist]
+
+#define	MAX_BTN		21  // CDWriter ItemBtn Max Value
+
+  F:\NEW 6-1-2015\SRCDesign\Engine\Define_GAMIGO.h(25):// CDWriter
+ 
+
+
+// CDWriter
+
+//#define XTRAP_SECURE_CKBANG_2010_07_20	// 2010-07-20 ¹æÃ¢±Ô - XTrap º¸¾È ¼Ö·ç¼Ç Àû¿ë
+
+
+  F:\NEW 6-1-2015\SRCDesign\Engine\Define_USA.h(17):// CDWriter
+ 
+
+
+
+
+// CDWriter
+
+//#define XTRAP_SECURE_CKBANG_2010_07_20	// XTrap º¸¾È ¼Ö·ç¼Ç Àû¿ë
+
+  F:\NEW 6-1-2015\SRCDesign\Engine\Interface\UICashShopEX.cpp(2341):                                        // CDWriter cash shop link
+ 
+
+
+// CDWriter cash shop link
+
+
+
+ShellExecute( NULL, "open", "http://192.168.1.56/test2/index.php/", NULL,NULL, SW_SHOWNORMAL );
+
+This part here adds in IP for Client
+
+  F:\NEW 6-1-2015\SRCDesign\Engine\Network\CommunicationInterface.cpp(785):        TempIP.SetIP( 192, 168, 1, 56, USA);  // CDWriter IP
+  F:\NEW 6-1-2015\SRCDesign\Engine\Network\CommunicationInterface.cpp(788):        TempIP.SetIP( 192, 168, 1, 56, USA);  // CDWriter IP
+ 
+
+
+	{  //  192, 168, 1, 56,	
+
+		TempIP.SetIP( 192, 168, 1, 56, USA);  // CDWriter IP 
+
+		m_vecIPFilter.push_back( TempIP );
+
+
+
+		TempIP.SetIP( 192, 168, 1, 56, USA);  // CDWriter IP
+
+		m_vecIPFilter.push_back( TempIP );
+
+	}
+
+This is how you remove the ip check in Client and put it back to sl.dta
+
+ 
+
+  F:\NEW 6-1-2015\SRCDesign\Engine\Network\CommunicationInterface.cpp(917):            // CDWriter Ip removal check...returns ip back to SL.dta
+ 
+
+
+		if (CheckIPFilter() == TRUE)
+
+		{
+
+			// CDWriter Ip removal check...returns ip back to SL.dta
+
+			// how to remove it is below. by adding /*  and */ Omitting the lines
+
+                        //
+
+			/*if (IsValidIP() == FALSE)
+
+			{
+
+				cci_iSelectedServerNum = -1;
+
+				return;
+
+			} */
+
+                     }
+
+        // ¼­¹ö¿¡ Á¢¼ÓÀ» ½Ãµµ.
+
+        _tcpip.ConnectToServer(cci_szAddr, cci_iPort); //¼­¹ö°¡ ¶ç¿öÁ®ÀÖ´Â ÄÄÇ»ÅÍ ¾ÆÀÌÇÇ    
+
+
+
+        cci_hSocket = _tcpip.Socket;
+
+        g_hSocket    = cci_hSocket;
+
+    }
+
+  F:\NEW 6-1-2015\SRCDesign\Engine\Network\SessionStateExten.cpp(2286):                //CDWriter New Account logins
+ 
+
+
+				//CDWriter New Account logins from Launcher
+
+				temURL.PrintF("http://shop.gamigo.com/game_%d/login/user/%s/hash/%s/", nGrupID, strUserID, strCode);
+
+				ShellExecute( NULL, "open", temURL, NULL,NULL, SW_SHOWNORMAL );
+
+			}else
+
+This must be removed to get client to work
+
+  F:\NEW 6-1-2015\SRCDesign\Engine\Engine.cpp(744):// CDWriter removed TimeBomb protection
+ 
+
+
+// [2013/01/16] sykim70
+
+// CDWriter removed TimeBomb protection
+
+ENGINE_API bool SE_CheckEngine()
+
+{
+
+	
+
+// Orginal code Protection
+
+/*
+
+{
+
+#if !defined(_DEBUG) && !defined(KALYDO) && !defined(G_KOR) && !defined(VER_TEST) && !defined(G_CHINA)
+
+	AnalyzeApplicationPath();
+
+
+
+	// check binary.lod
+
+	CTString strFullPath = strDirPath;
+
+	CTString fnTemp = strFullPath + "data\\etc\\binary.lod";
+
+	CTString data = OpenPersistentSymbolFile2(fnTemp);
+
+
+
+	CTString oneline;
+
+	if (!GetOneLine(data, oneline))
+
+		return false;
+
+	int nCount = atoi(oneline.str_String);
+
+
+
+	if (!GetOneLine(data, oneline))	// stamp
+
+		return false;
+
+
+
+	UINT srcLen, targetLen, targetTime;
+
+	UINT minTime = -1;
+
+	UINT maxTime = 0;
+
+	for (int i = 0; i < nCount; i++)
+
+	{
+
+		if (!GetOneLine(data, oneline))
+
+			return false;
+
+		fnTemp = strFullPath + oneline;
+
+
+
+		if (!GetOneLine(data, oneline))
+
+			return false;
+
+		srcLen = (UINT)atoi(oneline.str_String);
+
+
+
+		if (!GetFileInfo(fnTemp.str_String, targetLen, targetTime))
+
+			return false;
+
+
+
+		if (srcLen != targetLen)
+
+			return false;
+
+
+
+		minTime = min(minTime, targetTime);
+
+		maxTime = max(maxTime, targetTime);
+
+	}
+
+	if (maxTime-minTime > 60*3)	// 3 min
+
+		return false;
+
+
+
+#endif
+
+		*/
+
+	return true;
+
+}
+
+These are just what i changed ....hopeful i did not miss any? But barunson can be tricky
+
+ 
+
+Give me a Thumbs up please!!!  More will follow just keep following this post.
+
+ 
+
+CDWriter

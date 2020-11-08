@@ -1,0 +1,719 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\NTServer\Desktop\LcDevPack_TeamDamonA\LcDevPack_TeamDamonA\LcDevPack_TeamDamonA.exe-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E2538B4B-18E5-4B67-BD56-3A1A50186E81}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>LcDevPack_TeamDamonA</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <LangVersion>8</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>LcDevPack_TeamDamonA</RootNamespace>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>%24this.Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NetworkMonitor, Version=1.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\NetworkMonitor.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimDX">
+      <HintPath>lib\SlimDX.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Checksum">
+      <HintPath>lib\Checksum.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnimReader.cs" />
+    <Compile Include="cAnimation.cs" />
+    <Compile Include="cAnimFile.cs" />
+    <Compile Include="cAnimHeader.cs" />
+    <Compile Include="cJointAnim.cs" />
+    <Compile Include="cPositionKeyFrame.cs" />
+    <Compile Include="cRotationKeyFrame.cs" />
+    <Compile Include="CustomVertex.cs" />
+    <Compile Include="Decoder.cs" />
+    <Compile Include="ExportLod\DBConfigLoader.cs" />
+    <Compile Include="ExportLod\FormExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportLod\FormExport.Designer.cs">
+      <DependentUpon>FormExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExportLod\FormExportHeader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportLod\FormExportUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportLod\Util_INI.cs" />
+    <Compile Include="LangSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LangSelect.Designer.cs">
+      <DependentUpon>LangSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LCMeshReader.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="pwBoneIndex.cs" />
+    <Compile Include="pwFaces.cs" />
+    <Compile Include="pwHeaderInfo.cs" />
+    <Compile Include="pwJoints.cs" />
+    <Compile Include="pwMaterials.cs" />
+    <Compile Include="pwMeshContainer.cs" />
+    <Compile Include="pwNormal.cs" />
+    <Compile Include="pwObject.cs" />
+    <Compile Include="pwTextures.cs" />
+    <Compile Include="pwUV.cs" />
+    <Compile Include="pwVertex.cs" />
+    <Compile Include="pwVertexWeight.cs" />
+    <Compile Include="RatesEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RatesEditor.Designer.cs">
+      <DependentUpon>RatesEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="smcMesh.cs" />
+    <Compile Include="smcObject.cs" />
+    <Compile Include="SMCReader.cs" />
+    <Compile Include="StringEXP\FormExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StringEXP\FormExport.Designer.cs">
+      <DependentUpon>FormExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringEXP\FormExportHeader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StringEXP\FormExportNation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StringEXP\FormExportQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StringEXP\FormExportUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StringEXP\mysql.cs" />
+    <Compile Include="StringEXP\Util_INI.cs" />
+    <Compile Include="Tex.cs" />
+    <Compile Include="texFormat.cs" />
+    <Compile Include="tFace.cs" />
+    <Compile Include="tFire.cs" />
+    <Compile Include="Tools\Animation Picker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Animation Picker.Designer.cs">
+      <DependentUpon>Animation Picker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\IniFile.cs" />
+    <Compile Include="Tools\ItemPicker2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\CustomMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\CustomMessage.Designer.cs">
+      <DependentUpon>CustomMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FlagChangerMass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FlagChangerMass.Designer.cs">
+      <DependentUpon>FlagChangerMass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\IpEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\IpEdit.Designer.cs">
+      <DependentUpon>IpEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ItemPicker2_items.cs" />
+    <Compile Include="Tools\Lacaball Editor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Lacaball Editor.Designer.cs">
+      <DependentUpon>Lacaball Editor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\LogReader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\LogReader.Designer.cs">
+      <DependentUpon>LogReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MakeItemEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MakeItemEditor.Designer.cs">
+      <DependentUpon>MakeItemEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MassEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MassEdit.Designer.cs">
+      <DependentUpon>MassEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MassEditSeals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MassEditSeals.Designer.cs">
+      <DependentUpon>MassEditSeals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MassNameChanger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MassNameChanger.Designer.cs">
+      <DependentUpon>MassNameChanger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MassPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MassPrice.Designer.cs">
+      <DependentUpon>MassPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\ActionEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\ActionEditor.Designer.cs">
+      <DependentUpon>ActionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\DailyLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\DailyLogin.Designer.cs">
+      <DependentUpon>DailyLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\ExChange\ExChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\ExChange\ExChange.Designer.cs">
+      <DependentUpon>ExChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\ExChange\ExChange_cHaR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\ExChange\ExChange_cHaR.designer.cs">
+      <DependentUpon>ExChange_cHaR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\ExChange\LoadLod.cs" />
+    <Compile Include="Tools\MemoryWorker\ExChange\tbl_exchange.cs" />
+    <Compile Include="Tools\MemoryWorker\ExChange\t_EXChange.cs" />
+    <Compile Include="Tools\MemoryWorker\Item\ItemAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\Item\ItemAll.Designer.cs">
+      <DependentUpon>ItemAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\Item\ItemContainer.cs" />
+    <Compile Include="Tools\MemoryWorker\Item\Items.cs" />
+    <Compile Include="Tools\MemoryWorker\Jawel\JawelData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\Jawel\JawelData.Designer.cs">
+      <DependentUpon>JawelData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\Jawel\JawelStruct.cs" />
+    <Compile Include="Tools\MemoryWorker\LacaBall\LacaBall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\LacaBall\LacaBall.Designer.cs">
+      <DependentUpon>LacaBall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\LacaBall\t_lcball.cs" />
+    <Compile Include="Tools\MemoryWorker\LevelUpGuide\LevelUP.cs" />
+    <Compile Include="Tools\MemoryWorker\LevelUpGuide\LevelUpGuide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\LevelUpGuide\LevelUpGuide.Designer.cs">
+      <DependentUpon>LevelUpGuide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\MassPercentAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\MassPercentAdd.Designer.cs">
+      <DependentUpon>MassPercentAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\MonsterComboEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\MonsterComboEditor.Designer.cs">
+      <DependentUpon>MonsterComboEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\PetEditor\BigpetEv.cs" />
+    <Compile Include="Tools\MemoryWorker\PetEditor\Open_Lod.cs" />
+    <Compile Include="Tools\MemoryWorker\rareoption\RareOptionEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\rareoption\RareOptionEditor.Designer.cs">
+      <DependentUpon>RareOptionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\rareoption\t_rareoption.cs" />
+    <Compile Include="Tools\MemoryWorker\SetItem\SetItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\SetItem\SetItem.Designer.cs">
+      <DependentUpon>SetItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\StrucAction.cs" />
+    <Compile Include="Tools\MobMassEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MobMassEdit.Designer.cs">
+      <DependentUpon>MobMassEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MobPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MobPicker.Designer.cs">
+      <DependentUpon>MobPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SkillList.cs" />
+    <Compile Include="Tools\NpcList.cs" />
+    <Compile Include="Tools\RewardEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\RewardEditor.Designer.cs">
+      <DependentUpon>RewardEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SetItemEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\SetItemEditor.Designer.cs">
+      <DependentUpon>SetItemEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\TextEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\TextEditor.Designer.cs">
+      <DependentUpon>TextEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\tItemCollection.cs" />
+    <Compile Include="Tools\tLucky.cs" />
+    <Compile Include="Tools\tSkill.cs" />
+    <Compile Include="Tools\tNpc.cs" />
+    <Compile Include="tTextCoord.cs" />
+    <Compile Include="tTexture.cs" />
+    <Compile Include="tVertex3f.cs" />
+    <Compile Include="IconSkill.cs" />
+    <Compile Include="SkillIcon.cs" />
+    <Compile Include="mname.cs" />
+    <Compile Include="tHeader.cs" />
+    <Compile Include="tHeaderInfo.cs" />
+    <Compile Include="tMesh.cs" />
+    <Compile Include="tMeshContainer.cs" />
+    <Compile Include="tMeshJointWeights.cs" />
+    <Compile Include="tMeshMorphMap.cs" />
+    <Compile Include="tMeshObject.cs" />
+    <Compile Include="tMeshShaderData.cs" />
+    <Compile Include="tMeshShaderInfo.cs" />
+    <Compile Include="tMeshTexture.cs" />
+    <Compile Include="tMeshUVMap.cs" />
+    <Compile Include="tMeshWeightsMap.cs" />
+    <Compile Include="EditorInformation.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="DatabaseHandle.cs" />
+    <Compile Include="epvp_hwid.cs" />
+    <Compile Include="ExportLodHandle.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="IconList.cs" />
+    <Compile Include="MessageHandle.cs" />
+    <Compile Include="ticon.cs" />
+    <Compile Include="Types.cs" />
+    <Compile Include="RareOptSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Tools\MemoryWorker\PetEditor\t_attkpet.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Tools\BigPetEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\AffinityEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\IconPickerItemCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\ItemCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\SkillPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FlagList.cs" />
+    <Compile Include="Tools\FlagBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\ItemPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\QuestEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MobEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\ItemEditor2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\CatalogEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\IconPickerItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\ItemEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\OptionEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\ShopEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\LuckyDrawBoxTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MagicEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\SkillEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\IconPickerSkill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MoonstoneEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\TitleEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\AllLists.cs" />
+    <Compile Include="Tools\MemoryWorker\config.cs" />
+    <Compile Include="Tools\MemoryWorker\DatabaseUpdate.cs" />
+    <Compile Include="Tools\MemoryWorker\MobEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\LoadFromDatabase.cs" />
+    <Compile Include="Tools\MemoryWorker\mySQL.cs" />
+    <Compile Include="Tools\MemoryWorker\RewardEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\tnpc.cs" />
+    <Compile Include="Tools\MemoryWorker\treward_data.cs" />
+    <Compile Include="Tools\MemoryWorker\treward_head.cs" />
+    <Compile Include="Tools\MemoryWorker\PetEditor\BigPetEditorr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExportLod\FormExport.resx">
+      <DependentUpon>FormExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemSearch.resx">
+      <DependentUpon>ItemSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LangSelect.resx">
+      <DependentUpon>LangSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RatesEditor.resx">
+      <DependentUpon>RatesEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StringEXP\FormExport.resx">
+      <DependentUpon>FormExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\AffinityEditor.resx" />
+    <EmbeddedResource Include="Tools\Animation Picker.resx">
+      <DependentUpon>Animation Picker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BigPetEditor.resx" />
+    <EmbeddedResource Include="Tools\CatalogEditor.resx" />
+    <EmbeddedResource Include="Tools\CustomMessage.resx">
+      <DependentUpon>CustomMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FlagBuilder.resx" />
+    <EmbeddedResource Include="Tools\FlagChangerMass.resx">
+      <DependentUpon>FlagChangerMass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\IconPickerItem.resx" />
+    <EmbeddedResource Include="Tools\IconPickerItemCollection.resx" />
+    <EmbeddedResource Include="Tools\IconPickerSkill.resx" />
+    <EmbeddedResource Include="Tools\IpEdit.resx">
+      <DependentUpon>IpEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ItemCollection.resx" />
+    <EmbeddedResource Include="Tools\ItemEditor.resx" />
+    <EmbeddedResource Include="Tools\ItemEditor2.resx" />
+    <EmbeddedResource Include="Tools\ItemPicker.resx" />
+    <EmbeddedResource Include="Tools\ItemPicker2.resx">
+      <DependentUpon>ItemPicker2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Lacaball Editor.resx">
+      <DependentUpon>Lacaball Editor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\LogReader.resx">
+      <DependentUpon>LogReader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\LuckyDrawBoxTool.resx" />
+    <EmbeddedResource Include="Tools\MagicEditor.resx" />
+    <EmbeddedResource Include="Tools\MakeItemEditor.resx">
+      <DependentUpon>MakeItemEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MassEdit.resx">
+      <DependentUpon>MassEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MassEditSeals.resx">
+      <DependentUpon>MassEditSeals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MassNameChanger.resx">
+      <DependentUpon>MassNameChanger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MassPrice.resx">
+      <DependentUpon>MassPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MemoryWorker\ActionEditor.resx">
+      <DependentUpon>ActionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MemoryWorker\DailyLogin.resx">
+      <DependentUpon>DailyLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MemoryWorker\ExChange\ExChange.resx">
+      <DependentUpon>ExChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MemoryWorker\ExChange\ExChange_cHaR.resx">
+      <DependentUpon>ExChange_cHaR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MemoryWorker\Item\ItemAll.resx">
+      <DependentUpon>ItemAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MemoryWorker\Jawel\JawelData.resx">
+      <DependentUpon>JawelData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MemoryWorker\LacaBall\LacaBall.resx">
+      <DependentUpon>LacaBall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MemoryWorker\LevelUpGuide\LevelUpGuide.resx">
+      <DependentUpon>LevelUpGuide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MemoryWorker\MassPercentAdd.resx">
+      <DependentUpon>MassPercentAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MemoryWorker\MobEditor.resx" />
+    <EmbeddedResource Include="Tools\MemoryWorker\MonsterComboEditor.resx">
+      <DependentUpon>MonsterComboEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MemoryWorker\PetEditor\BigPetEditorr.resx" />
+    <EmbeddedResource Include="Tools\MemoryWorker\rareoption\RareOptionEditor.resx">
+      <DependentUpon>RareOptionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MemoryWorker\RewardEditor.resx" />
+    <EmbeddedResource Include="Tools\MemoryWorker\SetItem\SetItem.resx">
+      <DependentUpon>SetItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MobEditor.resx" />
+    <EmbeddedResource Include="Tools\MobMassEdit.resx">
+      <DependentUpon>MobMassEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MobPicker.resx">
+      <DependentUpon>MobPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MoonstoneEditor.resx" />
+    <EmbeddedResource Include="Tools\OptionEditor.resx" />
+    <EmbeddedResource Include="Tools\QuestEditor.resx" />
+    <EmbeddedResource Include="Tools\RewardEditor.resx">
+      <DependentUpon>RewardEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\SetItemEditor.resx">
+      <DependentUpon>SetItemEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ShopEditor.resx" />
+    <EmbeddedResource Include="Tools\SkillEditor.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\SkillPicker.resx" />
+    <EmbeddedResource Include="Tools\TextEditor.resx">
+      <DependentUpon>TextEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\TitleEditor.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ExportLod\app.config" />
+    <None Include="StringEXP\app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\m1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\m2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\m3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\m4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\m5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\m6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\m7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oie_transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\209365-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\29302.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1195425990911699381ArtFavor_Money_stack_of_coins.svg.hi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treasure-clipart-bag-gold-9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\depositphotos_17405057-stock-illustration-scales-of-justice.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wykrzyknik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="%24this.Icon.ico" />
+    <Content Include="Resources\08.ico" />
+    <Content Include="StringEXP\demo.png" />
+    <None Include="Resources\weapon.png" />
+    <None Include="Resources\081.ico" />
+    <Content Include="Resources\18.ico" />
+    <None Include="Resources\button10.BackgroundImage.png" />
+    <None Include="Resources\accessory.png" />
+    <None Include="Resources\Arrow_Red_Down_Transparent_PNG_Clip_Art_Image.png" />
+    <None Include="Resources\Arrow_Green_Down_Transparent_PNG_Clip_Art_Image.png" />
+    <Content Include="Resources\control_add_blue.ico" />
+    <None Include="Resources\control_add_blue1.ico" />
+    <None Include="Resources\delete.ico" />
+    <Content Include="Resources\FOLDER05.ICO" />
+    <None Include="Resources\FOLDER051.ICO" />
+    <None Include="Resources\Page81.ico" />
+    <Content Include="Resources\question.ico" />
+    <None Include="Resources\search %285%29.ico" />
+    <None Include="Resources\refresh.ico" />
+    <Content Include="Resources\search.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
