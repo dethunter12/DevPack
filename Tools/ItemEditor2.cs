@@ -9175,49 +9175,51 @@ namespace LcDevPack_TeamDamonA.Tools
 
         private void Update_Probability_Text() //dethunter12 9/3/2020
         {
-            if (Item_Is_Rare() && int.Parse(TbOptionID1.Text) >= 0)
+            
+            if (Item_Is_Rare() && int.Parse(TbOptionID1.Text) >= 0 && TbOptionLvl1.Text !="")
             {
 
                 lblProb1.Text = "";
                 decimal result = ((int.Parse(TbOptionLvl1.Text) * 100m) / 10000m);
                 lblProb1.Text = Convert.ToString(result) + "%";
             }
-            if (Item_Is_Rare() && int.Parse(TbOptionID2.Text) >= 0)
+            if (Item_Is_Rare() && int.Parse(TbOptionID2.Text) >= 0 && TbOptionLvl2.Text != "")
             {
 
                 lblProb2.Text = "";
+                
                 decimal result = ((int.Parse(TbOptionLvl2.Text) * 100m) / 10000m);
                 lblProb2.Text = Convert.ToString(result) + "%";
             }
-            if (Item_Is_Rare() && int.Parse(TbOptionID3.Text) >= 0)
+            if (Item_Is_Rare() && int.Parse(TbOptionID3.Text) >= 0 && TbOptionLvl3.Text != "")
             {
 
                 lblProb3.Text = "";
                 decimal result = ((int.Parse(TbOptionLvl3.Text) * 100m) / 10000m);
                 lblProb3.Text = Convert.ToString(result) + "%";
             }
-            if (Item_Is_Rare() && int.Parse(TbOptionID4.Text) >= 0)
+            if (Item_Is_Rare() && int.Parse(TbOptionID4.Text) >= 0 && TbOptionLvl4.Text != "")
             {
 
                 lblProb4.Text = "";
                 decimal result = ((int.Parse(TbOptionLvl4.Text) * 100m) / 10000m);
                 lblProb4.Text = Convert.ToString(result) + "%";
             }
-            if (Item_Is_Rare() && int.Parse(TbOptionID5.Text) >= 0)
+            if (Item_Is_Rare() && int.Parse(TbOptionID5.Text) >= 0 && TbOptionLvl5.Text != "")
             {
 
                 lblProb5.Text = "";
                 decimal result = ((int.Parse(TbOptionLvl5.Text) * 100m) / 10000m);
                 lblProb5.Text = Convert.ToString(result) + "%";
             }
-            if (Item_Is_Rare() && int.Parse(TbOptionID6.Text) >= 0)
+            if (Item_Is_Rare() && int.Parse(TbOptionID6.Text) >= 0 && TbOptionLvl6.Text != "")
             {
 
                 lblProb6.Text = "";
                 decimal result = ((int.Parse(TbOptionLvl6.Text) * 100) / 10000m);
                 lblProb6.Text = Convert.ToString(result) + "%";
             }
-            if (Item_Is_Rare() && int.Parse(TbOptionID7.Text) >= 0)
+            if (Item_Is_Rare() && int.Parse(TbOptionID7.Text) >= 0 && TbOptionLvl7.Text != "")
             {
 
                 lblProb7.Text = "";
@@ -9225,7 +9227,7 @@ namespace LcDevPack_TeamDamonA.Tools
                 
                 lblProb7.Text = Convert.ToString(result) + "%";
             }
-            if (Item_Is_Rare() && int.Parse(TbOptionID8.Text) >= 0)
+            if (Item_Is_Rare() && int.Parse(TbOptionID8.Text) >= 0 && TbOptionLvl8.Text != "")
             {
 
                 lblProb8.Text = "";
@@ -9234,14 +9236,14 @@ namespace LcDevPack_TeamDamonA.Tools
                 //var thevalue = string.Format("{0:0.00}", result);
                 //lblProb8.Text = thevalue + "%";
             }
-            if (Item_Is_Rare() && int.Parse(TbOptionID9.Text) >= 0)
+            if (Item_Is_Rare() && int.Parse(TbOptionID9.Text) >= 0 && TbOptionLvl9.Text != "")
             {
 
                 lblProb9.Text = "";
                 decimal result = ((int.Parse(TbOptionLvl9.Text) * 100m) / 10000m);
                 lblProb9.Text = Convert.ToString(result) + "%";
             }
-            if (Item_Is_Rare() && int.Parse(TbOptionID10.Text) >= 0)
+            if (Item_Is_Rare() && int.Parse(TbOptionID10.Text) >= 0 && TbOptionLvl10.Text != "")
             {
 
                 lblProb10.Text = "";
