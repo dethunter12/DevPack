@@ -2449,6 +2449,8 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label7 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tbmaxLevel = new System.Windows.Forms.TextBox();
+            this.label140 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox26 = new System.Windows.Forms.GroupBox();
@@ -2829,8 +2831,6 @@ namespace LcDevPack_TeamDamonA.Tools
             this.lblLang = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnSaveAndNext = new System.Windows.Forms.Button();
-            this.tbmaxLevel = new System.Windows.Forms.TextBox();
-            this.label140 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -3142,6 +3142,23 @@ namespace LcDevPack_TeamDamonA.Tools
             this.tabPage1.Size = new System.Drawing.Size(1041, 598);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Basic";
+            // 
+            // tbmaxLevel
+            // 
+            this.tbmaxLevel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbmaxLevel.Location = new System.Drawing.Point(482, 299);
+            this.tbmaxLevel.Name = "tbmaxLevel";
+            this.tbmaxLevel.Size = new System.Drawing.Size(46, 20);
+            this.tbmaxLevel.TabIndex = 58;
+            // 
+            // label140
+            // 
+            this.label140.AutoSize = true;
+            this.label140.Location = new System.Drawing.Point(412, 301);
+            this.label140.Name = "label140";
+            this.label140.Size = new System.Drawing.Size(64, 13);
+            this.label140.TabIndex = 59;
+            this.label140.Text = "a_maxLevel";
             // 
             // tabControl2
             // 
@@ -4255,7 +4272,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // textBox94
             // 
             this.textBox94.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox94.Location = new System.Drawing.Point(192, 84);
+            this.textBox94.Location = new System.Drawing.Point(192, 85);
             this.textBox94.Name = "textBox94";
             this.textBox94.Size = new System.Drawing.Size(43, 20);
             this.textBox94.TabIndex = 19;
@@ -4265,7 +4282,7 @@ namespace LcDevPack_TeamDamonA.Tools
             this.pictureBox5.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Location = new System.Drawing.Point(122, 13);
+            this.pictureBox5.Location = new System.Drawing.Point(119, 66);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(32, 32);
             this.pictureBox5.TabIndex = 18;
@@ -4285,7 +4302,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // textBox93
             // 
             this.textBox93.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox93.Location = new System.Drawing.Point(192, 13);
+            this.textBox93.Location = new System.Drawing.Point(192, 61);
             this.textBox93.Name = "textBox93";
             this.textBox93.Size = new System.Drawing.Size(43, 20);
             this.textBox93.TabIndex = 16;
@@ -4312,7 +4329,7 @@ namespace LcDevPack_TeamDamonA.Tools
             this.pictureBox4.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Location = new System.Drawing.Point(122, 63);
+            this.pictureBox4.Location = new System.Drawing.Point(119, 14);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(32, 32);
             this.pictureBox4.TabIndex = 13;
@@ -4332,7 +4349,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // textBox91
             // 
             this.textBox91.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox91.Location = new System.Drawing.Point(192, 61);
+            this.textBox91.Location = new System.Drawing.Point(192, 12);
             this.textBox91.Name = "textBox91";
             this.textBox91.Size = new System.Drawing.Size(43, 20);
             this.textBox91.TabIndex = 11;
@@ -6891,23 +6908,6 @@ namespace LcDevPack_TeamDamonA.Tools
             this.btnSaveAndNext.Text = "Save Skill and Next";
             this.btnSaveAndNext.UseVisualStyleBackColor = false;
             this.btnSaveAndNext.Click += new System.EventHandler(this.btnSaveAndNext_Click);
-            // 
-            // tbmaxLevel
-            // 
-            this.tbmaxLevel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbmaxLevel.Location = new System.Drawing.Point(482, 299);
-            this.tbmaxLevel.Name = "tbmaxLevel";
-            this.tbmaxLevel.Size = new System.Drawing.Size(46, 20);
-            this.tbmaxLevel.TabIndex = 58;
-            // 
-            // label140
-            // 
-            this.label140.AutoSize = true;
-            this.label140.Location = new System.Drawing.Point(412, 301);
-            this.label140.Name = "label140";
-            this.label140.Size = new System.Drawing.Size(64, 13);
-            this.label140.TabIndex = 59;
-            this.label140.Text = "a_maxLevel";
             // 
             // SkillEditor
             // 

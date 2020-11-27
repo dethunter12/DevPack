@@ -1951,7 +1951,7 @@ namespace LcDevPack_TeamDamonA.Tools
          "21 - GPS",
          "22 - Holy Water",
          "23 - Protect PVP",
-         "24 - CASH_TICKET",
+         "24 - Seal Item",
          "25 - statpt_remain_200",
          "26 - statpt_remain_500",
          "27 - CASH_COLOR",
