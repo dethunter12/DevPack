@@ -13,6 +13,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using LcDevPack_TeamDamonA.Tools.MemoryWorker;
 
 namespace LcDevPack_TeamDamonA.Tools
 {
@@ -2390,11 +2391,40 @@ namespace LcDevPack_TeamDamonA.Tools
 
     private void button4_Click_1(object sender, EventArgs e)
     {
-      string Query = "INSERT INTO t_skillLevel (a_index, a_level, a_needItemIndex1, a_needItemIndex2,a_learnSkillIndex1, a_learnSkillIndex2, a_learnSkillIndex3, a_learnItemIndex1, a_learnItemIndex2, a_learnItemIndex3 ) VALUES ('" + textBox1.Text + "', '" + Convert.ToString(listBox2.Items.Count + 1) +"'," + "'-1" + "','" + "-1" +  "','" + "-1" + "','" + "-1" + "','" + "-1" + "','" + "-1" + "','" + "-1" + "','" + "-1" +  "')";
-      Console.WriteLine(Query);
-            databaseHandle.SendQueryMySql(Host, User, Password, Database, Query);
-            LoadListBox2();
-            listBox2.SelectedIndex = listBox2.Items.Count - 1;
+        try {
+                using (MySqlConnection mySqlConnection = new MySqlConnection("datasource=" + Host + ";port=3306;username=" + User + ";password=" + Password + ";database=" + Database))
+                {
+                    MySqlCommand mySqlCommand = new MySqlCommand();
+                    mySqlConnection.Open();
+                    mySqlCommand.Connection = mySqlConnection;
+                    string str = "INSERT INTO t_skillLevel (" + "a_index, " + "a_level ," + "a_needItemIndex1 ," + "a_needItemIndex2 ," + "a_learnSkillIndex1 ," + "a_learnSkillIndex2 ," + "a_learnSkillIndex3 ," + "a_magicIndex1 ," + "a_magicLevel1 ," + "a_magicIndex2 ," + "a_magicLevel2 ," + "a_magicIndex3 ," + "a_magicLevel3 , " + "a_targetNum" + ")" + "VALUES ("  + "@index ," + "@level ," + "@needItemIdx1 ," + "@needItemIdx2 ," + "@learnSkillIdx1 ," + "@learnSkillIdx2 ," + "@learnSkillIdx3 ," + "@magicIdx1 ," + "@magicLevel1 ," + "@magicIdx2 ," + "@magicLevel2 ," + "@magicIdx3 ," + "@magicLevel3 ," + "@targetnum " + ")";
+                    mySqlCommand.CommandText = str;
+                    mySqlCommand.Prepare();
+                    mySqlCommand.Parameters.AddWithValue("@index", int.Parse(textBox1.Text));
+                    mySqlCommand.Parameters.AddWithValue("@level", listBox2.Items.Count + 1);
+                    mySqlCommand.Parameters.AddWithValue("@needItemIdx1", -1);
+                    mySqlCommand.Parameters.AddWithValue("@needItemIdx2", -1);
+                    mySqlCommand.Parameters.AddWithValue("@learnSkillIdx1", -1);
+                    mySqlCommand.Parameters.AddWithValue("@learnSkillIdx2", -1);
+                    mySqlCommand.Parameters.AddWithValue("@learnSkillIdx3", -1);
+                    mySqlCommand.Parameters.AddWithValue("@magicIdx1", -1);
+                    mySqlCommand.Parameters.AddWithValue("@magicLevel1", 0);
+                    mySqlCommand.Parameters.AddWithValue("@magicIdx2", -1);
+                    mySqlCommand.Parameters.AddWithValue("@magicLevel2", 0);
+                    mySqlCommand.Parameters.AddWithValue("@magicIdx3", -1);
+                    mySqlCommand.Parameters.AddWithValue("@magicLevel3", 0);
+                    mySqlCommand.Parameters.AddWithValue("@targetnum", 1);
+
+                    mySqlCommand.ExecuteNonQuery();
+                    mySqlConnection.Close();
+                }
+                LoadListBox2();
+                listBox2.SelectedIndex = listBox2.Items.Count - 1;
+            }
+
+            catch(MySqlException ex){
+                int num = (int)MessageBox.Show(ex.Message.ToString());
+            }
     }
 
     private void button5_Click_1(object sender, EventArgs e)
