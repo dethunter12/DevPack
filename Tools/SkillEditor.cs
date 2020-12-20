@@ -6958,7 +6958,7 @@ namespace LcDevPack_TeamDamonA.Tools
             this.MaximizeBox = false;
             this.Name = "SkillEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Skill Editor EP4 V1.01";
+            this.Text = "Skill Editor EP4 V1.02";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -7113,6 +7113,7 @@ namespace LcDevPack_TeamDamonA.Tools
             databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_skill WHERE a_index=" + textBox1.Text + ";" + "SELECT a_index FROM tempTable;" + "UPDATE tempTable SET a_index=(SELECT a_index from t_skill ORDER BY a_index DESC LIMIT 1)+1; " + "SELECT a_index FROM tempTable;" + "INSERT INTO t_skill SELECT * FROM tempTable;");
             databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_skillLevel WHERE a_index=" + textBox1.Text + ";" + "SELECT a_index FROM tempTable;" + "UPDATE tempTable SET a_index=(SELECT a_index from t_skillLevel ORDER BY a_index DESC LIMIT 1)+1; " + "SELECT a_index FROM tempTable;" + "INSERT INTO t_skillLevel SELECT * FROM tempTable;"); //test
             LoadListBox();
+            LoadListBox2();
             if (textBox203.Text != "") //dethunter12 add 12/22/2019
                 SearchList(textBox203.Text);
             listBox1.SelectedIndex = listBox1.Items.Count - 2; //test

@@ -1714,15 +1714,15 @@ namespace LcDevPack_TeamDamonA.Tools
         private void btnCopyRec_Click(object sender, EventArgs e)
         {
 
-           // databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_catalog WHERE a_ctid=" + textBox1.Text + ";" + "SELECT a_ctid FROM tempTable;" + "UPDATE tempTable SET a_index=(SELECT a_ctid from t_catalog ORDER BY a_ctid DESC LIMIT 1)+1; " + "SELECT a_ctid FROM tempTable;" + "INSERT INTO t_catalog SELECT * FROM tempTable;");
-           //databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_catalog_1 WHERE a_ctid=" + textBox1.Text + ";" + "SELECT a_ctid FROM tempTable;" + "UPDATE tempTable SET a_index=(SELECT a_ctid from t_catalog_1 ORDER BY a_ctid DESC LIMIT 1)+1; " + "SELECT a_ctid FROM tempTable;" + "INSERT INTO t_catalog_1 SELECT * FROM tempTable;");
-           // databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_ct_item WHERE a_ctid=" + textBox1.Text + ";" + "SELECT a_ctid FROM tempTable;" + "UPDATE tempTable SET a_index=(SELECT a_ctid from t_ct_item ORDER BY a_ctid DESC LIMIT 1)+1; " + "SELECT a_ctid FROM tempTable;" + "INSERT INTO t_ct_item SELECT * FROM tempTable;");
-           // databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_ct_item_1 WHERE a_ctid=" + textBox1.Text + ";" + "SELECT a_ctid FROM tempTable;" + "UPDATE tempTable SET a_index=(SELECT a_ctid from t_ct_item_1 ORDER BY a_ctid DESC LIMIT 1)+1; " + "SELECT a_ctid FROM tempTable;" + "INSERT INTO t_ct_item_1 SELECT * FROM tempTable;");
-           // LoadListBox();
-      
-           // if (textBox12.Text != "")
-           //     SearchList(textBox12.Text);
-           // listBox1.SelectedIndex = listBox1.Items.Count - 1;
+           databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_catalog WHERE a_ctid=" + textBox1.Text + ";" + "SELECT a_ctid FROM tempTable;" + "UPDATE tempTable SET a_ctid=(SELECT a_ctid from t_catalog ORDER BY a_ctid DESC LIMIT 1)+1; " + "SELECT a_ctid FROM tempTable;" + "INSERT INTO t_catalog SELECT * FROM tempTable;");
+           databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_catalog_1 WHERE a_ctid=" + textBox1.Text + ";" + "SELECT a_ctid FROM tempTable;" + "UPDATE tempTable SET a_ctid=(SELECT a_ctid from t_catalog_1 ORDER BY a_ctid DESC LIMIT 1)+1; " + "SELECT a_ctid FROM tempTable;" + "INSERT INTO t_catalog_1 SELECT * FROM tempTable;");
+           databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_ct_item WHERE a_ctid=" + textBox1.Text + ";" + "SELECT a_index, a_ctid FROM tempTable;" + "UPDATE tempTable SET a_ctid=(SELECT a_ctid from t_ct_item ORDER BY a_ctid DESC LIMIT 1)+1; " + "SELECT a_ctid FROM tempTable;" + "INSERT INTO t_ct_item SELECT * FROM tempTable;");
+           databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_ct_item_1 WHERE a_ctid=" + textBox1.Text + ";" + "SELECT a_index, a_ctid FROM tempTable;" + "UPDATE tempTable SET a_ctid=(SELECT a_ctid from t_ct_item_1 ORDER BY a_ctid DESC LIMIT 1)+1; " + "SELECT a_ctid FROM tempTable;" + "INSERT INTO t_ct_item_1 SELECT * FROM tempTable;");
+            LoadListBox();
+            LoadDG();
+           if (textBox12.Text != "")
+                SearchList(textBox12.Text);
+           listBox1.SelectedIndex = listBox1.Items.Count - 1;
         }
 
         private void btnSaveAndNext_Click(object sender, EventArgs e)

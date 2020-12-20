@@ -577,7 +577,6 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
     }
     private void InitializeComponent()
     {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RewardEditor));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importFromDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -675,7 +674,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
             this.extraToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(931, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(955, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -716,7 +715,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
             this.groupBox2.Controls.Add(this.listBox1);
             this.groupBox2.Location = new System.Drawing.Point(12, 84);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(256, 565);
+            this.groupBox2.Size = new System.Drawing.Size(256, 573);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Reward Head list";
@@ -798,7 +797,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
             this.groupBox4.Controls.Add(this.dgItems);
             this.groupBox4.Location = new System.Drawing.Point(274, 103);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(644, 248);
+            this.groupBox4.Size = new System.Drawing.Size(644, 282);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Rewards";
@@ -831,7 +830,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
             this.dgItems.RowTemplate.Height = 32;
             this.dgItems.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgItems.Size = new System.Drawing.Size(638, 229);
+            this.dgItems.Size = new System.Drawing.Size(638, 263);
             this.dgItems.TabIndex = 0;
             this.dgItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgItems_CellClick);
             // 
@@ -1023,7 +1022,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
             this.groupBox21.Controls.Add(this.label8);
             this.groupBox21.Controls.Add(this.checkedListBox2);
             this.groupBox21.Controls.Add(this.textBox9);
-            this.groupBox21.Location = new System.Drawing.Point(274, 468);
+            this.groupBox21.Location = new System.Drawing.Point(280, 502);
             this.groupBox21.Name = "groupBox21";
             this.groupBox21.Size = new System.Drawing.Size(242, 155);
             this.groupBox21.TabIndex = 59;
@@ -1117,7 +1116,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
             this.groupBox5.Controls.Add(this.label4);
             this.groupBox5.Controls.Add(this.comboBox1);
             this.groupBox5.Controls.Add(this.label3);
-            this.groupBox5.Location = new System.Drawing.Point(274, 357);
+            this.groupBox5.Location = new System.Drawing.Point(280, 391);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(641, 100);
             this.groupBox5.TabIndex = 60;
@@ -1314,7 +1313,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
             this.groupBox6.Controls.Add(this.textBox13);
             this.groupBox6.Controls.Add(this.label7);
             this.groupBox6.Controls.Add(this.textBox12);
-            this.groupBox6.Location = new System.Drawing.Point(524, 468);
+            this.groupBox6.Location = new System.Drawing.Point(530, 502);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(200, 50);
             this.groupBox6.TabIndex = 61;
@@ -1347,7 +1346,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.textBox14);
-            this.groupBox7.Location = new System.Drawing.Point(749, 468);
+            this.groupBox7.Location = new System.Drawing.Point(755, 502);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(165, 50);
             this.groupBox7.TabIndex = 62;
@@ -1367,7 +1366,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Image = global::LcDevPack_TeamDamonA.Properties.Resources.delete;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(526, 567);
+            this.button12.Location = new System.Drawing.Point(532, 601);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(77, 27);
             this.button12.TabIndex = 65;
@@ -1381,7 +1380,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Image = global::LcDevPack_TeamDamonA.Properties.Resources._08;
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(621, 534);
+            this.button9.Location = new System.Drawing.Point(627, 568);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(293, 60);
             this.button9.TabIndex = 64;
@@ -1395,7 +1394,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Image = global::LcDevPack_TeamDamonA.Properties.Resources.control_add_blue;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(526, 534);
+            this.button6.Location = new System.Drawing.Point(532, 568);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(77, 27);
             this.button6.TabIndex = 63;
@@ -1407,7 +1406,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(271, 636);
+            this.label9.Location = new System.Drawing.Point(277, 670);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(591, 13);
             this.label9.TabIndex = 69;
@@ -1418,7 +1417,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 669);
+            this.ClientSize = new System.Drawing.Size(955, 687);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button9);
@@ -1437,7 +1436,6 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
-         //   this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RewardEditor";
             this.Text = "RewardEditor by Kimpobin";
