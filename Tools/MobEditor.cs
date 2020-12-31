@@ -2298,12 +2298,15 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label7 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label99 = new System.Windows.Forms.Label();
+            this.TbAttribute = new System.Windows.Forms.TextBox();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.chk3D = new System.Windows.Forms.CheckBox();
             this.slideLeftRight = new System.Windows.Forms.TrackBar();
             this.slideUpDown = new System.Windows.Forms.TrackBar();
             this.slideZoom = new System.Windows.Forms.TrackBar();
             this.panel3DView = new System.Windows.Forms.Panel();
+            this.label100 = new System.Windows.Forms.Label();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.label70 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
@@ -2311,6 +2314,7 @@ namespace LcDevPack_TeamDamonA.Tools
             this.textBox106 = new System.Windows.Forms.TextBox();
             this.TbEffect = new System.Windows.Forms.TextBox();
             this.label68 = new System.Windows.Forms.Label();
+            this.TbSskillMaster = new System.Windows.Forms.TextBox();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.label72 = new System.Windows.Forms.Label();
             this.TbSpeed = new System.Windows.Forms.TextBox();
@@ -2658,10 +2662,6 @@ namespace LcDevPack_TeamDamonA.Tools
             this.lblLang = new System.Windows.Forms.Label();
             this.btnSaveAndNext = new System.Windows.Forms.Button();
             this.BtnClearDrop = new System.Windows.Forms.Button();
-            this.label99 = new System.Windows.Forms.Label();
-            this.TbAttribute = new System.Windows.Forms.TextBox();
-            this.label100 = new System.Windows.Forms.Label();
-            this.TbSskillMaster = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -2884,6 +2884,24 @@ namespace LcDevPack_TeamDamonA.Tools
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Basic";
             // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Location = new System.Drawing.Point(150, 559);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(60, 13);
+            this.label99.TabIndex = 104;
+            this.label99.Text = "a_attribute:";
+            // 
+            // TbAttribute
+            // 
+            this.TbAttribute.BackColor = System.Drawing.SystemColors.Window;
+            this.TbAttribute.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TbAttribute.Location = new System.Drawing.Point(230, 557);
+            this.TbAttribute.Name = "TbAttribute";
+            this.TbAttribute.Size = new System.Drawing.Size(100, 20);
+            this.TbAttribute.TabIndex = 103;
+            // 
             // groupBox20
             // 
             this.groupBox20.Controls.Add(this.chk3D);
@@ -2954,6 +2972,15 @@ namespace LcDevPack_TeamDamonA.Tools
             this.panel3DView.Size = new System.Drawing.Size(266, 258);
             this.panel3DView.TabIndex = 0;
             // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Location = new System.Drawing.Point(149, 584);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(75, 13);
+            this.label100.TabIndex = 102;
+            this.label100.Text = "a_sskillmaster:";
+            // 
             // groupBox15
             // 
             this.groupBox15.Controls.Add(this.label70);
@@ -3019,6 +3046,15 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label68.Size = new System.Drawing.Size(47, 13);
             this.label68.TabIndex = 49;
             this.label68.Text = "Effect 0:";
+            // 
+            // TbSskillMaster
+            // 
+            this.TbSskillMaster.BackColor = System.Drawing.SystemColors.Window;
+            this.TbSskillMaster.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TbSskillMaster.Location = new System.Drawing.Point(231, 582);
+            this.TbSskillMaster.Name = "TbSskillMaster";
+            this.TbSskillMaster.Size = new System.Drawing.Size(100, 20);
+            this.TbSskillMaster.TabIndex = 101;
             // 
             // groupBox14
             // 
@@ -6460,42 +6496,6 @@ namespace LcDevPack_TeamDamonA.Tools
             this.BtnClearDrop.UseVisualStyleBackColor = false;
             this.BtnClearDrop.Click += new System.EventHandler(this.BtnClearDrop_Click);
             // 
-            // label99
-            // 
-            this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(150, 559);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(60, 13);
-            this.label99.TabIndex = 104;
-            this.label99.Text = "a_attribute:";
-            // 
-            // TbAttribute
-            // 
-            this.TbAttribute.BackColor = System.Drawing.SystemColors.Window;
-            this.TbAttribute.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TbAttribute.Location = new System.Drawing.Point(230, 557);
-            this.TbAttribute.Name = "TbAttribute";
-            this.TbAttribute.Size = new System.Drawing.Size(100, 20);
-            this.TbAttribute.TabIndex = 103;
-            // 
-            // label100
-            // 
-            this.label100.AutoSize = true;
-            this.label100.Location = new System.Drawing.Point(149, 584);
-            this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(75, 13);
-            this.label100.TabIndex = 102;
-            this.label100.Text = "a_sskillmaster:";
-            // 
-            // TbSskillMaster
-            // 
-            this.TbSskillMaster.BackColor = System.Drawing.SystemColors.Window;
-            this.TbSskillMaster.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TbSskillMaster.Location = new System.Drawing.Point(231, 582);
-            this.TbSskillMaster.Name = "TbSskillMaster";
-            this.TbSskillMaster.Size = new System.Drawing.Size(100, 20);
-            this.TbSskillMaster.TabIndex = 101;
-            // 
             // MobEditor
             // 
             this.ClientSize = new System.Drawing.Size(1076, 704);
@@ -6518,6 +6518,7 @@ namespace LcDevPack_TeamDamonA.Tools
             this.Name = "MobEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MobAll EP4";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MobEditor_FormClosed);
             this.Load += new System.EventHandler(this.MobEditor_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -6600,7 +6601,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private void massEditToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MobMassEdit m = new MobMassEdit(); //dethunter12 add
-            m.ShowDialog(); //dethunter12 add
+            m.Show(); //dethunter12 add
         }
 
         private void cbEnabled_CheckedChanged(object sender, EventArgs e)
@@ -6894,7 +6895,13 @@ namespace LcDevPack_TeamDamonA.Tools
         private void strNpcNamelodToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormExport f2 = new FormExport();
-            f2.ShowDialog(); // Shows Form2
+            f2.Show(); // Shows Form2
         }
+
+        private void MobEditor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+
     }
 }

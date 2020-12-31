@@ -27,8 +27,6 @@ namespace LcDevPack_TeamDamonA.Tools
         private DatabaseHandle databaseHandle = new DatabaseHandle();
         public string rowName = "a_index";
         private string Episode = SkillEditor.connection.ReadSettings("Episode");
-        public int SkillLevelSelect; //dethunter12 add
-        public int MagicLevelSelect; //dethunter12 add
         public bool IsSelectIndexChanged = false; //dethunter12 add 7/26/2020
         public bool ISMagicIndexChanged = false; //dethunter12 add 7/26/2020
         public string[] menuArray = new string[2]
@@ -7278,7 +7276,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private void exportStrSkillsusalodToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormExport f2 = new FormExport();
-            f2.ShowDialog(); // Shows Form2
+            f2.Show(); // Shows Form2
         }
 
         private void cbSkillLevel_SelectedIndexChanged(object sender, EventArgs e) //dethunter12 add 7/26/2020

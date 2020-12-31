@@ -9,14 +9,17 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
     internal class StrucAction
 
     {
-      public  int Index, Type, Job, Icon_ID, Icon_Row, Icon_Col;
-      public  string Name, Descr;
+      public  int index, type, job, iconID, iconRow, iconCol;
+
+      public  string name, descr;
+         
+      
 
         public string menu //Nymp code
         {
             get
             {
-                return this.Index.ToString() + " - " + Name;
+                return this.index.ToString() + " - " + name;
             }
         }
     }

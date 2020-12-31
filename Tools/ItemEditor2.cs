@@ -2343,7 +2343,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private void exportStrItemlodToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormExport f2 = new FormExport();
-            f2.ShowDialog(); // Shows Form2
+            f2.Show(); // Shows Form2
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -7893,7 +7893,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private void massEditToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             MassEdit m = new MassEdit(); //dethunter12 add
-            m.ShowDialog(); //dethunter12 add
+            m.Show(); //dethunter12 add
         }
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
@@ -7967,7 +7967,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private void massUpdateSealsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MassEditSeals ma = new MassEditSeals(); //dethunter12 add
-            ma.ShowDialog(); //dethunter12 add
+            ma.Show(); //dethunter12 add
         }
 
         private void textBox8_KeyPress(object sender, KeyPressEventArgs e)
@@ -8793,7 +8793,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private void massUpdateFlagToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FlagChangerMass fcm = new FlagChangerMass(); //dethunter12 add
-            fcm.ShowDialog(); //dethunter12 add
+            fcm.Show(); //dethunter12 add
 
         }
 
@@ -9017,13 +9017,13 @@ namespace LcDevPack_TeamDamonA.Tools
         private void MassUpdateNameToolStripMenuItem_Click(object sender, EventArgs e) //dethunter12 add 10/2/2019
         {
             MassNameChanger massNameChanger = new MassNameChanger(); //dethunter12 add
-            massNameChanger.ShowDialog();
+            massNameChanger.Show();
         }
 
         private void BtnMassNum_Click(object sender, EventArgs e)
         {
             MassPercentAdd mpa = new MassPercentAdd(); //dethunter12 add 12/22/2019
-            mpa.ShowDialog();
+            mpa.Show();
         }
 
         private void btnSub1_Click(object sender, EventArgs e)
@@ -9077,7 +9077,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private void MassPriceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MassPrice m = new MassPrice(); //dethunter12 add
-            m.ShowDialog();
+            m.Show();
         }
 
         public string LanguageExport() //dethunter12 add 7/5/2020

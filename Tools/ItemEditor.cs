@@ -1094,7 +1094,7 @@ namespace LcDevPack_TeamDamonA.Tools
     private void exportStrItemlodToolStripMenuItem_Click(object sender, EventArgs e)
     {
             FormExport f2 = new FormExport();
-            f2.ShowDialog(); // Shows Form2
+            f2.Show(); // Shows Form2
         }
 
     private void groupBox5_Enter(object sender, EventArgs e)

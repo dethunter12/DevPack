@@ -371,7 +371,7 @@ namespace LcDevPack_TeamDamonA.Tools
     private void exportStrOptionlodToolStripMenuItem_Click(object sender, EventArgs e)
     {
             FormExport f2 = new FormExport();
-            f2.ShowDialog(); // Shows Form2
+            f2.Show(); // Shows Form2
         }
 
     protected override void Dispose(bool disposing)

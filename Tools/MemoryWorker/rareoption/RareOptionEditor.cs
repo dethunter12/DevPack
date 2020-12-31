@@ -1274,7 +1274,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker.rareoption
         private void exportStringToolStripMenuItem_Click(object sender, EventArgs e)
         {
              FormExport f2 = new FormExport();
-            f2.ShowDialog(); // Shows Form2
+            f2.Show(); // Shows Form2
         }
 
         private void od0_TextChanged(object sender, EventArgs e)
