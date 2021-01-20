@@ -1813,7 +1813,7 @@ namespace LcDevPack_TeamDamonA.Tools
          "7 - Castle Dratan",
          "8 - Castle Merac",
       });
-            CbPrizeType1.Items.AddRange(new object[9]
+            CbPrizeType1.Items.AddRange(new object[10]
       {
         "-1",
          "0 - Item",
@@ -1823,9 +1823,10 @@ namespace LcDevPack_TeamDamonA.Tools
          "4 - Skill",
          "5 - Special Skill",
          "6 - Stat Point",
-         "7 - RVRPOINT"
+         "7 - RVRPOINT",
+         "8 - EXP %"
       }); //dethunter12 adjust combo Box 9 -19
-            CbPrizeType2.Items.AddRange(new object[9] 
+            CbPrizeType2.Items.AddRange(new object[10] 
       {
          "-1",
          "0 - Item",
@@ -1835,9 +1836,11 @@ namespace LcDevPack_TeamDamonA.Tools
          "4 - Skill",
          "5 - Special Skill",
          "6 - Stat Point",
-         "7 - RVRPOINT"
+         "7 - RVRPOINT",
+         "8 - EXP %"
+
       });
-            CbPrizeType3.Items.AddRange(new object[9]
+            CbPrizeType3.Items.AddRange(new object[10]
       {
         "-1",
          "0 - Item",
@@ -1847,9 +1850,10 @@ namespace LcDevPack_TeamDamonA.Tools
          "4 - Skill",
          "5 - Special Skill",
          "6 - Stat Point",
-         "7 - RVRPOINT"
+         "7 - RVRPOINT",
+         "8 - EXP %"
       });
-            CbPrizeType4.Items.AddRange(new object[9]
+            CbPrizeType4.Items.AddRange(new object[10]
       {
         "-1",
          "0 - Item",
@@ -1859,9 +1863,10 @@ namespace LcDevPack_TeamDamonA.Tools
          "4 - Skill",
          "5 - Special Skill",
          "6 - Stat Point",
-         "7 - RVRPOINT"
+         "7 - RVRPOINT",
+         "8 - EXP %"
       });
-            CbPrizeType5.Items.AddRange(new object[9]
+            CbPrizeType5.Items.AddRange(new object[10]
       {
         "-1",
          "0 - Item",
@@ -1871,9 +1876,10 @@ namespace LcDevPack_TeamDamonA.Tools
          "4 - Skill",
          "5 - Special Skill",
          "6 - Stat Point",
-         "7 - RVRPOINT"
+         "7 - RVRPOINT",
+         "8 - EXP %"
       });
-            CbOptPrizeType1.Items.AddRange(new object[9]
+            CbOptPrizeType1.Items.AddRange(new object[10]
       {
         "-1",
          "0 - Item",
@@ -1883,9 +1889,10 @@ namespace LcDevPack_TeamDamonA.Tools
          "4 - Skill",
          "5 - Special Skill",
          "6 - Stat Point",
-         "7 - RVRPOINT"
+         "7 - RVRPOINT",
+         "8 - EXP %"
       });
-            CbOptPrizeType2.Items.AddRange(new object[9]
+            CbOptPrizeType2.Items.AddRange(new object[10]
       {
          "-1",
          "0 - Item",
@@ -1895,9 +1902,10 @@ namespace LcDevPack_TeamDamonA.Tools
          "4 - Skill",
          "5 - Special Skill",
          "6 - Stat Point",
-         "7 - RVRPOINT"
+         "7 - RVRPOINT",
+         "8 - EXP %"
       });
-            CbOptPrizeType3.Items.AddRange(new object[9]
+            CbOptPrizeType3.Items.AddRange(new object[10]
       {
          "-1",
          "0 - Item",
@@ -1907,9 +1915,10 @@ namespace LcDevPack_TeamDamonA.Tools
          "4 - Skill",
          "5 - Special Skill",
          "6 - Stat Point",
-         "7 - RVRPOINT"
+         "7 - RVRPOINT",
+         "8 - EXP %"
       });
-            CbOptPrizeType4.Items.AddRange(new object[9]
+            CbOptPrizeType4.Items.AddRange(new object[10]
       {
         "-1",
          "0 - Item",
@@ -1919,9 +1928,10 @@ namespace LcDevPack_TeamDamonA.Tools
          "4 - Skill",
          "5 - Special Skill",
          "6 - Stat Point",
-         "7 - RVRPOINT"
+         "7 - RVRPOINT",
+         "8 - EXP %"
       });
-            CbOptPrizeType5.Items.AddRange(new object[9]
+            CbOptPrizeType5.Items.AddRange(new object[10]
       {
         "-1",
          "0 - Item",
@@ -1931,9 +1941,10 @@ namespace LcDevPack_TeamDamonA.Tools
          "4 - Skill",
          "5 - Special Skill",
          "6 - Stat Point",
-         "7 - RVRPOINT"
+         "7 - RVRPOINT",
+         "8 - EXP %"
       });
-            CbOptPrizeType6.Items.AddRange(new object[9]
+            CbOptPrizeType6.Items.AddRange(new object[10]
       {
         "-1",
          "0 - Item",
@@ -1943,9 +1954,10 @@ namespace LcDevPack_TeamDamonA.Tools
          "4 - Skill",
          "5 - Special Skill",
          "6 - Stat Point",
-         "7 - RVRPOINT"
+         "7 - RVRPOINT",
+         "8 - EXP %"
       });
-            CbOptPrizeType7.Items.AddRange(new object[9]
+            CbOptPrizeType7.Items.AddRange(new object[10]
       {
          "-1",
          "0 - Item",
@@ -1955,7 +1967,8 @@ namespace LcDevPack_TeamDamonA.Tools
          "4 - Skill",
          "5 - Special Skill",
          "6 - Stat Point",
-         "7 - RVRPOINT"
+         "7 - RVRPOINT",
+         "8 - EXP %"
       });
 
             CbRvrType.Items.AddRange(new object[3] //dethunter12 add
