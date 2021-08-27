@@ -1486,20 +1486,20 @@ namespace LcDevPack_TeamDamonA.Tools
             this.exportlodToolStripMenuItem,
             this.exportStrItemlodToolStripMenuItem});
             this.fileExportToolStripMenuItem.Name = "fileExportToolStripMenuItem";
-            this.fileExportToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.fileExportToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.fileExportToolStripMenuItem.Text = "File Export";
             // 
             // exportlodToolStripMenuItem
             // 
             this.exportlodToolStripMenuItem.Name = "exportlodToolStripMenuItem";
-            this.exportlodToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.exportlodToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.exportlodToolStripMenuItem.Text = "Export itemAll.lod";
             this.exportlodToolStripMenuItem.Click += new System.EventHandler(this.exportlodToolStripMenuItem_Click);
             // 
             // exportStrItemlodToolStripMenuItem
             // 
             this.exportStrItemlodToolStripMenuItem.Name = "exportStrItemlodToolStripMenuItem";
-            this.exportStrItemlodToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.exportStrItemlodToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.exportStrItemlodToolStripMenuItem.Text = "Export strItem.lod";
             this.exportStrItemlodToolStripMenuItem.Click += new System.EventHandler(this.exportStrItemlodToolStripMenuItem_Click);
             // 

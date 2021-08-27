@@ -686,17 +686,17 @@ namespace LcDevPack_TeamDamonA.Tools
         private Label label111;
         private TextBox textBox110;
         private GroupBox groupBox27;
-        private TextBox textBox120;
+        private TextBox tbMagicLevel3;
         private Label label121;
-        private TextBox textBox119;
+        private TextBox tbMagicIndex3;
         private Label label120;
-        private TextBox textBox118;
+        private TextBox tbMagicLevel2;
         private Label label119;
-        private TextBox textBox117;
+        private TextBox tbMagicIndex2;
         private Label label118;
-        private TextBox textBox116;
+        private TextBox tbMagicLevel1;
         private Label label117;
-        private TextBox textBox115;
+        private TextBox tbMagicIndex1;
         private Label label116;
         private Label label125;
         private Label label124;
@@ -2264,12 +2264,12 @@ namespace LcDevPack_TeamDamonA.Tools
                 textBox112.Text = strArray[28];
                 textBox113.Text = strArray[29];
                 textBox114.Text = strArray[30];
-                textBox115.Text = strArray[31];
-                textBox116.Text = strArray[32];
-                textBox117.Text = strArray[33];
-                textBox118.Text = strArray[34];
-                textBox119.Text = strArray[35];
-                textBox120.Text = strArray[36];
+                tbMagicIndex1.Text = strArray[31];
+                tbMagicLevel1.Text = strArray[32];
+                tbMagicIndex2.Text = strArray[33];
+                tbMagicLevel2.Text = strArray[34];
+                tbMagicIndex3.Text = strArray[35];
+                tbMagicLevel3.Text = strArray[36];
                 textBox121.Text = strArray[37];
                 textBox122.Text = strArray[38];
                 textBox123.Text = strArray[39];
@@ -2377,7 +2377,7 @@ namespace LcDevPack_TeamDamonA.Tools
         
     private void button6_Click(object sender, EventArgs e)
     {
-      string Query = "UPDATE t_skillLevel SET " + "a_needHP = '" + textBox86.Text + "'," + "a_needMP = '" + textBox87.Text + "'," + "a_needGP = '" + textBox88.Text + "'," + "a_durtime = '" + textBox89.Text + "'," + "a_dummypower = '" + textBox90.Text + "'," + "a_needItemIndex1 = '" + textBox91.Text + "'," + "a_needItemCount1 = '" + textBox92.Text + "'," + "a_needItemIndex2 = '" + textBox93.Text + "'," + "a_needItemCount2 = '" + textBox94.Text + "'," + "a_learnLevel = '" + textBox95.Text + "'," + "a_learnSP = '" + textBox96.Text + "'," + "a_learnSkillIndex1 = '" + textBox97.Text + "'," + "a_learnSkillLevel1 = '" + textBox98.Text + "'," + "a_learnSkillIndex2 = '" + textBox99.Text + "'," + "a_learnSkillLevel2 = '" + textBox100.Text + "'," + "a_learnSkillIndex3 = '" + textBox101.Text + "'," + "a_learnSkillLevel3 = '" + textBox102.Text + "'," + "a_learnItemIndex1 = '" + tbNeedLearn1.Text + "'," + "a_learnItemCount1 = '" + textBox104.Text + "'," + "a_learnItemIndex2 = '" + tbNeedLearn2.Text + "'," + "a_learnItemCount2 = '" + textBox106.Text + "'," + "a_learnItemIndex3 = '" + tbNeedLearn3.Text + "'," + "a_learnItemCount3 = '" + textBox108.Text + "'," + "a_appMagicIndex1 = '" + textBox109.Text + "'," + "a_appMagicLevel1 = '" + textBox110.Text + "'," + "a_appMagicIndex2 = '" + textBox111.Text + "'," + "a_appMagicLevel2 = '" + textBox112.Text + "'," + "a_appMagicIndex3 = '" + textBox113.Text + "'," + "a_appMagicLevel3 = '" + textBox114.Text + "'," + "a_magicIndex1 = '" + textBox115.Text + "'," + "a_magicLevel1 = '" + textBox116.Text + "'," + "a_magicIndex2 = '" + textBox117.Text + "'," + "a_magicLevel2 = '" + textBox118.Text + "'," + "a_magicIndex3 = '" + textBox119.Text + "'," + "a_magicLevel3 = '" + textBox120.Text + "'," + "a_learnstr = '" + textBox121.Text + "'," + "a_learndex = '" + textBox122.Text + "'," + "a_learnint = '" + textBox123.Text + "'," + "a_learncon = '" + textBox124.Text + "'," + "a_hate = '" + textBox125.Text + "'," + "a_learnGP = '" + textBox126.Text + "'," + "a_use_count = '" + textBox127.Text + "'," + "a_targetNum = '" + textBox128.Text + "'" + "WHERE a_index = '" + textBox1.Text + "' AND a_level = '" + textBox85.Text + "'";
+      string Query = "UPDATE t_skillLevel SET " + "a_needHP = '" + textBox86.Text + "'," + "a_needMP = '" + textBox87.Text + "'," + "a_needGP = '" + textBox88.Text + "'," + "a_durtime = '" + textBox89.Text + "'," + "a_dummypower = '" + textBox90.Text + "'," + "a_needItemIndex1 = '" + textBox91.Text + "'," + "a_needItemCount1 = '" + textBox92.Text + "'," + "a_needItemIndex2 = '" + textBox93.Text + "'," + "a_needItemCount2 = '" + textBox94.Text + "'," + "a_learnLevel = '" + textBox95.Text + "'," + "a_learnSP = '" + textBox96.Text + "'," + "a_learnSkillIndex1 = '" + textBox97.Text + "'," + "a_learnSkillLevel1 = '" + textBox98.Text + "'," + "a_learnSkillIndex2 = '" + textBox99.Text + "'," + "a_learnSkillLevel2 = '" + textBox100.Text + "'," + "a_learnSkillIndex3 = '" + textBox101.Text + "'," + "a_learnSkillLevel3 = '" + textBox102.Text + "'," + "a_learnItemIndex1 = '" + tbNeedLearn1.Text + "'," + "a_learnItemCount1 = '" + textBox104.Text + "'," + "a_learnItemIndex2 = '" + tbNeedLearn2.Text + "'," + "a_learnItemCount2 = '" + textBox106.Text + "'," + "a_learnItemIndex3 = '" + tbNeedLearn3.Text + "'," + "a_learnItemCount3 = '" + textBox108.Text + "'," + "a_appMagicIndex1 = '" + textBox109.Text + "'," + "a_appMagicLevel1 = '" + textBox110.Text + "'," + "a_appMagicIndex2 = '" + textBox111.Text + "'," + "a_appMagicLevel2 = '" + textBox112.Text + "'," + "a_appMagicIndex3 = '" + textBox113.Text + "'," + "a_appMagicLevel3 = '" + textBox114.Text + "'," + "a_magicIndex1 = '" + tbMagicIndex1.Text + "'," + "a_magicLevel1 = '" + tbMagicLevel1.Text + "'," + "a_magicIndex2 = '" + tbMagicIndex2.Text + "'," + "a_magicLevel2 = '" + tbMagicLevel2.Text + "'," + "a_magicIndex3 = '" + tbMagicIndex3.Text + "'," + "a_magicLevel3 = '" + tbMagicLevel3.Text + "'," + "a_learnstr = '" + textBox121.Text + "'," + "a_learndex = '" + textBox122.Text + "'," + "a_learnint = '" + textBox123.Text + "'," + "a_learncon = '" + textBox124.Text + "'," + "a_hate = '" + textBox125.Text + "'," + "a_learnGP = '" + textBox126.Text + "'," + "a_use_count = '" + textBox127.Text + "'," + "a_targetNum = '" + textBox128.Text + "'" + "WHERE a_index = '" + textBox1.Text + "' AND a_level = '" + textBox85.Text + "'";
       Console.WriteLine(Query);
             databaseHandle.SendQueryMySql(Host, User, Password, Database, Query);
             LoadListBox2();
@@ -2408,12 +2408,12 @@ namespace LcDevPack_TeamDamonA.Tools
                     mySqlCommand.Parameters.AddWithValue("@learnItemIdx1", -1);
                     mySqlCommand.Parameters.AddWithValue("@learnItemIdx2", -1);
                     mySqlCommand.Parameters.AddWithValue("@learnItemIdx3", -1);
-                    mySqlCommand.Parameters.AddWithValue("@magicIdx1", -1);
-                    mySqlCommand.Parameters.AddWithValue("@magicLevel1", 0);
-                    mySqlCommand.Parameters.AddWithValue("@magicIdx2", -1);
-                    mySqlCommand.Parameters.AddWithValue("@magicLevel2", 0);
-                    mySqlCommand.Parameters.AddWithValue("@magicIdx3", -1);
-                    mySqlCommand.Parameters.AddWithValue("@magicLevel3", 0);
+                    mySqlCommand.Parameters.AddWithValue("@magicIdx1", tbMagicIndex1.Text);
+                    mySqlCommand.Parameters.AddWithValue("@magicLevel1", tbMagicLevel1.Text);
+                    mySqlCommand.Parameters.AddWithValue("@magicIdx2", tbMagicIndex2.Text);
+                    mySqlCommand.Parameters.AddWithValue("@magicLevel2", tbMagicLevel2.Text);
+                    mySqlCommand.Parameters.AddWithValue("@magicIdx3", tbMagicIndex3.Text);
+                    mySqlCommand.Parameters.AddWithValue("@magicLevel3", tbMagicLevel3.Text);
                     mySqlCommand.Parameters.AddWithValue("@targetnum", 1);
 
                     mySqlCommand.ExecuteNonQuery();
@@ -2573,17 +2573,17 @@ namespace LcDevPack_TeamDamonA.Tools
             this.PbMagicIdx3 = new System.Windows.Forms.PictureBox();
             this.PbMagicIdx2 = new System.Windows.Forms.PictureBox();
             this.PbMagicIdx1 = new System.Windows.Forms.PictureBox();
-            this.textBox120 = new System.Windows.Forms.TextBox();
+            this.tbMagicLevel3 = new System.Windows.Forms.TextBox();
             this.label121 = new System.Windows.Forms.Label();
-            this.textBox119 = new System.Windows.Forms.TextBox();
+            this.tbMagicIndex3 = new System.Windows.Forms.TextBox();
             this.label120 = new System.Windows.Forms.Label();
-            this.textBox118 = new System.Windows.Forms.TextBox();
+            this.tbMagicLevel2 = new System.Windows.Forms.TextBox();
             this.label119 = new System.Windows.Forms.Label();
-            this.textBox117 = new System.Windows.Forms.TextBox();
+            this.tbMagicIndex2 = new System.Windows.Forms.TextBox();
             this.label118 = new System.Windows.Forms.Label();
-            this.textBox116 = new System.Windows.Forms.TextBox();
+            this.tbMagicLevel1 = new System.Windows.Forms.TextBox();
             this.label117 = new System.Windows.Forms.Label();
-            this.textBox115 = new System.Windows.Forms.TextBox();
+            this.tbMagicIndex1 = new System.Windows.Forms.TextBox();
             this.label116 = new System.Windows.Forms.Label();
             this.groupBox23 = new System.Windows.Forms.GroupBox();
             this.label95 = new System.Windows.Forms.Label();
@@ -2919,7 +2919,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // menuStrip1
             // 
             this.menuStrip1.AllowMerge = false;
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.Menu;
+            this.menuStrip1.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileExportToolStripMenuItem,
             this.mYSQLToolStripMenuItem});
@@ -4100,17 +4100,17 @@ namespace LcDevPack_TeamDamonA.Tools
             this.groupBox27.Controls.Add(this.PbMagicIdx3);
             this.groupBox27.Controls.Add(this.PbMagicIdx2);
             this.groupBox27.Controls.Add(this.PbMagicIdx1);
-            this.groupBox27.Controls.Add(this.textBox120);
+            this.groupBox27.Controls.Add(this.tbMagicLevel3);
             this.groupBox27.Controls.Add(this.label121);
-            this.groupBox27.Controls.Add(this.textBox119);
+            this.groupBox27.Controls.Add(this.tbMagicIndex3);
             this.groupBox27.Controls.Add(this.label120);
-            this.groupBox27.Controls.Add(this.textBox118);
+            this.groupBox27.Controls.Add(this.tbMagicLevel2);
             this.groupBox27.Controls.Add(this.label119);
-            this.groupBox27.Controls.Add(this.textBox117);
+            this.groupBox27.Controls.Add(this.tbMagicIndex2);
             this.groupBox27.Controls.Add(this.label118);
-            this.groupBox27.Controls.Add(this.textBox116);
+            this.groupBox27.Controls.Add(this.tbMagicLevel1);
             this.groupBox27.Controls.Add(this.label117);
-            this.groupBox27.Controls.Add(this.textBox115);
+            this.groupBox27.Controls.Add(this.tbMagicIndex1);
             this.groupBox27.Controls.Add(this.label116);
             this.groupBox27.Location = new System.Drawing.Point(623, 6);
             this.groupBox27.Name = "groupBox27";
@@ -4164,13 +4164,13 @@ namespace LcDevPack_TeamDamonA.Tools
             this.toolTip1.SetToolTip(this.PbMagicIdx1, "Select MagicID");
             this.PbMagicIdx1.Click += new System.EventHandler(this.PbMagicIdx1_Click);
             // 
-            // textBox120
+            // tbMagicLevel3
             // 
-            this.textBox120.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox120.Location = new System.Drawing.Point(169, 69);
-            this.textBox120.Name = "textBox120";
-            this.textBox120.Size = new System.Drawing.Size(21, 20);
-            this.textBox120.TabIndex = 11;
+            this.tbMagicLevel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbMagicLevel3.Location = new System.Drawing.Point(169, 69);
+            this.tbMagicLevel3.Name = "tbMagicLevel3";
+            this.tbMagicLevel3.Size = new System.Drawing.Size(21, 20);
+            this.tbMagicLevel3.TabIndex = 11;
             // 
             // label121
             // 
@@ -4181,13 +4181,13 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label121.TabIndex = 10;
             this.label121.Text = "Level:";
             // 
-            // textBox119
+            // tbMagicIndex3
             // 
-            this.textBox119.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox119.Location = new System.Drawing.Point(73, 69);
-            this.textBox119.Name = "textBox119";
-            this.textBox119.Size = new System.Drawing.Size(36, 20);
-            this.textBox119.TabIndex = 9;
+            this.tbMagicIndex3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbMagicIndex3.Location = new System.Drawing.Point(73, 69);
+            this.tbMagicIndex3.Name = "tbMagicIndex3";
+            this.tbMagicIndex3.Size = new System.Drawing.Size(36, 20);
+            this.tbMagicIndex3.TabIndex = 9;
             // 
             // label120
             // 
@@ -4198,13 +4198,13 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label120.TabIndex = 8;
             this.label120.Text = "Index:";
             // 
-            // textBox118
+            // tbMagicLevel2
             // 
-            this.textBox118.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox118.Location = new System.Drawing.Point(169, 42);
-            this.textBox118.Name = "textBox118";
-            this.textBox118.Size = new System.Drawing.Size(21, 20);
-            this.textBox118.TabIndex = 7;
+            this.tbMagicLevel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbMagicLevel2.Location = new System.Drawing.Point(169, 42);
+            this.tbMagicLevel2.Name = "tbMagicLevel2";
+            this.tbMagicLevel2.Size = new System.Drawing.Size(21, 20);
+            this.tbMagicLevel2.TabIndex = 7;
             // 
             // label119
             // 
@@ -4215,13 +4215,13 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label119.TabIndex = 6;
             this.label119.Text = "Level:";
             // 
-            // textBox117
+            // tbMagicIndex2
             // 
-            this.textBox117.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox117.Location = new System.Drawing.Point(73, 42);
-            this.textBox117.Name = "textBox117";
-            this.textBox117.Size = new System.Drawing.Size(36, 20);
-            this.textBox117.TabIndex = 5;
+            this.tbMagicIndex2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbMagicIndex2.Location = new System.Drawing.Point(73, 42);
+            this.tbMagicIndex2.Name = "tbMagicIndex2";
+            this.tbMagicIndex2.Size = new System.Drawing.Size(36, 20);
+            this.tbMagicIndex2.TabIndex = 5;
             // 
             // label118
             // 
@@ -4232,13 +4232,13 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label118.TabIndex = 4;
             this.label118.Text = "Index:";
             // 
-            // textBox116
+            // tbMagicLevel1
             // 
-            this.textBox116.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox116.Location = new System.Drawing.Point(169, 16);
-            this.textBox116.Name = "textBox116";
-            this.textBox116.Size = new System.Drawing.Size(21, 20);
-            this.textBox116.TabIndex = 3;
+            this.tbMagicLevel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbMagicLevel1.Location = new System.Drawing.Point(169, 16);
+            this.tbMagicLevel1.Name = "tbMagicLevel1";
+            this.tbMagicLevel1.Size = new System.Drawing.Size(21, 20);
+            this.tbMagicLevel1.TabIndex = 3;
             // 
             // label117
             // 
@@ -4249,13 +4249,13 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label117.TabIndex = 2;
             this.label117.Text = "Level:";
             // 
-            // textBox115
+            // tbMagicIndex1
             // 
-            this.textBox115.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox115.Location = new System.Drawing.Point(73, 16);
-            this.textBox115.Name = "textBox115";
-            this.textBox115.Size = new System.Drawing.Size(36, 20);
-            this.textBox115.TabIndex = 1;
+            this.tbMagicIndex1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbMagicIndex1.Location = new System.Drawing.Point(73, 16);
+            this.tbMagicIndex1.Name = "tbMagicIndex1";
+            this.tbMagicIndex1.Size = new System.Drawing.Size(36, 20);
+            this.tbMagicIndex1.TabIndex = 1;
             // 
             // label116
             // 
@@ -4474,13 +4474,14 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(62, 19);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(52, 22);
             this.button4.TabIndex = 1;
             this.button4.Text = "Add";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // listBox2
@@ -6903,7 +6904,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // label131
             // 
             this.label131.AutoSize = true;
-            this.label131.BackColor = System.Drawing.SystemColors.Menu;
+            this.label131.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.label131.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label131.Location = new System.Drawing.Point(1076, 3);
             this.label131.Name = "label131";
@@ -6914,9 +6915,9 @@ namespace LcDevPack_TeamDamonA.Tools
             // lblLang
             // 
             this.lblLang.AutoSize = true;
-            this.lblLang.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblLang.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.lblLang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLang.ForeColor = System.Drawing.Color.Chartreuse;
+            this.lblLang.ForeColor = System.Drawing.Color.Crimson;
             this.lblLang.Location = new System.Drawing.Point(1230, 5);
             this.lblLang.Name = "lblLang";
             this.lblLang.Size = new System.Drawing.Size(0, 16);
