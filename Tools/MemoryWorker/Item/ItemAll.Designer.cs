@@ -1804,7 +1804,8 @@
             "Accesoire Slot",
             "Accesoire Slot",
             "Pet Slot",
-            "Wing Slot"});
+            "Wing Slot",
+            "Insignia Slot"});
             this.t_WearingPosCombo.Location = new System.Drawing.Point(91, 112);
             this.t_WearingPosCombo.Name = "t_WearingPosCombo";
             this.t_WearingPosCombo.Size = new System.Drawing.Size(207, 21);

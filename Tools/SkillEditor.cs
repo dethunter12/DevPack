@@ -2395,7 +2395,7 @@ namespace LcDevPack_TeamDamonA.Tools
                     MySqlCommand mySqlCommand = new MySqlCommand();
                     mySqlConnection.Open();
                     mySqlCommand.Connection = mySqlConnection;
-                    string str = "INSERT INTO t_skillLevel (" + "a_index, " + "a_level ," + "a_needItemIndex1 ," + "a_needItemIndex2 ," + "a_learnSkillIndex1 ," + "a_learnSkillIndex2 ," + "a_learnSkillIndex3 ," + "a_magicIndex1 ," + "a_magicLevel1 ," + "a_magicIndex2 ," + "a_magicLevel2 ," + "a_magicIndex3 ," + "a_magicLevel3 , " + "a_targetNum" + ")" + "VALUES ("  + "@index ," + "@level ," + "@needItemIdx1 ," + "@needItemIdx2 ," + "@learnSkillIdx1 ," + "@learnSkillIdx2 ," + "@learnSkillIdx3 ," + "@magicIdx1 ," + "@magicLevel1 ," + "@magicIdx2 ," + "@magicLevel2 ," + "@magicIdx3 ," + "@magicLevel3 ," + "@targetnum " + ")";
+                    string str = "INSERT INTO t_skillLevel (" + "a_index, " + "a_level ," + "a_needItemIndex1 ," + "a_needItemIndex2 ," + "a_learnSkillIndex1 ," + "a_learnSkillIndex2 ," + "a_learnSkillIndex3 ," + "a_learnItemIndex1 ," + "a_learnItemIndex2 ," + "a_learnItemIndex3 ," + "a_magicIndex1 ," + "a_magicLevel1 ," + "a_magicIndex2 ," + "a_magicLevel2 ," + "a_magicIndex3 ," + "a_magicLevel3 , " + "a_targetNum" + ")" + "VALUES ("  + "@index ," + "@level ," + "@needItemIdx1 ," + "@needItemIdx2 ," + "@learnSkillIdx1 ," + "@learnSkillIdx2 ," + "@learnSkillIdx3 ," + "@learnItemIdx1 ," + "@learnItemIdx2 ," + "@learnItemIdx3 ," + "@magicIdx1 ," + "@magicLevel1 ," + "@magicIdx2 ," + "@magicLevel2 ," + "@magicIdx3 ," + "@magicLevel3 ," + "@targetnum " + ")";
                     mySqlCommand.CommandText = str;
                     mySqlCommand.Prepare();
                     mySqlCommand.Parameters.AddWithValue("@index", int.Parse(textBox1.Text));
@@ -2405,6 +2405,9 @@ namespace LcDevPack_TeamDamonA.Tools
                     mySqlCommand.Parameters.AddWithValue("@learnSkillIdx1", -1);
                     mySqlCommand.Parameters.AddWithValue("@learnSkillIdx2", -1);
                     mySqlCommand.Parameters.AddWithValue("@learnSkillIdx3", -1);
+                    mySqlCommand.Parameters.AddWithValue("@learnItemIdx1", -1);
+                    mySqlCommand.Parameters.AddWithValue("@learnItemIdx2", -1);
+                    mySqlCommand.Parameters.AddWithValue("@learnItemIdx3", -1);
                     mySqlCommand.Parameters.AddWithValue("@magicIdx1", -1);
                     mySqlCommand.Parameters.AddWithValue("@magicLevel1", 0);
                     mySqlCommand.Parameters.AddWithValue("@magicIdx2", -1);

@@ -102,14 +102,6 @@ namespace LcDevPack_TeamDamonA.Tools
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
     private GroupBox groupBox8;
-    private DataGridView dataGridView4;
-    private DataGridViewTextBoxColumn Column7;
-    private DataGridViewTextBoxColumn Column8;
-    private DataGridViewTextBoxColumn Column13;
-    private DataGridViewTextBoxColumn Column9;
-    private DataGridViewTextBoxColumn Column10;
-    private DataGridViewTextBoxColumn Column11;
-    private DataGridViewTextBoxColumn Column12;
     private Button button2;
     private Button button1;
     private GroupBox groupBox9;
@@ -164,6 +156,18 @@ namespace LcDevPack_TeamDamonA.Tools
         private ToolStripMenuItem brazilToolStripMenuItem;
         private ToolStripMenuItem italianToolStripMenuItem;
         private ToolStripMenuItem polandToolStripMenuItem;
+        private TextBox tbNpcIndex;
+        private DataGridView dataGridView4;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column13;
+        private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn Column10;
+        private DataGridViewTextBoxColumn Column11;
+        private DataGridViewTextBoxColumn Column12;
+        private ToolStrip toolStrip5;
+        private ToolStripButton tsBtnRewardAdd;
+        private ToolStripButton tsBtnRewardDelete;
         private DataGridViewTextBoxColumn Column6;
 
     public AffinityEditor()
@@ -223,7 +227,7 @@ namespace LcDevPack_TeamDamonA.Tools
             LoadDG2();
             LoadDG3();
             LoadDG4();
-            LoadDG5(textBox1.Text);
+            LoadDG5(tbNpcIndex.Text);
             LoadListBox();
             LoadMisc();
     }
@@ -313,8 +317,9 @@ namespace LcDevPack_TeamDamonA.Tools
             textBox12.Text = strArray[11];
             textBox13.Text = strArray[12];
             AffinityIcon();
-            LoadDG5(textBox1.Text);
             LoadDG4();
+            LoadDG5(tbNpcIndex.Text);
+          
             LoadDG3();
             LoadDG2();
             LoadDG();
@@ -452,8 +457,8 @@ namespace LcDevPack_TeamDamonA.Tools
     }
 
     public void LoadDG4()
-    {
-            dataGridView4.Rows.Clear();
+    {           
+      dataGridView4.Rows.Clear();
       string str1 = "SELECT * FROM t_affinity_npc WHERE a_affinity_idx = '" + textBox1.Text + "'";
       string[] strArray = new string[6]
       {
@@ -477,22 +482,27 @@ namespace LcDevPack_TeamDamonA.Tools
         int ordinal4 = mySqlDataReader.GetOrdinal("a_enable");
         int ordinal5 = mySqlDataReader.GetOrdinal("a_flag");
         int ordinal6 = mySqlDataReader.GetOrdinal("a_string_idx");
+        
         string str2 = mySqlDataReader.GetString(ordinal1);
         string str3 = mySqlDataReader.GetString(ordinal2);
         string str4 = mySqlDataReader.GetString(ordinal3);
         string str5 = mySqlDataReader.GetString(ordinal5);
         string str6 = mySqlDataReader.GetString(ordinal6);
         string str7 = mySqlDataReader.GetString(ordinal4);
-        string str8 = databaseHandle.FunctionMonsterName(Convert.ToInt32(str3));
-                dataGridView4.Rows.Add( str2,  str3,  str8,  str4,  str7,  str5,  str6);
+        if(str5 == "11" || str5 == "15")
+            {
+                 tbNpcIndex.Text = str3;
+            }
+         string str8 = databaseHandle.FunctionMonsterName(Convert.ToInt32(str3));
+         dataGridView4.Rows.Add( str2,  str3,  str8,  str4,  str7,  str5,  str6);
       }
-      mySqlConnection.Close();
-    }
+            mySqlConnection.Close();         
+        }
 
     public void LoadDG5(string npcidx)
     {
             dataGridView5.Rows.Clear();
-      string str1 = "SELECT * FROM t_affinity_reward_item WHERE  a_npcidx ='+" + npcidx + "' ORDER BY a_npcidx";
+      string str1 = "SELECT * FROM t_affinity_reward_item WHERE  a_npcidx ='" + npcidx + "' ORDER BY a_npcidx";
       string[] strArray = new string[10]
       {
         "a_npcidx",
@@ -732,6 +742,9 @@ namespace LcDevPack_TeamDamonA.Tools
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.toolStrip5 = new System.Windows.Forms.ToolStrip();
+            this.tsBtnRewardAdd = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnRewardDelete = new System.Windows.Forms.ToolStripButton();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -744,6 +757,7 @@ namespace LcDevPack_TeamDamonA.Tools
             this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
+            this.tbNpcIndex = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -768,6 +782,7 @@ namespace LcDevPack_TeamDamonA.Tools
             this.toolStrip4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.groupBox9.SuspendLayout();
+            this.toolStrip5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1787,6 +1802,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.toolStrip5);
             this.groupBox9.Controls.Add(this.dataGridView5);
             this.groupBox9.Location = new System.Drawing.Point(240, 523);
             this.groupBox9.Name = "groupBox9";
@@ -1794,6 +1810,38 @@ namespace LcDevPack_TeamDamonA.Tools
             this.groupBox9.TabIndex = 16;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Affinity Reward";
+            // 
+            // toolStrip5
+            // 
+            this.toolStrip5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsBtnRewardAdd,
+            this.tsBtnRewardDelete});
+            this.toolStrip5.Location = new System.Drawing.Point(3, 118);
+            this.toolStrip5.Name = "toolStrip5";
+            this.toolStrip5.Size = new System.Drawing.Size(418, 25);
+            this.toolStrip5.TabIndex = 1;
+            this.toolStrip5.Text = "toolStrip5";
+            // 
+            // tsBtnRewardAdd
+            // 
+            this.tsBtnRewardAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnRewardAdd.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnRewardAdd.Image")));
+            this.tsBtnRewardAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnRewardAdd.Name = "tsBtnRewardAdd";
+            this.tsBtnRewardAdd.Size = new System.Drawing.Size(75, 22);
+            this.tsBtnRewardAdd.Text = "Add Reward";
+            this.tsBtnRewardAdd.Click += new System.EventHandler(this.tsBtnRewardAdd_Click);
+            // 
+            // tsBtnRewardDelete
+            // 
+            this.tsBtnRewardDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnRewardDelete.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnRewardDelete.Image")));
+            this.tsBtnRewardDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnRewardDelete.Name = "tsBtnRewardDelete";
+            this.tsBtnRewardDelete.Size = new System.Drawing.Size(86, 22);
+            this.tsBtnRewardDelete.Text = "Delete Reward";
+            this.tsBtnRewardDelete.Click += new System.EventHandler(this.tsBtnRewardDelete_Click);
             // 
             // dataGridView5
             // 
@@ -1881,12 +1929,22 @@ namespace LcDevPack_TeamDamonA.Tools
             this.button3.TabIndex = 17;
             this.button3.Text = "Save";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // tbNpcIndex
+            // 
+            this.tbNpcIndex.Location = new System.Drawing.Point(274, 501);
+            this.tbNpcIndex.Name = "tbNpcIndex";
+            this.tbNpcIndex.Size = new System.Drawing.Size(38, 20);
+            this.tbNpcIndex.TabIndex = 18;
+            this.tbNpcIndex.Visible = false;
             // 
             // AffinityEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1391, 696);
+            this.ClientSize = new System.Drawing.Size(1391, 716);
+            this.Controls.Add(this.tbNpcIndex);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
@@ -1941,6 +1999,9 @@ namespace LcDevPack_TeamDamonA.Tools
             this.toolStrip4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.toolStrip5.ResumeLayout(false);
+            this.toolStrip5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2105,6 +2166,21 @@ namespace LcDevPack_TeamDamonA.Tools
         {
             FormExport f2 = new FormExport();
             f2.Show(); // Shows Form2
+        }
+
+        private void tsBtnRewardAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsBtnRewardDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

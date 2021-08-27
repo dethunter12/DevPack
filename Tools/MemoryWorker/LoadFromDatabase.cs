@@ -194,6 +194,109 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
                 });
         }
 
+        //public void titem_Import()
+        //{
+        //    AllLists.tItemMenuData.Clear();
+        //    AllLists.tItemMenu.Clear();
+        //    LoadFromDatabase.LoadFromDatabaseSQL = "SELECT * FROM t_item ";
+        //    foreach (DataRow row in (InternalDataCollectionBase)mySQL.GetFromQuery(LoadFromDatabase.LoadFromDatabaseSQL).Rows)
+        //    {
+        //        tItem titem = new tItem();
+        //        titem.index = Convert.ToInt32(row["a_index"]);
+        //        titem.typeIdx = Convert.ToInt32(row["a_type_idx"]);
+        //        titem.subTypeIdx = Convert.ToInt32(row["a_subtype_idx"]);
+        //        titem.enable = Convert.ToInt32(row["a_enable"]);
+        //        titem.wearing = Convert.ToInt32(row["a_wearing"]);
+        //        titem.num0 = Convert.ToInt32(row["a_num_0"]);
+        //        titem.num1 = Convert.ToInt32(row["a_num_1"]);
+        //        titem.num2 = Convert.ToInt32(row["a_num_2"]);
+        //        titem.num3 = Convert.ToInt32(row["a_num_3"]);
+        //        titem.num4 = Convert.ToInt32(row["a_num_4"]);
+        //        titem.minLevel = Convert.ToInt32(row["a_level"]);
+        //        titem.maxLevel = Convert.ToInt32(row["a_leve2"]);
+        //        titem.weight = Convert.ToInt32(row["a_weight"]);
+        //        titem.price = Convert.ToInt32(row["a_price"]);
+        //        titem.maxUse = Convert.ToInt32(row["a_max_use"]);
+        //        titem.skillpoint = Convert.ToInt32(row["a_skill_point"]);
+        //        titem.sskillmaster = Convert.ToInt32(row["a_sskill_master"]);
+        //        titem.str = Convert.ToInt32(row["a_str"]);
+        //        titem.dex = Convert.ToInt32(row["a_dex"]);
+        //        titem.INT = Convert.ToInt32(row["a_int"]);
+        //        titem.con = Convert.ToInt32(row["a_con"]);
+        //        titem.attack = Convert.ToInt32(row["a_attack"]);
+        //        titem.magic = Convert.ToInt32(row["a_magic"]);
+        //        titem.defense = Convert.ToInt32(row["a_defense"]);
+        //        titem.resist = Convert.ToInt32(row["a_resist"]);
+        //        titem.attacklevel = Convert.ToInt32(row["a_attacklevel"]);
+        //        titem.defenselevel = Convert.ToInt32(row["a_defenselevel"]);
+        //        titem.hp = Convert.ToInt32(row["a_hp"]);
+        //        titem.mp = Convert.ToInt32(row["a_mp"]);
+        //        titem.attacktype = Convert.ToInt32(row["a_attackType"]);
+        //        titem.attackspeed = Convert.ToInt32(row["a_attackSpeed"]);
+        //        titem.recoverhp = Convert.ToInt32(row["a_recover_hp"]);
+        //        titem.recovermp = Convert.ToInt32(row["a_recover_mp"]);
+        //        titem.walkspeed = Convert.ToSingle(row["a_walk_speed"]);
+        //        titem.runspeed = Convert.ToSingle(row["a_run_speed"]);
+        //        titem.skill0 = Convert.ToString(row["a_skill0"]);
+        //        titem.skill1 = Convert.ToString(row["a_skill1"]);
+        //        titem.skill2 = Convert.ToString(row["a_skill2"]);
+        //        titem.skill3 = Convert.ToString(row["a_skill3"]);
+        //        titem.drop0 = Convert.ToInt32(row["a_item_0"]);
+        //        titem.drop1 = Convert.ToInt32(row["a_item_1"]);
+        //        titem.drop2 = Convert.ToInt32(row["a_item_2"]);
+        //        titem.drop3 = Convert.ToInt32(row["a_item_3"]);
+        //        titem.drop4 = Convert.ToInt32(row["a_item_4"]);
+        //        titem.drop5 = Convert.ToInt32(row["a_item_5"]);
+        //        titem.drop6 = Convert.ToInt32(row["a_item_6"]);
+        //        titem.drop7 = Convert.ToInt32(row["a_item_7"]);
+        //        titem.drop8 = Convert.ToInt32(row["a_item_8"]);
+        //        titem.drop9 = Convert.ToInt32(row["a_item_9"]);
+        //        titem.drop10 = Convert.ToInt32(row["a_item_10"]);
+        //        titem.drop11 = Convert.ToInt32(row["a_item_11"]);
+        //        titem.drop12 = Convert.ToInt32(row["a_item_12"]);
+        //        titem.jewel7 = Convert.ToInt32(row["a_jewel_7"]);
+        //        titem.jewel8 = Convert.ToInt32(row["a_jewel_8"]);
+        //        titem.jewel9 = Convert.ToInt32(row["a_jewel_9"]);
+        //        titem.jewel10 = Convert.ToInt32(row["a_jewel_10"]);
+        //        titem.jewel11 = Convert.ToInt32(row["a_jewel_11"]);
+        //        titem.jewel12 = Convert.ToInt32(row["a_jewel_12"]);
+        //        titem.jewel13 = Convert.ToInt32(row["a_jewel_13"]);
+        //        titem.jewel14 = Convert.ToInt32(row["a_jewel_14"]);
+        //        titem.jewel15 = Convert.ToInt32(row["a_jewel_15"]);
+        //        titem.jewel16 = Convert.ToInt32(row["a_jewel_16"]);
+        //        titem.jewel17 = Convert.ToInt32(row["a_jewel_17"]);
+        //        titem.jewel18 = Convert.ToInt32(row["a_jewel_18"]);
+        //        titem.jewel19 = Convert.ToInt32(row["a_jewel_19"]);
+        //        titem.jeweldrop0 = Convert.ToInt32(row["a_jewel_percent_0"]);
+        //        titem.jeweldrop1 = Convert.ToInt32(row["a_jewel_percent_1"]);
+        //        titem.jeweldrop2 = Convert.ToInt32(row["a_jewel_percent_2"]);
+        //        titem.jeweldrop3 = Convert.ToInt32(row["a_jewel_percent_3"]);
+        //        titem.jeweldrop4 = Convert.ToInt32(row["a_jewel_percent_4"]);
+        //        titem.jeweldrop5 = Convert.ToInt32(row["a_jewel_percent_5"]);
+        //        titem.jeweldrop6 = Convert.ToInt32(row["a_jewel_percent_6"]);
+        //        titem.jeweldrop7 = Convert.ToInt32(row["a_jewel_percent_7"]);
+        //        titem.jeweldrop8 = Convert.ToInt32(row["a_jewel_percent_8"]);
+        //        titem.jeweldrop9 = Convert.ToInt32(row["a_jewel_percent_9"]);
+        //        titem.jeweldrop10 = Convert.ToInt32(row["a_jewel_percent_10"]);
+        //        titem.jeweldrop11 = Convert.ToInt32(row["a_jewel_percent_11"]);
+        //        titem.jeweldrop12 = Convert.ToInt32(row["a_jewel_percent_12"]);
+        //        titem.jeweldrop13 = Convert.ToInt32(row["a_jewel_percent_13"]);
+        //        titem.jeweldrop14 = Convert.ToInt32(row["a_jewel_percent_14"]);
+        //        titem.jeweldrop15 = Convert.ToInt32(row["a_jewel_percent_15"]);
+        //        titem.jeweldrop16 = Convert.ToInt32(row["a_jewel_percent_16"]);
+        //        titem.jeweldrop17 = Convert.ToInt32(row["a_jewel_percent_17"]);
+        //        titem.jeweldrop18 = Convert.ToInt32(row["a_jewel_percent_18"]);
+        //        titem.jeweldrop19 = Convert.ToInt32(row["a_jewel_percent_19"]);
+        //        titem.zoneflag = Convert.ToInt64(row["a_zone_flag"]);
+        //        titem.extraflag = Convert.ToInt64(row["a_extra_flag"]);
+        //        titem.rvrvalue = Convert.ToInt32(row["a_rvr_value"]);
+        //        titem.rvrgrade = Convert.ToInt32(row["a_rvr_grade"]);
+        //        titem.bound = Convert.ToInt32(row["a_bound"]);
+        //        titem.lifetime = Convert.ToInt32(row["a_lifetime"]);
+        //        AllLists.tItemMenuData.Add(titem);
+        //        AllLists.tItemMenu.Add(titem.index.ToString() + " - " + titem.name.ToString());
+        //    }
+        //}
         public void tnpc_Import()
         {
             AllLists.tnpc_MenuData.Clear();

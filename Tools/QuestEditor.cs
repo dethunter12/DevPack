@@ -2297,6 +2297,9 @@ namespace LcDevPack_TeamDamonA.Tools
             CbOptPrizeType7.BackColor = Color.White;
             comboBox21.BackColor = Color.White;
             comboBox22.BackColor = Color.White;
+            CbRvrType.BackColor = Color.White;
+            CbRvRGrade.BackColor = Color.White;
+            CbRvRGrade1.BackColor = Color.White;
         }
     private void button7_Click(object sender, EventArgs e)
     {
@@ -3584,6 +3587,7 @@ namespace LcDevPack_TeamDamonA.Tools
             this.CbRvRGrade.Size = new System.Drawing.Size(102, 21);
             this.CbRvRGrade.TabIndex = 239;
             this.CbRvRGrade.SelectedIndexChanged += new System.EventHandler(this.CbRvRGrade_SelectedIndexChanged);
+            this.CbRvRGrade.SelectionChangeCommitted += new System.EventHandler(this.CbRvRGrade_SelectionChangeCommitted);
             // 
             // CbRvrType
             // 
@@ -7589,6 +7593,7 @@ namespace LcDevPack_TeamDamonA.Tools
             if (TbRvrType.Text == "2")
             {
                 TbRvrGrade.Text = GetIndexByComboBox(CbRvRGrade1.Text).ToString(); //dethunter12  add
+                CbRvRGrade1.BackColor = Color.LightBlue;
             }
         }
 
@@ -7597,6 +7602,7 @@ namespace LcDevPack_TeamDamonA.Tools
             if (TbRvrType.Text == "2")
             {
                 TbRvrGrade.Text = GetIndexByComboBox(CbRvRGrade.Text).ToString(); //dethunter12  add
+                CbRvRGrade.BackColor = Color.LightBlue;
             }
         }
 
@@ -8520,6 +8526,11 @@ namespace LcDevPack_TeamDamonA.Tools
             {
                 TbObj1Name3.Text = databaseHandle.MobNameFast(int.Parse(TbObj1Npc3.Text));
             }
+        }
+
+        private void CbRvRGrade_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            CbRvRGrade.BackColor = Color.LightBlue;
         }
     }
 }
