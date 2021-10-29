@@ -1808,7 +1808,7 @@ namespace LcDevPack_TeamDamonA.Tools
          "6 - Potions",
          "Unknown"
       });
-            comboBox4.Items.AddRange(new object[14]
+            comboBox4.Items.AddRange(new object[19]
       {
          "-1 - None",
          "0 - Hood Slot",
@@ -1823,7 +1823,12 @@ namespace LcDevPack_TeamDamonA.Tools
          "9 - Accesoire Slot",
          "10 - Pet Slot",
          "11 - Wing Slot",
-         "12 - Insignia Slot"
+         "12 - Insignia Slot",
+         "13 - RUNE 1 Slot",
+         "14 - RUNE 2 Slot",
+         "15 - Rune 3 Slot",
+         "16 - Rune 4 Slot",
+         "17 - Legendary Rune"
       });
 
             comboBox24.Items.AddRange(new object[3] //dethunter12 add

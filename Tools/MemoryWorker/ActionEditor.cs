@@ -30,5 +30,21 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker
         {
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int num = 0;
+            for (int index = 0; index < checkedListBox1.Items.Count; ++index)
+            {
+                if (checkedListBox1.GetItemChecked(index))
+                    num += 1 << index;
+            }
+            TbFlag.Text = num.ToString();
+        }
     }
 }

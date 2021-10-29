@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActionEditor));
             this.CbType = new System.Windows.Forms.ComboBox();
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -35,7 +36,6 @@
             this.lblCol = new System.Windows.Forms.Label();
             this.lblRow = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
-            this.PbIcon = new System.Windows.Forms.PictureBox();
             this.TbRow = new System.Windows.Forms.TextBox();
             this.TbCol = new System.Windows.Forms.TextBox();
             this.TbID = new System.Windows.Forms.TextBox();
@@ -47,29 +47,32 @@
             this.CbAutoDelete = new System.Windows.Forms.CheckBox();
             this.lblName = new System.Windows.Forms.Label();
             this.TbFlag = new System.Windows.Forms.TextBox();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sQLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dUMPSQLSCRIPTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportStrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblType = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TbName = new System.Windows.Forms.TextBox();
             this.TbDescr = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.btnCopy = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
             this.BtnAdd = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.PbIcon = new System.Windows.Forms.PictureBox();
+            this.gbSearch = new System.Windows.Forms.GroupBox();
+            this.gbList = new System.Windows.Forms.GroupBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbIcon)).BeginInit();
             this.GbSortType.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbIcon)).BeginInit();
+            this.gbList.SuspendLayout();
             this.SuspendLayout();
             // 
             // CbType
@@ -77,7 +80,7 @@
             this.CbType.FormattingEnabled = true;
             this.CbType.Location = new System.Drawing.Point(68, 54);
             this.CbType.Name = "CbType";
-            this.CbType.Size = new System.Drawing.Size(152, 21);
+            this.CbType.Size = new System.Drawing.Size(185, 21);
             this.CbType.TabIndex = 16;
             // 
             // lblDescription
@@ -100,6 +103,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.linkLabel1);
             this.groupBox3.Controls.Add(this.lblCol);
             this.groupBox3.Controls.Add(this.lblRow);
             this.groupBox3.Controls.Add(this.lblID);
@@ -107,9 +111,9 @@
             this.groupBox3.Controls.Add(this.TbRow);
             this.groupBox3.Controls.Add(this.TbCol);
             this.groupBox3.Controls.Add(this.TbID);
-            this.groupBox3.Location = new System.Drawing.Point(6, 217);
+            this.groupBox3.Location = new System.Drawing.Point(3, 302);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(114, 109);
+            this.groupBox3.Size = new System.Drawing.Size(117, 108);
             this.groupBox3.TabIndex = 56;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Icon";
@@ -140,14 +144,6 @@
             this.lblID.Size = new System.Drawing.Size(21, 13);
             this.lblID.TabIndex = 4;
             this.lblID.Text = "ID:";
-            // 
-            // PbIcon
-            // 
-            this.PbIcon.Location = new System.Drawing.Point(71, 38);
-            this.PbIcon.Name = "PbIcon";
-            this.PbIcon.Size = new System.Drawing.Size(34, 34);
-            this.PbIcon.TabIndex = 3;
-            this.PbIcon.TabStop = false;
             // 
             // TbRow
             // 
@@ -194,13 +190,13 @@
             this.checkedListBox2.Location = new System.Drawing.Point(7, 13);
             this.checkedListBox2.MultiColumn = true;
             this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(279, 45);
+            this.checkedListBox2.Size = new System.Drawing.Size(409, 45);
             this.checkedListBox2.TabIndex = 41;
             // 
             // lblFlag
             // 
             this.lblFlag.AutoSize = true;
-            this.lblFlag.Location = new System.Drawing.Point(123, 388);
+            this.lblFlag.Location = new System.Drawing.Point(126, 388);
             this.lblFlag.Name = "lblFlag";
             this.lblFlag.Size = new System.Drawing.Size(27, 13);
             this.lblFlag.TabIndex = 58;
@@ -226,7 +222,7 @@
             // 
             this.CbAutoDelete.AutoSize = true;
             this.CbAutoDelete.BackColor = System.Drawing.SystemColors.Control;
-            this.CbAutoDelete.Location = new System.Drawing.Point(227, 530);
+            this.CbAutoDelete.Location = new System.Drawing.Point(50, 416);
             this.CbAutoDelete.Name = "CbAutoDelete";
             this.CbAutoDelete.Size = new System.Drawing.Size(79, 17);
             this.CbAutoDelete.TabIndex = 63;
@@ -249,45 +245,33 @@
             this.TbFlag.Size = new System.Drawing.Size(68, 20);
             this.TbFlag.TabIndex = 57;
             // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.openToolStripMenuItem.Text = "Open";
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            // 
             // sQLToolStripMenuItem
             // 
             this.sQLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dUMPSQLSCRIPTToolStripMenuItem});
+            this.exportToolStripMenuItem,
+            this.exportStrToolStripMenuItem});
             this.sQLToolStripMenuItem.Name = "sQLToolStripMenuItem";
-            this.sQLToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.sQLToolStripMenuItem.Text = "SQL";
+            this.sQLToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.sQLToolStripMenuItem.Text = "File";
             // 
-            // dUMPSQLSCRIPTToolStripMenuItem
+            // exportToolStripMenuItem
             // 
-            this.dUMPSQLSCRIPTToolStripMenuItem.Name = "dUMPSQLSCRIPTToolStripMenuItem";
-            this.dUMPSQLSCRIPTToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.dUMPSQLSCRIPTToolStripMenuItem.Text = "Dump SQL Script";
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Text = "Export Lod";
+            // 
+            // exportStrToolStripMenuItem
+            // 
+            this.exportStrToolStripMenuItem.Name = "exportStrToolStripMenuItem";
+            this.exportStrToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportStrToolStripMenuItem.Text = "Export Str";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.CbType);
+            this.groupBox2.Controls.Add(this.BtnSave);
             this.groupBox2.Controls.Add(this.groupBox3);
+            this.groupBox2.Controls.Add(this.CbAutoDelete);
             this.groupBox2.Controls.Add(this.lblFlag);
             this.groupBox2.Controls.Add(this.lblDescription);
             this.groupBox2.Controls.Add(this.TbFlag);
@@ -300,7 +284,7 @@
             this.groupBox2.Controls.Add(this.TbDescr);
             this.groupBox2.Location = new System.Drawing.Point(176, 107);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(253, 416);
+            this.groupBox2.Size = new System.Drawing.Size(253, 446);
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Action Data";
@@ -314,11 +298,21 @@
             this.lblType.TabIndex = 8;
             this.lblType.Text = "Type:";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.checkedListBox1);
+            this.groupBox1.Location = new System.Drawing.Point(126, 212);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(127, 173);
+            this.groupBox1.TabIndex = 54;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Job";
+            // 
             // TbName
             // 
-            this.TbName.Location = new System.Drawing.Point(68, 92);
+            this.TbName.Location = new System.Drawing.Point(67, 91);
             this.TbName.Name = "TbName";
-            this.TbName.Size = new System.Drawing.Size(152, 20);
+            this.TbName.Size = new System.Drawing.Size(186, 20);
             this.TbName.TabIndex = 7;
             // 
             // TbDescr
@@ -326,35 +320,8 @@
             this.TbDescr.Location = new System.Drawing.Point(68, 122);
             this.TbDescr.Multiline = true;
             this.TbDescr.Name = "TbDescr";
-            this.TbDescr.Size = new System.Drawing.Size(152, 89);
+            this.TbDescr.Size = new System.Drawing.Size(181, 89);
             this.TbDescr.TabIndex = 6;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.checkedListBox1);
-            this.groupBox1.Location = new System.Drawing.Point(126, 217);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(119, 168);
-            this.groupBox1.TabIndex = 54;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Job";
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkedListBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox1.CheckOnClick = true;
-            this.checkedListBox1.ColumnWidth = 105;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.IntegralHeight = false;
-            this.checkedListBox1.Location = new System.Drawing.Point(5, 19);
-            this.checkedListBox1.MultiColumn = true;
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(111, 143);
-            this.checkedListBox1.TabIndex = 40;
             // 
             // btnCopy
             // 
@@ -367,15 +334,16 @@
             // 
             // listBox1
             // 
+            this.listBox1.BackColor = System.Drawing.SystemColors.Control;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 114);
+            this.listBox1.Location = new System.Drawing.Point(-1, 16);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(164, 407);
+            this.listBox1.Size = new System.Drawing.Size(164, 342);
             this.listBox1.TabIndex = 51;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(130, 530);
+            this.btnDelete.Location = new System.Drawing.Point(127, 530);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(47, 23);
             this.btnDelete.TabIndex = 50;
@@ -384,7 +352,7 @@
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(308, 526);
+            this.BtnSave.Location = new System.Drawing.Point(131, 412);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(117, 23);
             this.BtnSave.TabIndex = 49;
@@ -403,41 +371,90 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
             this.sQLToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(428, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(432, 24);
             this.menuStrip1.TabIndex = 52;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // PbIcon
+            // 
+            this.PbIcon.Location = new System.Drawing.Point(77, 23);
+            this.PbIcon.Name = "PbIcon";
+            this.PbIcon.Size = new System.Drawing.Size(34, 34);
+            this.PbIcon.TabIndex = 3;
+            this.PbIcon.TabStop = false;
+            // 
+            // gbSearch
+            // 
+            this.gbSearch.Location = new System.Drawing.Point(6, 106);
+            this.gbSearch.Name = "gbSearch";
+            this.gbSearch.Size = new System.Drawing.Size(164, 54);
+            this.gbSearch.TabIndex = 64;
+            this.gbSearch.TabStop = false;
+            this.gbSearch.Text = "Search";
+            // 
+            // gbList
+            // 
+            this.gbList.Controls.Add(this.listBox1);
+            this.gbList.Location = new System.Drawing.Point(6, 161);
+            this.gbList.Name = "gbList";
+            this.gbList.Size = new System.Drawing.Size(164, 363);
+            this.gbList.TabIndex = 65;
+            this.gbList.TabStop = false;
+            this.gbList.Text = "Actions";
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(3, 15);
+            this.checkedListBox1.MultiColumn = true;
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 154);
+            this.checkedListBox1.TabIndex = 0;
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(74, 84);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(37, 13);
+            this.linkLabel1.TabIndex = 7;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Select";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // ActionEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 558);
+            this.ClientSize = new System.Drawing.Size(432, 558);
+            this.Controls.Add(this.gbList);
+            this.Controls.Add(this.gbSearch);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.GbSortType);
-            this.Controls.Add(this.CbAutoDelete);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnCopy);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ActionEditor";
             this.Text = "ActionEditor";
             this.Load += new System.EventHandler(this.ActionEditor_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbIcon)).EndInit();
             this.GbSortType.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbIcon)).EndInit();
+            this.gbList.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,7 +469,6 @@
         private System.Windows.Forms.Label lblCol;
         private System.Windows.Forms.Label lblRow;
         private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.PictureBox PbIcon;
         private System.Windows.Forms.TextBox TbRow;
         private System.Windows.Forms.TextBox TbCol;
         private System.Windows.Forms.TextBox TbID;
@@ -464,15 +480,10 @@
         private System.Windows.Forms.CheckBox CbAutoDelete;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox TbFlag;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sQLToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dUMPSQLSCRIPTToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.TextBox TbName;
         private System.Windows.Forms.TextBox TbDescr;
         private System.Windows.Forms.Button btnCopy;
@@ -481,5 +492,12 @@
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportStrToolStripMenuItem;
+        private System.Windows.Forms.PictureBox PbIcon;
+        private System.Windows.Forms.GroupBox gbSearch;
+        private System.Windows.Forms.GroupBox gbList;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

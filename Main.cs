@@ -73,7 +73,7 @@ namespace LcDevPack_TeamDamonA
     {
          
             statusLabel.Text = "Version: " + Globals.Version;
-            checkedListBox1.Items.AddRange(new object[21]
+            checkedListBox1.Items.AddRange(new object[22]
       {
          "Catalog",
          "LuckyDraw",
@@ -99,7 +99,7 @@ namespace LcDevPack_TeamDamonA
         "Jewel Prob",
         "Log Reader",
         "Ip Reader",
-     //   "LcBall",
+       "Action Editor",
       });
       try
       {
@@ -121,7 +121,9 @@ namespace LcDevPack_TeamDamonA
       NpcList.SetConnection(); //dethunter12 important!!
       SkillList.SetConnection(); //dethunter12 important!!
       IconSkill.SetConnection(); //test
+      IconAction.SetConnection();
       IconSkill.Import(); //test
+      IconAction.Import();
       IconList.Import();
       NpcList.Import(); //dethunter12 important!!!
       SkillList.Import(); //dethunter12 add 7/31/2020
@@ -191,6 +193,8 @@ namespace LcDevPack_TeamDamonA
                     new IpEdit().Show();
                 if (checkedItem == "Rare Option")
                     new RareOptionEditor().Show();
+                if (checkedItem == "Action Editor")
+                    new LcDevPack_TeamDamonA.Tools.MemoryWorker.ActionEditor().Show();
                 //if (checkedItem == "Affinity")
                 //if (checkedItem == "RareOption")
                 //    new LcDevPack_TeamDamonA.Tools.MemoryWorker.rareoption.RareOptionEditor().Show();
@@ -211,10 +215,12 @@ namespace LcDevPack_TeamDamonA
       IconList.List.Clear();
       NpcList.List.Clear(); //dethunter12 important
       IconSkill.List.Clear(); //dethunter12 add
+      IconAction.List.Clear();
       IconList.Import();
       NpcList.Import(); //dethunter12 important
       IconSkill.Import(); //dethunter12 add
        SkillList.Import(); //dethunter12 add 7/31/2020
+       IconAction.Import();
     }
 
    /* private void licenceSystemToolStripMenuItem_Click(object sender, EventArgs e)

@@ -7995,7 +7995,7 @@ namespace LcDevPack_TeamDamonA.Tools
                 if (mobPicker.ShowDialog() != DialogResult.OK)
                     return;
                 TbStartNpc.Text = Convert.ToString(mobPicker.MobIndex);
-                TbEndNpcName.Text = databaseHandle.MobNameFast(Convert.ToInt32(TbStartNpc.Text));
+                TbStartNpcName.Text = databaseHandle.MobNameFast(Convert.ToInt32(TbStartNpc.Text));
                 TbStartNpc.BackColor = Color.LightBlue;
             }
             else if (textBox7.Text == "1")

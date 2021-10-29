@@ -331,6 +331,31 @@ namespace LcDevPack_TeamDamonA
             graphics2.Dispose();
             return bitmap2;
         }
+        public Bitmap ActionFast(int ActionID)
+        {
+            Image image1 = Image.FromFile("icons/ActionBtn0.png");
+            Bitmap bitmap1 = new Bitmap(32, 32);
+            Graphics graphics1 = Graphics.FromImage((Image)bitmap1);
+            Rectangle srcRect1 = new Rectangle(0, 0, 32, 32);
+            graphics1.DrawImage(image1, 0, 0, srcRect1, GraphicsUnit.Pixel);
+            graphics1.Dispose();
+            if (ActionID == -1)
+                return bitmap1;
+            ActionIcon ActionIcon = IconAction.List.Find((Predicate<ActionIcon>)(g => g.ActionID.Equals(ActionID)));
+            if (ActionIcon == null)
+                return bitmap1;
+            int fileId = ActionIcon.FileID;
+            int row = ActionIcon.Row;
+            int col = ActionIcon.Col;
+            Image image2 = Image.FromFile("icons/ActionBtn" + fileId.ToString() + ".png");
+            Bitmap bitmap2 = new Bitmap(32, 32);
+            Graphics graphics2 = Graphics.FromImage((Image)bitmap2);
+            int y = row * 32;
+            Rectangle srcRect2 = new Rectangle(col * 32, y, 32, 32);
+            graphics2.DrawImage(image2, 0, 0, srcRect2, GraphicsUnit.Pixel);
+            graphics2.Dispose();
+            return bitmap2;
+        }
 
         public string ItemNameFast(int itemID)
         {
@@ -462,6 +487,17 @@ namespace LcDevPack_TeamDamonA
       graphics.Dispose();
       return bitmap;
     }
+    public Bitmap IconActionn(int FileID, int Row, int Col)
+     {
+        Image image = Image.FromFile("icons/ActionBtn" + FileID.ToString() + ".png");
+        Bitmap bitmap = new Bitmap(32, 32);
+        Graphics graphics = Graphics.FromImage((Image)bitmap);
+        int y = Row * 32;
+        Rectangle srcRect = new Rectangle(Col * 32, y, 32, 32);
+        graphics.DrawImage(image, 0, 0, srcRect, GraphicsUnit.Pixel);
+        graphics.Dispose();
+        return bitmap;
+     }
 
     public Bitmap IconItemCollection(int FileID, int Row, int Col)
     {

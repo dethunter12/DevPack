@@ -152,12 +152,14 @@
     <Compile Include="texFormat.cs" />
     <Compile Include="tFace.cs" />
     <Compile Include="tFire.cs" />
+    <Compile Include="Tools\ActionIcon.cs" />
     <Compile Include="Tools\Animation Picker.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Tools\Animation Picker.Designer.cs">
       <DependentUpon>Animation Picker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\IconAction.cs" />
     <Compile Include="Tools\IniFile.cs" />
     <Compile Include="Tools\ItemPicker2.cs">
       <SubType>Form</SubType>
@@ -307,6 +309,10 @@
       <DependentUpon>SetItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\MemoryWorker\StrucAction.cs" />
+    <Compile Include="Tools\MemoryWorker\tFortuneData.cs" />
+    <Compile Include="Tools\MemoryWorker\tFortuneHead.cs" />
+    <Compile Include="Tools\MemoryWorker\tItem.cs" />
+    <Compile Include="Tools\MemoryWorker\tSet.cs" />
     <Compile Include="Tools\MobMassEdit.cs">
       <SubType>Form</SubType>
     </Compile>

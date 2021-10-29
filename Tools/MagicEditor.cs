@@ -382,7 +382,7 @@ namespace LcDevPack_TeamDamonA.Tools
          "6 - Light",
          "7 - Random"
         });
-            cbSubType2.Items.AddRange(new object[55] //dethunter12 add
+            cbSubType2.Items.AddRange(new object[56] //dethunter12 add
     {
         "0 - Posion",
         "1 - Hold",
@@ -438,7 +438,8 @@ namespace LcDevPack_TeamDamonA.Tools
         "51 - Attack Tower",
         "52 - Artifact GPS",
         "53 - Totem Item Buff",
-        "54 - Totem Item Attack"
+        "54 - Totem Item Attack",
+        "55 - Heal % Reduction"
     });
             cbSubType3.Items.AddRange(new object[6] //dethunter12 add
     {
@@ -652,6 +653,7 @@ namespace LcDevPack_TeamDamonA.Tools
           stringList.Add("52 - Artifact GPS");
           stringList.Add("53 - Totem Item Buff");
           stringList.Add("54 - Totem Item Attack");
+          stringList.Add("55 - Heal % Reduction");
           break;
         case 3:
           stringList.Add("0 - Normal");

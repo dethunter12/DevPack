@@ -28,17 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbRates = new System.Windows.Forms.TabControl();
-            this.tbQuest = new System.Windows.Forms.TabPage();
-            this.tbSkill = new System.Windows.Forms.TabPage();
-            this.tbAffinity = new System.Windows.Forms.TabPage();
             this.tbNPC = new System.Windows.Forms.TabPage();
             this.gbInfo = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.gbAtribute = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Atribute = new System.Windows.Forms.Label();
+            this.btnElemental = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbHrPlus = new System.Windows.Forms.CheckBox();
+            this.cbHrMinus = new System.Windows.Forms.CheckBox();
+            this.btnSendExportQry = new System.Windows.Forms.Button();
+            this.btnSendHitrateQry = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tbHitrate = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.gbJewelProb = new System.Windows.Forms.GroupBox();
+            this.cbJewelPlus = new System.Windows.Forms.CheckBox();
+            this.cbJewelMinus = new System.Windows.Forms.CheckBox();
+            this.btnExportJewel = new System.Windows.Forms.Button();
+            this.btnSendJewelQry = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbJewelProb = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.gbRate = new System.Windows.Forms.GroupBox();
+            this.cbDropPlus = new System.Windows.Forms.CheckBox();
+            this.cbDropMinus = new System.Windows.Forms.CheckBox();
+            this.cbGoldPlus = new System.Windows.Forms.CheckBox();
+            this.cbGoldMinus = new System.Windows.Forms.CheckBox();
+            this.cbSpPlus = new System.Windows.Forms.CheckBox();
+            this.cbSpMinus = new System.Windows.Forms.CheckBox();
+            this.cbExpPlus = new System.Windows.Forms.CheckBox();
+            this.cbExpMinus = new System.Windows.Forms.CheckBox();
+            this.btnExportDropQry = new System.Windows.Forms.Button();
+            this.btnSendDropQry = new System.Windows.Forms.Button();
+            this.btnExportGoldQry = new System.Windows.Forms.Button();
+            this.btnSendGoldQry = new System.Windows.Forms.Button();
+            this.btnExportSpQry = new System.Windows.Forms.Button();
+            this.btnSendSpQry = new System.Windows.Forms.Button();
+            this.btnExportExpQry = new System.Windows.Forms.Button();
+            this.btnSendExpQry = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.tbDrop = new System.Windows.Forms.TextBox();
             this.tbGold = new System.Windows.Forms.TextBox();
             this.tbSp = new System.Windows.Forms.TextBox();
@@ -47,190 +78,78 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.gbJewelProb = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.cbPlus = new System.Windows.Forms.CheckBox();
-            this.cbMinus = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
+            this.tbAffinity = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.checkBox21 = new System.Windows.Forms.CheckBox();
             this.checkBox22 = new System.Windows.Forms.CheckBox();
-            this.checkBox23 = new System.Windows.Forms.CheckBox();
-            this.checkBox24 = new System.Windows.Forms.CheckBox();
-            this.checkBox25 = new System.Windows.Forms.CheckBox();
-            this.checkBox26 = new System.Windows.Forms.CheckBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
+            this.cbAffItemPlus = new System.Windows.Forms.CheckBox();
+            this.cbAffItemMinus = new System.Windows.Forms.CheckBox();
+            this.cbAffinQuestPlus = new System.Windows.Forms.CheckBox();
+            this.cbAffinQuestMinus = new System.Windows.Forms.CheckBox();
+            this.btnExportAffNpc = new System.Windows.Forms.Button();
+            this.btnSendAffNpc = new System.Windows.Forms.Button();
+            this.btnExportAffQuest = new System.Windows.Forms.Button();
+            this.btnSendAffItemQry = new System.Windows.Forms.Button();
+            this.btnExportAffQuestQry = new System.Windows.Forms.Button();
+            this.btnSendAffQuestQry = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tbAffNpc = new System.Windows.Forms.TextBox();
+            this.tbAffItem = new System.Windows.Forms.TextBox();
+            this.tbAffQuest = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
-            this.checkBox16 = new System.Windows.Forms.CheckBox();
-            this.checkBox17 = new System.Windows.Forms.CheckBox();
-            this.checkBox18 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.tbQuest = new System.Windows.Forms.TabPage();
+            this.tbRates = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.gbJewel = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblPercentMeld = new System.Windows.Forms.Label();
+            this.lblRemoveChance = new System.Windows.Forms.Label();
+            this.lblMeldChance = new System.Windows.Forms.Label();
+            this.tbMeldProb = new System.Windows.Forms.TextBox();
+            this.tbRemovalProb = new System.Windows.Forms.TextBox();
+            this.btnSendJewel = new System.Windows.Forms.Button();
+            this.btnExportJewelQry = new System.Windows.Forms.Button();
+            this.gbQuestExp = new System.Windows.Forms.GroupBox();
+            this.gbQuestSP = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.tbQuestExp = new System.Windows.Forms.TextBox();
+            this.tbQuestSp = new System.Windows.Forms.TextBox();
+            this.tbQuestGold = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.checkBox19 = new System.Windows.Forms.CheckBox();
-            this.checkBox20 = new System.Windows.Forms.CheckBox();
-            this.checkBox27 = new System.Windows.Forms.CheckBox();
-            this.checkBox28 = new System.Windows.Forms.CheckBox();
-            this.checkBox29 = new System.Windows.Forms.CheckBox();
-            this.checkBox30 = new System.Windows.Forms.CheckBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.checkBox31 = new System.Windows.Forms.CheckBox();
-            this.checkBox32 = new System.Windows.Forms.CheckBox();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button34 = new System.Windows.Forms.Button();
-            this.label33 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.checkBox33 = new System.Windows.Forms.CheckBox();
-            this.checkBox34 = new System.Windows.Forms.CheckBox();
-            this.button35 = new System.Windows.Forms.Button();
-            this.button36 = new System.Windows.Forms.Button();
-            this.label35 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.tbRates.SuspendLayout();
-            this.tbSkill.SuspendLayout();
-            this.tbAffinity.SuspendLayout();
+            this.btnExportQuestExp = new System.Windows.Forms.Button();
+            this.btnSendQuestExp = new System.Windows.Forms.Button();
+            this.btnExportQuestSp = new System.Windows.Forms.Button();
+            this.btnSendQuestSp = new System.Windows.Forms.Button();
+            this.btnExportQuestGold = new System.Windows.Forms.Button();
+            this.btnSendQuestGold = new System.Windows.Forms.Button();
+            this.cbQuestSpPlus = new System.Windows.Forms.CheckBox();
+            this.cbQuestSpMinus = new System.Windows.Forms.CheckBox();
+            this.cbQuestGoldPlus = new System.Windows.Forms.CheckBox();
+            this.cbQuestGoldMinus = new System.Windows.Forms.CheckBox();
+            this.cbQuestExpPlus = new System.Windows.Forms.CheckBox();
+            this.cbQuestExpMinus = new System.Windows.Forms.CheckBox();
             this.tbNPC.SuspendLayout();
             this.gbInfo.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.gbAtribute.SuspendLayout();
-            this.gbRate.SuspendLayout();
-            this.gbJewelProb.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.gbJewelProb.SuspendLayout();
+            this.gbRate.SuspendLayout();
+            this.tbAffinity.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.tbQuest.SuspendLayout();
+            this.tbRates.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.gbJewel.SuspendLayout();
+            this.gbQuestExp.SuspendLayout();
+            this.gbQuestSP.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tbRates
-            // 
-            this.tbRates.Controls.Add(this.tbQuest);
-            this.tbRates.Controls.Add(this.tbSkill);
-            this.tbRates.Controls.Add(this.tbAffinity);
-            this.tbRates.Controls.Add(this.tbNPC);
-            this.tbRates.Location = new System.Drawing.Point(12, 12);
-            this.tbRates.Name = "tbRates";
-            this.tbRates.SelectedIndex = 0;
-            this.tbRates.Size = new System.Drawing.Size(297, 533);
-            this.tbRates.TabIndex = 0;
-            // 
-            // tbQuest
-            // 
-            this.tbQuest.Location = new System.Drawing.Point(4, 22);
-            this.tbQuest.Name = "tbQuest";
-            this.tbQuest.Padding = new System.Windows.Forms.Padding(3);
-            this.tbQuest.Size = new System.Drawing.Size(289, 507);
-            this.tbQuest.TabIndex = 0;
-            this.tbQuest.Text = "Quest";
-            this.tbQuest.UseVisualStyleBackColor = true;
-            // 
-            // tbSkill
-            // 
-            this.tbSkill.Controls.Add(this.groupBox5);
-            this.tbSkill.Controls.Add(this.groupBox4);
-            this.tbSkill.Controls.Add(this.groupBox3);
-            this.tbSkill.Location = new System.Drawing.Point(4, 22);
-            this.tbSkill.Name = "tbSkill";
-            this.tbSkill.Padding = new System.Windows.Forms.Padding(3);
-            this.tbSkill.Size = new System.Drawing.Size(289, 507);
-            this.tbSkill.TabIndex = 1;
-            this.tbSkill.Text = "Skill";
-            this.tbSkill.UseVisualStyleBackColor = true;
-            // 
-            // tbAffinity
-            // 
-            this.tbAffinity.Controls.Add(this.groupBox7);
-            this.tbAffinity.Location = new System.Drawing.Point(4, 22);
-            this.tbAffinity.Name = "tbAffinity";
-            this.tbAffinity.Padding = new System.Windows.Forms.Padding(3);
-            this.tbAffinity.Size = new System.Drawing.Size(289, 507);
-            this.tbAffinity.TabIndex = 2;
-            this.tbAffinity.Text = "Affinity";
-            this.tbAffinity.UseVisualStyleBackColor = true;
             // 
             // tbNPC
             // 
@@ -257,10 +176,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnElemental);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.gbJewelProb);
-            this.groupBox1.Controls.Add(this.gbAtribute);
             this.groupBox1.Location = new System.Drawing.Point(127, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(154, 481);
@@ -269,57 +188,223 @@
             this.groupBox1.Text = "Misc";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // gbAtribute
+            // btnElemental
             // 
-            this.gbAtribute.Controls.Add(this.checkBox7);
-            this.gbAtribute.Controls.Add(this.checkBox8);
-            this.gbAtribute.Controls.Add(this.button12);
-            this.gbAtribute.Controls.Add(this.label6);
-            this.gbAtribute.Controls.Add(this.button13);
-            this.gbAtribute.Controls.Add(this.textBox1);
-            this.gbAtribute.Controls.Add(this.Atribute);
-            this.gbAtribute.Location = new System.Drawing.Point(5, 16);
-            this.gbAtribute.Name = "gbAtribute";
-            this.gbAtribute.Size = new System.Drawing.Size(148, 124);
-            this.gbAtribute.TabIndex = 0;
-            this.gbAtribute.TabStop = false;
-            this.gbAtribute.Text = "Atribute";
-            this.gbAtribute.Enter += new System.EventHandler(this.Attriburte_Enter);
+            this.btnElemental.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnElemental.Location = new System.Drawing.Point(13, 19);
+            this.btnElemental.Name = "btnElemental";
+            this.btnElemental.Size = new System.Drawing.Size(134, 121);
+            this.btnElemental.TabIndex = 54;
+            this.btnElemental.Text = "Set Elemental to 0";
+            this.btnElemental.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // label14
             // 
-            this.textBox1.Location = new System.Drawing.Point(28, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(94, 20);
-            this.textBox1.TabIndex = 46;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(2, 436);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(153, 13);
+            this.label14.TabIndex = 53;
+            this.label14.Text = "Note: All Mobs will be effected ";
             // 
-            // Atribute
+            // groupBox2
             // 
-            this.Atribute.AutoSize = true;
-            this.Atribute.Location = new System.Drawing.Point(19, 16);
-            this.Atribute.Name = "Atribute";
-            this.Atribute.Size = new System.Drawing.Size(46, 13);
-            this.Atribute.TabIndex = 43;
-            this.Atribute.Text = "Atribute:";
+            this.groupBox2.Controls.Add(this.cbHrPlus);
+            this.groupBox2.Controls.Add(this.cbHrMinus);
+            this.groupBox2.Controls.Add(this.btnSendExportQry);
+            this.groupBox2.Controls.Add(this.btnSendHitrateQry);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.tbHitrate);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Location = new System.Drawing.Point(5, 286);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(148, 129);
+            this.groupBox2.TabIndex = 52;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "HitRate";
+            // 
+            // cbHrPlus
+            // 
+            this.cbHrPlus.AutoSize = true;
+            this.cbHrPlus.Location = new System.Drawing.Point(65, 15);
+            this.cbHrPlus.Name = "cbHrPlus";
+            this.cbHrPlus.Size = new System.Drawing.Size(32, 17);
+            this.cbHrPlus.TabIndex = 71;
+            this.cbHrPlus.Text = "+";
+            this.cbHrPlus.UseVisualStyleBackColor = true;
+            // 
+            // cbHrMinus
+            // 
+            this.cbHrMinus.AutoSize = true;
+            this.cbHrMinus.Location = new System.Drawing.Point(99, 15);
+            this.cbHrMinus.Name = "cbHrMinus";
+            this.cbHrMinus.Size = new System.Drawing.Size(29, 17);
+            this.cbHrMinus.TabIndex = 72;
+            this.cbHrMinus.Text = "-";
+            this.cbHrMinus.UseVisualStyleBackColor = true;
+            // 
+            // btnSendExportQry
+            // 
+            this.btnSendExportQry.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnSendExportQry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSendExportQry.FlatAppearance.BorderSize = 0;
+            this.btnSendExportQry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendExportQry.Location = new System.Drawing.Point(22, 93);
+            this.btnSendExportQry.Name = "btnSendExportQry";
+            this.btnSendExportQry.Size = new System.Drawing.Size(112, 23);
+            this.btnSendExportQry.TabIndex = 51;
+            this.btnSendExportQry.Text = "Export Query";
+            this.btnSendExportQry.UseVisualStyleBackColor = false;
+            this.btnSendExportQry.Click += new System.EventHandler(this.button24_Click);
+            // 
+            // btnSendHitrateQry
+            // 
+            this.btnSendHitrateQry.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSendHitrateQry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSendHitrateQry.FlatAppearance.BorderSize = 0;
+            this.btnSendHitrateQry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendHitrateQry.Location = new System.Drawing.Point(22, 64);
+            this.btnSendHitrateQry.Name = "btnSendHitrateQry";
+            this.btnSendHitrateQry.Size = new System.Drawing.Size(112, 23);
+            this.btnSendHitrateQry.TabIndex = 50;
+            this.btnSendHitrateQry.Text = "Send Query";
+            this.btnSendHitrateQry.UseVisualStyleBackColor = false;
+            this.btnSendHitrateQry.Click += new System.EventHandler(this.button25_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(125, 41);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(16, 13);
+            this.label12.TabIndex = 48;
+            this.label12.Text = "%";
+            // 
+            // tbHitrate
+            // 
+            this.tbHitrate.Location = new System.Drawing.Point(28, 38);
+            this.tbHitrate.Name = "tbHitrate";
+            this.tbHitrate.Size = new System.Drawing.Size(94, 20);
+            this.tbHitrate.TabIndex = 46;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(19, 16);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(41, 13);
+            this.label13.TabIndex = 43;
+            this.label13.Text = "Hitrate:";
+            // 
+            // gbJewelProb
+            // 
+            this.gbJewelProb.Controls.Add(this.cbJewelPlus);
+            this.gbJewelProb.Controls.Add(this.cbJewelMinus);
+            this.gbJewelProb.Controls.Add(this.btnExportJewel);
+            this.gbJewelProb.Controls.Add(this.btnSendJewelQry);
+            this.gbJewelProb.Controls.Add(this.label7);
+            this.gbJewelProb.Controls.Add(this.tbJewelProb);
+            this.gbJewelProb.Controls.Add(this.label5);
+            this.gbJewelProb.Location = new System.Drawing.Point(2, 146);
+            this.gbJewelProb.Name = "gbJewelProb";
+            this.gbJewelProb.Size = new System.Drawing.Size(148, 129);
+            this.gbJewelProb.TabIndex = 47;
+            this.gbJewelProb.TabStop = false;
+            this.gbJewelProb.Text = "JewelProb";
+            // 
+            // cbJewelPlus
+            // 
+            this.cbJewelPlus.AutoSize = true;
+            this.cbJewelPlus.Location = new System.Drawing.Point(68, 17);
+            this.cbJewelPlus.Name = "cbJewelPlus";
+            this.cbJewelPlus.Size = new System.Drawing.Size(32, 17);
+            this.cbJewelPlus.TabIndex = 69;
+            this.cbJewelPlus.Text = "+";
+            this.cbJewelPlus.UseVisualStyleBackColor = true;
+            // 
+            // cbJewelMinus
+            // 
+            this.cbJewelMinus.AutoSize = true;
+            this.cbJewelMinus.Location = new System.Drawing.Point(102, 17);
+            this.cbJewelMinus.Name = "cbJewelMinus";
+            this.cbJewelMinus.Size = new System.Drawing.Size(29, 17);
+            this.cbJewelMinus.TabIndex = 70;
+            this.cbJewelMinus.Text = "-";
+            this.cbJewelMinus.UseVisualStyleBackColor = true;
+            // 
+            // btnExportJewel
+            // 
+            this.btnExportJewel.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnExportJewel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExportJewel.FlatAppearance.BorderSize = 0;
+            this.btnExportJewel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportJewel.Location = new System.Drawing.Point(22, 93);
+            this.btnExportJewel.Name = "btnExportJewel";
+            this.btnExportJewel.Size = new System.Drawing.Size(112, 23);
+            this.btnExportJewel.TabIndex = 51;
+            this.btnExportJewel.Text = "Export Query";
+            this.btnExportJewel.UseVisualStyleBackColor = false;
+            this.btnExportJewel.Click += new System.EventHandler(this.button22_Click);
+            // 
+            // btnSendJewelQry
+            // 
+            this.btnSendJewelQry.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSendJewelQry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSendJewelQry.FlatAppearance.BorderSize = 0;
+            this.btnSendJewelQry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendJewelQry.Location = new System.Drawing.Point(22, 64);
+            this.btnSendJewelQry.Name = "btnSendJewelQry";
+            this.btnSendJewelQry.Size = new System.Drawing.Size(112, 23);
+            this.btnSendJewelQry.TabIndex = 50;
+            this.btnSendJewelQry.Text = "Send Query";
+            this.btnSendJewelQry.UseVisualStyleBackColor = false;
+            this.btnSendJewelQry.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(125, 41);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(16, 13);
+            this.label7.TabIndex = 48;
+            this.label7.Text = "%";
+            // 
+            // tbJewelProb
+            // 
+            this.tbJewelProb.Location = new System.Drawing.Point(28, 38);
+            this.tbJewelProb.Name = "tbJewelProb";
+            this.tbJewelProb.Size = new System.Drawing.Size(94, 20);
+            this.tbJewelProb.TabIndex = 46;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.TabIndex = 43;
+            this.label5.Text = "JewelProb:";
             // 
             // gbRate
             // 
-            this.gbRate.Controls.Add(this.checkBox5);
-            this.gbRate.Controls.Add(this.checkBox6);
-            this.gbRate.Controls.Add(this.checkBox3);
-            this.gbRate.Controls.Add(this.checkBox4);
-            this.gbRate.Controls.Add(this.checkBox1);
-            this.gbRate.Controls.Add(this.checkBox2);
-            this.gbRate.Controls.Add(this.cbPlus);
-            this.gbRate.Controls.Add(this.cbMinus);
-            this.gbRate.Controls.Add(this.button20);
-            this.gbRate.Controls.Add(this.button21);
-            this.gbRate.Controls.Add(this.button18);
-            this.gbRate.Controls.Add(this.button19);
-            this.gbRate.Controls.Add(this.button16);
-            this.gbRate.Controls.Add(this.button17);
-            this.gbRate.Controls.Add(this.button14);
-            this.gbRate.Controls.Add(this.button15);
+            this.gbRate.Controls.Add(this.cbDropPlus);
+            this.gbRate.Controls.Add(this.cbDropMinus);
+            this.gbRate.Controls.Add(this.cbGoldPlus);
+            this.gbRate.Controls.Add(this.cbGoldMinus);
+            this.gbRate.Controls.Add(this.cbSpPlus);
+            this.gbRate.Controls.Add(this.cbSpMinus);
+            this.gbRate.Controls.Add(this.cbExpPlus);
+            this.gbRate.Controls.Add(this.cbExpMinus);
+            this.gbRate.Controls.Add(this.btnExportDropQry);
+            this.gbRate.Controls.Add(this.btnSendDropQry);
+            this.gbRate.Controls.Add(this.btnExportGoldQry);
+            this.gbRate.Controls.Add(this.btnSendGoldQry);
+            this.gbRate.Controls.Add(this.btnExportSpQry);
+            this.gbRate.Controls.Add(this.btnSendSpQry);
+            this.gbRate.Controls.Add(this.btnExportExpQry);
+            this.gbRate.Controls.Add(this.btnSendExpQry);
             this.gbRate.Controls.Add(this.label11);
             this.gbRate.Controls.Add(this.label10);
             this.gbRate.Controls.Add(this.label9);
@@ -339,6 +424,238 @@
             this.gbRate.TabStop = false;
             this.gbRate.Text = "Rate";
             this.gbRate.Enter += new System.EventHandler(this.gbRate_Enter);
+            // 
+            // cbDropPlus
+            // 
+            this.cbDropPlus.AutoSize = true;
+            this.cbDropPlus.Location = new System.Drawing.Point(44, 374);
+            this.cbDropPlus.Name = "cbDropPlus";
+            this.cbDropPlus.Size = new System.Drawing.Size(32, 17);
+            this.cbDropPlus.TabIndex = 65;
+            this.cbDropPlus.Text = "+";
+            this.cbDropPlus.UseVisualStyleBackColor = true;
+            // 
+            // cbDropMinus
+            // 
+            this.cbDropMinus.AutoSize = true;
+            this.cbDropMinus.Location = new System.Drawing.Point(78, 374);
+            this.cbDropMinus.Name = "cbDropMinus";
+            this.cbDropMinus.Size = new System.Drawing.Size(29, 17);
+            this.cbDropMinus.TabIndex = 66;
+            this.cbDropMinus.Text = "-";
+            this.cbDropMinus.UseVisualStyleBackColor = true;
+            // 
+            // cbGoldPlus
+            // 
+            this.cbGoldPlus.AutoSize = true;
+            this.cbGoldPlus.Location = new System.Drawing.Point(44, 252);
+            this.cbGoldPlus.Name = "cbGoldPlus";
+            this.cbGoldPlus.Size = new System.Drawing.Size(32, 17);
+            this.cbGoldPlus.TabIndex = 63;
+            this.cbGoldPlus.Text = "+";
+            this.cbGoldPlus.UseVisualStyleBackColor = true;
+            // 
+            // cbGoldMinus
+            // 
+            this.cbGoldMinus.AutoSize = true;
+            this.cbGoldMinus.Location = new System.Drawing.Point(78, 252);
+            this.cbGoldMinus.Name = "cbGoldMinus";
+            this.cbGoldMinus.Size = new System.Drawing.Size(29, 17);
+            this.cbGoldMinus.TabIndex = 64;
+            this.cbGoldMinus.Text = "-";
+            this.cbGoldMinus.UseVisualStyleBackColor = true;
+            // 
+            // cbSpPlus
+            // 
+            this.cbSpPlus.AutoSize = true;
+            this.cbSpPlus.Location = new System.Drawing.Point(44, 133);
+            this.cbSpPlus.Name = "cbSpPlus";
+            this.cbSpPlus.Size = new System.Drawing.Size(32, 17);
+            this.cbSpPlus.TabIndex = 61;
+            this.cbSpPlus.Text = "+";
+            this.cbSpPlus.UseVisualStyleBackColor = true;
+            // 
+            // cbSpMinus
+            // 
+            this.cbSpMinus.AutoSize = true;
+            this.cbSpMinus.Location = new System.Drawing.Point(78, 133);
+            this.cbSpMinus.Name = "cbSpMinus";
+            this.cbSpMinus.Size = new System.Drawing.Size(29, 17);
+            this.cbSpMinus.TabIndex = 62;
+            this.cbSpMinus.Text = "-";
+            this.cbSpMinus.UseVisualStyleBackColor = true;
+            // 
+            // cbExpPlus
+            // 
+            this.cbExpPlus.AutoSize = true;
+            this.cbExpPlus.Location = new System.Drawing.Point(44, 19);
+            this.cbExpPlus.Name = "cbExpPlus";
+            this.cbExpPlus.Size = new System.Drawing.Size(32, 17);
+            this.cbExpPlus.TabIndex = 59;
+            this.cbExpPlus.Text = "+";
+            this.cbExpPlus.UseVisualStyleBackColor = true;
+            // 
+            // cbExpMinus
+            // 
+            this.cbExpMinus.AutoSize = true;
+            this.cbExpMinus.Location = new System.Drawing.Point(78, 19);
+            this.cbExpMinus.Name = "cbExpMinus";
+            this.cbExpMinus.Size = new System.Drawing.Size(29, 17);
+            this.cbExpMinus.TabIndex = 60;
+            this.cbExpMinus.Text = "-";
+            this.cbExpMinus.UseVisualStyleBackColor = true;
+            // 
+            // btnExportDropQry
+            // 
+            this.btnExportDropQry.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnExportDropQry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExportDropQry.FlatAppearance.BorderSize = 0;
+            this.btnExportDropQry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportDropQry.Location = new System.Drawing.Point(7, 451);
+            this.btnExportDropQry.Name = "btnExportDropQry";
+            this.btnExportDropQry.Size = new System.Drawing.Size(108, 27);
+            this.btnExportDropQry.TabIndex = 58;
+            this.btnExportDropQry.Text = "Export Query";
+            this.btnExportDropQry.UseVisualStyleBackColor = false;
+            this.btnExportDropQry.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // btnSendDropQry
+            // 
+            this.btnSendDropQry.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSendDropQry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSendDropQry.FlatAppearance.BorderSize = 0;
+            this.btnSendDropQry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendDropQry.Location = new System.Drawing.Point(7, 422);
+            this.btnSendDropQry.Name = "btnSendDropQry";
+            this.btnSendDropQry.Size = new System.Drawing.Size(108, 27);
+            this.btnSendDropQry.TabIndex = 57;
+            this.btnSendDropQry.Text = "Send Query";
+            this.btnSendDropQry.UseVisualStyleBackColor = false;
+            this.btnSendDropQry.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // btnExportGoldQry
+            // 
+            this.btnExportGoldQry.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnExportGoldQry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExportGoldQry.FlatAppearance.BorderSize = 0;
+            this.btnExportGoldQry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportGoldQry.Location = new System.Drawing.Point(6, 331);
+            this.btnExportGoldQry.Name = "btnExportGoldQry";
+            this.btnExportGoldQry.Size = new System.Drawing.Size(108, 27);
+            this.btnExportGoldQry.TabIndex = 56;
+            this.btnExportGoldQry.Text = "Export Query";
+            this.btnExportGoldQry.UseVisualStyleBackColor = false;
+            this.btnExportGoldQry.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // btnSendGoldQry
+            // 
+            this.btnSendGoldQry.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSendGoldQry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSendGoldQry.FlatAppearance.BorderSize = 0;
+            this.btnSendGoldQry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendGoldQry.Location = new System.Drawing.Point(6, 302);
+            this.btnSendGoldQry.Name = "btnSendGoldQry";
+            this.btnSendGoldQry.Size = new System.Drawing.Size(108, 27);
+            this.btnSendGoldQry.TabIndex = 55;
+            this.btnSendGoldQry.Text = "Send Query";
+            this.btnSendGoldQry.UseVisualStyleBackColor = false;
+            this.btnSendGoldQry.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // btnExportSpQry
+            // 
+            this.btnExportSpQry.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnExportSpQry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExportSpQry.FlatAppearance.BorderSize = 0;
+            this.btnExportSpQry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportSpQry.Location = new System.Drawing.Point(6, 217);
+            this.btnExportSpQry.Name = "btnExportSpQry";
+            this.btnExportSpQry.Size = new System.Drawing.Size(108, 27);
+            this.btnExportSpQry.TabIndex = 54;
+            this.btnExportSpQry.Text = "Export Query";
+            this.btnExportSpQry.UseVisualStyleBackColor = false;
+            this.btnExportSpQry.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // btnSendSpQry
+            // 
+            this.btnSendSpQry.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSendSpQry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSendSpQry.FlatAppearance.BorderSize = 0;
+            this.btnSendSpQry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendSpQry.Location = new System.Drawing.Point(6, 188);
+            this.btnSendSpQry.Name = "btnSendSpQry";
+            this.btnSendSpQry.Size = new System.Drawing.Size(108, 27);
+            this.btnSendSpQry.TabIndex = 53;
+            this.btnSendSpQry.Text = "Send Query";
+            this.btnSendSpQry.UseVisualStyleBackColor = false;
+            this.btnSendSpQry.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // btnExportExpQry
+            // 
+            this.btnExportExpQry.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnExportExpQry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExportExpQry.FlatAppearance.BorderSize = 0;
+            this.btnExportExpQry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportExpQry.Location = new System.Drawing.Point(2, 97);
+            this.btnExportExpQry.Name = "btnExportExpQry";
+            this.btnExportExpQry.Size = new System.Drawing.Size(108, 27);
+            this.btnExportExpQry.TabIndex = 52;
+            this.btnExportExpQry.Text = "Export Query";
+            this.btnExportExpQry.UseVisualStyleBackColor = false;
+            this.btnExportExpQry.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // btnSendExpQry
+            // 
+            this.btnSendExpQry.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSendExpQry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSendExpQry.FlatAppearance.BorderSize = 0;
+            this.btnSendExpQry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendExpQry.Location = new System.Drawing.Point(2, 68);
+            this.btnSendExpQry.Name = "btnSendExpQry";
+            this.btnSendExpQry.Size = new System.Drawing.Size(108, 27);
+            this.btnSendExpQry.TabIndex = 51;
+            this.btnSendExpQry.Text = "Send Query";
+            this.btnSendExpQry.UseVisualStyleBackColor = false;
+            this.btnSendExpQry.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(101, 401);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(16, 13);
+            this.label11.TabIndex = 49;
+            this.label11.Text = "%";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(101, 279);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(16, 13);
+            this.label10.TabIndex = 50;
+            this.label10.Text = "%";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(101, 165);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(16, 13);
+            this.label9.TabIndex = 49;
+            this.label9.Text = "%";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(101, 45);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(16, 13);
+            this.label8.TabIndex = 48;
+            this.label8.Text = "%";
             // 
             // tbDrop
             // 
@@ -404,505 +721,37 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "EXP:";
             // 
-            // gbJewelProb
-            // 
-            this.gbJewelProb.Controls.Add(this.checkBox9);
-            this.gbJewelProb.Controls.Add(this.checkBox10);
-            this.gbJewelProb.Controls.Add(this.button22);
-            this.gbJewelProb.Controls.Add(this.button23);
-            this.gbJewelProb.Controls.Add(this.label7);
-            this.gbJewelProb.Controls.Add(this.textBox2);
-            this.gbJewelProb.Controls.Add(this.label5);
-            this.gbJewelProb.Location = new System.Drawing.Point(2, 146);
-            this.gbJewelProb.Name = "gbJewelProb";
-            this.gbJewelProb.Size = new System.Drawing.Size(148, 129);
-            this.gbJewelProb.TabIndex = 47;
-            this.gbJewelProb.TabStop = false;
-            this.gbJewelProb.Text = "JewelProb";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(28, 38);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(94, 20);
-            this.textBox2.TabIndex = 46;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 13);
-            this.label5.TabIndex = 43;
-            this.label5.Text = "JewelProb:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(125, 41);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(16, 13);
-            this.label6.TabIndex = 43;
-            this.label6.Text = "%";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(125, 41);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(16, 13);
-            this.label7.TabIndex = 48;
-            this.label7.Text = "%";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(101, 45);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(16, 13);
-            this.label8.TabIndex = 48;
-            this.label8.Text = "%";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(101, 165);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(16, 13);
-            this.label9.TabIndex = 49;
-            this.label9.Text = "%";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(101, 279);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(16, 13);
-            this.label10.TabIndex = 50;
-            this.label10.Text = "%";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(101, 401);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(16, 13);
-            this.label11.TabIndex = 49;
-            this.label11.Text = "%";
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.Aquamarine;
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Location = new System.Drawing.Point(25, 93);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(112, 23);
-            this.button12.TabIndex = 49;
-            this.button12.Text = "Export Query";
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Location = new System.Drawing.Point(25, 64);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(112, 23);
-            this.button13.TabIndex = 48;
-            this.button13.Text = "Send Query";
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.Aquamarine;
-            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Location = new System.Drawing.Point(2, 97);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(108, 27);
-            this.button14.TabIndex = 52;
-            this.button14.Text = "Export Query";
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // button15
-            // 
-            this.button15.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Location = new System.Drawing.Point(2, 68);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(108, 27);
-            this.button15.TabIndex = 51;
-            this.button15.Text = "Send Query";
-            this.button15.UseVisualStyleBackColor = false;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // button16
-            // 
-            this.button16.BackColor = System.Drawing.Color.Aquamarine;
-            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Location = new System.Drawing.Point(6, 217);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(108, 27);
-            this.button16.TabIndex = 54;
-            this.button16.Text = "Export Query";
-            this.button16.UseVisualStyleBackColor = false;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
-            // 
-            // button17
-            // 
-            this.button17.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button17.FlatAppearance.BorderSize = 0;
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Location = new System.Drawing.Point(6, 188);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(108, 27);
-            this.button17.TabIndex = 53;
-            this.button17.Text = "Send Query";
-            this.button17.UseVisualStyleBackColor = false;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
-            // 
-            // button18
-            // 
-            this.button18.BackColor = System.Drawing.Color.Aquamarine;
-            this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button18.FlatAppearance.BorderSize = 0;
-            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button18.Location = new System.Drawing.Point(6, 331);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(108, 27);
-            this.button18.TabIndex = 56;
-            this.button18.Text = "Export Query";
-            this.button18.UseVisualStyleBackColor = false;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
-            // 
-            // button19
-            // 
-            this.button19.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button19.FlatAppearance.BorderSize = 0;
-            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button19.Location = new System.Drawing.Point(6, 302);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(108, 27);
-            this.button19.TabIndex = 55;
-            this.button19.Text = "Send Query";
-            this.button19.UseVisualStyleBackColor = false;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
-            // 
-            // button20
-            // 
-            this.button20.BackColor = System.Drawing.Color.Aquamarine;
-            this.button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button20.FlatAppearance.BorderSize = 0;
-            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button20.Location = new System.Drawing.Point(7, 451);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(108, 27);
-            this.button20.TabIndex = 58;
-            this.button20.Text = "Export Query";
-            this.button20.UseVisualStyleBackColor = false;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
-            // 
-            // button21
-            // 
-            this.button21.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button21.FlatAppearance.BorderSize = 0;
-            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button21.Location = new System.Drawing.Point(7, 422);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(108, 27);
-            this.button21.TabIndex = 57;
-            this.button21.Text = "Send Query";
-            this.button21.UseVisualStyleBackColor = false;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
-            // 
-            // button22
-            // 
-            this.button22.BackColor = System.Drawing.Color.Aquamarine;
-            this.button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button22.FlatAppearance.BorderSize = 0;
-            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button22.Location = new System.Drawing.Point(22, 93);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(112, 23);
-            this.button22.TabIndex = 51;
-            this.button22.Text = "Export Query";
-            this.button22.UseVisualStyleBackColor = false;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
-            // 
-            // button23
-            // 
-            this.button23.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button23.FlatAppearance.BorderSize = 0;
-            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button23.Location = new System.Drawing.Point(22, 64);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(112, 23);
-            this.button23.TabIndex = 50;
-            this.button23.Text = "Send Query";
-            this.button23.UseVisualStyleBackColor = false;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.checkBox11);
-            this.groupBox2.Controls.Add(this.checkBox12);
-            this.groupBox2.Controls.Add(this.button24);
-            this.groupBox2.Controls.Add(this.button25);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Location = new System.Drawing.Point(5, 286);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(148, 129);
-            this.groupBox2.TabIndex = 52;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "HitRate";
-            // 
-            // button24
-            // 
-            this.button24.BackColor = System.Drawing.Color.Aquamarine;
-            this.button24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button24.FlatAppearance.BorderSize = 0;
-            this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button24.Location = new System.Drawing.Point(22, 93);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(112, 23);
-            this.button24.TabIndex = 51;
-            this.button24.Text = "Export Query";
-            this.button24.UseVisualStyleBackColor = false;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
-            // 
-            // button25
-            // 
-            this.button25.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button25.FlatAppearance.BorderSize = 0;
-            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button25.Location = new System.Drawing.Point(22, 64);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(112, 23);
-            this.button25.TabIndex = 50;
-            this.button25.Text = "Send Query";
-            this.button25.UseVisualStyleBackColor = false;
-            this.button25.Click += new System.EventHandler(this.button25_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(125, 41);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(16, 13);
-            this.label12.TabIndex = 48;
-            this.label12.Text = "%";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(28, 38);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(94, 20);
-            this.textBox3.TabIndex = 46;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(19, 16);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 43;
-            this.label13.Text = "Hitrate:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(2, 436);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(153, 13);
-            this.label14.TabIndex = 53;
-            this.label14.Text = "Note: All Mobs will be effected ";
-            // 
-            // cbPlus
-            // 
-            this.cbPlus.AutoSize = true;
-            this.cbPlus.Location = new System.Drawing.Point(44, 19);
-            this.cbPlus.Name = "cbPlus";
-            this.cbPlus.Size = new System.Drawing.Size(32, 17);
-            this.cbPlus.TabIndex = 59;
-            this.cbPlus.Text = "+";
-            this.cbPlus.UseVisualStyleBackColor = true;
-            // 
-            // cbMinus
-            // 
-            this.cbMinus.AutoSize = true;
-            this.cbMinus.Location = new System.Drawing.Point(78, 19);
-            this.cbMinus.Name = "cbMinus";
-            this.cbMinus.Size = new System.Drawing.Size(29, 17);
-            this.cbMinus.TabIndex = 60;
-            this.cbMinus.Text = "-";
-            this.cbMinus.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(44, 133);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(32, 17);
-            this.checkBox1.TabIndex = 61;
-            this.checkBox1.Text = "+";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(78, 133);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(29, 17);
-            this.checkBox2.TabIndex = 62;
-            this.checkBox2.Text = "-";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(44, 252);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(32, 17);
-            this.checkBox3.TabIndex = 63;
-            this.checkBox3.Text = "+";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(78, 252);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(29, 17);
-            this.checkBox4.TabIndex = 64;
-            this.checkBox4.Text = "-";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(44, 374);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(32, 17);
-            this.checkBox5.TabIndex = 65;
-            this.checkBox5.Text = "+";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(78, 374);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(29, 17);
-            this.checkBox6.TabIndex = 66;
-            this.checkBox6.Text = "-";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(65, 15);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(32, 17);
-            this.checkBox7.TabIndex = 67;
-            this.checkBox7.Text = "+";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(99, 15);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(29, 17);
-            this.checkBox8.TabIndex = 68;
-            this.checkBox8.Text = "-";
-            this.checkBox8.UseVisualStyleBackColor = true;
-            // 
-            // checkBox9
-            // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(68, 17);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(32, 17);
-            this.checkBox9.TabIndex = 69;
-            this.checkBox9.Text = "+";
-            this.checkBox9.UseVisualStyleBackColor = true;
-            // 
-            // checkBox10
-            // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(102, 17);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(29, 17);
-            this.checkBox10.TabIndex = 70;
-            this.checkBox10.Text = "-";
-            this.checkBox10.UseVisualStyleBackColor = true;
-            // 
-            // checkBox11
-            // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(65, 15);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(32, 17);
-            this.checkBox11.TabIndex = 71;
-            this.checkBox11.Text = "+";
-            this.checkBox11.UseVisualStyleBackColor = true;
-            // 
-            // checkBox12
-            // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(99, 15);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(29, 17);
-            this.checkBox12.TabIndex = 72;
-            this.checkBox12.Text = "-";
-            this.checkBox12.UseVisualStyleBackColor = true;
+            // tbAffinity
+            // 
+            this.tbAffinity.Controls.Add(this.groupBox7);
+            this.tbAffinity.Location = new System.Drawing.Point(4, 22);
+            this.tbAffinity.Name = "tbAffinity";
+            this.tbAffinity.Padding = new System.Windows.Forms.Padding(3);
+            this.tbAffinity.Size = new System.Drawing.Size(289, 507);
+            this.tbAffinity.TabIndex = 2;
+            this.tbAffinity.Text = "Affinity";
+            this.tbAffinity.UseVisualStyleBackColor = true;
             // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.checkBox21);
             this.groupBox7.Controls.Add(this.checkBox22);
-            this.groupBox7.Controls.Add(this.checkBox23);
-            this.groupBox7.Controls.Add(this.checkBox24);
-            this.groupBox7.Controls.Add(this.checkBox25);
-            this.groupBox7.Controls.Add(this.checkBox26);
-            this.groupBox7.Controls.Add(this.button9);
-            this.groupBox7.Controls.Add(this.button10);
-            this.groupBox7.Controls.Add(this.button11);
-            this.groupBox7.Controls.Add(this.button26);
-            this.groupBox7.Controls.Add(this.button27);
-            this.groupBox7.Controls.Add(this.button28);
+            this.groupBox7.Controls.Add(this.cbAffItemPlus);
+            this.groupBox7.Controls.Add(this.cbAffItemMinus);
+            this.groupBox7.Controls.Add(this.cbAffinQuestPlus);
+            this.groupBox7.Controls.Add(this.cbAffinQuestMinus);
+            this.groupBox7.Controls.Add(this.btnExportAffNpc);
+            this.groupBox7.Controls.Add(this.btnSendAffNpc);
+            this.groupBox7.Controls.Add(this.btnExportAffQuest);
+            this.groupBox7.Controls.Add(this.btnSendAffItemQry);
+            this.groupBox7.Controls.Add(this.btnExportAffQuestQry);
+            this.groupBox7.Controls.Add(this.btnSendAffQuestQry);
             this.groupBox7.Controls.Add(this.label23);
             this.groupBox7.Controls.Add(this.label24);
             this.groupBox7.Controls.Add(this.label25);
-            this.groupBox7.Controls.Add(this.textBox8);
-            this.groupBox7.Controls.Add(this.textBox9);
-            this.groupBox7.Controls.Add(this.textBox10);
+            this.groupBox7.Controls.Add(this.tbAffNpc);
+            this.groupBox7.Controls.Add(this.tbAffItem);
+            this.groupBox7.Controls.Add(this.tbAffQuest);
             this.groupBox7.Controls.Add(this.label27);
             this.groupBox7.Controls.Add(this.label28);
             this.groupBox7.Controls.Add(this.label29);
@@ -933,124 +782,124 @@
             this.checkBox22.Text = "-";
             this.checkBox22.UseVisualStyleBackColor = true;
             // 
-            // checkBox23
+            // cbAffItemPlus
             // 
-            this.checkBox23.AutoSize = true;
-            this.checkBox23.Location = new System.Drawing.Point(44, 133);
-            this.checkBox23.Name = "checkBox23";
-            this.checkBox23.Size = new System.Drawing.Size(32, 17);
-            this.checkBox23.TabIndex = 61;
-            this.checkBox23.Text = "+";
-            this.checkBox23.UseVisualStyleBackColor = true;
+            this.cbAffItemPlus.AutoSize = true;
+            this.cbAffItemPlus.Location = new System.Drawing.Point(44, 133);
+            this.cbAffItemPlus.Name = "cbAffItemPlus";
+            this.cbAffItemPlus.Size = new System.Drawing.Size(32, 17);
+            this.cbAffItemPlus.TabIndex = 61;
+            this.cbAffItemPlus.Text = "+";
+            this.cbAffItemPlus.UseVisualStyleBackColor = true;
             // 
-            // checkBox24
+            // cbAffItemMinus
             // 
-            this.checkBox24.AutoSize = true;
-            this.checkBox24.Location = new System.Drawing.Point(78, 133);
-            this.checkBox24.Name = "checkBox24";
-            this.checkBox24.Size = new System.Drawing.Size(29, 17);
-            this.checkBox24.TabIndex = 62;
-            this.checkBox24.Text = "-";
-            this.checkBox24.UseVisualStyleBackColor = true;
+            this.cbAffItemMinus.AutoSize = true;
+            this.cbAffItemMinus.Location = new System.Drawing.Point(78, 133);
+            this.cbAffItemMinus.Name = "cbAffItemMinus";
+            this.cbAffItemMinus.Size = new System.Drawing.Size(29, 17);
+            this.cbAffItemMinus.TabIndex = 62;
+            this.cbAffItemMinus.Text = "-";
+            this.cbAffItemMinus.UseVisualStyleBackColor = true;
             // 
-            // checkBox25
+            // cbAffinQuestPlus
             // 
-            this.checkBox25.AutoSize = true;
-            this.checkBox25.Location = new System.Drawing.Point(44, 19);
-            this.checkBox25.Name = "checkBox25";
-            this.checkBox25.Size = new System.Drawing.Size(32, 17);
-            this.checkBox25.TabIndex = 59;
-            this.checkBox25.Text = "+";
-            this.checkBox25.UseVisualStyleBackColor = true;
+            this.cbAffinQuestPlus.AutoSize = true;
+            this.cbAffinQuestPlus.Location = new System.Drawing.Point(44, 19);
+            this.cbAffinQuestPlus.Name = "cbAffinQuestPlus";
+            this.cbAffinQuestPlus.Size = new System.Drawing.Size(32, 17);
+            this.cbAffinQuestPlus.TabIndex = 59;
+            this.cbAffinQuestPlus.Text = "+";
+            this.cbAffinQuestPlus.UseVisualStyleBackColor = true;
             // 
-            // checkBox26
+            // cbAffinQuestMinus
             // 
-            this.checkBox26.AutoSize = true;
-            this.checkBox26.Location = new System.Drawing.Point(78, 19);
-            this.checkBox26.Name = "checkBox26";
-            this.checkBox26.Size = new System.Drawing.Size(29, 17);
-            this.checkBox26.TabIndex = 60;
-            this.checkBox26.Text = "-";
-            this.checkBox26.UseVisualStyleBackColor = true;
+            this.cbAffinQuestMinus.AutoSize = true;
+            this.cbAffinQuestMinus.Location = new System.Drawing.Point(78, 19);
+            this.cbAffinQuestMinus.Name = "cbAffinQuestMinus";
+            this.cbAffinQuestMinus.Size = new System.Drawing.Size(29, 17);
+            this.cbAffinQuestMinus.TabIndex = 60;
+            this.cbAffinQuestMinus.Text = "-";
+            this.cbAffinQuestMinus.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnExportAffNpc
             // 
-            this.button9.BackColor = System.Drawing.Color.Aquamarine;
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(6, 331);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(108, 27);
-            this.button9.TabIndex = 56;
-            this.button9.Text = "Export Query";
-            this.button9.UseVisualStyleBackColor = false;
+            this.btnExportAffNpc.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnExportAffNpc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExportAffNpc.FlatAppearance.BorderSize = 0;
+            this.btnExportAffNpc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportAffNpc.Location = new System.Drawing.Point(6, 331);
+            this.btnExportAffNpc.Name = "btnExportAffNpc";
+            this.btnExportAffNpc.Size = new System.Drawing.Size(108, 27);
+            this.btnExportAffNpc.TabIndex = 56;
+            this.btnExportAffNpc.Text = "Export Query";
+            this.btnExportAffNpc.UseVisualStyleBackColor = false;
             // 
-            // button10
+            // btnSendAffNpc
             // 
-            this.button10.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(6, 302);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(108, 27);
-            this.button10.TabIndex = 55;
-            this.button10.Text = "Send Query";
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnSendAffNpc.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSendAffNpc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSendAffNpc.FlatAppearance.BorderSize = 0;
+            this.btnSendAffNpc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendAffNpc.Location = new System.Drawing.Point(6, 302);
+            this.btnSendAffNpc.Name = "btnSendAffNpc";
+            this.btnSendAffNpc.Size = new System.Drawing.Size(108, 27);
+            this.btnSendAffNpc.TabIndex = 55;
+            this.btnSendAffNpc.Text = "Send Query";
+            this.btnSendAffNpc.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // btnExportAffQuest
             // 
-            this.button11.BackColor = System.Drawing.Color.Aquamarine;
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Location = new System.Drawing.Point(6, 217);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(108, 27);
-            this.button11.TabIndex = 54;
-            this.button11.Text = "Export Query";
-            this.button11.UseVisualStyleBackColor = false;
+            this.btnExportAffQuest.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnExportAffQuest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExportAffQuest.FlatAppearance.BorderSize = 0;
+            this.btnExportAffQuest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportAffQuest.Location = new System.Drawing.Point(6, 217);
+            this.btnExportAffQuest.Name = "btnExportAffQuest";
+            this.btnExportAffQuest.Size = new System.Drawing.Size(108, 27);
+            this.btnExportAffQuest.TabIndex = 54;
+            this.btnExportAffQuest.Text = "Export Query";
+            this.btnExportAffQuest.UseVisualStyleBackColor = false;
             // 
-            // button26
+            // btnSendAffItemQry
             // 
-            this.button26.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button26.FlatAppearance.BorderSize = 0;
-            this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button26.Location = new System.Drawing.Point(6, 188);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(108, 27);
-            this.button26.TabIndex = 53;
-            this.button26.Text = "Send Query";
-            this.button26.UseVisualStyleBackColor = false;
+            this.btnSendAffItemQry.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSendAffItemQry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSendAffItemQry.FlatAppearance.BorderSize = 0;
+            this.btnSendAffItemQry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendAffItemQry.Location = new System.Drawing.Point(6, 188);
+            this.btnSendAffItemQry.Name = "btnSendAffItemQry";
+            this.btnSendAffItemQry.Size = new System.Drawing.Size(108, 27);
+            this.btnSendAffItemQry.TabIndex = 53;
+            this.btnSendAffItemQry.Text = "Send Query";
+            this.btnSendAffItemQry.UseVisualStyleBackColor = false;
             // 
-            // button27
+            // btnExportAffQuestQry
             // 
-            this.button27.BackColor = System.Drawing.Color.Aquamarine;
-            this.button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button27.FlatAppearance.BorderSize = 0;
-            this.button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button27.Location = new System.Drawing.Point(2, 97);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(108, 27);
-            this.button27.TabIndex = 52;
-            this.button27.Text = "Export Query";
-            this.button27.UseVisualStyleBackColor = false;
+            this.btnExportAffQuestQry.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnExportAffQuestQry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExportAffQuestQry.FlatAppearance.BorderSize = 0;
+            this.btnExportAffQuestQry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportAffQuestQry.Location = new System.Drawing.Point(2, 97);
+            this.btnExportAffQuestQry.Name = "btnExportAffQuestQry";
+            this.btnExportAffQuestQry.Size = new System.Drawing.Size(108, 27);
+            this.btnExportAffQuestQry.TabIndex = 52;
+            this.btnExportAffQuestQry.Text = "Export Query";
+            this.btnExportAffQuestQry.UseVisualStyleBackColor = false;
             // 
-            // button28
+            // btnSendAffQuestQry
             // 
-            this.button28.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button28.FlatAppearance.BorderSize = 0;
-            this.button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button28.Location = new System.Drawing.Point(2, 68);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(108, 27);
-            this.button28.TabIndex = 51;
-            this.button28.Text = "Send Query";
-            this.button28.UseVisualStyleBackColor = false;
-            this.button28.Click += new System.EventHandler(this.button28_Click);
+            this.btnSendAffQuestQry.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSendAffQuestQry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSendAffQuestQry.FlatAppearance.BorderSize = 0;
+            this.btnSendAffQuestQry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendAffQuestQry.Location = new System.Drawing.Point(2, 68);
+            this.btnSendAffQuestQry.Name = "btnSendAffQuestQry";
+            this.btnSendAffQuestQry.Size = new System.Drawing.Size(108, 27);
+            this.btnSendAffQuestQry.TabIndex = 51;
+            this.btnSendAffQuestQry.Text = "Send Query";
+            this.btnSendAffQuestQry.UseVisualStyleBackColor = false;
+            this.btnSendAffQuestQry.Click += new System.EventHandler(this.button28_Click);
             // 
             // label23
             // 
@@ -1082,26 +931,26 @@
             this.label25.TabIndex = 48;
             this.label25.Text = "%";
             // 
-            // textBox8
+            // tbAffNpc
             // 
-            this.textBox8.Location = new System.Drawing.Point(7, 276);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(94, 20);
-            this.textBox8.TabIndex = 41;
+            this.tbAffNpc.Location = new System.Drawing.Point(7, 276);
+            this.tbAffNpc.Name = "tbAffNpc";
+            this.tbAffNpc.Size = new System.Drawing.Size(94, 20);
+            this.tbAffNpc.TabIndex = 41;
             // 
-            // textBox9
+            // tbAffItem
             // 
-            this.textBox9.Location = new System.Drawing.Point(6, 162);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(94, 20);
-            this.textBox9.TabIndex = 40;
+            this.tbAffItem.Location = new System.Drawing.Point(6, 162);
+            this.tbAffItem.Name = "tbAffItem";
+            this.tbAffItem.Size = new System.Drawing.Size(94, 20);
+            this.tbAffItem.TabIndex = 40;
             // 
-            // textBox10
+            // tbAffQuest
             // 
-            this.textBox10.Location = new System.Drawing.Point(6, 42);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(94, 20);
-            this.textBox10.TabIndex = 39;
+            this.tbAffQuest.Location = new System.Drawing.Point(6, 42);
+            this.tbAffQuest.Name = "tbAffQuest";
+            this.tbAffQuest.Size = new System.Drawing.Size(94, 20);
+            this.tbAffQuest.TabIndex = 39;
             // 
             // label27
             // 
@@ -1130,664 +979,370 @@
             this.label29.TabIndex = 0;
             this.label29.Text = "Quest:";
             // 
-            // groupBox3
+            // tbQuest
             // 
-            this.groupBox3.Controls.Add(this.checkBox13);
-            this.groupBox3.Controls.Add(this.checkBox14);
-            this.groupBox3.Controls.Add(this.checkBox15);
-            this.groupBox3.Controls.Add(this.checkBox16);
-            this.groupBox3.Controls.Add(this.checkBox17);
-            this.groupBox3.Controls.Add(this.checkBox18);
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.button6);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Location = new System.Drawing.Point(6, 17);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(122, 363);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "AffinityWork";
+            this.tbQuest.Controls.Add(this.groupBox5);
+            this.tbQuest.Controls.Add(this.gbQuestSP);
+            this.tbQuest.Controls.Add(this.gbQuestExp);
+            this.tbQuest.Location = new System.Drawing.Point(4, 22);
+            this.tbQuest.Name = "tbQuest";
+            this.tbQuest.Padding = new System.Windows.Forms.Padding(3);
+            this.tbQuest.Size = new System.Drawing.Size(289, 507);
+            this.tbQuest.TabIndex = 0;
+            this.tbQuest.Text = "Quest";
+            this.tbQuest.UseVisualStyleBackColor = true;
             // 
-            // checkBox13
+            // tbRates
             // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Location = new System.Drawing.Point(44, 252);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(32, 17);
-            this.checkBox13.TabIndex = 63;
-            this.checkBox13.Text = "+";
-            this.checkBox13.UseVisualStyleBackColor = true;
+            this.tbRates.Controls.Add(this.tbQuest);
+            this.tbRates.Controls.Add(this.tbAffinity);
+            this.tbRates.Controls.Add(this.tbNPC);
+            this.tbRates.Controls.Add(this.tabPage1);
+            this.tbRates.Location = new System.Drawing.Point(12, 12);
+            this.tbRates.Name = "tbRates";
+            this.tbRates.SelectedIndex = 0;
+            this.tbRates.Size = new System.Drawing.Size(297, 533);
+            this.tbRates.TabIndex = 0;
             // 
-            // checkBox14
+            // tabPage1
             // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Location = new System.Drawing.Point(78, 252);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(29, 17);
-            this.checkBox14.TabIndex = 64;
-            this.checkBox14.Text = "-";
-            this.checkBox14.UseVisualStyleBackColor = true;
+            this.tabPage1.Controls.Add(this.gbJewel);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(289, 507);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Misc";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // checkBox15
+            // gbJewel
             // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.Location = new System.Drawing.Point(44, 133);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(32, 17);
-            this.checkBox15.TabIndex = 61;
-            this.checkBox15.Text = "+";
-            this.checkBox15.UseVisualStyleBackColor = true;
+            this.gbJewel.Controls.Add(this.label6);
+            this.gbJewel.Controls.Add(this.lblPercentMeld);
+            this.gbJewel.Controls.Add(this.lblRemoveChance);
+            this.gbJewel.Controls.Add(this.lblMeldChance);
+            this.gbJewel.Controls.Add(this.tbMeldProb);
+            this.gbJewel.Controls.Add(this.tbRemovalProb);
+            this.gbJewel.Controls.Add(this.btnSendJewel);
+            this.gbJewel.Controls.Add(this.btnExportJewelQry);
+            this.gbJewel.Location = new System.Drawing.Point(6, 6);
+            this.gbJewel.Name = "gbJewel";
+            this.gbJewel.Size = new System.Drawing.Size(274, 134);
+            this.gbJewel.TabIndex = 0;
+            this.gbJewel.TabStop = false;
+            this.gbJewel.Text = "Jewel Removal / Fusion Rate";
             // 
-            // checkBox16
+            // label6
             // 
-            this.checkBox16.AutoSize = true;
-            this.checkBox16.Location = new System.Drawing.Point(78, 133);
-            this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(29, 17);
-            this.checkBox16.TabIndex = 62;
-            this.checkBox16.Text = "-";
-            this.checkBox16.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(253, 47);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(21, 16);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "%";
             // 
-            // checkBox17
+            // lblPercentMeld
             // 
-            this.checkBox17.AutoSize = true;
-            this.checkBox17.Location = new System.Drawing.Point(44, 19);
-            this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(32, 17);
-            this.checkBox17.TabIndex = 59;
-            this.checkBox17.Text = "+";
-            this.checkBox17.UseVisualStyleBackColor = true;
+            this.lblPercentMeld.AutoSize = true;
+            this.lblPercentMeld.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPercentMeld.Location = new System.Drawing.Point(110, 46);
+            this.lblPercentMeld.Name = "lblPercentMeld";
+            this.lblPercentMeld.Size = new System.Drawing.Size(21, 16);
+            this.lblPercentMeld.TabIndex = 6;
+            this.lblPercentMeld.Text = "%";
             // 
-            // checkBox18
+            // lblRemoveChance
             // 
-            this.checkBox18.AutoSize = true;
-            this.checkBox18.Location = new System.Drawing.Point(78, 19);
-            this.checkBox18.Name = "checkBox18";
-            this.checkBox18.Size = new System.Drawing.Size(29, 17);
-            this.checkBox18.TabIndex = 60;
-            this.checkBox18.Text = "-";
-            this.checkBox18.UseVisualStyleBackColor = true;
+            this.lblRemoveChance.AutoSize = true;
+            this.lblRemoveChance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRemoveChance.Location = new System.Drawing.Point(148, 27);
+            this.lblRemoveChance.Name = "lblRemoveChance";
+            this.lblRemoveChance.Size = new System.Drawing.Size(123, 13);
+            this.lblRemoveChance.TabIndex = 5;
+            this.lblRemoveChance.Text = "Removal  Probability";
             // 
-            // button1
+            // lblMeldChance
             // 
-            this.button1.BackColor = System.Drawing.Color.Aquamarine;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(6, 331);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 27);
-            this.button1.TabIndex = 56;
-            this.button1.Text = "Export Query";
-            this.button1.UseVisualStyleBackColor = false;
+            this.lblMeldChance.AutoSize = true;
+            this.lblMeldChance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMeldChance.Location = new System.Drawing.Point(9, 27);
+            this.lblMeldChance.Name = "lblMeldChance";
+            this.lblMeldChance.Size = new System.Drawing.Size(97, 13);
+            this.lblMeldChance.TabIndex = 4;
+            this.lblMeldChance.Text = "Meld Probability";
             // 
-            // button2
+            // tbMeldProb
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(6, 302);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 27);
-            this.button2.TabIndex = 55;
-            this.button2.Text = "Send Query";
-            this.button2.UseVisualStyleBackColor = false;
+            this.tbMeldProb.Location = new System.Drawing.Point(6, 45);
+            this.tbMeldProb.Name = "tbMeldProb";
+            this.tbMeldProb.Size = new System.Drawing.Size(100, 20);
+            this.tbMeldProb.TabIndex = 3;
             // 
-            // button3
+            // tbRemovalProb
             // 
-            this.button3.BackColor = System.Drawing.Color.Aquamarine;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(6, 217);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 27);
-            this.button3.TabIndex = 54;
-            this.button3.Text = "Export Query";
-            this.button3.UseVisualStyleBackColor = false;
+            this.tbRemovalProb.Location = new System.Drawing.Point(152, 45);
+            this.tbRemovalProb.Name = "tbRemovalProb";
+            this.tbRemovalProb.Size = new System.Drawing.Size(100, 20);
+            this.tbRemovalProb.TabIndex = 2;
             // 
-            // button4
+            // btnSendJewel
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(6, 188);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 27);
-            this.button4.TabIndex = 53;
-            this.button4.Text = "Send Query";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnSendJewel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSendJewel.FlatAppearance.BorderSize = 0;
+            this.btnSendJewel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendJewel.Location = new System.Drawing.Point(6, 74);
+            this.btnSendJewel.Name = "btnSendJewel";
+            this.btnSendJewel.Size = new System.Drawing.Size(262, 23);
+            this.btnSendJewel.TabIndex = 1;
+            this.btnSendJewel.Text = "Send Query";
+            this.btnSendJewel.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnExportJewelQry
             // 
-            this.button5.BackColor = System.Drawing.Color.Aquamarine;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(2, 97);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(108, 27);
-            this.button5.TabIndex = 52;
-            this.button5.Text = "Export Query";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnExportJewelQry.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnExportJewelQry.FlatAppearance.BorderSize = 0;
+            this.btnExportJewelQry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportJewelQry.Location = new System.Drawing.Point(6, 103);
+            this.btnExportJewelQry.Name = "btnExportJewelQry";
+            this.btnExportJewelQry.Size = new System.Drawing.Size(262, 23);
+            this.btnExportJewelQry.TabIndex = 0;
+            this.btnExportJewelQry.Text = "Export Query";
+            this.btnExportJewelQry.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // gbQuestExp
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(2, 68);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(108, 27);
-            this.button6.TabIndex = 51;
-            this.button6.Text = "Send Query";
-            this.button6.UseVisualStyleBackColor = false;
+            this.gbQuestExp.Controls.Add(this.cbQuestExpPlus);
+            this.gbQuestExp.Controls.Add(this.cbQuestExpMinus);
+            this.gbQuestExp.Controls.Add(this.btnExportQuestExp);
+            this.gbQuestExp.Controls.Add(this.btnSendQuestExp);
+            this.gbQuestExp.Controls.Add(this.label15);
+            this.gbQuestExp.Controls.Add(this.tbQuestExp);
+            this.gbQuestExp.Location = new System.Drawing.Point(6, 6);
+            this.gbQuestExp.Name = "gbQuestExp";
+            this.gbQuestExp.Size = new System.Drawing.Size(143, 125);
+            this.gbQuestExp.TabIndex = 0;
+            this.gbQuestExp.TabStop = false;
+            this.gbQuestExp.Text = "Quest Exp ";
+            // 
+            // gbQuestSP
+            // 
+            this.gbQuestSP.Controls.Add(this.cbQuestSpPlus);
+            this.gbQuestSP.Controls.Add(this.cbQuestSpMinus);
+            this.gbQuestSP.Controls.Add(this.btnExportQuestSp);
+            this.gbQuestSP.Controls.Add(this.btnSendQuestSp);
+            this.gbQuestSP.Controls.Add(this.label16);
+            this.gbQuestSP.Controls.Add(this.tbQuestSp);
+            this.gbQuestSP.Location = new System.Drawing.Point(6, 137);
+            this.gbQuestSP.Name = "gbQuestSP";
+            this.gbQuestSP.Size = new System.Drawing.Size(143, 125);
+            this.gbQuestSP.TabIndex = 1;
+            this.gbQuestSP.TabStop = false;
+            this.gbQuestSP.Text = "Quest SP";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.cbQuestGoldPlus);
+            this.groupBox5.Controls.Add(this.cbQuestGoldMinus);
+            this.groupBox5.Controls.Add(this.btnExportQuestGold);
+            this.groupBox5.Controls.Add(this.label17);
+            this.groupBox5.Controls.Add(this.tbQuestGold);
+            this.groupBox5.Controls.Add(this.btnSendQuestGold);
+            this.groupBox5.Location = new System.Drawing.Point(6, 268);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(143, 133);
+            this.groupBox5.TabIndex = 1;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Quest Gold";
+            // 
+            // tbQuestExp
+            // 
+            this.tbQuestExp.Location = new System.Drawing.Point(16, 37);
+            this.tbQuestExp.Name = "tbQuestExp";
+            this.tbQuestExp.Size = new System.Drawing.Size(100, 20);
+            this.tbQuestExp.TabIndex = 0;
+            // 
+            // tbQuestSp
+            // 
+            this.tbQuestSp.Location = new System.Drawing.Point(16, 39);
+            this.tbQuestSp.Name = "tbQuestSp";
+            this.tbQuestSp.Size = new System.Drawing.Size(100, 20);
+            this.tbQuestSp.TabIndex = 1;
+            // 
+            // tbQuestGold
+            // 
+            this.tbQuestGold.Location = new System.Drawing.Point(16, 46);
+            this.tbQuestGold.Name = "tbQuestGold";
+            this.tbQuestGold.Size = new System.Drawing.Size(100, 20);
+            this.tbQuestGold.TabIndex = 2;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(101, 279);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(119, 39);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(16, 13);
-            this.label15.TabIndex = 50;
+            this.label15.Size = new System.Drawing.Size(21, 16);
+            this.label15.TabIndex = 7;
             this.label15.Text = "%";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(101, 165);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(119, 40);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(16, 13);
-            this.label16.TabIndex = 49;
+            this.label16.Size = new System.Drawing.Size(21, 16);
+            this.label16.TabIndex = 7;
             this.label16.Text = "%";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(101, 45);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(119, 48);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(16, 13);
-            this.label17.TabIndex = 48;
+            this.label17.Size = new System.Drawing.Size(21, 16);
+            this.label17.TabIndex = 7;
             this.label17.Text = "%";
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(7, 276);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(94, 20);
-            this.textBox4.TabIndex = 41;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(6, 162);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(94, 20);
-            this.textBox5.TabIndex = 40;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(6, 42);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(94, 20);
-            this.textBox6.TabIndex = 39;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 252);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(32, 13);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "NPC:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(7, 133);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(30, 13);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "Item:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(7, 19);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(38, 13);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Quest:";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.checkBox19);
-            this.groupBox4.Controls.Add(this.checkBox20);
-            this.groupBox4.Controls.Add(this.checkBox27);
-            this.groupBox4.Controls.Add(this.checkBox28);
-            this.groupBox4.Controls.Add(this.checkBox29);
-            this.groupBox4.Controls.Add(this.checkBox30);
-            this.groupBox4.Controls.Add(this.button7);
-            this.groupBox4.Controls.Add(this.button8);
-            this.groupBox4.Controls.Add(this.button29);
-            this.groupBox4.Controls.Add(this.button30);
-            this.groupBox4.Controls.Add(this.button31);
-            this.groupBox4.Controls.Add(this.button32);
-            this.groupBox4.Controls.Add(this.label21);
-            this.groupBox4.Controls.Add(this.label22);
-            this.groupBox4.Controls.Add(this.label26);
-            this.groupBox4.Controls.Add(this.textBox7);
-            this.groupBox4.Controls.Add(this.textBox11);
-            this.groupBox4.Controls.Add(this.textBox12);
-            this.groupBox4.Controls.Add(this.label30);
-            this.groupBox4.Controls.Add(this.label31);
-            this.groupBox4.Controls.Add(this.label32);
-            this.groupBox4.Location = new System.Drawing.Point(149, 17);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(122, 363);
-            this.groupBox4.TabIndex = 65;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "AffinityWork";
-            // 
-            // checkBox19
-            // 
-            this.checkBox19.AutoSize = true;
-            this.checkBox19.Location = new System.Drawing.Point(44, 252);
-            this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(32, 17);
-            this.checkBox19.TabIndex = 63;
-            this.checkBox19.Text = "+";
-            this.checkBox19.UseVisualStyleBackColor = true;
-            // 
-            // checkBox20
-            // 
-            this.checkBox20.AutoSize = true;
-            this.checkBox20.Location = new System.Drawing.Point(78, 252);
-            this.checkBox20.Name = "checkBox20";
-            this.checkBox20.Size = new System.Drawing.Size(29, 17);
-            this.checkBox20.TabIndex = 64;
-            this.checkBox20.Text = "-";
-            this.checkBox20.UseVisualStyleBackColor = true;
-            // 
-            // checkBox27
-            // 
-            this.checkBox27.AutoSize = true;
-            this.checkBox27.Location = new System.Drawing.Point(44, 133);
-            this.checkBox27.Name = "checkBox27";
-            this.checkBox27.Size = new System.Drawing.Size(32, 17);
-            this.checkBox27.TabIndex = 61;
-            this.checkBox27.Text = "+";
-            this.checkBox27.UseVisualStyleBackColor = true;
-            // 
-            // checkBox28
-            // 
-            this.checkBox28.AutoSize = true;
-            this.checkBox28.Location = new System.Drawing.Point(78, 133);
-            this.checkBox28.Name = "checkBox28";
-            this.checkBox28.Size = new System.Drawing.Size(29, 17);
-            this.checkBox28.TabIndex = 62;
-            this.checkBox28.Text = "-";
-            this.checkBox28.UseVisualStyleBackColor = true;
-            // 
-            // checkBox29
-            // 
-            this.checkBox29.AutoSize = true;
-            this.checkBox29.Location = new System.Drawing.Point(44, 19);
-            this.checkBox29.Name = "checkBox29";
-            this.checkBox29.Size = new System.Drawing.Size(32, 17);
-            this.checkBox29.TabIndex = 59;
-            this.checkBox29.Text = "+";
-            this.checkBox29.UseVisualStyleBackColor = true;
-            // 
-            // checkBox30
-            // 
-            this.checkBox30.AutoSize = true;
-            this.checkBox30.Location = new System.Drawing.Point(78, 19);
-            this.checkBox30.Name = "checkBox30";
-            this.checkBox30.Size = new System.Drawing.Size(29, 17);
-            this.checkBox30.TabIndex = 60;
-            this.checkBox30.Text = "-";
-            this.checkBox30.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Aquamarine;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(6, 331);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(108, 27);
-            this.button7.TabIndex = 56;
-            this.button7.Text = "Export Query";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(6, 302);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(108, 27);
-            this.button8.TabIndex = 55;
-            this.button8.Text = "Send Query";
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // button29
-            // 
-            this.button29.BackColor = System.Drawing.Color.Aquamarine;
-            this.button29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button29.FlatAppearance.BorderSize = 0;
-            this.button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button29.Location = new System.Drawing.Point(6, 217);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(108, 27);
-            this.button29.TabIndex = 54;
-            this.button29.Text = "Export Query";
-            this.button29.UseVisualStyleBackColor = false;
-            // 
-            // button30
-            // 
-            this.button30.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button30.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button30.FlatAppearance.BorderSize = 0;
-            this.button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button30.Location = new System.Drawing.Point(6, 188);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(108, 27);
-            this.button30.TabIndex = 53;
-            this.button30.Text = "Send Query";
-            this.button30.UseVisualStyleBackColor = false;
-            // 
-            // button31
-            // 
-            this.button31.BackColor = System.Drawing.Color.Aquamarine;
-            this.button31.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button31.FlatAppearance.BorderSize = 0;
-            this.button31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button31.Location = new System.Drawing.Point(2, 97);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(108, 27);
-            this.button31.TabIndex = 52;
-            this.button31.Text = "Export Query";
-            this.button31.UseVisualStyleBackColor = false;
-            // 
-            // button32
-            // 
-            this.button32.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button32.FlatAppearance.BorderSize = 0;
-            this.button32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button32.Location = new System.Drawing.Point(2, 68);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(108, 27);
-            this.button32.TabIndex = 51;
-            this.button32.Text = "Send Query";
-            this.button32.UseVisualStyleBackColor = false;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(101, 279);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(16, 13);
-            this.label21.TabIndex = 50;
-            this.label21.Text = "%";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(101, 165);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(16, 13);
-            this.label22.TabIndex = 49;
-            this.label22.Text = "%";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(101, 45);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(16, 13);
-            this.label26.TabIndex = 48;
-            this.label26.Text = "%";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(7, 276);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(94, 20);
-            this.textBox7.TabIndex = 41;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(6, 162);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(94, 20);
-            this.textBox11.TabIndex = 40;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(6, 42);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(94, 20);
-            this.textBox12.TabIndex = 39;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(6, 252);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(32, 13);
-            this.label30.TabIndex = 2;
-            this.label30.Text = "NPC:";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(7, 133);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(30, 13);
-            this.label31.TabIndex = 1;
-            this.label31.Text = "Item:";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(7, 19);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(38, 13);
-            this.label32.TabIndex = 0;
-            this.label32.Text = "Quest:";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.checkBox33);
-            this.groupBox5.Controls.Add(this.checkBox34);
-            this.groupBox5.Controls.Add(this.button35);
-            this.groupBox5.Controls.Add(this.button36);
-            this.groupBox5.Controls.Add(this.label35);
-            this.groupBox5.Controls.Add(this.textBox14);
-            this.groupBox5.Controls.Add(this.label36);
-            this.groupBox5.Controls.Add(this.checkBox31);
-            this.groupBox5.Controls.Add(this.checkBox32);
-            this.groupBox5.Controls.Add(this.button33);
-            this.groupBox5.Controls.Add(this.button34);
-            this.groupBox5.Controls.Add(this.label33);
-            this.groupBox5.Controls.Add(this.textBox13);
-            this.groupBox5.Controls.Add(this.label34);
-            this.groupBox5.Location = new System.Drawing.Point(16, 380);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(255, 127);
-            this.groupBox5.TabIndex = 65;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "groupBox5";
-            // 
-            // checkBox31
-            // 
-            this.checkBox31.AutoSize = true;
-            this.checkBox31.Location = new System.Drawing.Point(44, 16);
-            this.checkBox31.Name = "checkBox31";
-            this.checkBox31.Size = new System.Drawing.Size(32, 17);
-            this.checkBox31.TabIndex = 70;
-            this.checkBox31.Text = "+";
-            this.checkBox31.UseVisualStyleBackColor = true;
-            // 
-            // checkBox32
-            // 
-            this.checkBox32.AutoSize = true;
-            this.checkBox32.Location = new System.Drawing.Point(78, 16);
-            this.checkBox32.Name = "checkBox32";
-            this.checkBox32.Size = new System.Drawing.Size(29, 17);
-            this.checkBox32.TabIndex = 71;
-            this.checkBox32.Text = "-";
-            this.checkBox32.UseVisualStyleBackColor = true;
-            // 
-            // button33
-            // 
-            this.button33.BackColor = System.Drawing.Color.Aquamarine;
-            this.button33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button33.FlatAppearance.BorderSize = 0;
-            this.button33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button33.Location = new System.Drawing.Point(6, 95);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(108, 27);
-            this.button33.TabIndex = 69;
-            this.button33.Text = "Export Query";
-            this.button33.UseVisualStyleBackColor = false;
-            // 
-            // button34
-            // 
-            this.button34.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button34.FlatAppearance.BorderSize = 0;
-            this.button34.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button34.Location = new System.Drawing.Point(6, 66);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(108, 27);
-            this.button34.TabIndex = 68;
-            this.button34.Text = "Send Query";
-            this.button34.UseVisualStyleBackColor = false;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(101, 43);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(16, 13);
-            this.label33.TabIndex = 67;
-            this.label33.Text = "%";
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(7, 40);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(94, 20);
-            this.textBox13.TabIndex = 66;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(6, 16);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(32, 13);
-            this.label34.TabIndex = 65;
-            this.label34.Text = "NPC:";
-            // 
-            // checkBox33
-            // 
-            this.checkBox33.AutoSize = true;
-            this.checkBox33.Location = new System.Drawing.Point(174, 17);
-            this.checkBox33.Name = "checkBox33";
-            this.checkBox33.Size = new System.Drawing.Size(32, 17);
-            this.checkBox33.TabIndex = 77;
-            this.checkBox33.Text = "+";
-            this.checkBox33.UseVisualStyleBackColor = true;
-            // 
-            // checkBox34
-            // 
-            this.checkBox34.AutoSize = true;
-            this.checkBox34.Location = new System.Drawing.Point(208, 17);
-            this.checkBox34.Name = "checkBox34";
-            this.checkBox34.Size = new System.Drawing.Size(29, 17);
-            this.checkBox34.TabIndex = 78;
-            this.checkBox34.Text = "-";
-            this.checkBox34.UseVisualStyleBackColor = true;
-            // 
-            // button35
-            // 
-            this.button35.BackColor = System.Drawing.Color.Aquamarine;
-            this.button35.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button35.FlatAppearance.BorderSize = 0;
-            this.button35.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button35.Location = new System.Drawing.Point(136, 96);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(108, 27);
-            this.button35.TabIndex = 76;
-            this.button35.Text = "Export Query";
-            this.button35.UseVisualStyleBackColor = false;
-            // 
-            // button36
-            // 
-            this.button36.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button36.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button36.FlatAppearance.BorderSize = 0;
-            this.button36.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button36.Location = new System.Drawing.Point(136, 67);
-            this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(108, 27);
-            this.button36.TabIndex = 75;
-            this.button36.Text = "Send Query";
-            this.button36.UseVisualStyleBackColor = false;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(231, 44);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(16, 13);
-            this.label35.TabIndex = 74;
-            this.label35.Text = "%";
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(137, 41);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(94, 20);
-            this.textBox14.TabIndex = 73;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(136, 17);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(32, 13);
-            this.label36.TabIndex = 72;
-            this.label36.Text = "NPC:";
+            // btnExportQuestExp
+            // 
+            this.btnExportQuestExp.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnExportQuestExp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExportQuestExp.FlatAppearance.BorderSize = 0;
+            this.btnExportQuestExp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportQuestExp.Location = new System.Drawing.Point(6, 92);
+            this.btnExportQuestExp.Name = "btnExportQuestExp";
+            this.btnExportQuestExp.Size = new System.Drawing.Size(134, 25);
+            this.btnExportQuestExp.TabIndex = 54;
+            this.btnExportQuestExp.Text = "Export Query";
+            this.btnExportQuestExp.UseVisualStyleBackColor = false;
+            // 
+            // btnSendQuestExp
+            // 
+            this.btnSendQuestExp.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSendQuestExp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSendQuestExp.FlatAppearance.BorderSize = 0;
+            this.btnSendQuestExp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendQuestExp.Location = new System.Drawing.Point(6, 63);
+            this.btnSendQuestExp.Name = "btnSendQuestExp";
+            this.btnSendQuestExp.Size = new System.Drawing.Size(134, 27);
+            this.btnSendQuestExp.TabIndex = 53;
+            this.btnSendQuestExp.Text = "Send Query";
+            this.btnSendQuestExp.UseVisualStyleBackColor = false;
+            // 
+            // btnExportQuestSp
+            // 
+            this.btnExportQuestSp.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnExportQuestSp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExportQuestSp.FlatAppearance.BorderSize = 0;
+            this.btnExportQuestSp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportQuestSp.Location = new System.Drawing.Point(3, 93);
+            this.btnExportQuestSp.Name = "btnExportQuestSp";
+            this.btnExportQuestSp.Size = new System.Drawing.Size(137, 27);
+            this.btnExportQuestSp.TabIndex = 54;
+            this.btnExportQuestSp.Text = "Export Query";
+            this.btnExportQuestSp.UseVisualStyleBackColor = false;
+            // 
+            // btnSendQuestSp
+            // 
+            this.btnSendQuestSp.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSendQuestSp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSendQuestSp.FlatAppearance.BorderSize = 0;
+            this.btnSendQuestSp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendQuestSp.Location = new System.Drawing.Point(3, 64);
+            this.btnSendQuestSp.Name = "btnSendQuestSp";
+            this.btnSendQuestSp.Size = new System.Drawing.Size(137, 27);
+            this.btnSendQuestSp.TabIndex = 53;
+            this.btnSendQuestSp.Text = "Send Query";
+            this.btnSendQuestSp.UseVisualStyleBackColor = false;
+            // 
+            // btnExportQuestGold
+            // 
+            this.btnExportQuestGold.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnExportQuestGold.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExportQuestGold.FlatAppearance.BorderSize = 0;
+            this.btnExportQuestGold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportQuestGold.Location = new System.Drawing.Point(3, 100);
+            this.btnExportQuestGold.Name = "btnExportQuestGold";
+            this.btnExportQuestGold.Size = new System.Drawing.Size(137, 27);
+            this.btnExportQuestGold.TabIndex = 56;
+            this.btnExportQuestGold.Text = "Export Query";
+            this.btnExportQuestGold.UseVisualStyleBackColor = false;
+            // 
+            // btnSendQuestGold
+            // 
+            this.btnSendQuestGold.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSendQuestGold.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSendQuestGold.FlatAppearance.BorderSize = 0;
+            this.btnSendQuestGold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendQuestGold.Location = new System.Drawing.Point(3, 71);
+            this.btnSendQuestGold.Name = "btnSendQuestGold";
+            this.btnSendQuestGold.Size = new System.Drawing.Size(137, 27);
+            this.btnSendQuestGold.TabIndex = 55;
+            this.btnSendQuestGold.Text = "Send Query";
+            this.btnSendQuestGold.UseVisualStyleBackColor = false;
+            // 
+            // cbQuestSpPlus
+            // 
+            this.cbQuestSpPlus.AutoSize = true;
+            this.cbQuestSpPlus.Location = new System.Drawing.Point(42, 16);
+            this.cbQuestSpPlus.Name = "cbQuestSpPlus";
+            this.cbQuestSpPlus.Size = new System.Drawing.Size(32, 17);
+            this.cbQuestSpPlus.TabIndex = 61;
+            this.cbQuestSpPlus.Text = "+";
+            this.cbQuestSpPlus.UseVisualStyleBackColor = true;
+            // 
+            // cbQuestSpMinus
+            // 
+            this.cbQuestSpMinus.AutoSize = true;
+            this.cbQuestSpMinus.Location = new System.Drawing.Point(76, 16);
+            this.cbQuestSpMinus.Name = "cbQuestSpMinus";
+            this.cbQuestSpMinus.Size = new System.Drawing.Size(29, 17);
+            this.cbQuestSpMinus.TabIndex = 62;
+            this.cbQuestSpMinus.Text = "-";
+            this.cbQuestSpMinus.UseVisualStyleBackColor = true;
+            // 
+            // cbQuestGoldPlus
+            // 
+            this.cbQuestGoldPlus.AutoSize = true;
+            this.cbQuestGoldPlus.Location = new System.Drawing.Point(42, 23);
+            this.cbQuestGoldPlus.Name = "cbQuestGoldPlus";
+            this.cbQuestGoldPlus.Size = new System.Drawing.Size(32, 17);
+            this.cbQuestGoldPlus.TabIndex = 61;
+            this.cbQuestGoldPlus.Text = "+";
+            this.cbQuestGoldPlus.UseVisualStyleBackColor = true;
+            // 
+            // cbQuestGoldMinus
+            // 
+            this.cbQuestGoldMinus.AutoSize = true;
+            this.cbQuestGoldMinus.Location = new System.Drawing.Point(76, 23);
+            this.cbQuestGoldMinus.Name = "cbQuestGoldMinus";
+            this.cbQuestGoldMinus.Size = new System.Drawing.Size(29, 17);
+            this.cbQuestGoldMinus.TabIndex = 62;
+            this.cbQuestGoldMinus.Text = "-";
+            this.cbQuestGoldMinus.UseVisualStyleBackColor = true;
+            // 
+            // cbQuestExpPlus
+            // 
+            this.cbQuestExpPlus.AutoSize = true;
+            this.cbQuestExpPlus.Location = new System.Drawing.Point(52, 14);
+            this.cbQuestExpPlus.Name = "cbQuestExpPlus";
+            this.cbQuestExpPlus.Size = new System.Drawing.Size(32, 17);
+            this.cbQuestExpPlus.TabIndex = 61;
+            this.cbQuestExpPlus.Text = "+";
+            this.cbQuestExpPlus.UseVisualStyleBackColor = true;
+            // 
+            // cbQuestExpMinus
+            // 
+            this.cbQuestExpMinus.AutoSize = true;
+            this.cbQuestExpMinus.Location = new System.Drawing.Point(86, 14);
+            this.cbQuestExpMinus.Name = "cbQuestExpMinus";
+            this.cbQuestExpMinus.Size = new System.Drawing.Size(29, 17);
+            this.cbQuestExpMinus.TabIndex = 62;
+            this.cbQuestExpMinus.Text = "-";
+            this.cbQuestExpMinus.UseVisualStyleBackColor = true;
             // 
             // RatesEditor
             // 
@@ -1798,27 +1353,28 @@
             this.Name = "RatesEditor";
             this.Text = "RatesEditor";
             this.Load += new System.EventHandler(this.RatesEditor_Load);
-            this.tbRates.ResumeLayout(false);
-            this.tbSkill.ResumeLayout(false);
-            this.tbAffinity.ResumeLayout(false);
             this.tbNPC.ResumeLayout(false);
             this.gbInfo.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.gbAtribute.ResumeLayout(false);
-            this.gbAtribute.PerformLayout();
-            this.gbRate.ResumeLayout(false);
-            this.gbRate.PerformLayout();
-            this.gbJewelProb.ResumeLayout(false);
-            this.gbJewelProb.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.gbJewelProb.ResumeLayout(false);
+            this.gbJewelProb.PerformLayout();
+            this.gbRate.ResumeLayout(false);
+            this.gbRate.PerformLayout();
+            this.tbAffinity.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.tbQuest.ResumeLayout(false);
+            this.tbRates.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.gbJewel.ResumeLayout(false);
+            this.gbJewel.PerformLayout();
+            this.gbQuestExp.ResumeLayout(false);
+            this.gbQuestExp.PerformLayout();
+            this.gbQuestSP.ResumeLayout(false);
+            this.gbQuestSP.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
@@ -1827,147 +1383,111 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tbRates;
-        private System.Windows.Forms.TabPage tbQuest;
-        private System.Windows.Forms.TabPage tbSkill;
-        private System.Windows.Forms.TabPage tbAffinity;
         private System.Windows.Forms.TabPage tbNPC;
         private System.Windows.Forms.GroupBox gbInfo;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnElemental;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox cbHrPlus;
+        private System.Windows.Forms.CheckBox cbHrMinus;
+        private System.Windows.Forms.Button btnSendExportQry;
+        private System.Windows.Forms.Button btnSendHitrateQry;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox tbHitrate;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.GroupBox gbJewelProb;
+        private System.Windows.Forms.CheckBox cbJewelPlus;
+        private System.Windows.Forms.CheckBox cbJewelMinus;
+        private System.Windows.Forms.Button btnExportJewel;
+        private System.Windows.Forms.Button btnSendJewelQry;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox tbJewelProb;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox gbRate;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox gbAtribute;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label Atribute;
+        private System.Windows.Forms.CheckBox cbDropPlus;
+        private System.Windows.Forms.CheckBox cbDropMinus;
+        private System.Windows.Forms.CheckBox cbGoldPlus;
+        private System.Windows.Forms.CheckBox cbGoldMinus;
+        private System.Windows.Forms.CheckBox cbSpPlus;
+        private System.Windows.Forms.CheckBox cbSpMinus;
+        private System.Windows.Forms.CheckBox cbExpPlus;
+        private System.Windows.Forms.CheckBox cbExpMinus;
+        private System.Windows.Forms.Button btnExportDropQry;
+        private System.Windows.Forms.Button btnSendDropQry;
+        private System.Windows.Forms.Button btnExportGoldQry;
+        private System.Windows.Forms.Button btnSendGoldQry;
+        private System.Windows.Forms.Button btnExportSpQry;
+        private System.Windows.Forms.Button btnSendSpQry;
+        private System.Windows.Forms.Button btnExportExpQry;
+        private System.Windows.Forms.Button btnSendExpQry;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbDrop;
         private System.Windows.Forms.TextBox tbGold;
         private System.Windows.Forms.TextBox tbSp;
         private System.Windows.Forms.TextBox tbExp;
-        private System.Windows.Forms.GroupBox gbJewelProb;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.CheckBox cbMinus;
-        private System.Windows.Forms.CheckBox cbPlus;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabPage tbAffinity;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.CheckBox checkBox21;
         private System.Windows.Forms.CheckBox checkBox22;
-        private System.Windows.Forms.CheckBox checkBox23;
-        private System.Windows.Forms.CheckBox checkBox24;
-        private System.Windows.Forms.CheckBox checkBox25;
-        private System.Windows.Forms.CheckBox checkBox26;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.CheckBox cbAffItemPlus;
+        private System.Windows.Forms.CheckBox cbAffItemMinus;
+        private System.Windows.Forms.CheckBox cbAffinQuestPlus;
+        private System.Windows.Forms.CheckBox cbAffinQuestMinus;
+        private System.Windows.Forms.Button btnExportAffNpc;
+        private System.Windows.Forms.Button btnSendAffNpc;
+        private System.Windows.Forms.Button btnExportAffQuest;
+        private System.Windows.Forms.Button btnSendAffItemQry;
+        private System.Windows.Forms.Button btnExportAffQuestQry;
+        private System.Windows.Forms.Button btnSendAffQuestQry;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tbAffNpc;
+        private System.Windows.Forms.TextBox tbAffItem;
+        private System.Windows.Forms.TextBox tbAffQuest;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.CheckBox checkBox11;
-        private System.Windows.Forms.CheckBox checkBox12;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.TabPage tbQuest;
+        private System.Windows.Forms.TabControl tbRates;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.GroupBox gbJewel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblPercentMeld;
+        private System.Windows.Forms.Label lblRemoveChance;
+        private System.Windows.Forms.Label lblMeldChance;
+        private System.Windows.Forms.TextBox tbMeldProb;
+        private System.Windows.Forms.TextBox tbRemovalProb;
+        private System.Windows.Forms.Button btnSendJewel;
+        private System.Windows.Forms.Button btnExportJewelQry;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.CheckBox checkBox33;
-        private System.Windows.Forms.CheckBox checkBox34;
-        private System.Windows.Forms.Button button35;
-        private System.Windows.Forms.Button button36;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.CheckBox checkBox31;
-        private System.Windows.Forms.CheckBox checkBox32;
-        private System.Windows.Forms.Button button33;
-        private System.Windows.Forms.Button button34;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.CheckBox checkBox19;
-        private System.Windows.Forms.CheckBox checkBox20;
-        private System.Windows.Forms.CheckBox checkBox27;
-        private System.Windows.Forms.CheckBox checkBox28;
-        private System.Windows.Forms.CheckBox checkBox29;
-        private System.Windows.Forms.CheckBox checkBox30;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckBox checkBox13;
-        private System.Windows.Forms.CheckBox checkBox14;
-        private System.Windows.Forms.CheckBox checkBox15;
-        private System.Windows.Forms.CheckBox checkBox16;
-        private System.Windows.Forms.CheckBox checkBox17;
-        private System.Windows.Forms.CheckBox checkBox18;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox tbQuestGold;
+        private System.Windows.Forms.GroupBox gbQuestSP;
+        private System.Windows.Forms.Button btnExportQuestSp;
+        private System.Windows.Forms.Button btnSendQuestSp;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox tbQuestSp;
+        private System.Windows.Forms.GroupBox gbQuestExp;
+        private System.Windows.Forms.Button btnExportQuestExp;
+        private System.Windows.Forms.Button btnSendQuestExp;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox tbQuestExp;
+        private System.Windows.Forms.CheckBox cbQuestGoldPlus;
+        private System.Windows.Forms.CheckBox cbQuestGoldMinus;
+        private System.Windows.Forms.Button btnExportQuestGold;
+        private System.Windows.Forms.Button btnSendQuestGold;
+        private System.Windows.Forms.CheckBox cbQuestSpPlus;
+        private System.Windows.Forms.CheckBox cbQuestSpMinus;
+        private System.Windows.Forms.CheckBox cbQuestExpPlus;
+        private System.Windows.Forms.CheckBox cbQuestExpMinus;
     }
 }
