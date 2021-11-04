@@ -109,7 +109,7 @@ private void LoadStartup()
     private void button1_Click(object sender, EventArgs e)
     {
             if (tbAmount.Text == "")
-                ItemAmount = -1;
+                ItemAmount = 1;
             else
             {
                 ItemAmount = Convert.ToInt32(tbAmount.Text);

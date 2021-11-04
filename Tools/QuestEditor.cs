@@ -197,6 +197,9 @@ namespace LcDevPack_TeamDamonA.Tools
         private Label lblPercent;
         private Label lblPercent2;
         private Label lblPercent3;
+        private PictureBox pbObj1;
+        private PictureBox pbObj2;
+        private PictureBox pbObj3;
         public string nameholder1; //dethunter12 test
         
         public string StringFromLanguage() //dethunter12 4/11/2018
@@ -3302,6 +3305,9 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label122 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnSaveAndNext = new System.Windows.Forms.Button();
+            this.pbObj1 = new System.Windows.Forms.PictureBox();
+            this.pbObj2 = new System.Windows.Forms.PictureBox();
+            this.pbObj3 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -3378,6 +3384,9 @@ namespace LcDevPack_TeamDamonA.Tools
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbObj1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbObj2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbObj3)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -4807,6 +4816,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pbObj1);
             this.tabPage2.Controls.Add(this.TbObj1Name0);
             this.tabPage2.Controls.Add(this.PbCond1);
             this.tabPage2.Controls.Add(this.TbObj1Type);
@@ -4829,7 +4839,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             this.TbObj1Name0.BackColor = System.Drawing.SystemColors.Menu;
             this.TbObj1Name0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TbObj1Name0.Location = new System.Drawing.Point(162, 47);
+            this.TbObj1Name0.Location = new System.Drawing.Point(190, 48);
             this.TbObj1Name0.Name = "TbObj1Name0";
             this.TbObj1Name0.ReadOnly = true;
             this.TbObj1Name0.Size = new System.Drawing.Size(195, 20);
@@ -4839,7 +4849,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             this.PbCond1.BackgroundImage = global::LcDevPack_TeamDamonA.Properties.Resources.oie_transparent;
             this.PbCond1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbCond1.Location = new System.Drawing.Point(360, 47);
+            this.PbCond1.Location = new System.Drawing.Point(388, 47);
             this.PbCond1.Name = "PbCond1";
             this.PbCond1.Size = new System.Drawing.Size(22, 22);
             this.PbCond1.TabIndex = 78;
@@ -4853,6 +4863,7 @@ namespace LcDevPack_TeamDamonA.Tools
             this.TbObj1Type.Size = new System.Drawing.Size(62, 20);
             this.TbObj1Type.TabIndex = 38;
             this.TbObj1Type.Visible = false;
+            this.TbObj1Type.TextChanged += new System.EventHandler(this.TbObj1Type_TextChanged);
             // 
             // GbNpcQuestItm
             // 
@@ -5082,7 +5093,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // TbObjcAmount1
             // 
             this.TbObjcAmount1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TbObjcAmount1.Location = new System.Drawing.Point(440, 49);
+            this.TbObjcAmount1.Location = new System.Drawing.Point(462, 49);
             this.TbObjcAmount1.Name = "TbObjcAmount1";
             this.TbObjcAmount1.Size = new System.Drawing.Size(100, 20);
             this.TbObjcAmount1.TabIndex = 14;
@@ -5091,7 +5102,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(388, 52);
+            this.label28.Location = new System.Drawing.Point(416, 52);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(46, 13);
             this.label28.TabIndex = 16;
@@ -5099,6 +5110,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.pbObj2);
             this.tabPage4.Controls.Add(this.TbObj2Name0);
             this.tabPage4.Controls.Add(this.PbCond2);
             this.tabPage4.Controls.Add(this.TbObj2Type);
@@ -5121,7 +5133,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             this.TbObj2Name0.BackColor = System.Drawing.SystemColors.Menu;
             this.TbObj2Name0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TbObj2Name0.Location = new System.Drawing.Point(162, 47);
+            this.TbObj2Name0.Location = new System.Drawing.Point(190, 48);
             this.TbObj2Name0.Name = "TbObj2Name0";
             this.TbObj2Name0.ReadOnly = true;
             this.TbObj2Name0.Size = new System.Drawing.Size(195, 20);
@@ -5131,7 +5143,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             this.PbCond2.BackgroundImage = global::LcDevPack_TeamDamonA.Properties.Resources.oie_transparent;
             this.PbCond2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbCond2.Location = new System.Drawing.Point(360, 47);
+            this.PbCond2.Location = new System.Drawing.Point(388, 47);
             this.PbCond2.Name = "PbCond2";
             this.PbCond2.Size = new System.Drawing.Size(22, 22);
             this.PbCond2.TabIndex = 78;
@@ -5145,6 +5157,7 @@ namespace LcDevPack_TeamDamonA.Tools
             this.TbObj2Type.Size = new System.Drawing.Size(62, 20);
             this.TbObj2Type.TabIndex = 45;
             this.TbObj2Type.Visible = false;
+            this.TbObj2Type.TextChanged += new System.EventHandler(this.TbObj2Type_TextChanged);
             // 
             // groupBox12
             // 
@@ -5365,7 +5378,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(388, 52);
+            this.label27.Location = new System.Drawing.Point(416, 52);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(46, 13);
             this.label27.TabIndex = 17;
@@ -5383,7 +5396,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // TbObjcAmount2
             // 
             this.TbObjcAmount2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TbObjcAmount2.Location = new System.Drawing.Point(440, 49);
+            this.TbObjcAmount2.Location = new System.Drawing.Point(462, 49);
             this.TbObjcAmount2.Name = "TbObjcAmount2";
             this.TbObjcAmount2.Size = new System.Drawing.Size(100, 20);
             this.TbObjcAmount2.TabIndex = 13;
@@ -5391,6 +5404,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.pbObj3);
             this.tabPage5.Controls.Add(this.TbObj3Name0);
             this.tabPage5.Controls.Add(this.PbCond3);
             this.tabPage5.Controls.Add(this.TbObj3Type);
@@ -5412,7 +5426,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             this.TbObj3Name0.BackColor = System.Drawing.SystemColors.Menu;
             this.TbObj3Name0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TbObj3Name0.Location = new System.Drawing.Point(162, 47);
+            this.TbObj3Name0.Location = new System.Drawing.Point(190, 48);
             this.TbObj3Name0.Name = "TbObj3Name0";
             this.TbObj3Name0.ReadOnly = true;
             this.TbObj3Name0.Size = new System.Drawing.Size(195, 20);
@@ -5422,7 +5436,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             this.PbCond3.BackgroundImage = global::LcDevPack_TeamDamonA.Properties.Resources.oie_transparent;
             this.PbCond3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbCond3.Location = new System.Drawing.Point(360, 47);
+            this.PbCond3.Location = new System.Drawing.Point(388, 47);
             this.PbCond3.Name = "PbCond3";
             this.PbCond3.Size = new System.Drawing.Size(22, 22);
             this.PbCond3.TabIndex = 78;
@@ -5436,11 +5450,12 @@ namespace LcDevPack_TeamDamonA.Tools
             this.TbObj3Type.Size = new System.Drawing.Size(62, 20);
             this.TbObj3Type.TabIndex = 46;
             this.TbObj3Type.Visible = false;
+            this.TbObj3Type.TextChanged += new System.EventHandler(this.TbObj3Type_TextChanged);
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(388, 52);
+            this.label26.Location = new System.Drawing.Point(416, 52);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(46, 13);
             this.label26.TabIndex = 18;
@@ -5460,7 +5475,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // TbObjcAmount3
             // 
             this.TbObjcAmount3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TbObjcAmount3.Location = new System.Drawing.Point(440, 49);
+            this.TbObjcAmount3.Location = new System.Drawing.Point(462, 49);
             this.TbObjcAmount3.Name = "TbObjcAmount3";
             this.TbObjcAmount3.Size = new System.Drawing.Size(100, 20);
             this.TbObjcAmount3.TabIndex = 21;
@@ -7447,6 +7462,33 @@ namespace LcDevPack_TeamDamonA.Tools
             this.btnSaveAndNext.UseVisualStyleBackColor = true;
             this.btnSaveAndNext.Click += new System.EventHandler(this.btnSaveAndNext_Click);
             // 
+            // pbObj1
+            // 
+            this.pbObj1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbObj1.Location = new System.Drawing.Point(159, 43);
+            this.pbObj1.Name = "pbObj1";
+            this.pbObj1.Size = new System.Drawing.Size(25, 25);
+            this.pbObj1.TabIndex = 238;
+            this.pbObj1.TabStop = false;
+            // 
+            // pbObj2
+            // 
+            this.pbObj2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbObj2.Location = new System.Drawing.Point(159, 43);
+            this.pbObj2.Name = "pbObj2";
+            this.pbObj2.Size = new System.Drawing.Size(25, 25);
+            this.pbObj2.TabIndex = 239;
+            this.pbObj2.TabStop = false;
+            // 
+            // pbObj3
+            // 
+            this.pbObj3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbObj3.Location = new System.Drawing.Point(159, 43);
+            this.pbObj3.Name = "pbObj3";
+            this.pbObj3.Size = new System.Drawing.Size(25, 25);
+            this.pbObj3.TabIndex = 239;
+            this.pbObj3.TabStop = false;
+            // 
             // QuestEditor
             // 
             this.ClientSize = new System.Drawing.Size(1056, 699);
@@ -7567,6 +7609,9 @@ namespace LcDevPack_TeamDamonA.Tools
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbObj1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbObj2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbObj3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -7762,7 +7807,18 @@ namespace LcDevPack_TeamDamonA.Tools
                 PbPrize5.BackgroundImage = databaseHandle.IconFast(Convert.ToInt32(TbPrizeItm5.Text));
             if (textBox53.Text != "0")
                 PbPrize5.BackgroundImage = null;
-
+            if (TbObj1Type.Text == "1" || TbObj1Type.Text == "2" || TbObj1Type.Text == "5")
+                pbObj1.BackgroundImage = databaseHandle.IconFast(Convert.ToInt32(TbObj1Id.Text));
+            else
+                pbObj1.BackgroundImage = null;
+            if (TbObj2Type.Text == "1" || TbObj2Type.Text == "2" || TbObj2Type.Text == "5")
+                pbObj2.BackgroundImage = databaseHandle.IconFast(Convert.ToInt32(TbObj2Id.Text));
+            else
+                pbObj2.BackgroundImage = null;
+            if (TbObj3Type.Text == "1" || TbObj3Type.Text == "2" || TbObj3Type.Text == "5")
+                pbObj3.BackgroundImage = databaseHandle.IconFast(Convert.ToInt32(TbObj3Id.Text));
+            else
+                pbObj3.BackgroundImage = null;
             //Need Items
             if (TbNeedItm1.Text != "-1") pbIconNeed1.BackgroundImage = databaseHandle.IconFast(Convert.ToInt32(TbNeedItm1.Text));
             else  pbIconNeed1.BackgroundImage = null;
@@ -8531,6 +8587,51 @@ namespace LcDevPack_TeamDamonA.Tools
         private void CbRvRGrade_SelectionChangeCommitted(object sender, EventArgs e)
         {
             CbRvRGrade.BackColor = Color.LightBlue;
+        }
+
+        private void TbObj1Type_TextChanged(object sender, EventArgs e)
+        {
+            if (TbObj1Type.Text == "1" || TbObj1Type.Text == "2" || TbObj1Type.Text == "5" && TbObj1Id.Text != "")
+            {
+                pbObj1.BackgroundImage = databaseHandle.IconFast(Convert.ToInt32(TbObj1Id.Text));
+                TbObj1Name0.Text = databaseHandle.ItemNameFast(int.Parse(TbObj1Id.Text));
+            }
+
+            if ( TbObj1Type.Text != "1" && TbObj1Type.Text == "2" && TbObj1Type.Text == "5" )
+            {
+                pbObj1.BackgroundImage = null;
+               
+            }
+        }
+
+        private void TbObj2Type_TextChanged(object sender, EventArgs e)
+        {
+            if (TbObj2Type.Text == "1" || TbObj2Type.Text == "2" || TbObj2Type.Text == "5" && TbObj2Id.Text != "")
+            {
+                pbObj2.BackgroundImage = databaseHandle.IconFast(Convert.ToInt32(TbObj2Id.Text));
+                TbObj2Name0.Text = databaseHandle.ItemNameFast(int.Parse(TbObj2Id.Text));
+            }
+
+            if (TbObj2Type.Text != "1" && TbObj2Type.Text == "2" && TbObj2Type.Text == "5")
+            {
+                pbObj2.BackgroundImage = null;
+
+            }
+        }
+
+        private void TbObj3Type_TextChanged(object sender, EventArgs e)
+        {
+            if (TbObj3Type.Text == "1" || TbObj3Type.Text == "2" || TbObj3Type.Text == "5" && TbObj3Id.Text != "")
+            {
+                pbObj3.BackgroundImage = databaseHandle.IconFast(Convert.ToInt32(TbObj3Id.Text));
+                TbObj3Name0.Text = databaseHandle.ItemNameFast(int.Parse(TbObj3Id.Text));
+            }
+
+            if (TbObj3Type.Text != "1" && TbObj3Type.Text == "2" && TbObj3Type.Text == "5")
+            {
+                pbObj3.BackgroundImage = null;
+
+            }
         }
     }
 }

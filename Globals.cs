@@ -8,7 +8,7 @@ namespace LcDevPack_TeamDamonA
 {
   public class Globals
   {
-    public static string Name = "LastChaos Tool Pack by DamonA & Kravens Fixes By Roseon & Dethunter12 & AssasinPL V1.11";
+    public static string Name = "LastChaos Tool Pack by DamonA & Kravens Fixes By Roseon & Dethunter12 & AssasinPL V1.12";
     public static string DebugRelease = "R";
     public static string Version = "1." + EditorInformation.Editor_Release.Length.ToString() + "." + EditorInformation.Editor_Beta.Length.ToString() + EditorInformation.Editor_Alpha.Length.ToString() + Globals.DebugRelease;
    // public static bool LicenceSystem = false;

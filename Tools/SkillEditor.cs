@@ -1457,6 +1457,7 @@ namespace LcDevPack_TeamDamonA.Tools
         {
             int selectedIndex = listBox1.SelectedIndex;
             databaseHandle.SendQueryMySql(Host, User, Password, Database, "DELETE FROM t_skill WHERE a_index = '" + textBox1.Text + "'");
+            databaseHandle.SendQueryMySql(Host, User, Password, Database, "DELETE FROM t_skilllevel WHERE a_index = '" + textBox1.Text + "'");
             LoadListBox();
             if (textBox203.Text != "") //dethunter12 add 12/22/2019
                 SearchList(textBox203.Text);

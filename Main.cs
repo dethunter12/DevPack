@@ -445,7 +445,7 @@ namespace LcDevPack_TeamDamonA
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "LastChaos Tool Collection by DamonA & Kravens Fixes By Roseon & Dethunter12 & Ass" +
-    "asinPL V1.11";
+    "asinPL V1.12";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
