@@ -43,25 +43,24 @@ namespace LcDevPack_TeamDamonA.Tools
     private ToolStripMenuItem fileExportToolStripMenuItem;
     private ToolStripMenuItem exportlodToolStripMenuItem;
     private ListBox listBox1;
-    private TextBox textBox1;
-    private TextBox textBox2;
-    private TextBox textBox3;
-    private TextBox textBox4;
+    private TextBox tbCatalogID;
+    private TextBox tbName;
+    private TextBox tbCategory;
+    private TextBox tbType;
     private TextBox textBox5;
-    private TextBox textBox6;
+    private TextBox tbPrice;
     private Label label1;
     private Label label2;
     private Label label3;
     private Label label5;
     private Label label6;
-    private TextBox textBox7;
-    private TextBox textBox8;
+    private TextBox tbDescr;
+    private TextBox tbMileage;
     private Label label8;
     private Label label9;
-    private TextBox textBox9;
-    private TextBox textBox10;
-    private TextBox textBox11;
-    private Label label4;
+    private TextBox tbEnable;
+    private TextBox tbFlag;
+    private TextBox tbIcon;
     private Label label10;
     private Label label11;
     private Label label12;
@@ -117,6 +116,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private Button btnSaveAndNext;
         private CheckBox cbshowEnabled;
         private ToolTip toolTip1;
+        private CheckBox cbEnabled;
         private TextBox tbLimit;
 
     public CatalogEditor()
@@ -141,13 +141,13 @@ namespace LcDevPack_TeamDamonA.Tools
         }
         public void LoadListBox()
         {
-            if (cbshowEnabled.Checked == true)
+            if (cbshowEnabled.Checked == true && tbEnable.Text != "")
             {
-                listBox1.DataSource = databaseHandle.SelectMySqlReturnList(menuArray, Host, User, Password, Database, "select a_ctid, a_ctname from t_catalog WHERE a_enable = '" + enabled + "'" + " ORDER BY a_ctid;");
+                listBox1.DataSource = databaseHandle.SelectMySqlReturnList(menuArray, Host, User, Password, Database, "select a_ctid, a_ctname from t_catalog WHERE a_enable = '" + tbEnable.Text + "'" + " ORDER BY a_ctid;");
             }
             else
             {
-                listBox1.DataSource = databaseHandle.SelectMySqlReturnList(menuArray, Host, User, Password, Database, "select a_ctid, a_ctname from t_catalog ORDER BY a_ctid;");
+                listBox1.DataSource = databaseHandle.SelectMySqlReturnList(menuArray, Host, User, Password, Database, "select a_ctid, a_ctname from t_catalog WHERE a_enable = '1' ORDER BY a_ctid;");
             }
         }
     public Bitmap CropImage(Bitmap source, Rectangle section)
@@ -166,8 +166,8 @@ namespace LcDevPack_TeamDamonA.Tools
 
     public void LoadMisc()
     {
-      string text1 = textBox3.Text;
-      string text2 = textBox4.Text;
+      string text1 = tbCategory.Text;
+      string text2 = tbType.Text;
       for (int index = 0; index < checkedListBox1.Items.Count; ++index)
       {
         int num = checkedListBox1.FindString(text1);
@@ -248,8 +248,8 @@ namespace LcDevPack_TeamDamonA.Tools
     private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
     {
       if (listBox1.SelectedIndex != -1)
-                textBox1.Text = GetIndex().ToString();
-      string[] strArray = databaseHandle.SelectMySqlReturnArray(Host, User, Password, Database, " select * from t_catalog WHERE a_ctid ='" + textBox1.Text + "';", new string[11]
+                tbCatalogID.Text = GetIndex().ToString();
+      string[] strArray = databaseHandle.SelectMySqlReturnArray(Host, User, Password, Database, " select * from t_catalog WHERE a_ctid ='" + tbCatalogID.Text + "';", new string[11]
       {
         "a_ctid",
         "a_ctname",
@@ -263,17 +263,31 @@ namespace LcDevPack_TeamDamonA.Tools
         "a_flag",
         "a_icon"
       });
-            textBox1.Text = strArray[0];
-            textBox2.Text = strArray[1];
-            textBox3.Text = strArray[2];
-            textBox4.Text = strArray[3];
+            tbCatalogID.Text = strArray[0];
+            tbName.Text = strArray[1];
+            tbCategory.Text = strArray[2];
+            tbType.Text = strArray[3];
             textBox5.Text = strArray[4];
-            textBox6.Text = strArray[5];
-            textBox7.Text = strArray[6];
-            textBox8.Text = strArray[7];
-            textBox9.Text = strArray[8];
-            textBox10.Text = strArray[9];
-            textBox11.Text = strArray[10];
+            tbPrice.Text = strArray[5];
+            tbDescr.Text = strArray[6];
+            tbMileage.Text = strArray[7];
+            tbEnable.Text = strArray[8];
+
+            if (tbEnable.Text == "1")
+            {
+                cbEnabled.Checked = true;
+                cbEnabled.Text = "Enabled";
+            }
+                
+            else
+            {
+                cbEnabled.Checked = false;
+                cbEnabled.Text = "Disabled";
+            }
+               
+
+            tbFlag.Text = strArray[9];
+            tbIcon.Text = strArray[10];
             ShowFlag(int.Parse(strArray[9]));
             ShowCategory(int.Parse(strArray[2]));
             dgItems.Rows.Clear();
@@ -303,11 +317,11 @@ namespace LcDevPack_TeamDamonA.Tools
     {
       int selectedIndex = listBox1.SelectedIndex;
             
-            databaseHandle.SendQueryMySql(Host, User, Password, Database, "DELETE FROM t_catalog WHERE a_ctid = '" + textBox1.Text + "'");
-            databaseHandle.SendQueryMySql(Host, User, Password, Database, "DELETE FROM t_catalog_1 WHERE a_ctid = '" + textBox1.Text + "'"); //dethunter12 add
+            databaseHandle.SendQueryMySql(Host, User, Password, Database, "DELETE FROM t_catalog WHERE a_ctid = '" + tbCatalogID.Text + "'");
+            databaseHandle.SendQueryMySql(Host, User, Password, Database, "DELETE FROM t_catalog_1 WHERE a_ctid = '" + tbCatalogID.Text + "'"); //dethunter12 add
             //catalog Modification Dethunter12 Delete t_ct_item-t_ct_item_1
-            databaseHandle.SendQueryMySql(Host, User, Password, Database, "DELETE FROM t_ct_item WHERE a_ctid = '" + textBox1.Text + "'");
-            databaseHandle.SendQueryMySql(Host, User, Password, Database, "DELETE FROM t_ct_item_1 WHERE a_ctid = '" + textBox1.Text + "'"); //dethunter12 add
+            databaseHandle.SendQueryMySql(Host, User, Password, Database, "DELETE FROM t_ct_item WHERE a_ctid = '" + tbCatalogID.Text + "'");
+            databaseHandle.SendQueryMySql(Host, User, Password, Database, "DELETE FROM t_ct_item_1 WHERE a_ctid = '" + tbCatalogID.Text + "'"); //dethunter12 add
             listBox1.DataSource = databaseHandle.SelectMySqlReturnList(menuArray, Host, User, Password, Database, "select * from t_catalog ORDER BY a_ctid;");
             listBox1.SelectedIndex = selectedIndex - 1;
             int num5 = (int)new CustomMessage("Deleted").ShowDialog();
@@ -334,8 +348,8 @@ namespace LcDevPack_TeamDamonA.Tools
                 ItemIDx = ItemPicker2List[i].ID;
                
                 //dethunter12 adjust t_ct_item_1
-                databaseHandle.SendQueryMySql(Host, User, Password, Database, "INSERT INTO t_ct_item (a_ctid, a_item_idx, a_item_flag, a_item_plus, a_item_option, a_item_num) VALUES (" + textBox1.Text + "," + ItemIDx + ", 0, 0, 0, " + ItemAmnt + " )");
-                databaseHandle.SendQueryMySql(Host, User, Password, Database, "INSERT INTO t_ct_item_1 (a_ctid, a_item_idx, a_item_flag, a_item_plus, a_item_option, a_item_num) VALUES (" + textBox1.Text + "," + ItemIDx + ", 0, 0, 0," + ItemAmnt + ")"); //dethunter12 add
+                databaseHandle.SendQueryMySql(Host, User, Password, Database, "INSERT INTO t_ct_item (a_ctid, a_item_idx, a_item_flag, a_item_plus, a_item_option, a_item_num) VALUES (" + tbCatalogID.Text + "," + ItemIDx + ", 0, 0, 0, " + ItemAmnt + " )");
+                databaseHandle.SendQueryMySql(Host, User, Password, Database, "INSERT INTO t_ct_item_1 (a_ctid, a_item_idx, a_item_flag, a_item_plus, a_item_option, a_item_num) VALUES (" + tbCatalogID.Text + "," + ItemIDx + ", 0, 0, 0," + ItemAmnt + ")"); //dethunter12 add
             }
            
 
@@ -348,7 +362,7 @@ namespace LcDevPack_TeamDamonA.Tools
     public void LoadDG()
     {
             toolStripStatusLabel1.Text = "Load Items ...";
-      string str1 = " select * from t_ct_item WHERE a_ctid ='" + textBox1.Text + "' ORDER BY a_index;";
+      string str1 = " select * from t_ct_item WHERE a_ctid ='" + tbCatalogID.Text + "' ORDER BY a_index;";
       string[] strArray = new string[6]
       {
         "a_ctid",
@@ -407,8 +421,8 @@ namespace LcDevPack_TeamDamonA.Tools
     private void button2_Click(object sender, EventArgs e)
     {
             //dethunter12 add t_catalog_1 - t_catalog_hardcore
-            databaseHandle.SendQueryMySql(Host, User, Password, Database, "UPDATE t_catalog SET " + "a_ctname = '" + textBox2.Text.Replace("'", "\\'") + "', " + "a_category = '" + textBox3.Text + "', " + "a_type = '" + textBox4.Text + "', " + "a_subtype = '" + textBox5.Text + "', " + "a_cash = '" + textBox6.Text + "', " + "a_ctdesc = '" + textBox7.Text.Replace("'", "\\'") + "', " + "a_mileage = '" + textBox8.Text + "', " + "a_enable = '" + textBox9.Text + "', " + "a_flag = '" + textBox10.Text + "', " + "a_icon = '" + textBox11.Text + "' " + "WHERE a_ctid = '" + textBox1.Text + "'");
-            databaseHandle.SendQueryMySql(Host, User, Password, Database, "UPDATE t_catalog_1 SET " + "a_ctname = '" + textBox2.Text.Replace("'", "\\'") + "', " + "a_category = '" + textBox3.Text + "', " + "a_type = '" + textBox4.Text + "', " + "a_subtype = '" + textBox5.Text + "', " + "a_cash = '" + textBox6.Text + "', " + "a_ctdesc = '" + textBox7.Text.Replace("'", "\\'") + "', " + "a_mileage = '" + textBox8.Text + "', " + "a_enable = '" + textBox9.Text + "', " + "a_flag = '" + textBox10.Text + "', " + "a_icon = '" + textBox11.Text + "' " + "WHERE a_ctid = '" + textBox1.Text + "'");
+            databaseHandle.SendQueryMySql(Host, User, Password, Database, "UPDATE t_catalog SET " + "a_ctname = '" + tbName.Text.Replace("'", "\\'") + "', " + "a_category = '" + tbCategory.Text + "', " + "a_type = '" + tbType.Text + "', " + "a_subtype = '" + textBox5.Text + "', " + "a_cash = '" + tbPrice.Text + "', " + "a_ctdesc = '" + tbDescr.Text.Replace("'", "\\'") + "', " + "a_mileage = '" + tbMileage.Text + "', " + "a_enable = '" + tbEnable.Text + "', " + "a_flag = '" + tbFlag.Text + "', " + "a_icon = '" + tbIcon.Text + "' " + "WHERE a_ctid = '" + tbCatalogID.Text + "'");
+            databaseHandle.SendQueryMySql(Host, User, Password, Database, "UPDATE t_catalog_1 SET " + "a_ctname = '" + tbName.Text.Replace("'", "\\'") + "', " + "a_category = '" + tbCategory.Text + "', " + "a_type = '" + tbType.Text + "', " + "a_subtype = '" + textBox5.Text + "', " + "a_cash = '" + tbPrice.Text + "', " + "a_ctdesc = '" + tbDescr.Text.Replace("'", "\\'") + "', " + "a_mileage = '" + tbMileage.Text + "', " + "a_enable = '" + tbEnable.Text + "', " + "a_flag = '" + tbFlag.Text + "', " + "a_icon = '" + tbIcon.Text + "' " + "WHERE a_ctid = '" + tbCatalogID.Text + "'");
             int selectedIndex = listBox1.SelectedIndex;
             if (textBox12.Text != "")
             {
@@ -454,7 +468,7 @@ namespace LcDevPack_TeamDamonA.Tools
       {
         if (clbFlagTest.GetItemChecked(index))
           num += 1 << index;
-                textBox10.Text = num.ToString();
+                tbFlag.Text = num.ToString();
       }
     }
 
@@ -621,7 +635,7 @@ namespace LcDevPack_TeamDamonA.Tools
       string comboBox = "";
       foreach (object checkedItem in checkedListBox1.CheckedItems)
         comboBox = checkedItem.ToString();
-            textBox3.Text = GetIndexByComboBox(comboBox).ToString();
+            tbCategory.Text = GetIndexByComboBox(comboBox).ToString();
     }
 
     private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -663,7 +677,7 @@ namespace LcDevPack_TeamDamonA.Tools
       string comboBox = "";
       foreach (object checkedItem in checkedListBox2.CheckedItems)
         comboBox = checkedItem.ToString();
-            textBox4.Text = GetIndexByComboBox(comboBox).ToString();
+            tbType.Text = GetIndexByComboBox(comboBox).ToString();
             textBox5.Text = GetIndexByComboBox(comboBox).ToString();
     }
 
@@ -695,7 +709,7 @@ namespace LcDevPack_TeamDamonA.Tools
     private void textBox13_TextChanged(object sender, EventArgs e)
     {
       int.TryParse(tbLimit.Text, out tmpLimit);
-            textBox10.Text = JoinLimitWithFlag().ToString();
+            tbFlag.Text = JoinLimitWithFlag().ToString();
     }
 
     private void SplitLimitFromFlag(int flag)
@@ -735,25 +749,24 @@ namespace LcDevPack_TeamDamonA.Tools
             this.fileExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportlodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbCatalogID = new System.Windows.Forms.TextBox();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.tbCategory = new System.Windows.Forms.TextBox();
+            this.tbType = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbPrice = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tbDescr = new System.Windows.Forms.TextBox();
+            this.tbMileage = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.tbEnable = new System.Windows.Forms.TextBox();
+            this.tbFlag = new System.Windows.Forms.TextBox();
+            this.tbIcon = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -810,6 +823,7 @@ namespace LcDevPack_TeamDamonA.Tools
             this.btnSaveAndNext = new System.Windows.Forms.Button();
             this.cbshowEnabled = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cbEnabled = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -861,38 +875,38 @@ namespace LcDevPack_TeamDamonA.Tools
             this.listBox1.TabIndex = 1;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // textBox1
+            // tbCatalogID
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(72, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(64, 20);
-            this.textBox1.TabIndex = 2;
+            this.tbCatalogID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbCatalogID.Location = new System.Drawing.Point(72, 31);
+            this.tbCatalogID.Name = "tbCatalogID";
+            this.tbCatalogID.Size = new System.Drawing.Size(64, 20);
+            this.tbCatalogID.TabIndex = 2;
             // 
-            // textBox2
+            // tbName
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(72, 83);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(205, 20);
-            this.textBox2.TabIndex = 3;
+            this.tbName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbName.Location = new System.Drawing.Point(72, 57);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(205, 20);
+            this.tbName.TabIndex = 3;
             // 
-            // textBox3
+            // tbCategory
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(220, 17);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(89, 20);
-            this.textBox3.TabIndex = 3;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.tbCategory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbCategory.Location = new System.Drawing.Point(220, 17);
+            this.tbCategory.Name = "tbCategory";
+            this.tbCategory.Size = new System.Drawing.Size(89, 20);
+            this.tbCategory.TabIndex = 3;
+            this.tbCategory.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox4
+            // tbType
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(75, 43);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(68, 20);
-            this.textBox4.TabIndex = 4;
+            this.tbType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbType.Location = new System.Drawing.Point(75, 43);
+            this.tbType.Name = "tbType";
+            this.tbType.Size = new System.Drawing.Size(68, 20);
+            this.tbType.TabIndex = 4;
             // 
             // textBox5
             // 
@@ -903,18 +917,18 @@ namespace LcDevPack_TeamDamonA.Tools
             this.textBox5.TabIndex = 5;
             this.textBox5.Visible = false;
             // 
-            // textBox6
+            // tbPrice
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(75, 17);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(68, 20);
-            this.textBox6.TabIndex = 6;
+            this.tbPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbPrice.Location = new System.Drawing.Point(75, 17);
+            this.tbPrice.Name = "tbPrice";
+            this.tbPrice.Size = new System.Drawing.Size(68, 20);
+            this.tbPrice.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 59);
+            this.label1.Location = new System.Drawing.Point(9, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 7;
@@ -923,7 +937,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 85);
+            this.label2.Location = new System.Drawing.Point(9, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 8;
@@ -932,7 +946,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 111);
+            this.label3.Location = new System.Drawing.Point(9, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 9;
@@ -941,7 +955,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(160, 59);
+            this.label5.Location = new System.Drawing.Point(160, 33);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 10;
@@ -956,22 +970,22 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label6.TabIndex = 11;
             this.label6.Text = "Price:";
             // 
-            // textBox7
+            // tbDescr
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Location = new System.Drawing.Point(72, 109);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(205, 145);
-            this.textBox7.TabIndex = 13;
+            this.tbDescr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbDescr.Location = new System.Drawing.Point(72, 83);
+            this.tbDescr.Multiline = true;
+            this.tbDescr.Name = "tbDescr";
+            this.tbDescr.Size = new System.Drawing.Size(205, 145);
+            this.tbDescr.TabIndex = 13;
             // 
-            // textBox8
+            // tbMileage
             // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Location = new System.Drawing.Point(209, 57);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(68, 20);
-            this.textBox8.TabIndex = 13;
+            this.tbMileage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbMileage.Location = new System.Drawing.Point(209, 31);
+            this.tbMileage.Name = "tbMileage";
+            this.tbMileage.Size = new System.Drawing.Size(68, 20);
+            this.tbMileage.TabIndex = 13;
             // 
             // label8
             // 
@@ -991,38 +1005,31 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label9.TabIndex = 15;
             this.label9.Text = "Flag:";
             // 
-            // textBox9
+            // tbEnable
             // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Location = new System.Drawing.Point(72, 31);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(64, 20);
-            this.textBox9.TabIndex = 16;
+            this.tbEnable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbEnable.Location = new System.Drawing.Point(491, 3);
+            this.tbEnable.Name = "tbEnable";
+            this.tbEnable.Size = new System.Drawing.Size(64, 20);
+            this.tbEnable.TabIndex = 16;
+            this.tbEnable.Visible = false;
+            this.tbEnable.TextChanged += new System.EventHandler(this.tbEnable_TextChanged);
             // 
-            // textBox10
+            // tbFlag
             // 
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Location = new System.Drawing.Point(220, 43);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(89, 20);
-            this.textBox10.TabIndex = 17;
+            this.tbFlag.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbFlag.Location = new System.Drawing.Point(220, 43);
+            this.tbFlag.Name = "tbFlag";
+            this.tbFlag.Size = new System.Drawing.Size(89, 20);
+            this.tbFlag.TabIndex = 17;
             // 
-            // textBox11
+            // tbIcon
             // 
-            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox11.Location = new System.Drawing.Point(220, 69);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(89, 20);
-            this.textBox11.TabIndex = 18;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Enable:";
+            this.tbIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbIcon.Location = new System.Drawing.Point(220, 69);
+            this.tbIcon.Name = "tbIcon";
+            this.tbIcon.Size = new System.Drawing.Size(89, 20);
+            this.tbIcon.TabIndex = 18;
             // 
             // label10
             // 
@@ -1054,15 +1061,14 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.cbEnabled);
+            this.groupBox1.Controls.Add(this.tbMileage);
+            this.groupBox1.Controls.Add(this.tbCatalogID);
+            this.groupBox1.Controls.Add(this.tbName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Controls.Add(this.tbDescr);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(282, 30);
             this.groupBox1.Name = "groupBox1";
@@ -1076,14 +1082,14 @@ namespace LcDevPack_TeamDamonA.Tools
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.tbLimit);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.tbCategory);
+            this.groupBox2.Controls.Add(this.tbType);
+            this.groupBox2.Controls.Add(this.tbPrice);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox11);
+            this.groupBox2.Controls.Add(this.tbIcon);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox10);
+            this.groupBox2.Controls.Add(this.tbFlag);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Location = new System.Drawing.Point(581, 30);
             this.groupBox2.Name = "groupBox2";
@@ -1634,6 +1640,19 @@ namespace LcDevPack_TeamDamonA.Tools
             this.cbshowEnabled.UseVisualStyleBackColor = true;
             this.cbshowEnabled.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
+            // cbEnabled
+            // 
+            this.cbEnabled.BackColor = System.Drawing.Color.Red;
+            this.cbEnabled.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbEnabled.Location = new System.Drawing.Point(72, 234);
+            this.cbEnabled.Name = "cbEnabled";
+            this.cbEnabled.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.cbEnabled.Size = new System.Drawing.Size(212, 17);
+            this.cbEnabled.TabIndex = 14;
+            this.cbEnabled.Text = "Enabled";
+            this.cbEnabled.UseVisualStyleBackColor = false;
+            this.cbEnabled.CheckedChanged += new System.EventHandler(this.cbEnabled_CheckedChanged);
+            // 
             // CatalogEditor
             // 
             this.ClientSize = new System.Drawing.Size(1146, 732);
@@ -1644,6 +1663,7 @@ namespace LcDevPack_TeamDamonA.Tools
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.label11);
+            this.Controls.Add(this.tbEnable);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
@@ -1706,18 +1726,18 @@ namespace LcDevPack_TeamDamonA.Tools
                 str3 = new DatabaseHandle().ItemDescrFast(ItemIdx);
                 // column 1
 
-                textBox2.Text = str2;  // name
-                textBox7.Text = str3; //description
+                tbName.Text = str2;  // name
+                tbDescr.Text = str3; //description
             
     }
 
         private void btnCopyRec_Click(object sender, EventArgs e)
         {
 
-           databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_catalog WHERE a_ctid=" + textBox1.Text + ";" + "SELECT a_ctid FROM tempTable;" + "UPDATE tempTable SET a_ctid=(SELECT a_ctid from t_catalog ORDER BY a_ctid DESC LIMIT 1)+1; " + "SELECT a_ctid FROM tempTable;" + "INSERT INTO t_catalog SELECT * FROM tempTable;");
-           databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_catalog_1 WHERE a_ctid=" + textBox1.Text + ";" + "SELECT a_ctid FROM tempTable;" + "UPDATE tempTable SET a_ctid=(SELECT a_ctid from t_catalog_1 ORDER BY a_ctid DESC LIMIT 1)+1; " + "SELECT a_ctid FROM tempTable;" + "INSERT INTO t_catalog_1 SELECT * FROM tempTable;");
-           databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_ct_item WHERE a_ctid=" + textBox1.Text + ";" + "SELECT a_index, a_ctid FROM tempTable;" + "UPDATE tempTable SET a_ctid=(SELECT a_ctid from t_ct_item ORDER BY a_ctid DESC LIMIT 1)+1; " + "SELECT a_ctid FROM tempTable;" + "INSERT INTO t_ct_item SELECT * FROM tempTable;");
-           databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_ct_item_1 WHERE a_ctid=" + textBox1.Text + ";" + "SELECT a_index, a_ctid FROM tempTable;" + "UPDATE tempTable SET a_ctid=(SELECT a_ctid from t_ct_item_1 ORDER BY a_ctid DESC LIMIT 1)+1; " + "SELECT a_ctid FROM tempTable;" + "INSERT INTO t_ct_item_1 SELECT * FROM tempTable;");
+           databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_catalog WHERE a_ctid=" + tbCatalogID.Text + ";" + "SELECT a_ctid FROM tempTable;" + "UPDATE tempTable SET a_ctid=(SELECT a_ctid from t_catalog ORDER BY a_ctid DESC LIMIT 1)+1; " + "SELECT a_ctid FROM tempTable;" + "INSERT INTO t_catalog SELECT * FROM tempTable;");
+           databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_catalog_1 WHERE a_ctid=" + tbCatalogID.Text + ";" + "SELECT a_ctid FROM tempTable;" + "UPDATE tempTable SET a_ctid=(SELECT a_ctid from t_catalog_1 ORDER BY a_ctid DESC LIMIT 1)+1; " + "SELECT a_ctid FROM tempTable;" + "INSERT INTO t_catalog_1 SELECT * FROM tempTable;");
+           databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_ct_item WHERE a_ctid=" + tbCatalogID.Text + ";" + "SELECT a_index, a_ctid FROM tempTable;" + "UPDATE tempTable SET a_ctid=(SELECT a_ctid from t_ct_item ORDER BY a_ctid DESC LIMIT 1)+1; " + "SELECT a_ctid FROM tempTable;" + "INSERT INTO t_ct_item SELECT * FROM tempTable;");
+           databaseHandle.SendQueryMySql(Host, User, Password, Database, "DROP TABLE IF EXISTS tempTable;" + "CREATE TEMPORARY TABLE tempTable ENGINE=MEMORY SELECT * FROM t_ct_item_1 WHERE a_ctid=" + tbCatalogID.Text + ";" + "SELECT a_index, a_ctid FROM tempTable;" + "UPDATE tempTable SET a_ctid=(SELECT a_ctid from t_ct_item_1 ORDER BY a_ctid DESC LIMIT 1)+1; " + "SELECT a_ctid FROM tempTable;" + "INSERT INTO t_ct_item_1 SELECT * FROM tempTable;");
             LoadListBox();
             LoadDG();
            if (textBox12.Text != "")
@@ -1728,8 +1748,8 @@ namespace LcDevPack_TeamDamonA.Tools
         private void btnSaveAndNext_Click(object sender, EventArgs e)
         {
             //dethunter12 add t_catalog_1 - t_catalog_hardcore
-            databaseHandle.SendQueryMySql(Host, User, Password, Database, "UPDATE t_catalog SET " + "a_ctname = '" + textBox2.Text.Replace("'", "\\'") + "', " + "a_category = '" + textBox3.Text + "', " + "a_type = '" + textBox4.Text + "', " + "a_subtype = '" + textBox5.Text + "', " + "a_cash = '" + textBox6.Text + "', " + "a_ctdesc = '" + textBox7.Text.Replace("'", "\\'") + "', " + "a_mileage = '" + textBox8.Text + "', " + "a_enable = '" + textBox9.Text + "', " + "a_flag = '" + textBox10.Text + "', " + "a_icon = '" + textBox11.Text + "' " + "WHERE a_ctid = '" + textBox1.Text + "'");
-            databaseHandle.SendQueryMySql(Host, User, Password, Database, "UPDATE t_catalog_1 SET " + "a_ctname = '" + textBox2.Text.Replace("'", "\\'") + "', " + "a_category = '" + textBox3.Text + "', " + "a_type = '" + textBox4.Text + "', " + "a_subtype = '" + textBox5.Text + "', " + "a_cash = '" + textBox6.Text + "', " + "a_ctdesc = '" + textBox7.Text.Replace("'", "\\'") + "', " + "a_mileage = '" + textBox8.Text + "', " + "a_enable = '" + textBox9.Text + "', " + "a_flag = '" + textBox10.Text + "', " + "a_icon = '" + textBox11.Text + "' " + "WHERE a_ctid = '" + textBox1.Text + "'");
+            databaseHandle.SendQueryMySql(Host, User, Password, Database, "UPDATE t_catalog SET " + "a_ctname = '" + tbName.Text.Replace("'", "\\'") + "', " + "a_category = '" + tbCategory.Text + "', " + "a_type = '" + tbType.Text + "', " + "a_subtype = '" + textBox5.Text + "', " + "a_cash = '" + tbPrice.Text + "', " + "a_ctdesc = '" + tbDescr.Text.Replace("'", "\\'") + "', " + "a_mileage = '" + tbMileage.Text + "', " + "a_enable = '" + tbEnable.Text + "', " + "a_flag = '" + tbFlag.Text + "', " + "a_icon = '" + tbIcon.Text + "' " + "WHERE a_ctid = '" + tbCatalogID.Text + "'");
+            databaseHandle.SendQueryMySql(Host, User, Password, Database, "UPDATE t_catalog_1 SET " + "a_ctname = '" + tbName.Text.Replace("'", "\\'") + "', " + "a_category = '" + tbCategory.Text + "', " + "a_type = '" + tbType.Text + "', " + "a_subtype = '" + textBox5.Text + "', " + "a_cash = '" + tbPrice.Text + "', " + "a_ctdesc = '" + tbDescr.Text.Replace("'", "\\'") + "', " + "a_mileage = '" + tbMileage.Text + "', " + "a_enable = '" + tbEnable.Text + "', " + "a_flag = '" + tbFlag.Text + "', " + "a_icon = '" + tbIcon.Text + "' " + "WHERE a_ctid = '" + tbCatalogID.Text + "'");
 
             int selectedIndex = listBox1.SelectedIndex;
             int nextselected = listBox1.SelectedIndex + 1;
@@ -1780,6 +1800,37 @@ namespace LcDevPack_TeamDamonA.Tools
                 LoadListBox();  
             }
                 
+        }
+
+        private void tbEnable_TextChanged(object sender, EventArgs e)
+        {
+           if (cbEnabled.Checked)
+            {
+
+            }
+        }
+
+        private void cbEnabled_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbEnabled.Checked)
+                cbEnabled.BackColor = Color.LimeGreen;
+            else
+                cbEnabled.BackColor = Color.Red;
+
+            if (int.Parse(tbEnable.Text) == 1 && cbEnabled.Checked == false)
+            {
+                tbEnable.Text = "0";
+                cbEnabled.Text = "Disabled";
+            }
+                
+
+            else if (int.Parse(tbEnable.Text) == 0 && cbEnabled.Checked)
+            {
+                tbEnable.Text = "1";
+                cbEnabled.Text = "Enabled";
+            }
+            
+
         }
     }
 }

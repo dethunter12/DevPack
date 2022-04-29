@@ -43,6 +43,8 @@ namespace LcDevPack_TeamDamonA.Tools
         strArray = FlagList.Npcs;
       else if (flagBuilderType == "npcs1")
         strArray = FlagList.Npcs1;
+            else if (flagBuilderType == "ZoneFlag") //Liquid
+                strArray = FlagList.ZoneFlag;
             clbFlagTest2.Items.AddRange((object[]) strArray);
     }
 
@@ -91,6 +93,10 @@ namespace LcDevPack_TeamDamonA.Tools
         else
                     flagSmall = Convert.ToInt32(num);
       }
+      else if(flagBuilderType == "ZoneFlag")
+            {
+                flagBig = num;
+            }
       else
                 flagSmall = Convert.ToInt32(num);
     }
@@ -111,6 +117,11 @@ namespace LcDevPack_TeamDamonA.Tools
                     textBox2.Text = flagSmall.ToString();
         }
       }
+      else if(flagBuilderType == "ZoneFlag")
+            {
+                ShowFlagLong(flagBig);
+                textBox2.Text = flagBig.ToString();
+            }
       else
       {
                 ShowFlag(flagSmall);

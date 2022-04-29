@@ -100,6 +100,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private string namee; //dethunter12 stringfrom lang modify
         public string adescr = "";
         public string aname = ""; //dehtunter12 add
+        private string ISO = (string)null;
         private Label label8;
         private Label lblLang;
         private GroupBox gbFortune;

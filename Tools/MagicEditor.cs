@@ -34,30 +34,30 @@ namespace LcDevPack_TeamDamonA.Tools
     private GroupBox groupBox2;
     private Label label4;
     private Label label1;
-    private TextBox textBox2;
-    private TextBox textBox1;
+    private TextBox tbName;
+    private TextBox tbIndex;
     private GroupBox groupBox3;
-    private TextBox textBox3;
+    private TextBox tbMaxLevel;
     private Label label2;
     private Label label6;
     private Label label5;
-    private TextBox textBox6;
+    private TextBox tbDamageType;
     private Label label3;
     private TextBox textBox5;
-    private TextBox textBox4;
+    private TextBox tbType;
     private GroupBox groupBox4;
     private Label label12;
-    private TextBox textBox12;
+    private TextBox tbHtp;
     private Label label11;
-    private TextBox textBox11;
+    private TextBox tbHsp;
     private Label label10;
     private Label label9;
-    private TextBox textBox10;
-    private TextBox textBox9;
+    private TextBox tbPtp;
+    private TextBox tbPsp;
     private Label label8;
-    private TextBox textBox8;
+    private TextBox tbAttribute;
     private Label label7;
-    private TextBox textBox7;
+    private TextBox tbHitType;
     private GroupBox groupBox5;
     private DataGridView dgItems;
     private ToolStrip toolStrip2;
@@ -74,7 +74,7 @@ namespace LcDevPack_TeamDamonA.Tools
     private ComboBox comboBox3;
     private ComboBox comboBox2;
     private ComboBox comboBox1;
-    private TextBox textBox13;
+    private TextBox tbTogle;
     private Label label14;
     private ComboBox comboBox4;
     private GroupBox groupBox6;
@@ -90,6 +90,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private ComboBox cbSubType4;
         private ComboBox cbSubType3;
         private TextBox tbSubtype;
+        private Button btnCopy;
         private TextBox textBox14;
 
     public MagicEditor()
@@ -129,8 +130,8 @@ namespace LcDevPack_TeamDamonA.Tools
     private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
     {
       if (listBox1.SelectedIndex != -1)
-                textBox1.Text = GetIndex().ToString();
-      string[] strArray = databaseHandle.SelectMySqlReturnArray(Host, User, Password, Database, " SELECT a_index, a_name, a_maxlevel, a_type, a_subtype, a_damagetype, a_hittype, a_attribute, a_psp, a_ptp, a_hsp, a_htp, a_togle  from t_magic WHERE a_index ='" + textBox1.Text + "';", new string[13]
+                tbIndex.Text = GetIndex().ToString();
+      string[] strArray = databaseHandle.SelectMySqlReturnArray(Host, User, Password, Database, " SELECT a_index, a_name, a_maxlevel, a_type, a_subtype, a_damagetype, a_hittype, a_attribute, a_psp, a_ptp, a_hsp, a_htp, a_togle  from t_magic WHERE a_index ='" + tbIndex.Text + "';", new string[13]
       {
         "a_index",
         "a_name",
@@ -146,32 +147,32 @@ namespace LcDevPack_TeamDamonA.Tools
         "a_htp",
         "a_togle"
       });
-            textBox1.Text = strArray[0];
-            textBox2.Text = strArray[1];
-            textBox3.Text = strArray[2];
-            textBox4.Text = strArray[3];
+            tbIndex.Text = strArray[0];
+            tbName.Text = strArray[1];
+            tbMaxLevel.Text = strArray[2];
+            tbType.Text = strArray[3];
             textBox5.Text = strArray[4];
-            textBox6.Text = strArray[5];
-            textBox7.Text = strArray[6];
-            textBox8.Text = strArray[7];
-            textBox9.Text = strArray[8];
-            textBox10.Text = strArray[9];
-            textBox11.Text = strArray[10];
-            textBox12.Text = strArray[11];
-            textBox13.Text = strArray[12];
-            tbSubtype.Text = strArray[4];
+            tbSubtype.Text = strArray[4];  
+            tbDamageType.Text = strArray[5];
+            tbHitType.Text = strArray[6];
+            tbAttribute.Text = strArray[7];
+            tbPsp.Text = strArray[8];
+            tbPtp.Text = strArray[9];
+            tbHsp.Text = strArray[10];
+            tbHtp.Text = strArray[11];
+            tbTogle.Text = strArray[12];
             SelectBoxes();
           //LoadMisc();
             dgItems.Rows.Clear();
-            LoadDG(textBox1.Text);
+            LoadDG(tbIndex.Text);
     }
 
         private void SelectBoxes() //dethunter12 add
         {
-            int num1 = comboBox1.FindString(textBox4.Text);
+            int num1 = comboBox1.FindString(tbType.Text);
             int num2 = comboBox2.FindString(textBox5.Text);
-            int num3 = comboBox3.FindString(textBox6.Text);
-            int num4 = comboBox4.FindString(textBox7.Text);
+            int num3 = comboBox3.FindString(tbDamageType.Text);
+            int num4 = comboBox4.FindString(tbHitType.Text);
             int num5 = cbSubType1.FindString(textBox5.Text);
             int num6 = cbSubType2.FindString(textBox5.Text);
             int num7 = cbSubType3.FindString(textBox5.Text);
@@ -216,9 +217,9 @@ namespace LcDevPack_TeamDamonA.Tools
     private void button3_Click(object sender, EventArgs e)
     {
             //databaseHandle.SendQueryMySql(Host, User, Password, Database, Query: $"UPDATE t_magic SET a_name = '{textBox2.Text}', a_maxlevel = '{textBox3.Text}', a_type = '{textBox4.Text}', a_subtype = '{textBox5.Text}', a_damagetype = '{textBox6.Text}', a_hittype = '{textBox7.Text}', a_attribute = '{textBox8.Text}', a_psp = '{textBox9.Text}', a_ptp = '{textBox10.Text}', a_hsp = '{textBox11.Text}', a_htp = '{textBox12.Text}', a_togle = '{textBox13.Text}' WHERE a_index = '{textBox1.Text}'");
-            string str9 = "UPDATE t_magic SET " + "a_index = '" + textBox1.Text + "', " + "a_type = '" + textBox4.Text + "', " + "a_subtype = '" + textBox5.Text + "', ";
-            string str10 = textBox2.Text.Replace("'", "\\'").Replace("\"", "\\\"");
-            string QueryUpdate = str9 + "a_name = '" + str10 + "', " + "a_maxlevel = '" + textBox3.Text + "'," + "a_damagetype = '" + textBox6.Text + "'," + "a_hittype = '" + textBox7.Text + "'," + "a_attribute = '" + textBox8.Text + "'," + "a_psp = '" + textBox9.Text + "'," + "a_ptp = '" + textBox10.Text + "'," + "a_hsp = '" + textBox11.Text + "'," + "a_htp = '" + textBox12.Text + "'," + "a_togle = '" + textBox13.Text + "'" + " WHERE a_index = '" + textBox1.Text + "'";
+            string str9 = "UPDATE t_magic SET " + "a_index = '" + tbIndex.Text + "', " + "a_type = '" + tbType.Text + "', " + "a_subtype = '" + textBox5.Text + "', ";
+            string str10 = tbName.Text.Replace("'", "\\'").Replace("\"", "\\\"");
+            string QueryUpdate = str9 + "a_name = '" + str10 + "', " + "a_maxlevel = '" + tbMaxLevel.Text + "'," + "a_damagetype = '" + tbDamageType.Text + "'," + "a_hittype = '" + tbHitType.Text + "'," + "a_attribute = '" + tbAttribute.Text + "'," + "a_psp = '" + tbPsp.Text + "'," + "a_ptp = '" + tbPtp.Text + "'," + "a_hsp = '" + tbHsp.Text + "'," + "a_htp = '" + tbHtp.Text + "'," + "a_togle = '" + tbTogle.Text + "'" + " WHERE a_index = '" + tbIndex.Text + "'";
             databaseHandle.SendQueryMySql(Host, User, Password, Database, QueryUpdate); //dethunter12 add
             Console.WriteLine(QueryUpdate); //dethunter12 add
             int selectedIndex = listBox1.SelectedIndex;
@@ -230,18 +231,26 @@ namespace LcDevPack_TeamDamonA.Tools
             listBox1.SelectedIndex = selectedIndex;
     }
 
-    private void button1_Click(object sender, EventArgs e)
+    public int NextMagic()
+        {
+            string str2 = "select * from t_magic order by a_index DESC Limit 0,1";
+            int currentIndex;
+            MySqlConnection mySqlConnection = new MySqlConnection("datasource=" + Host + ";port=3306;username=" + User + ";password=" + Password + ";database=" + Database);
+            MySqlCommand command = mySqlConnection.CreateCommand();
+            command.CommandText = str2;
+            mySqlConnection.Open();
+            MySqlDataReader mySqlDataReader = command.ExecuteReader();
+            mySqlDataReader.Read();
+            currentIndex = (int)mySqlDataReader.GetValue(0);
+            mySqlDataReader.Close();
+            return currentIndex;     
+        }
+
+        private void button1_Click(object sender, EventArgs e) // button copy.
     {
-      string str1 = "";
-      string str2 = "select * from t_magic order by a_index DESC Limit 0,1";
-      MySqlConnection mySqlConnection = new MySqlConnection("datasource=" + Host + ";port=3306;username=" + User + ";password=" + Password + ";database=" + Database);
-      MySqlCommand command = mySqlConnection.CreateCommand();
-      command.CommandText = str2;
-      mySqlConnection.Open();
-      MySqlDataReader mySqlDataReader = command.ExecuteReader();
-      while (mySqlDataReader.Read())
-        str1 = mySqlDataReader.GetValue(0).ToString();
-            databaseHandle.SendQueryMySql(Host, User, Password, Database, "INSERT INTO t_magic (a_index, a_name) VALUES ('" + (Convert.ToInt32(str1) + 1).ToString() + "', 'New Magic Skill')");
+
+            int nextIndex = NextMagic() +1;
+            databaseHandle.SendQueryMySql(Host, User, Password, Database, "INSERT INTO t_magic (a_index,a_name,a_maxlevel) VALUES("+"'" + nextIndex + "','NewMagic','1')");
             LoadListBox();
             listBox1.SelectedIndex = listBox1.Items.Count - 1;
     }
@@ -249,7 +258,7 @@ namespace LcDevPack_TeamDamonA.Tools
     private void button2_Click(object sender, EventArgs e)
     {
       int selectedIndex = listBox1.SelectedIndex;
-            databaseHandle.SendQueryMySql(Host, User, Password, Database, "DELETE FROM t_magic WHERE a_index = '" + textBox1.Text + "'");
+            databaseHandle.SendQueryMySql(Host, User, Password, Database, "DELETE FROM t_magic WHERE a_index = '" + tbIndex.Text + "'");
             LoadListBox();
             listBox1.SelectedIndex = selectedIndex - 1;
             int num4 = (int)new CustomMessage("Deleted :O").ShowDialog();
@@ -270,22 +279,22 @@ namespace LcDevPack_TeamDamonA.Tools
             
             row.SetValues(str1, str2, str3);
             dgItems.Rows.Clear();
-            LoadDG(textBox1.Text);
+            LoadDG(tbIndex.Text);
     }
 
     private void btnAddItems_Click(object sender, EventArgs e)
     {
-      int num1 = databaseHandle.CountByRow(Host, User, Password, Database, "SELECT COUNT(*) FROM t_magicLevel WHERE a_index = '" + textBox1.Text + "' ") + 1;
+      int num1 = databaseHandle.CountByRow(Host, User, Password, Database, "SELECT COUNT(*) FROM t_magicLevel WHERE a_index = '" + tbIndex.Text + "' ") + 1;
       try
       {
-                databaseHandle.SendQueryMySql(Host, User, Password, Database, "INSERT INTO t_magicLevel (a_index, a_level, a_power, a_hitrate) VALUES (" + textBox1.Text + ", '" + num1.ToString() + "', 0, 0)");
+                databaseHandle.SendQueryMySql(Host, User, Password, Database, "INSERT INTO t_magicLevel (a_index, a_level, a_power, a_hitrate) VALUES (" + tbIndex.Text + ", '" + num1.ToString() + "', 0, 0)");
       }
       catch
       {
         int num2 = (int) MessageBox.Show("Duplicated ItemID isn't allowed.", "Error");
       }
             dgItems.Rows.Clear();
-            LoadDG(textBox1.Text);
+            LoadDG(tbIndex.Text);
     }
 
     private void toolStripButton1_Click(object sender, EventArgs e)
@@ -293,7 +302,7 @@ namespace LcDevPack_TeamDamonA.Tools
       DataGridViewRow row = dgItems.Rows[dgItems.CurrentRow.Index];
             databaseHandle.SendQueryMySql(Host, User, Password, Database, "DELETE FROM t_magicLevel WHERE a_index ='" + Convert.ToString(row.Cells["index"].Value) + "' AND a_level = '" + Convert.ToString(row.Cells["Level"].Value) + "'");
             dgItems.Rows.Clear();
-            LoadDG(textBox1.Text);
+            LoadDG(tbIndex.Text);
     }
 
     public void SearchList(string searchString)
@@ -329,7 +338,7 @@ namespace LcDevPack_TeamDamonA.Tools
          "0 - Constant",
          "1 - Varible"
       });
-            comboBox2.Items.AddRange(new object[39] //dethunter12 add
+            comboBox2.Items.AddRange(new object[43] //dethunter12 add
 {
          "0 - Attack",
          "1 - Defense",
@@ -369,7 +378,11 @@ namespace LcDevPack_TeamDamonA.Tools
          "35 - NPC Attack",
          "36 - NPC Magic",
          "37 - Skill Cool Time",
-         "38 - Decrase Mana Spend"
+         "38 - Decrase Mana Spend",
+         "39 - stone chance",
+         "40 - Silence chance",
+         "41 - Stun chance",
+         "42 - PvP Damage Absorb",
 });
             cbSubType1.Items.AddRange(new object[8] //dethunter12 add
     {
@@ -586,7 +599,11 @@ namespace LcDevPack_TeamDamonA.Tools
           stringList.Add("36 - NPC Magic");
           stringList.Add("37 - Skill Cool Time");
           stringList.Add("38 - Decrase Mana Spend");
-          break;
+          stringList.Add("39 - Stone chance");
+          stringList.Add("40 - Silence chance");
+          stringList.Add("41 - Stun chance");
+          stringList.Add("42 - Absorb PVP");
+               break;
         case 1:
           stringList.Add("0 - None");
           stringList.Add("1 - Fire");
@@ -768,8 +785,8 @@ namespace LcDevPack_TeamDamonA.Tools
 
     private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) //dethunter12 add
     {
-            textBox4.Text = comboBox1.SelectedIndex.ToString();
-            if (textBox4.Text == "0") //dethunter12 add
+            tbType.Text = comboBox1.SelectedIndex.ToString();
+            if (tbType.Text == "0") //dethunter12 add
             {
                 comboBox2.Visible = true;
                 cbSubType1.Visible = false;
@@ -784,7 +801,7 @@ namespace LcDevPack_TeamDamonA.Tools
                 cbSubType10.Visible = false;
 
             }
-            else if (textBox4.Text == "1")
+            else if (tbType.Text == "1")
             {
                 comboBox2.Visible = false;
                 cbSubType1.Visible = true;
@@ -798,7 +815,7 @@ namespace LcDevPack_TeamDamonA.Tools
                 cbSubType9.Visible = false;
                 cbSubType10.Visible = false;
             }
-            else if (textBox4.Text == "2")
+            else if (tbType.Text == "2")
             {
                 comboBox2.Visible = false;
                 cbSubType1.Visible = false;
@@ -812,7 +829,7 @@ namespace LcDevPack_TeamDamonA.Tools
                 cbSubType9.Visible = false;
                 cbSubType10.Visible = false;
             }
-            else if (textBox4.Text == "3")
+            else if (tbType.Text == "3")
             {
                 comboBox2.Visible = false;
                 cbSubType1.Visible = false;
@@ -826,7 +843,7 @@ namespace LcDevPack_TeamDamonA.Tools
                 cbSubType9.Visible = false;
                 cbSubType10.Visible = false;
             }
-            else if (textBox4.Text == "4")
+            else if (tbType.Text == "4")
             {
                 comboBox2.Visible = false;
                 cbSubType1.Visible = false;
@@ -840,7 +857,7 @@ namespace LcDevPack_TeamDamonA.Tools
                 cbSubType9.Visible = false;
                 cbSubType10.Visible = false;
             }
-            else if (textBox4.Text == "5")
+            else if (tbType.Text == "5")
             {
                 comboBox2.Visible = false;
                 cbSubType1.Visible = false;
@@ -854,7 +871,7 @@ namespace LcDevPack_TeamDamonA.Tools
                 cbSubType9.Visible = false;
                 cbSubType10.Visible = false;
             }
-            else if (textBox4.Text == "6")
+            else if (tbType.Text == "6")
             {
                 comboBox2.Visible = false;
                 cbSubType1.Visible = false;
@@ -868,7 +885,7 @@ namespace LcDevPack_TeamDamonA.Tools
                 cbSubType9.Visible = false;
                 cbSubType10.Visible = false;
             }
-            else if (textBox4.Text == "7")
+            else if (tbType.Text == "7")
             {
                 comboBox2.Visible = false;
                 cbSubType1.Visible = false;
@@ -882,7 +899,7 @@ namespace LcDevPack_TeamDamonA.Tools
                 cbSubType9.Visible = false;
                 cbSubType10.Visible = false;
             }
-            else if (textBox4.Text == "8")
+            else if (tbType.Text == "8")
             {
                 comboBox2.Visible = false;
                 cbSubType1.Visible = false;
@@ -896,7 +913,7 @@ namespace LcDevPack_TeamDamonA.Tools
                 cbSubType9.Visible = false;
                 cbSubType10.Visible = false;
             }
-            else if (textBox4.Text == "9")
+            else if (tbType.Text == "9")
             {
                 comboBox2.Visible = false;
                 cbSubType1.Visible = false;
@@ -910,7 +927,7 @@ namespace LcDevPack_TeamDamonA.Tools
                 cbSubType9.Visible = true;
                 cbSubType10.Visible = false;
             }
-            else if (textBox4.Text == "10")
+            else if (tbType.Text == "10")
             {
                 comboBox2.Visible = false;
                 cbSubType1.Visible = false;
@@ -935,7 +952,7 @@ namespace LcDevPack_TeamDamonA.Tools
 
     private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
     {
-            if (textBox4.Text == "0") //dethunter12 add ( save magic index fix)
+            if (tbType.Text == "0") //dethunter12 add ( save magic index fix)
             {
                 textBox5.Text = GetIndexByComboBox(comboBox2.Text).ToString();
             }
@@ -943,12 +960,12 @@ namespace LcDevPack_TeamDamonA.Tools
 
     private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
     {
-            textBox6.Text = GetIndexByComboBox(comboBox3.Text).ToString();
+            tbDamageType.Text = GetIndexByComboBox(comboBox3.Text).ToString();
     }
 
     private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
     {
-            textBox7.Text = GetIndexByComboBox(comboBox4.Text).ToString();
+            tbHitType.Text = GetIndexByComboBox(comboBox4.Text).ToString();
     }
 
     private void textBox14_TextChanged(object sender, EventArgs e)
@@ -981,9 +998,9 @@ namespace LcDevPack_TeamDamonA.Tools
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.tbIndex = new System.Windows.Forms.TextBox();
+            this.tbMaxLevel = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbSubType10 = new System.Windows.Forms.ComboBox();
@@ -1004,23 +1021,23 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbType = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbDamageType = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.tbTogle = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.tbHtp = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.tbHsp = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.tbPtp = new System.Windows.Forms.TextBox();
+            this.tbPsp = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbAttribute = new System.Windows.Forms.TextBox();
+            this.tbHitType = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgItems = new System.Windows.Forms.DataGridView();
             this.index = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -1038,6 +1055,7 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label13 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.tbSubtype = new System.Windows.Forms.TextBox();
+            this.btnCopy = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1050,6 +1068,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnCopy);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.listBox1);
@@ -1065,9 +1084,9 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(117, 502);
+            this.button2.Location = new System.Drawing.Point(144, 502);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 23);
+            this.button2.Size = new System.Drawing.Size(73, 23);
             this.button2.TabIndex = 2;
             this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = false;
@@ -1079,7 +1098,7 @@ namespace LcDevPack_TeamDamonA.Tools
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(6, 502);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.Size = new System.Drawing.Size(56, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
@@ -1098,9 +1117,9 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.tbName);
+            this.groupBox2.Controls.Add(this.tbIndex);
+            this.groupBox2.Controls.Add(this.tbMaxLevel);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(241, 12);
             this.groupBox2.Name = "groupBox2";
@@ -1127,29 +1146,29 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label1.TabIndex = 3;
             this.label1.Text = "Index:";
             // 
-            // textBox2
+            // tbName
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(54, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(179, 20);
-            this.textBox2.TabIndex = 1;
+            this.tbName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbName.Location = new System.Drawing.Point(54, 45);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(179, 20);
+            this.tbName.TabIndex = 1;
             // 
-            // textBox1
+            // tbIndex
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(54, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(48, 20);
-            this.textBox1.TabIndex = 0;
+            this.tbIndex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbIndex.Location = new System.Drawing.Point(54, 19);
+            this.tbIndex.Name = "tbIndex";
+            this.tbIndex.Size = new System.Drawing.Size(48, 20);
+            this.tbIndex.TabIndex = 0;
             // 
-            // textBox3
+            // tbMaxLevel
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(185, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(48, 20);
-            this.textBox3.TabIndex = 6;
+            this.tbMaxLevel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbMaxLevel.Location = new System.Drawing.Point(185, 19);
+            this.tbMaxLevel.Name = "tbMaxLevel";
+            this.tbMaxLevel.Size = new System.Drawing.Size(48, 20);
+            this.tbMaxLevel.TabIndex = 6;
             // 
             // label2
             // 
@@ -1363,14 +1382,14 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label7.TabIndex = 9;
             this.label7.Text = "DamageTyp:";
             // 
-            // textBox4
+            // tbType
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(858, 31);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(48, 20);
-            this.textBox4.TabIndex = 8;
-            this.textBox4.Visible = false;
+            this.tbType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbType.Location = new System.Drawing.Point(858, 31);
+            this.tbType.Name = "tbType";
+            this.tbType.Size = new System.Drawing.Size(48, 20);
+            this.tbType.TabIndex = 8;
+            this.tbType.Visible = false;
             // 
             // textBox5
             // 
@@ -1381,30 +1400,30 @@ namespace LcDevPack_TeamDamonA.Tools
             this.textBox5.TabIndex = 6;
             this.textBox5.Visible = false;
             // 
-            // textBox6
+            // tbDamageType
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(858, 83);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(48, 20);
-            this.textBox6.TabIndex = 6;
-            this.textBox6.Visible = false;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.tbDamageType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbDamageType.Location = new System.Drawing.Point(858, 83);
+            this.tbDamageType.Name = "tbDamageType";
+            this.tbDamageType.Size = new System.Drawing.Size(48, 20);
+            this.tbDamageType.TabIndex = 6;
+            this.tbDamageType.Visible = false;
+            this.tbDamageType.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.textBox13);
+            this.groupBox4.Controls.Add(this.tbTogle);
             this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.textBox12);
+            this.groupBox4.Controls.Add(this.tbHtp);
             this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Controls.Add(this.textBox11);
+            this.groupBox4.Controls.Add(this.tbHsp);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Controls.Add(this.textBox10);
-            this.groupBox4.Controls.Add(this.textBox9);
+            this.groupBox4.Controls.Add(this.tbPtp);
+            this.groupBox4.Controls.Add(this.tbPsp);
             this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.textBox8);
+            this.groupBox4.Controls.Add(this.tbAttribute);
             this.groupBox4.Location = new System.Drawing.Point(241, 151);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(539, 100);
@@ -1421,13 +1440,13 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label14.TabIndex = 20;
             this.label14.Text = "Attribute:";
             // 
-            // textBox13
+            // tbTogle
             // 
-            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox13.Location = new System.Drawing.Point(329, 71);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(48, 20);
-            this.textBox13.TabIndex = 18;
+            this.tbTogle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTogle.Location = new System.Drawing.Point(329, 71);
+            this.tbTogle.Name = "tbTogle";
+            this.tbTogle.Size = new System.Drawing.Size(48, 20);
+            this.tbTogle.TabIndex = 18;
             // 
             // label12
             // 
@@ -1438,13 +1457,13 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label12.TabIndex = 17;
             this.label12.Text = "Togle:";
             // 
-            // textBox12
+            // tbHtp
             // 
-            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox12.Location = new System.Drawing.Point(329, 47);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(48, 20);
-            this.textBox12.TabIndex = 16;
+            this.tbHtp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbHtp.Location = new System.Drawing.Point(329, 47);
+            this.tbHtp.Name = "tbHtp";
+            this.tbHtp.Size = new System.Drawing.Size(48, 20);
+            this.tbHtp.TabIndex = 16;
             // 
             // label11
             // 
@@ -1455,13 +1474,13 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label11.TabIndex = 15;
             this.label11.Text = "HTP:";
             // 
-            // textBox11
+            // tbHsp
             // 
-            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox11.Location = new System.Drawing.Point(329, 21);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(48, 20);
-            this.textBox11.TabIndex = 14;
+            this.tbHsp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbHsp.Location = new System.Drawing.Point(329, 21);
+            this.tbHsp.Name = "tbHsp";
+            this.tbHsp.Size = new System.Drawing.Size(48, 20);
+            this.tbHsp.TabIndex = 14;
             // 
             // label10
             // 
@@ -1481,21 +1500,21 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label9.TabIndex = 13;
             this.label9.Text = "PTP:";
             // 
-            // textBox10
+            // tbPtp
             // 
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Location = new System.Drawing.Point(80, 71);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(48, 20);
-            this.textBox10.TabIndex = 8;
+            this.tbPtp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbPtp.Location = new System.Drawing.Point(80, 71);
+            this.tbPtp.Name = "tbPtp";
+            this.tbPtp.Size = new System.Drawing.Size(48, 20);
+            this.tbPtp.TabIndex = 8;
             // 
-            // textBox9
+            // tbPsp
             // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Location = new System.Drawing.Point(80, 47);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(48, 20);
-            this.textBox9.TabIndex = 12;
+            this.tbPsp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbPsp.Location = new System.Drawing.Point(80, 47);
+            this.tbPsp.Name = "tbPsp";
+            this.tbPsp.Size = new System.Drawing.Size(48, 20);
+            this.tbPsp.TabIndex = 12;
             // 
             // label8
             // 
@@ -1506,22 +1525,22 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label8.TabIndex = 11;
             this.label8.Text = "PSP:";
             // 
-            // textBox8
+            // tbAttribute
             // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Location = new System.Drawing.Point(80, 21);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(48, 20);
-            this.textBox8.TabIndex = 10;
+            this.tbAttribute.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbAttribute.Location = new System.Drawing.Point(80, 21);
+            this.tbAttribute.Name = "tbAttribute";
+            this.tbAttribute.Size = new System.Drawing.Size(48, 20);
+            this.tbAttribute.TabIndex = 10;
             // 
-            // textBox7
+            // tbHitType
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Location = new System.Drawing.Point(858, 109);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(48, 20);
-            this.textBox7.TabIndex = 8;
-            this.textBox7.Visible = false;
+            this.tbHitType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbHitType.Location = new System.Drawing.Point(858, 109);
+            this.tbHitType.Name = "tbHitType";
+            this.tbHitType.Size = new System.Drawing.Size(48, 20);
+            this.tbHitType.TabIndex = 8;
+            this.tbHitType.Visible = false;
             // 
             // groupBox5
             // 
@@ -1689,6 +1708,18 @@ namespace LcDevPack_TeamDamonA.Tools
             this.tbSubtype.TabIndex = 47;
             this.tbSubtype.Visible = false;
             // 
+            // btnCopy
+            // 
+            this.btnCopy.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCopy.Location = new System.Drawing.Point(68, 502);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(73, 23);
+            this.btnCopy.TabIndex = 3;
+            this.btnCopy.Text = "Copy";
+            this.btnCopy.UseVisualStyleBackColor = false;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
             // MagicEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1698,12 +1729,12 @@ namespace LcDevPack_TeamDamonA.Tools
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.tbDamageType);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tbHitType);
+            this.Controls.Add(this.tbType);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1731,7 +1762,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private void cbSubType1_SelectedIndexChanged(object sender, EventArgs e) //dethunter12 add
         {
             //dethunter12 add ( save magic index fix)
-            if (textBox4.Text == "1")
+            if (tbType.Text == "1")
             {
                 textBox5.Text = GetIndexByComboBox(cbSubType1.Text).ToString();
             }
@@ -1740,7 +1771,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private void cbSubType2_SelectedIndexChanged(object sender, EventArgs e) //dethunter12 add
         {
             //dethunter12 add ( save magic index fix)
-            if (textBox4.Text == "2")
+            if (tbType.Text == "2")
             {
                 textBox5.Text = GetIndexByComboBox(cbSubType2.Text).ToString();
             }
@@ -1749,7 +1780,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private void cbSubType3_SelectedIndexChanged(object sender, EventArgs e) //dethunter12 add
         {
             //dethunter12 add ( save magic index fix)
-            if (textBox4.Text == "3")
+            if (tbType.Text == "3")
             {
                 textBox5.Text = GetIndexByComboBox(cbSubType3.Text).ToString();
             }
@@ -1759,7 +1790,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private void cbSubType4_SelectedIndexChanged(object sender, EventArgs e) //dethunter12 add 
         {
             //dethunter12 add ( save magic index fix)
-            if (textBox4.Text == "4")
+            if (tbType.Text == "4")
             {
                 textBox5.Text = GetIndexByComboBox(cbSubType4.Text).ToString();
             }
@@ -1768,7 +1799,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private void cbSubType5_SelectedIndexChanged(object sender, EventArgs e) //dethunter12 add
         {
             //dethunter12 add ( save magic index fix)
-            if (textBox4.Text == "5")
+            if (tbType.Text == "5")
             {
                 textBox5.Text = GetIndexByComboBox(cbSubType5.Text).ToString();
             }
@@ -1777,7 +1808,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private void cbSubType6_SelectedIndexChanged(object sender, EventArgs e) //dethunter12 add
         {
             //dethunter12 add ( save magic index fix)
-            if (textBox4.Text == "6")
+            if (tbType.Text == "6")
             {
                 textBox5.Text = GetIndexByComboBox(cbSubType6.Text).ToString();
             }
@@ -1786,7 +1817,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private void cbSubType7_SelectedIndexChanged(object sender, EventArgs e) //dethunter12 add
         {
             //dethunter12 add ( save magic index fix)
-            if (textBox4.Text == "7")
+            if (tbType.Text == "7")
             {
                 textBox5.Text = GetIndexByComboBox(cbSubType7.Text).ToString();
             }
@@ -1795,7 +1826,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private void cbSubType8_SelectedIndexChanged(object sender, EventArgs e) //dethunter12 add
         {
             //dethunter12 add ( save magic index fix)
-            if (textBox4.Text == "8")
+            if (tbType.Text == "8")
             {
                 textBox5.Text = GetIndexByComboBox(cbSubType8.Text).ToString();
             }
@@ -1804,7 +1835,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private void cbSubType9_SelectedIndexChanged(object sender, EventArgs e) //dethunter12 add 
         {
             //dethunter12 add ( save magic index fix)
-            if (textBox4.Text == "9")
+            if (tbType.Text == "9")
             {
                 textBox5.Text = GetIndexByComboBox(cbSubType9.Text).ToString();
             }
@@ -1812,10 +1843,19 @@ namespace LcDevPack_TeamDamonA.Tools
         private void cbSubType10_SelectedIndexChanged(object sender, EventArgs e) //dethunter12 add
         {
             //dethunter12 add ( save magic index fix)
-            if (textBox4.Text == "10")
+            if (tbType.Text == "10")
             {
                 textBox5.Text = GetIndexByComboBox(cbSubType10.Text).ToString();
             }
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            int nextIndex = NextMagic() + 1;
+               
+            databaseHandle.SendQueryMySql(Host, User, Password, Database, "INSERT INTO t_magic (a_index,a_name,a_maxlevel) VALUES(" + "'" + nextIndex + "','NewMagic','1')");
+            LoadListBox();
+            listBox1.SelectedIndex = listBox1.Items.Count - 1;
         }
     }
 }

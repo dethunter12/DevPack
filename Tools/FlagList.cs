@@ -8,7 +8,75 @@ namespace LcDevPack_TeamDamonA.Tools
 {
   public class FlagList
   {
-    public static string[] Skills = new string[18]
+        public static string[] ZoneFlag = new string[64]
+        {
+              "0 ZONE_START",
+              "1 ZONE_DUNGEON1",
+              "2 ZONE_SINGLE_DUNGEON1",
+              "3 ZONE_DUNGEON2",
+              "4 ZONE_DRATAN",
+              "5 ZONE_SINGLE_DUNGEON2",
+              "6 ZONE_SINGLE_DUNGEON_TUTORIAL",
+              "7 ZONE_MERAC",
+              "8 ZONE_GUILDROOM",
+              "9 ZONE_DUNGEON3",
+              "10 ZONE_SINGLE_DUNGEON3",
+              "11 ZONE_SINGLE_DUNGEON4",
+              "12 ZONE_DUNGEON4",
+              "13 ZONE_FREE_PK_DUNGEON",
+              "14 ZONE_OXQUIZROOM",
+              "15 ZONE_EGEHA",
+              "16 ZONE_EGEHA_PK",
+              "17 ZONE_EGEHA_DUNGEON_1",
+              "18 ZONE_EGEHA_DUNGEON_8",
+              "19 ZONE_EGEHA_DUNGEON_9",
+              "20 ZONE_EGEHA_DUNGEON_10",
+              "21 ZONE_DRATAN_CASTLE_DUNGEON",
+              "22 ZONE_COMBO_DUNGEON",
+              "23 ZONE_STREIANA",
+              "24 ZONE_DRATAN_PK",
+              "25 ZONE_EXTREME_CUBE",
+              "26 ZONE_SPIRIT_CAVE",
+              "27 ZONE_QUANIAN_CAVE",
+              "28 ZONE_GOLEM_CAVE",
+              "29 ZONE_EBONY_MINE",
+              "30 ZONE_MISTY_CANYON",
+              "31 ZONE_FLORAIM_CAVE",
+              "32 ZONE_MONDSHINE",
+              "33 ZONE_CAPELLA_1",
+              "34 ZONE_CAPELLA_2",
+              "35 ZONE_ALTER_OF_DARK",
+              "36 ZONE_AKAN_TEMPLE",
+              "37 ZONE_TRIVIA_CANYON",
+              "38 ZONE_ROYAL_RUMBLE",
+              "39 ZONE_TARIAN",
+              "40 ZONE_BLOODYMIR",
+              "41 ZONE_TARIAN_DUNGEON",
+              "42 ZONE_RVR",
+              "43 ",
+              "44 ",
+              "45 ",
+              "46 ",
+              "47 ",
+              "48 ",
+              "49 ",
+              "50 ",
+              "51 ",
+              "52 ",
+              "53 ",
+              "54 ",
+              "55 ",
+              "56 ",
+              "57 ",
+              "58 ",
+              "59 ",
+              "60 ",
+              "61 ",
+              "62 ",
+              "63 "
+        };
+
+        public static string[] Skills = new string[18]
     {
       "Singlemode",
       "Help",
@@ -95,7 +163,7 @@ namespace LcDevPack_TeamDamonA.Tools
       "Subcity",
       "Chaocity"
     };
-    public static string[] Npcs1 = new string[11]
+    public static string[] Npcs1 = new string[12]
     {
       "Tradeagent",
       "Collsion",
@@ -107,7 +175,8 @@ namespace LcDevPack_TeamDamonA.Tools
       "Affinity",
       "Shadow",
       "Crafting",
-      "Totem Item"
+      "Totem Item",
+      "Multi Exchange"
     };
     public static string[] NpcsAI = new string[4]
     {

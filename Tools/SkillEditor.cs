@@ -1593,7 +1593,7 @@ namespace LcDevPack_TeamDamonA.Tools
          "8 - Seal",
          "9 - Summon Skill"
       });
-            comboBox16.Items.AddRange(new object[12]
+            comboBox16.Items.AddRange(new object[13]
       {
          "0 - Self One",
          "1 - Self Range",
@@ -1606,7 +1606,8 @@ namespace LcDevPack_TeamDamonA.Tools
          "8 - Elemental One",
          "9 - Guild All",
          "10 - Guild One",
-         "11 - Guild Self Range"
+         "11 - Guild Self Range",
+         "12 - Guild Member Self"
       });
             comboBox17.Items.AddRange(new object[17]
       {
