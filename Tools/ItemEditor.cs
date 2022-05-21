@@ -626,9 +626,9 @@ namespace LcDevPack_TeamDamonA.Tools
             listBox1.SelectedIndex = selectedIndex - 1;
     }
 
-    private void exportlodToolStripMenuItem_Click(object sender, EventArgs e)
+    private async void exportlodToolStripMenuItem_Click(object sender, EventArgs e)
     {
-            exportLodHandle.ExportItemAll_V4();
+        await exportLodHandle.ExportItemAll_V4Async();
     }
 
     private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
