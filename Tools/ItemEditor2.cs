@@ -137,7 +137,6 @@ namespace LcDevPack_TeamDamonA.Tools
         private Button btnSub2;
         private Button btnSub1;
         private ToolStripMenuItem massPriceToolStripMenuItem;
- 		private ToolStripMenuItem usaToolStripMenuItem;
         private CheckBox CbSaveIconSmc;
         private Label lblProb1;
         private Label lblProb10;
@@ -149,6 +148,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private Label lblProb4;
         private Label lblProb3;
         private Label lblProb2;
+        private ProgressBar pb_loading;
         public string descrr;
         public string StringFromLanguage() //dethunter12 4/11/2018
         {
@@ -1588,9 +1588,11 @@ namespace LcDevPack_TeamDamonA.Tools
             int num2 = (int)new CustomMessage("Deleted :O").ShowDialog();
         }
 
-        private void exportlodToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void exportlodToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            exportLodHandle.ExportItemAll_V4();
+            pb_loading.Visible = true;
+            await exportLodHandle.ExportItemAll_V4Async();
+            pb_loading.Visible = false;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -3424,15 +3426,14 @@ namespace LcDevPack_TeamDamonA.Tools
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemEditor2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportlodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportStrItemlodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportSmclodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -3712,6 +3713,16 @@ namespace LcDevPack_TeamDamonA.Tools
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label95 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.lblProb10 = new System.Windows.Forms.Label();
+            this.lblProb9 = new System.Windows.Forms.Label();
+            this.lblProb8 = new System.Windows.Forms.Label();
+            this.lblProb7 = new System.Windows.Forms.Label();
+            this.lblProb6 = new System.Windows.Forms.Label();
+            this.lblProb5 = new System.Windows.Forms.Label();
+            this.lblProb4 = new System.Windows.Forms.Label();
+            this.lblProb3 = new System.Windows.Forms.Label();
+            this.lblProb2 = new System.Windows.Forms.Label();
+            this.lblProb1 = new System.Windows.Forms.Label();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
@@ -3790,16 +3801,7 @@ namespace LcDevPack_TeamDamonA.Tools
             this.CbAutoUpdate = new System.Windows.Forms.CheckBox();
             this.tbDoesItemExist = new System.Windows.Forms.TextBox();
             this.CbSaveIconSmc = new System.Windows.Forms.CheckBox();
-            this.lblProb1 = new System.Windows.Forms.Label();
-            this.lblProb2 = new System.Windows.Forms.Label();
-            this.lblProb3 = new System.Windows.Forms.Label();
-            this.lblProb6 = new System.Windows.Forms.Label();
-            this.lblProb5 = new System.Windows.Forms.Label();
-            this.lblProb4 = new System.Windows.Forms.Label();
-            this.lblProb9 = new System.Windows.Forms.Label();
-            this.lblProb8 = new System.Windows.Forms.Label();
-            this.lblProb7 = new System.Windows.Forms.Label();
-            this.lblProb10 = new System.Windows.Forms.Label();
+            this.pb_loading = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -3882,17 +3884,10 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             // exportlodToolStripMenuItem
             // 
-            this.exportlodToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usaToolStripMenuItem});
             this.exportlodToolStripMenuItem.Name = "exportlodToolStripMenuItem";
             this.exportlodToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.exportlodToolStripMenuItem.Text = "itemAll.lod";
             this.exportlodToolStripMenuItem.Click += new System.EventHandler(this.exportlodToolStripMenuItem_Click);
-            // 
-            // usaToolStripMenuItem
-            // 
-            this.usaToolStripMenuItem.Name = "usaToolStripMenuItem";
-            this.usaToolStripMenuItem.Size = new System.Drawing.Size(67, 22);
             // 
             // exportStrItemlodToolStripMenuItem
             // 
@@ -6436,10 +6431,10 @@ namespace LcDevPack_TeamDamonA.Tools
             // t_item_idx
             // 
             this.t_item_idx.DataPropertyName = "t_item_idx";
-            dataGridViewCellStyle56.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.t_item_idx.DefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.t_item_idx.DefaultCellStyle = dataGridViewCellStyle6;
             this.t_item_idx.HeaderText = "Tmp1";
             this.t_item_idx.Name = "t_item_idx";
             this.t_item_idx.ReadOnly = true;
@@ -6449,10 +6444,10 @@ namespace LcDevPack_TeamDamonA.Tools
             // t_skill_index
             // 
             this.t_skill_index.DataPropertyName = "t_skill_index";
-            dataGridViewCellStyle57.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle57.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.t_skill_index.DefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.t_skill_index.DefaultCellStyle = dataGridViewCellStyle7;
             this.t_skill_index.HeaderText = "Tmp2";
             this.t_skill_index.Name = "t_skill_index";
             this.t_skill_index.ReadOnly = true;
@@ -6462,10 +6457,10 @@ namespace LcDevPack_TeamDamonA.Tools
             // t_skill_level
             // 
             this.t_skill_level.DataPropertyName = "t_skill_level";
-            dataGridViewCellStyle58.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle58.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.t_skill_level.DefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.t_skill_level.DefaultCellStyle = dataGridViewCellStyle8;
             this.t_skill_level.HeaderText = "Tmp3";
             this.t_skill_level.Name = "t_skill_level";
             this.t_skill_level.ReadOnly = true;
@@ -6475,10 +6470,10 @@ namespace LcDevPack_TeamDamonA.Tools
             // t_string_index
             // 
             this.t_string_index.DataPropertyName = "t_string_index";
-            dataGridViewCellStyle59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle59.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.t_string_index.DefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.t_string_index.DefaultCellStyle = dataGridViewCellStyle9;
             this.t_string_index.HeaderText = "Tmp4";
             this.t_string_index.Name = "t_string_index";
             this.t_string_index.ReadOnly = true;
@@ -6490,9 +6485,9 @@ namespace LcDevPack_TeamDamonA.Tools
             // t_prob
             // 
             this.t_prob.DataPropertyName = "t_prob";
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle60.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.t_prob.DefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.t_prob.DefaultCellStyle = dataGridViewCellStyle10;
             this.t_prob.HeaderText = "Tmp5";
             this.t_prob.Name = "t_prob";
             this.t_prob.ReadOnly = true;
@@ -6918,6 +6913,96 @@ namespace LcDevPack_TeamDamonA.Tools
             this.groupBox13.TabIndex = 0;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Rare Options";
+            // 
+            // lblProb10
+            // 
+            this.lblProb10.AutoSize = true;
+            this.lblProb10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lblProb10.Location = new System.Drawing.Point(280, 261);
+            this.lblProb10.Name = "lblProb10";
+            this.lblProb10.Size = new System.Drawing.Size(0, 15);
+            this.lblProb10.TabIndex = 109;
+            // 
+            // lblProb9
+            // 
+            this.lblProb9.AutoSize = true;
+            this.lblProb9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lblProb9.Location = new System.Drawing.Point(279, 234);
+            this.lblProb9.Name = "lblProb9";
+            this.lblProb9.Size = new System.Drawing.Size(0, 15);
+            this.lblProb9.TabIndex = 108;
+            // 
+            // lblProb8
+            // 
+            this.lblProb8.AutoSize = true;
+            this.lblProb8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lblProb8.Location = new System.Drawing.Point(280, 209);
+            this.lblProb8.Name = "lblProb8";
+            this.lblProb8.Size = new System.Drawing.Size(0, 15);
+            this.lblProb8.TabIndex = 107;
+            // 
+            // lblProb7
+            // 
+            this.lblProb7.AutoSize = true;
+            this.lblProb7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lblProb7.Location = new System.Drawing.Point(280, 182);
+            this.lblProb7.Name = "lblProb7";
+            this.lblProb7.Size = new System.Drawing.Size(0, 15);
+            this.lblProb7.TabIndex = 106;
+            // 
+            // lblProb6
+            // 
+            this.lblProb6.AutoSize = true;
+            this.lblProb6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lblProb6.Location = new System.Drawing.Point(279, 156);
+            this.lblProb6.Name = "lblProb6";
+            this.lblProb6.Size = new System.Drawing.Size(0, 15);
+            this.lblProb6.TabIndex = 105;
+            // 
+            // lblProb5
+            // 
+            this.lblProb5.AutoSize = true;
+            this.lblProb5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lblProb5.Location = new System.Drawing.Point(280, 130);
+            this.lblProb5.Name = "lblProb5";
+            this.lblProb5.Size = new System.Drawing.Size(0, 15);
+            this.lblProb5.TabIndex = 104;
+            // 
+            // lblProb4
+            // 
+            this.lblProb4.AutoSize = true;
+            this.lblProb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lblProb4.Location = new System.Drawing.Point(280, 102);
+            this.lblProb4.Name = "lblProb4";
+            this.lblProb4.Size = new System.Drawing.Size(0, 15);
+            this.lblProb4.TabIndex = 103;
+            // 
+            // lblProb3
+            // 
+            this.lblProb3.AutoSize = true;
+            this.lblProb3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lblProb3.Location = new System.Drawing.Point(280, 76);
+            this.lblProb3.Name = "lblProb3";
+            this.lblProb3.Size = new System.Drawing.Size(0, 15);
+            this.lblProb3.TabIndex = 102;
+            // 
+            // lblProb2
+            // 
+            this.lblProb2.AutoSize = true;
+            this.lblProb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lblProb2.Location = new System.Drawing.Point(281, 50);
+            this.lblProb2.Name = "lblProb2";
+            this.lblProb2.Size = new System.Drawing.Size(0, 15);
+            this.lblProb2.TabIndex = 101;
+            // 
+            // lblProb1
+            // 
+            this.lblProb1.AutoSize = true;
+            this.lblProb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProb1.Location = new System.Drawing.Point(281, 23);
+            this.lblProb1.Name = "lblProb1";
+            this.lblProb1.Size = new System.Drawing.Size(0, 15);
+            this.lblProb1.TabIndex = 100;
             // 
             // pictureBox22
             // 
@@ -7673,99 +7758,19 @@ namespace LcDevPack_TeamDamonA.Tools
             this.CbSaveIconSmc.Text = "Save Icon Info and SMC";
             this.CbSaveIconSmc.UseVisualStyleBackColor = true;
             // 
-            // lblProb1
+            // pb_loading
             // 
-            this.lblProb1.AutoSize = true;
-            this.lblProb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProb1.Location = new System.Drawing.Point(281, 23);
-            this.lblProb1.Name = "lblProb1";
-            this.lblProb1.Size = new System.Drawing.Size(0, 15);
-            this.lblProb1.TabIndex = 100;
-            // 
-            // lblProb2
-            // 
-            this.lblProb2.AutoSize = true;
-            this.lblProb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lblProb2.Location = new System.Drawing.Point(281, 50);
-            this.lblProb2.Name = "lblProb2";
-            this.lblProb2.Size = new System.Drawing.Size(0, 15);
-            this.lblProb2.TabIndex = 101;
-            // 
-            // lblProb3
-            // 
-            this.lblProb3.AutoSize = true;
-            this.lblProb3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lblProb3.Location = new System.Drawing.Point(280, 76);
-            this.lblProb3.Name = "lblProb3";
-            this.lblProb3.Size = new System.Drawing.Size(0, 15);
-            this.lblProb3.TabIndex = 102;
-            // 
-            // lblProb6
-            // 
-            this.lblProb6.AutoSize = true;
-            this.lblProb6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lblProb6.Location = new System.Drawing.Point(279, 156);
-            this.lblProb6.Name = "lblProb6";
-            this.lblProb6.Size = new System.Drawing.Size(0, 15);
-            this.lblProb6.TabIndex = 105;
-            // 
-            // lblProb5
-            // 
-            this.lblProb5.AutoSize = true;
-            this.lblProb5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lblProb5.Location = new System.Drawing.Point(280, 130);
-            this.lblProb5.Name = "lblProb5";
-            this.lblProb5.Size = new System.Drawing.Size(0, 15);
-            this.lblProb5.TabIndex = 104;
-            // 
-            // lblProb4
-            // 
-            this.lblProb4.AutoSize = true;
-            this.lblProb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lblProb4.Location = new System.Drawing.Point(280, 102);
-            this.lblProb4.Name = "lblProb4";
-            this.lblProb4.Size = new System.Drawing.Size(0, 15);
-            this.lblProb4.TabIndex = 103;
-            // 
-            // lblProb9
-            // 
-            this.lblProb9.AutoSize = true;
-            this.lblProb9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lblProb9.Location = new System.Drawing.Point(279, 234);
-            this.lblProb9.Name = "lblProb9";
-            this.lblProb9.Size = new System.Drawing.Size(0, 15);
-            this.lblProb9.TabIndex = 108;
-            // 
-            // lblProb8
-            // 
-            this.lblProb8.AutoSize = true;
-            this.lblProb8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lblProb8.Location = new System.Drawing.Point(280, 209);
-            this.lblProb8.Name = "lblProb8";
-            this.lblProb8.Size = new System.Drawing.Size(0, 15);
-            this.lblProb8.TabIndex = 107;
-            // 
-            // lblProb7
-            // 
-            this.lblProb7.AutoSize = true;
-            this.lblProb7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lblProb7.Location = new System.Drawing.Point(280, 182);
-            this.lblProb7.Name = "lblProb7";
-            this.lblProb7.Size = new System.Drawing.Size(0, 15);
-            this.lblProb7.TabIndex = 106;
-            // 
-            // lblProb10
-            // 
-            this.lblProb10.AutoSize = true;
-            this.lblProb10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lblProb10.Location = new System.Drawing.Point(280, 261);
-            this.lblProb10.Name = "lblProb10";
-            this.lblProb10.Size = new System.Drawing.Size(0, 15);
-            this.lblProb10.TabIndex = 109;
+            this.pb_loading.Location = new System.Drawing.Point(139, 6);
+            this.pb_loading.Name = "pb_loading";
+            this.pb_loading.Size = new System.Drawing.Size(385, 10);
+            this.pb_loading.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.pb_loading.TabIndex = 41;
+            this.pb_loading.Visible = false;
             // 
             // ItemEditor2
             // 
             this.ClientSize = new System.Drawing.Size(1232, 708);
+            this.Controls.Add(this.pb_loading);
             this.Controls.Add(this.CbSaveIconSmc);
             this.Controls.Add(this.tbDoesItemExist);
             this.Controls.Add(this.CbAutoUpdate);
