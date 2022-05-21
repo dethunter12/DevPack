@@ -2043,60 +2043,49 @@ namespace LcDevPack_TeamDamonA.Tools
         {
             textBox17.Text = GetIndexByComboBox(comboBox18.Text).ToString();
         }
-        public string LanguageExport() //dethunter12 add 7/5/2020
+        public string LanguageExport() //dethunter12 add 7/5/2020 [clean by scura]
         {
-
             if (language == "GER")
             {
-                namee = "ger";
-                return namee;
+                return "ger";
 
             }
             else if (language == "POL")
             {
-                namee = "pol";
-                return namee;
+                return "pol";
 
             }
             else if (language == "BRA")
             {
-                namee = "brz";
-                return namee;
+                return "brz";
             }
             else if (language == "RUS")
             {
-                namee = "rus";
-                return namee;
+                return "rus";
             }
             else if (language == "FRA")
             {
-                namee = "fra";
-                return namee;
+                return "fra";
             }
             else if (language == "ESP")
             {
-                namee = "esp";
-                return namee;
+                return "esp";
             }
             else if (language == "MEX")
             {
-                namee = "mex";
-                return namee;
+                return "mex";
             }
             else if (language == "THA")
             {
-                namee = "tha";
-                return namee;
+                return "tha";
             }
             else if (language == "ITA")
             {
-                namee = "ita";
-                return namee;
+                return "ita";
             }
             else if (language == "USA")
             {
-                namee = "usa";
-                return namee;
+                return "usa";
             }
             else
             {
