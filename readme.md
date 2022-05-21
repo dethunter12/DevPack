@@ -4,7 +4,7 @@ Complete opensource devpack for LastChaos Ep4.
 ![Demo](https://assets.landingpages.gamigo.com/websites/lastchaos/images/logo.png)
 
 
-[DOWNLOAD](https://bit.ly/2yv3qGb) | [ISSUE](https://bit.ly/2zdu06I) | [PULL REQUEST](https://bit.ly/2SBDI9V)
+[DOWNLOAD](https://github.com/dethunter12/DevPack/releases) | [ISSUE](https://github.com/dethunter12/DevPack/issues) | [PULL REQUEST](https://github.com/dethunter12/DevPack/pulls)
 
 ## Index
 - [About DevPack](#about-devpack)
@@ -21,27 +21,32 @@ Devpack is a set of tools maded by [DamonA](https://github.com/DamonA95) and man
 -----------
 ### Tools Supported
 
--[x] Affinity Editor
--[x] BigPet Editor
--[x] Catalog (Premium shop)
--[x] ExChange (SONGKRAN Craft event)
--[x] IpReader (aka IpTool)
--[x] Item Collection (IrisBook)
--[x] Item Editor
--[x] Jewel Prob
--[x] LevelUpGuide
--[x] LogReader (ServerLogs)
--[x] LuckyDraw
--[x] Magic (t_magic)
--[x] MobEditor
--[x] Moonstone Editor
--[x] Option Editor
--[x] Quest Editor
--[x] RareOption Editor
--[x] Reward Editor
--[x] Shop Editor (t_shop/npc)
--[x] Skill Editor
--[x] Title Editor
+- [x] Affinity Editor
+- [x] BigPet Editor
+- [x] Catalog (Premium shop)
+- [x] ExChange (SONGKRAN Craft event)
+- [x] IpReader (aka IpTool)
+- [x] Item Collection (IrisBook)
+- [x] Item Editor
+- [x] Jewel Prob
+- [x] LevelUpGuide
+- [x] LogReader (ServerLogs)
+- [x] LuckyDraw
+- [x] Magic (t_magic)
+- [x] MobEditor
+- [x] Moonstone Editor
+- [x] Option Editor
+- [x] Quest Editor
+- [x] RareOption Editor
+- [x] Reward Editor
+- [x] Shop Editor (t_shop/npc)
+- [x] Skill Editor
+- [x] Title Editor
+
+-----------
+### Known Issues
+
+Nothing here at the moment.
 
 -----------
 ### Credits
