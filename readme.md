@@ -66,8 +66,9 @@ Nothing here at the moment.
 
 [Previous version details are not listed here]
 
-#### Version 1.8.X
+#### Version 1.8.X -  [Scura](https://github.com/LittleZen)
 - [x] Item Editor now export lod item in async mode (no crash anymore)
 - [x] Fixed some bugs
 - [x] Little code clean up
 - [x] Exchange database column fixed. Now Correctly load the db.
+- [x] Readme added
