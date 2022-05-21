@@ -34,56 +34,43 @@ namespace LcDevPack_TeamDamonA
 
             if (language == "GER")
             {
-
-                name = "a_name_ger";
-                return name;
-
+                return "a_name_ger";
             }
             else if (language == "POL")
             {
-                name = "a_name_pld";
-                return name;
-
+                return "a_name_pld";
             }
             else if (language == "BRA")
             {
-                name = "a_name_brz";
-                return name;
+                return "a_name_brz";
             }
             else if (language == "RUS")
             {
-                name = "a_name_rus";
-                return name;
+                return "a_name_rus";
             }
             else if (language == "FRA")
             {
-                name = "a_name_frc";
-                return name;
+                return "a_name_frc";
             }
             else if (language == "ESP")
             {
-                name = "a_name_spn";
-                return name;
+                return "a_name_spn";
             }
             else if (language == "MEX")
             {
-                name = "a_name_mex";
-                return name;
+                return "a_name_mex";
             }
             else if (language == "THA")
             {
-                name = "a_name_thai";
-                return name;
+                return "a_name_thai";
             }
             else if (language == "ITA")
             {
-                name = "a_name_ita";
-                return name;
+                return "a_name_ita";
             }
             else if (language == "USA")
             {
-                name = "a_name_usa";
-                return name;
+                return "a_name_usa";
             }
             else
             {
@@ -106,7 +93,7 @@ namespace LcDevPack_TeamDamonA
                 str1 = char.ToUpper(searchString[0]).ToString() + searchString.Substring(1);
             //dethunter12 4/11/2018 language change
 
-            string cmdText = "select a_index," + " " + namee + " from " + tableName + " WHERE" + " " + namee + " " + "LIKE '%" + searchString + "%'" + " OR a_index LIKE '%" + searchString + "%'" + " OR" + " " + namee + " " + "LIKE '%" + lower + "%' OR a_index  LIKE '%" + lower + "%'" + " OR" + " " + namee + " " + "LIKE '%" + upper + "%' OR a_index LIKE '%" + upper + "%'" + " OR" + " " + namee + " " + " LIKE '%" + str1 + "%' OR a_index LIKE '%" + str1 + "%'" + " ORDER BY a_index;"; //dethunter12 test
+            string cmdText = "SELECT a_index," + " " + namee + " FROM " + tableName + " WHERE" + " " + namee + " " + "LIKE '%" + searchString + "%'" + " OR a_index LIKE '%" + searchString + "%'" + " OR" + " " + namee + " " + "LIKE '%" + lower + "%' OR a_index  LIKE '%" + lower + "%'" + " OR" + " " + namee + " " + "LIKE '%" + upper + "%' OR a_index LIKE '%" + upper + "%'" + " OR" + " " + namee + " " + " LIKE '%" + str1 + "%' OR a_index LIKE '%" + str1 + "%'" + " ORDER BY a_index;"; //dethunter12 test
             MySqlConnection connection = new MySqlConnection("datasource=" + Host + ";port=3306;username=" + User + ";password=" + Password + ";database=" + Database);
             MySqlCommand mySqlCommand = new MySqlCommand(cmdText, connection);
             try
@@ -145,7 +132,6 @@ namespace LcDevPack_TeamDamonA
                 return Menu;
             }
         }
-
 
 
         public List<string> SelectMySqlReturnList(string[] rowName, string Host, string User, string Password, string Database, string Query)
@@ -436,32 +422,33 @@ namespace LcDevPack_TeamDamonA
                 return "None";
             return skill.Name;
         }
-        public Bitmap Icon(int ItemID)
+
+    public Bitmap Icon(int ItemID)
     {
-      int num1 = 0;
-      int num2 = 0;
-      int num3 = 0;
-      string str = " select a_texture_id, a_texture_row, a_texture_col from t_item WHERE a_index ='" +  ItemID + "';";
-      MySqlConnection mySqlConnection = new MySqlConnection("datasource=" + Host + ";port=3306;username=" + User + ";password=" + Password + ";database=" + Database);
-      MySqlCommand command = mySqlConnection.CreateCommand();
-      command.CommandText = str;
-      mySqlConnection.Open();
-      MySqlDataReader mySqlDataReader = command.ExecuteReader();
-      while (mySqlDataReader.Read())
-      {
-        num1 = Convert.ToInt32(mySqlDataReader.GetValue(0));
-        num2 = Convert.ToInt32(mySqlDataReader.GetValue(1));
-        num3 = Convert.ToInt32(mySqlDataReader.GetValue(2));
-      }
-      Image image = Image.FromFile("icons/ItemBtn" + num1.ToString() + ".png");
-      Bitmap bitmap = new Bitmap(32, 32);
-      Graphics graphics = Graphics.FromImage((Image) bitmap);
-      int y = num2 * 32;
-      Rectangle srcRect = new Rectangle(num3 * 32, y, 32, 32);
-      graphics.DrawImage(image, 0, 0, srcRect, GraphicsUnit.Pixel);
-      graphics.Dispose();
-      mySqlConnection.Close();
-      return bitmap;
+       int num1 = 0;
+       int num2 = 0;
+       int num3 = 0;
+       string str = " select a_texture_id, a_texture_row, a_texture_col from t_item WHERE a_index ='" +  ItemID + "';";
+       MySqlConnection mySqlConnection = new MySqlConnection("datasource=" + Host + ";port=3306;username=" + User + ";password=" + Password + ";database=" + Database);
+       MySqlCommand command = mySqlConnection.CreateCommand();
+       command.CommandText = str;
+       mySqlConnection.Open();
+       MySqlDataReader mySqlDataReader = command.ExecuteReader();
+       while (mySqlDataReader.Read())
+       {
+         num1 = Convert.ToInt32(mySqlDataReader.GetValue(0));
+         num2 = Convert.ToInt32(mySqlDataReader.GetValue(1));
+         num3 = Convert.ToInt32(mySqlDataReader.GetValue(2));
+       }
+       Image image = Image.FromFile("icons/ItemBtn" + num1.ToString() + ".png");
+       Bitmap bitmap = new Bitmap(32, 32);
+       Graphics graphics = Graphics.FromImage((Image) bitmap);
+       int y = num2 * 32;
+       Rectangle srcRect = new Rectangle(num3 * 32, y, 32, 32);
+       graphics.DrawImage(image, 0, 0, srcRect, GraphicsUnit.Pixel);
+       graphics.Dispose();
+       mySqlConnection.Close();
+       return bitmap;
     }
 
     public Bitmap IconItem(int FileID, int Row, int Col)
