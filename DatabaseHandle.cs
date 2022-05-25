@@ -219,41 +219,66 @@ namespace LcDevPack_TeamDamonA
 
         public string[] SelectMySqlReturnArray(string Host, string User, string Password, string Database, string Query, string[] rows)
         {
-            Query.Replace("'", "\\'").Replace("\\", "\\\\").Replace("'", "\\'");
-            MySqlConnection connection = new MySqlConnection("datasource=" + Host + ";port=3306;username=" + User + ";password=" + Password + ";database=" + Database);
-            MySqlCommand mySqlCommand = new MySqlCommand(Query, connection);
-            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter();
-            mySqlDataAdapter.SelectCommand = mySqlCommand;
-            DataTable dataTable1 = new DataTable();
-            mySqlDataAdapter.Fill(dataTable1);
-            new BindingSource().DataSource = dataTable1;
-            mySqlDataAdapter.Update(dataTable1);
-            connection.Open();
-            DataTable dataTable2 = new DataTable();
-            mySqlCommand.ExecuteNonQuery();
-            mySqlDataAdapter.Fill(dataTable2);
-            Convert.ToString(mySqlCommand.ExecuteScalar());
-            string[] strArray = new string[rows.Length];
-            foreach (DataRow row in (InternalDataCollectionBase)dataTable2.Rows)
+            try // Scura Exception Handler [25-05-22]
             {
-                for (int index = 0; index < rows.Length; ++index)
+                Query.Replace("'", "\\'").Replace("\\", "\\\\").Replace("'", "\\'");
+                MySqlConnection connection = new MySqlConnection("datasource=" + Host + ";port=3306;username=" + User + ";password=" + Password + ";database=" + Database);
+                MySqlCommand mySqlCommand = new MySqlCommand(Query, connection);
+                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter();
+                mySqlDataAdapter.SelectCommand = mySqlCommand;
+                DataTable dataTable1 = new DataTable();
+                mySqlDataAdapter.Fill(dataTable1);
+                new BindingSource().DataSource = dataTable1;
+                mySqlDataAdapter.Update(dataTable1);
+                connection.Open();
+                DataTable dataTable2 = new DataTable();
+                mySqlCommand.ExecuteNonQuery();
+                mySqlDataAdapter.Fill(dataTable2);
+                Convert.ToString(mySqlCommand.ExecuteScalar());
+                string[] strArray = new string[rows.Length];
+                foreach (DataRow row in (InternalDataCollectionBase)dataTable2.Rows)
                 {
-                    row[rows[index]].ToString();
-                    strArray[index] = row[rows[index]].ToString();
+                    for (int index = 0; index < rows.Length; ++index)
+                    {
+                        row[rows[index]].ToString();
+                        strArray[index] = row[rows[index]].ToString();
+                    }
                 }
+                connection.Close();
+                return strArray;
             }
-            connection.Close();
-            return strArray;
+            catch (Exception ex) // Scura Catch Exception 
+            {
+                MessageBox.Show($"Error while connecting into server\n\n{ex}", "Mysql Server Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
         }
 
+
+        bool abort_connection = false; //Scura - prevent multiple exceptions
         public void SendQueryMySql(string Host, string User, string Password, string Database, string Query)
         {
-            Query.Replace("'", "\\'").Replace("\\", "\\\\").Replace("'", "\\'");
-            MySqlConnection connection = new MySqlConnection("datasource=" + Host + ";port=3306;username=" + User + ";password=" + Password + ";database=" + Database);
-            MySqlCommand mySqlCommand = new MySqlCommand(Query, connection);
-            connection.Open();
-            mySqlCommand.ExecuteReader();
-            connection.Close();
+            if (abort_connection) //Scura
+            {
+                MessageBox.Show("Connection Aborted. Re-launch the application!", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                Query.Replace("'", "\\'").Replace("\\", "\\\\").Replace("'", "\\'");
+                MySqlConnection connection = new MySqlConnection("datasource=" + Host + ";port=3306;username=" + User + ";password=" + Password + ";database=" + Database);
+                MySqlCommand mySqlCommand = new MySqlCommand(Query, connection);
+                connection.Open();
+                mySqlCommand.ExecuteReader();
+                connection.Close();
+                abort_connection = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error while sending mysql query to server. Exception:\n\n{ex}", "Error");
+                abort_connection = true;
+            }
         }
 
         public int CountByRow(string Host, string User, string Password, string Database, string Query)
