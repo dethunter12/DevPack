@@ -5077,59 +5077,46 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker.PetEditor
         }
         private string namee; //dethunter12 stringfrom lang modify
         public string LanguageExport() //dethunter12 add 7/5/2020
-        {
-
+        { 
             if (language == "GER")
             {
-                namee = "ger";
-                return namee;
-
+                return "a_name_ger";
             }
             else if (language == "POL")
             {
-                namee = "pol";
-                return namee;
-
+                return "a_name_pld";
             }
             else if (language == "BRA")
             {
-                namee = "brz";
-                return namee;
+                return "a_name_brz";
             }
             else if (language == "RUS")
             {
-                namee = "rus";
-                return namee;
+                return "a_name_rus";
             }
             else if (language == "FRA")
             {
-                namee = "fra";
-                return namee;
+                return "a_name_frc";
             }
             else if (language == "ESP")
             {
-                namee = "esp";
-                return namee;
+                return "a_name_spn";
             }
             else if (language == "MEX")
             {
-                namee = "mex";
-                return namee;
+                return "a_name_mex";
             }
             else if (language == "THA")
             {
-                namee = "tha";
-                return namee;
+                return "a_name_thai";
             }
             else if (language == "ITA")
             {
-                namee = "ita";
-                return namee;
+                return "a_name_ita";
             }
             else if (language == "USA")
             {
-                namee = "usa";
-                return namee;
+                return "a_name_usa";
             }
             else
             {

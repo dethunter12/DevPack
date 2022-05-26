@@ -24,59 +24,45 @@ namespace LcDevPack_TeamDamonA.Tools
         public static string descr;
         public  static string StringFromLanguage() 
         {
-
             if (language == "GER")
             {
-
-                name = "a_name_ger";
-                return name;
-
+                return "a_name_ger";
             }
             else if (language == "POL")
             {
-                name = "a_name_pld";
-                return name;
-
+                return "a_name_pld";
             }
             else if (language == "BRA")
             {
-                name = "a_name_brz";
-                return name;
+                return "a_name_brz";
             }
             else if (language == "RUS")
             {
-                name = "a_name_rus";
-                return name;
+                return "a_name_rus";
             }
             else if (language == "FRA")
             {
-                name = "a_name_frc";
-                return name;
+                return "a_name_frc";
             }
             else if (language == "ESP")
             {
-                name = "a_name_spn";
-                return name;
+                return "a_name_spn";
             }
             else if (language == "MEX")
             {
-                name = "a_name_mex";
-                return name;
+                return "a_name_mex";
             }
             else if (language == "THA")
             {
-                name = "a_name_thai";
-                return name;
+                return "a_name_thai";
             }
             else if (language == "ITA")
             {
-                name = "a_name_ita";
-                return name;
+                return "a_name_ita";
             }
             else if (language == "USA")
             {
-                name = "a_name_usa";
-                return name;
+                return "a_name_usa";
             }
             else
             {
@@ -88,56 +74,43 @@ namespace LcDevPack_TeamDamonA.Tools
         {
             if (language == "GER")
             {
-
-                descr = "a_client_description_ger";
-                return descr;
-
+                return "a_client_description_ger";
             }
             else if (language == "POL")
             {
-                descr = "a_client_description_pld";
-                return descr;
-
+                return "a_client_description_pld";
             }
             else if (language == "BRA")
             {
-                descr = "a_client_description_brz";
-                return descr;
+                return "a_client_description_brz";
             }
             else if (language == "RUS")
             {
-                descr = "a_client_description_rus";
-                return descr;
+                return "a_client_description_rus";
             }
             else if (language == "FRA")
             {
-                descr = "a_client_description_frc";
-                return descr;
+                return "a_client_description_frc";
             }
             else if (language == "ESP")
             {
-                descr = "a_client_description_spn";
-                return descr;
+                return "a_client_description_spn";
             }
             else if (language == "MEX")
             {
-                descr = "a_client_description_mex";
-                return descr;
+                return "a_client_description_mex";
             }
             else if (language == "THA")
             {
-                descr = "a_client_description_thai";
-                return descr;
+                return "a_client_description_thai";
             }
             else if (language == "ITA")
             {
-                descr = "a_client_description_ita";
-                return descr;
+                return "a_client_description_ita";
             }
             else if (language == "USA")
             {
-                descr = "a_client_description_usa";
-                return descr;
+                return "a_client_description_usa";
             }
             else
             {

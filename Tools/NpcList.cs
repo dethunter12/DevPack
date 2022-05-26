@@ -22,55 +22,43 @@ namespace LcDevPack_TeamDamonA.Tools
 
             if (language == "GER")
             {
-                namee = "a_name_ger";
-                return namee;
-
+                return "a_name_ger";
             }
             else if (language == "POL")
             {
-                namee = "a_name_pld";
-                return namee;
-
+                return "a_name_pld";
             }
             else if (language == "BRA")
             {
-                namee = "a_name_brz";
-                return namee;
+                return "a_name_brz";
             }
             else if (language == "RUS")
             {
-                namee = "a_name_rus";
-                return namee;
+                return "a_name_rus";
             }
             else if (language == "FRA")
             {
-                namee = "a_name_frc";
-                return namee;
+                return "a_name_frc";
             }
             else if (language == "ESP")
             {
-                namee = "a_name_spn";
-                return namee;
+                return "a_name_spn";
             }
             else if (language == "MEX")
             {
-                namee = "a_name_mex";
-                return namee;
+                return "a_name_mex";
             }
             else if (language == "THA")
             {
-                namee = "a_name_thai";
-                return namee;
+                return "a_name_thai";
             }
             else if (language == "ITA")
             {
-                namee = "a_name_ita";
-                return namee;
+                return "a_name_ita";
             }
             else if (language == "USA")
             {
-                namee = "a_name_usa";
-                return namee;
+                return "a_name_usa";
             }
             else
             {

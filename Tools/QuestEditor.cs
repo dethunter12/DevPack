@@ -207,55 +207,43 @@ namespace LcDevPack_TeamDamonA.Tools
 
             if (language == "GER")
             {
-                namee = "a_name_ger";
-                return namee;
-
+                return "a_name_ger";
             }
             else if (language == "POL")
             {
-                namee = "a_name_pld";
-                return namee;
-
+                return "a_name_pld";
             }
             else if (language == "BRA")
             {
-                namee = "a_name_brz";
-                return namee;
+                return "a_name_brz";
             }
             else if (language == "RUS")
             {
-                namee = "a_name_rus";
-                return namee;
+                return "a_name_rus";
             }
             else if (language == "FRA")
             {
-                namee = "a_name_frc";
-                return namee;
+                return "a_name_frc";
             }
             else if (language == "ESP")
             {
-                namee = "a_name_spn";
-                return namee;
+                return "a_name_spn";
             }
             else if (language == "MEX")
             {
-                namee = "a_name_mex";
-                return namee;
+                return "a_name_mex";
             }
             else if (language == "THA")
             {
-                namee = "a_name_thai";
-                return namee;
+                return "a_name_thai";
             }
             else if (language == "ITA")
             {
-                namee = "a_name_ita";
-                return namee;
+                return "a_name_ita";
             }
             else if (language == "USA")
             {
-                namee = "a_name_usa";
-                return namee;
+                return "a_name_usa";
             }
             else
             {
@@ -264,58 +252,45 @@ namespace LcDevPack_TeamDamonA.Tools
         }
         public string DescrFromLanguage() //dethunter12 4/11/2018
         {
-
             if (language == "GER")
             {
-                desc = "a_desc_ger";
-                return desc;
-
+                return "a_desc_ger";
             }
             else if (language == "POL")
             {
-                desc = "a_desc_pld";
-                return desc;
-
+                return "a_desc_pld";
             }
             else if (language == "BRA")
             {
-                desc = "a_desc_brz";
-                return desc;
+                return "a_desc_brz";
             }
             else if (language == "RUS")
             {
-                desc = "a_desc_rus";
-                return desc;
+                return "a_desc_rus";
             }
             else if (language == "FRA")
             {
-                desc = "a_desc_frc";
-                return desc;
+                return "a_desc_frc";
             }
             else if (language == "ESP")
             {
-                desc = "a_desc_spn";
-                return desc;
+                return "a_desc_spn";
             }
             else if (language == "MEX")
             {
-                desc = "a_desc_mex";
-                return desc;
+                return "a_desc_mex";
             }
             else if (language == "THA")
             {
-                desc = "a_desc_thai";
-                return desc;
+                return "a_desc_thai";
             }
             else if (language == "ITA")
             {
-                desc = "a_desc_ita";
-                return desc;
+                return "a_desc_ita";
             }
             else if (language == "USA")
             {
-                desc = "a_desc_usa";
-                return desc;
+                return "a_desc_usa";
             }
             else
             {
@@ -324,58 +299,45 @@ namespace LcDevPack_TeamDamonA.Tools
         }
         public string Descr2FromLanguage() //dethunter12 4/11/2018
         {
-
             if (language == "GER")
             {
-                desc2 = "a_desc2_ger";
-                return desc2;
-
+                return "a_desc2_ger";
             }
             else if (language == "POL")
             {
-                desc2 = "a_desc2_pld";
-                return desc2;
-
+                return "a_desc2_pld";
             }
             else if (language == "BRA")
             {
-                desc2 = "a_desc2_brz";
-                return desc2;
+                return "a_desc2_brz";
             }
             else if (language == "RUS")
             {
-                desc2 = "a_desc2_rus";
-                return desc2;
+                return "a_desc2_rus";
             }
             else if (language == "FRA")
             {
-                desc2 = "a_desc2_frc";
-                return desc2;
+                return "a_desc2_frc";
             }
             else if (language == "ESP")
             {
-                desc2 = "a_desc2_spn";
-                return desc2;
+                return "a_desc2_spn";;
             }
             else if (language == "MEX")
             {
-                desc2 = "a_desc2_mex";
-                return desc2;
+                return "a_desc2_mex";
             }
             else if (language == "THA")
             {
-                desc2 = "a_desc2_thai";
-                return desc2;
+                return "a_desc2_thai";
             }
             else if (language == "ITA")
             {
-                desc2 = "a_desc2_ita";
-                return desc2;
+                return "a_desc2_ita";
             }
             else if (language == "USA")
             {
-                desc2 = "a_desc2_usa";
-                return desc2;
+                return "a_desc2_usa";
             }
             else
             {
@@ -384,58 +346,45 @@ namespace LcDevPack_TeamDamonA.Tools
         }
         public string Descr3FromLanguage() //dethunter12 4/11/2018
         {
-
             if (language == "GER")
             {
-                desc3 = "a_desc3_ger";
-                return desc3;
-
+                return "a_desc3_ger";
             }
             else if (language == "POL")
             {
-                desc3 = "a_desc3_pld";
-                return desc3;
-
+                return "a_desc3_pld";
             }
             else if (language == "BRA")
             {
-                desc3 = "a_desc3_brz";
-                return desc3;
+                return "a_desc3_brz";
             }
             else if (language == "RUS")
             {
-                desc3 = "a_desc3_rus";
-                return desc3;
+                return "a_desc3_rus";
             }
             else if (language == "FRA")
             {
-                desc3 = "a_desc3_frc";
-                return desc3;
+                return "a_desc3_frc";
             }
             else if (language == "ESP")
             {
-                desc3 = "a_desc3_spn";
-                return desc3;
+                return "a_desc3_spn";
             }
             else if (language == "MEX")
             {
-                desc3 = "a_desc3_mex";
-                return desc3;
+                return "a_desc3_mex";
             }
             else if (language == "THA")
             {
-                desc3 = "a_desc3_thai";
-                return desc3;
+                return "a_desc3_thai";
             }
             else if (language == "ITA")
             {
-                desc3 = "a_desc3_ita";
-                return desc3;
+                return "a_desc3_ita";
             }
             else if (language == "USA")
             {
-                desc3 = "a_desc3_usa";
-                return desc3;
+                return "a_desc3_usa";
             }
             else
             {
@@ -2845,60 +2794,49 @@ namespace LcDevPack_TeamDamonA.Tools
 
             if (language == "GER")
             {
-                namee = "ger";
-                return namee;
-
+                return "ger";
             }
             else if (language == "POL")
             {
-                namee = "pol";
-                return namee;
-
+                return "pol";
             }
             else if (language == "BRA")
             {
-                namee = "brz";
-                return namee;
+                return "brz";
             }
             else if (language == "RUS")
             {
-                namee = "rus";
-                return namee;
+                return "rus";
             }
             else if (language == "FRA")
             {
-                namee = "fra";
-                return namee;
+                return "fra";
             }
             else if (language == "ESP")
             {
-                namee = "esp";
-                return namee;
+                return "esp";
             }
             else if (language == "MEX")
             {
-                namee = "mex";
-                return namee;
+                return "mex";
             }
             else if (language == "THA")
             {
-                namee = "tha";
-                return namee;
+                return "tha";
             }
             else if (language == "ITA")
             {
-                namee = "ita";
-                return namee;
+                return "ita";
             }
             else if (language == "USA")
             {
-                namee = "usa";
-                return namee;
+                return "usa";
             }
             else
             {
                 return null;
             }
+
         }
         private void exportToolStripMenuItem_Click(object sender, EventArgs e)
     {
