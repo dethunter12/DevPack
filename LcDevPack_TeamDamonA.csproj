@@ -295,6 +295,14 @@
     </Compile>
     <Compile Include="Tools\MemoryWorker\PetEditor\BigpetEv.cs" />
     <Compile Include="Tools\MemoryWorker\PetEditor\Open_Lod.cs" />
+    <Compile Include="Tools\MemoryWorker\rareEditor\RareOptionEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\rareEditor\RareOptionEditor.Designer.cs">
+      <DependentUpon>RareOptionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MemoryWorker\rareEditor\t_option.cs" />
+    <Compile Include="Tools\MemoryWorker\rareEditor\t_rareoptions.cs" />
     <Compile Include="Tools\MemoryWorker\rareoption\RareOptionEditor.cs">
       <SubType>Form</SubType>
     </Compile>
