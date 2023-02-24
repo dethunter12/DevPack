@@ -74,48 +74,56 @@ namespace ExchangeExport
 
         private void LoadDG()
         {
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-
-            dgItems.Rows.Clear();
-            string str1 = "select a_index, a_npc_index, result_itemIndex, result_itemCount, source_itemIndex0, source_itemCount0, source_itemIndex1, source_itemCount1, source_itemIndex2, source_itemCount2, source_itemIndex3, source_itemCount3, source_itemIndex4, source_itemCount4      from t_item_exchange order by a_index";
-            MySqlConnection mySqlConnection = new MySqlConnection("datasource=" + Host + ";port=3306;username=" + User + ";password=" + Password + ";database=" + Database);
-            MySqlCommand command = mySqlConnection.CreateCommand();
-            command.CommandText = str1;
-            mySqlConnection.Open();
-            MySqlDataReader mySqlDataReader = command.ExecuteReader();
-            while (mySqlDataReader.Read())
+            try
             {
-                tbl_exchange exchange = new tbl_exchange();
-                exchange.index = Convert.ToInt32(mySqlDataReader.GetValue(0).ToString()); //dethunter12 add 
-                exchange.npcidx = Convert.ToInt32(mySqlDataReader.GetValue(1).ToString()); //dethunter12 add
-                exchange.result_itemIndex = Convert.ToInt32(mySqlDataReader.GetValue(2).ToString());
-                exchange.result_itemCount = Convert.ToInt32(mySqlDataReader.GetValue(3).ToString());
-                exchange.source_itemIndex0 = Convert.ToInt32(mySqlDataReader.GetValue(4).ToString()); //item index 1
-                exchange.source_itemCount0 = Convert.ToInt32(mySqlDataReader.GetValue(5).ToString());
-                exchange.source_itemIndex1 = Convert.ToInt32(mySqlDataReader.GetValue(6).ToString());
-                exchange.source_itemCount1 = Convert.ToInt32(mySqlDataReader.GetValue(7).ToString());
-                exchange.source_itemIndex2 = Convert.ToInt32(mySqlDataReader.GetValue(8).ToString());
-                exchange.source_itemCount2 = Convert.ToInt32(mySqlDataReader.GetValue(9).ToString());
-                exchange.source_itemIndex3 = Convert.ToInt32(mySqlDataReader.GetValue(10).ToString());
-                exchange.source_itemCount3 = Convert.ToInt32(mySqlDataReader.GetValue(11).ToString());
-                exchange.source_item_Index4 = Convert.ToInt32(mySqlDataReader.GetValue(12).ToString());
-                exchange.source_itemCount4 = Convert.ToInt32(mySqlDataReader.GetValue(13).ToString());
-                ExChangeList.Add(exchange); //add all the values to the list  box
-                string a_index = mySqlDataReader.GetValue(0).ToString();
-                string a_npc_index = mySqlDataReader.GetValue(1).ToString();
-                string item_id = mySqlDataReader.GetValue(2).ToString();
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
 
-                dgItems.Rows.Add(new Bitmap(databaseHandle.IconFast(Int32.Parse(item_id)), 20, 20), a_index, databaseHandle.ItemNameFast(Int32.Parse(item_id)), databaseHandle.MobNameFast(Int32.Parse(a_npc_index)));
+                dgItems.Rows.Clear();
+                string str1 = "SELECT a_index, a_npc_index, a_result_itemIndex, a_result_itemCount, source_itemIndex0, source_itemCount0, source_itemIndex1, source_itemCount1, source_itemIndex2, source_itemCount2, source_itemIndex3, source_itemCount3, source_itemIndex4, source_itemCount4 FROM t_item_exchange ORDER BY a_index";
+                MySqlConnection mySqlConnection = new MySqlConnection("datasource=" + Host + ";port=3306;username=" + User + ";password=" + Password + ";database=" + Database);
+                MySqlCommand command = mySqlConnection.CreateCommand();
+                command.CommandText = str1;
+
+                mySqlConnection.Open();
+                MySqlDataReader mySqlDataReader = command.ExecuteReader();
+
+                while (mySqlDataReader.Read())
+                {
+                    tbl_exchange exchange = new tbl_exchange();
+                    exchange.index = Convert.ToInt32(mySqlDataReader.GetValue(0).ToString()); //dethunter12 add 
+                    exchange.npcidx = Convert.ToInt32(mySqlDataReader.GetValue(1).ToString()); //dethunter12 add
+                    exchange.result_itemIndex = Convert.ToInt32(mySqlDataReader.GetValue(2).ToString());
+                    exchange.result_itemCount = Convert.ToInt32(mySqlDataReader.GetValue(3).ToString());
+                    exchange.source_itemIndex0 = Convert.ToInt32(mySqlDataReader.GetValue(4).ToString()); //item index 1
+                    exchange.source_itemCount0 = Convert.ToInt32(mySqlDataReader.GetValue(5).ToString());
+                    exchange.source_itemIndex1 = Convert.ToInt32(mySqlDataReader.GetValue(6).ToString());
+                    exchange.source_itemCount1 = Convert.ToInt32(mySqlDataReader.GetValue(7).ToString());
+                    exchange.source_itemIndex2 = Convert.ToInt32(mySqlDataReader.GetValue(8).ToString());
+                    exchange.source_itemCount2 = Convert.ToInt32(mySqlDataReader.GetValue(9).ToString());
+                    exchange.source_itemIndex3 = Convert.ToInt32(mySqlDataReader.GetValue(10).ToString());
+                    exchange.source_itemCount3 = Convert.ToInt32(mySqlDataReader.GetValue(11).ToString());
+                    exchange.source_item_Index4 = Convert.ToInt32(mySqlDataReader.GetValue(12).ToString());
+                    exchange.source_itemCount4 = Convert.ToInt32(mySqlDataReader.GetValue(13).ToString());
+                    ExChangeList.Add(exchange); //add all the values to the list  box
+                    string a_index = mySqlDataReader.GetValue(0).ToString();
+                    string a_npc_index = mySqlDataReader.GetValue(1).ToString();
+                    string item_id = mySqlDataReader.GetValue(2).ToString();
+
+                    dgItems.Rows.Add(new Bitmap(databaseHandle.IconFast(Int32.Parse(item_id)), 20, 20), a_index, databaseHandle.ItemNameFast(Int32.Parse(item_id)), databaseHandle.MobNameFast(Int32.Parse(a_npc_index)));
+                }
+                mySqlConnection.Close();
+                stopwatch.Stop();
+                TimeSpan elapsed = stopwatch.Elapsed;
+                string.Format("{0:00}:{1:00}:{2:00}.{3:00}", elapsed.Hours, elapsed.Minutes, elapsed.Seconds, (elapsed.Milliseconds / 10));
+
+                //toolStripStatusLabel1.Text = "Ready";
             }
-            mySqlConnection.Close();
-            stopwatch.Stop();
-            TimeSpan elapsed = stopwatch.Elapsed;
-            string.Format("{0:00}:{1:00}:{2:00}.{3:00}", elapsed.Hours, elapsed.Minutes, elapsed.Seconds, (elapsed.Milliseconds / 10));
-
-            //toolStripStatusLabel1.Text = "Ready";
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error while loading itemexchange db, Exception:\n {ex}", "Error");
+            }
         }
-
 
         void item_src_init(PictureBox pb, TextBox id, TextBox name_src, TextBox qty)
         {
@@ -191,7 +199,7 @@ namespace ExchangeExport
         private void tb_reward_id_TextChanged(object sender, EventArgs e)
         {
             pictureBox2.Image = databaseHandle.IconFast(Int32.Parse(tb_reward_id.Text.Trim()));
-            tb_reward_name.Text = databaseHandle.ItemNameFast(Convert.ToInt32(tb_reward_id.Text)); 
+            tb_reward_name.Text = databaseHandle.ItemNameFast(Convert.ToInt32(tb_reward_id.Text));
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -409,7 +417,7 @@ namespace ExchangeExport
 
         private void btn_EnabledChanged(object sender, EventArgs e)
         {
-            if(((Button)sender).Enabled==true)
+            if (((Button)sender).Enabled == true)
             {
                 switch (((Button)sender).Name)
                 {
@@ -427,8 +435,8 @@ namespace ExchangeExport
 
         private void Number_textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
-           
+
+
         }
 
         private void bt_refresh_Click(object sender, EventArgs e)
@@ -472,13 +480,13 @@ namespace ExchangeExport
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if(tx_npc_id.Text.Trim().Length<=0)
+            if (tx_npc_id.Text.Trim().Length <= 0)
             {
                 MessageBox.Show("Please input NPC ID first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            string strSQL = "insert into t_item_exchange(a_index, a_enable, a_npc_index, result_itemIndex, result_itemCount, "
+            string strSQL = "INSERT INTO t_item_exchange(a_index, a_enable, a_npc_index, a_result_itemIndex, a_result_itemCount, "
                         + "source_itemIndex0, source_itemCount0, source_itemIndex1, source_itemCount1, source_itemIndex2, "
                         + "source_itemCount2, source_itemIndex3, source_itemCount3, source_itemIndex4, source_itemCount4) "
                         + "select IFNULL(max(a.a_index), 0) + 1 as id, "
@@ -546,7 +554,7 @@ namespace ExchangeExport
             ExChangeList[num].source_itemCount4 = Convert.ToInt32(tbExchange5Cnt.Text);
             ExChangeList[num].npcidx = Convert.ToInt32(tx_npc_id.Text);
             ExChangeList[num].npcidx = Convert.ToInt32(tx_npc_id.Text);
-            string strSQL = "update t_item_exchange set "
+            string strSQL = "UPDATE t_item_exchange SET "
                         + "a_npc_index = " + tx_npc_id.Text.Trim()
                         + ", result_itemIndex = " + (tb_reward_id.Text.Trim().Length == 0 ? "0" : tb_reward_id.Text.Trim())
                         + ", result_itemCount = " + (tb_reward_qty.Text.Trim().Length == 0 ? "0" : tb_reward_qty.Text.Trim())
@@ -581,12 +589,12 @@ namespace ExchangeExport
             int max = databaseHandle.CountByRow(Host, User, Password, Database, "SELECT MAX(a_index) FROM t_item_exchange");
             string str1 = "SELECT * FROM t_item_exchange WHERE a_enable = 1 ORDER by a_index";
             string connectionString = "datasource=" + Host + ";port=3306;username=" + User + ";password=" + Password + ";database=" + Database;
-            
+
             MySqlConnection mySqlConnection1 = new MySqlConnection(connectionString);
             MySqlCommand command1 = mySqlConnection1.CreateCommand();
             command1.CommandText = str1;
             mySqlConnection1.Open();
-            
+
             MySqlDataReader mySqlDataReader1 = command1.ExecuteReader();
             binaryWriter.Write(max);
             binaryWriter.Write(num);
@@ -666,9 +674,9 @@ namespace ExchangeExport
                 return;
             }
 
-            string strSQL = "insert into t_item_exchange select IFNULL(max(a.a_index), 0) + 1 as id, a_enable, a.a_npc_index, a.result_itemIndex, a.result_itemCount, "
-                        + "a.source_itemIndex0, a.source_itemCount0, a.source_itemIndex1, a.source_itemCount1, a.source_itemIndex2, "
-                        + "a.source_itemCount2, a.source_itemIndex3, a.source_itemCount3, a.source_itemIndex4, a.source_itemCount4, a.a_name, a.a_desc from t_item_exchange a";
+            string strSQL = "INSERT INTO t_item_exchange SELECT IFNULL(max(a_index), 0) + 1 AS id, a_enable, a_npc_index, a_result_itemIndex, a_result_itemCount, "
+                        + "source_itemIndex0, source_itemCount0, source_itemIndex1, source_itemCount1, source_itemIndex2, "
+                        + "source_itemCount2, source_itemIndex3, source_itemCount3, source_itemIndex4, source_itemCount4, a_name, a_desc FROM t_item_exchange a";
 
             databaseHandle.SendQueryMySql(Host, User, Password, Database, strSQL);
 

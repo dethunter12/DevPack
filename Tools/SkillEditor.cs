@@ -194,55 +194,43 @@ namespace LcDevPack_TeamDamonA.Tools
 
             if (language == "GER")
             {
-                namee = "a_name_ger";
-                return namee;
-
+                return "a_name_ger";
             }
             else if (language == "POL")
             {
-                namee = "a_name_pld";
-                return namee;
-
+                return "a_name_pld";
             }
             else if (language == "BRA")
             {
-                namee = "a_name_brz";
-                return namee;
+                return "a_name_brz";
             }
             else if (language == "RUS")
             {
-                namee = "a_name_rus";
-                return namee;
+                return "a_name_rus";
             }
             else if (language == "FRA")
             {
-                namee = "a_name_frc";
-                return namee;
+                return "a_name_frc";
             }
             else if (language == "ESP")
             {
-                namee = "a_name_spn";
-                return namee;
+                return "a_name_spn";
             }
             else if (language == "MEX")
             {
-                namee = "a_name_mex";
-                return namee;
+                return "a_name_mex";
             }
             else if (language == "THA")
             {
-                namee = "a_name_thai";
-                return namee;
+                return "a_name_thai";
             }
             else if (language == "ITA")
             {
-                namee = "a_name_ita";
-                return namee;
+                return "a_name_ita";
             }
             else if (language == "USA")
             {
-                namee = "a_name_usa";
-                return namee;
+                return "a_name_usa";
             }
             else
             {
@@ -251,58 +239,45 @@ namespace LcDevPack_TeamDamonA.Tools
         }
         public string ClientDescrFromLanguage() //dethunter12 4/12/2018
         {
-
             if (language == "GER")
             {
-                ClientDescription = "a_client_description_ger";
-                return ClientDescription;
-
+                return "a_client_description_ger";
             }
             else if (language == "POL")
             {
-                ClientDescription = "a_client_description_pld";
-                return ClientDescription;
-
+                return "a_client_description_pld";
             }
             else if (language == "BRA")
             {
-                ClientDescription = "a_client_description_brz";
-                return ClientDescription;
+               return "a_client_description_brz";
             }
             else if (language == "RUS")
             {
-                ClientDescription = "a_client_description_rus";
-                return ClientDescription;
+                return "a_client_description_rus";
             }
             else if (language == "FRA")
             {
-                ClientDescription = "a_client_description_frc";
-                return ClientDescription;
+                return"a_client_description_frc";
             }
             else if (language == "ESP")
             {
-                ClientDescription = "a_client_description_spn";
-                return ClientDescription;
+                return "a_client_description_spn";
             }
             else if (language == "MEX")
             {
-                ClientDescription = "a_client_description_mex";
-                return ClientDescription;
+                return "a_client_description_mex";
             }
             else if (language == "THA")
             {
-                ClientDescription = "a_client_description_thai";
-                return ClientDescription;
+                return "a_client_description_thai";
             }
             else if (language == "ITA")
             {
-                ClientDescription = "a_client_description_ita";
-                return ClientDescription;
+                return "a_client_description_ita";
             }
             else if (language == "USA")
             {
-                ClientDescription = "a_client_description_usa";
-                return ClientDescription;
+                return "a_client_description_usa";
             }
             else
             {
@@ -314,55 +289,43 @@ namespace LcDevPack_TeamDamonA.Tools
 
             if (language == "GER")
             {
-                ToolTip = "a_client_tooltip_ger";
-                return ToolTip;
-
+                return "a_client_tooltip_ger";
             }
             else if (language == "POL")
             {
-                ToolTip = "a_client_tooltip_pld";
-                return ToolTip;
-
+                return "a_client_tooltip_pld";
             }
             else if (language == "BRA")
             {
-                ToolTip = "a_client_tooltip_brz";
-                return ToolTip;
+                return "a_client_tooltip_brz";
             }
             else if (language == "RUS")
             {
-                ToolTip = "a_client_tooltip_rus";
-                return ToolTip;
+                return "a_client_tooltip_rus";
             }
             else if (language == "FRA")
             {
-                ToolTip = "a_client_tooltip_frc";
-                return ToolTip;
+                return "a_client_tooltip_frc";
             }
             else if (language == "ESP")
             {
-                ToolTip = "a_client_tooltip_spn";
-                return ToolTip;
+                return "a_client_tooltip_spn";
             }
             else if (language == "MEX")
             {
-                ToolTip = "a_client_tooltip_mex";
-                return ToolTip;
+                return "a_client_tooltip_mex";
             }
             else if (language == "THA")
             {
-                ToolTip = "a_client_tooltip_thai";
-                return ToolTip;
+                return "a_client_tooltip_thai";
             }
             else if (language == "ITA")
             {
-                ToolTip = "a_client_tooltip_ita";
-                return ToolTip;
+                return "a_client_tooltip_ita";
             }
             else if (language == "USA")
             {
-                ToolTip = "a_client_tooltip_usa";
-                return ToolTip;
+                return "a_client_tooltip_usa";
             }
             else
             {
@@ -2043,60 +2006,47 @@ namespace LcDevPack_TeamDamonA.Tools
         {
             textBox17.Text = GetIndexByComboBox(comboBox18.Text).ToString();
         }
-        public string LanguageExport() //dethunter12 add 7/5/2020
+        public string LanguageExport() //dethunter12 add 7/5/2020 [clean by scura]
         {
-
             if (language == "GER")
             {
-                namee = "ger";
-                return namee;
-
+                return "ger";
             }
             else if (language == "POL")
             {
-                namee = "pol";
-                return namee;
-
+                return "pol";
             }
             else if (language == "BRA")
             {
-                namee = "brz";
-                return namee;
+                return "brz";
             }
             else if (language == "RUS")
             {
-                namee = "rus";
-                return namee;
+                return "rus";
             }
             else if (language == "FRA")
             {
-                namee = "fra";
-                return namee;
+                return "fra";
             }
             else if (language == "ESP")
             {
-                namee = "esp";
-                return namee;
+                return "esp";
             }
             else if (language == "MEX")
             {
-                namee = "mex";
-                return namee;
+                return "mex";
             }
             else if (language == "THA")
             {
-                namee = "tha";
-                return namee;
+                return "tha";
             }
             else if (language == "ITA")
             {
-                namee = "ita";
-                return namee;
+                return "ita";
             }
             else if (language == "USA")
             {
-                namee = "usa";
-                return namee;
+                return "usa";
             }
             else
             {
