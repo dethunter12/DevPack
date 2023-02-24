@@ -49,35 +49,35 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.tbExchange5Cnt = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.r_t_id5 = new System.Windows.Forms.TextBox();
+            this.tbExchangeName5 = new System.Windows.Forms.TextBox();
+            this.tbExchangeID5 = new System.Windows.Forms.TextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.tbExchange4Cnt = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.r_t_id4 = new System.Windows.Forms.TextBox();
+            this.tbExchangeName4 = new System.Windows.Forms.TextBox();
+            this.tbExchangeID4 = new System.Windows.Forms.TextBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.tbExchange3Cnt = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.r_t_id3 = new System.Windows.Forms.TextBox();
+            this.tbExchangeName3 = new System.Windows.Forms.TextBox();
+            this.tbExchangeID3 = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.tbExchange2Cnt = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.r_t_id2 = new System.Windows.Forms.TextBox();
+            this.tbExchangeName2 = new System.Windows.Forms.TextBox();
+            this.tbExchangeID2 = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbExchange1Cnt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.r_t_id1 = new System.Windows.Forms.TextBox();
+            this.tbExchangeName1 = new System.Windows.Forms.TextBox();
+            this.tbExchangeID1 = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -99,6 +99,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgItems = new System.Windows.Forms.DataGridView();
+            this.Column7 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NpcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -109,10 +113,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.t_exchange_id = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.Column7 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NpcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -230,35 +230,35 @@
             this.groupBox3.Controls.Add(this.checkBox3);
             this.groupBox3.Controls.Add(this.checkBox2);
             this.groupBox3.Controls.Add(this.checkBox1);
-            this.groupBox3.Controls.Add(this.textBox18);
+            this.groupBox3.Controls.Add(this.tbExchange5Cnt);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.button7);
-            this.groupBox3.Controls.Add(this.textBox19);
-            this.groupBox3.Controls.Add(this.r_t_id5);
+            this.groupBox3.Controls.Add(this.tbExchangeName5);
+            this.groupBox3.Controls.Add(this.tbExchangeID5);
             this.groupBox3.Controls.Add(this.pictureBox7);
-            this.groupBox3.Controls.Add(this.textBox15);
+            this.groupBox3.Controls.Add(this.tbExchange4Cnt);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.button6);
-            this.groupBox3.Controls.Add(this.textBox16);
-            this.groupBox3.Controls.Add(this.r_t_id4);
+            this.groupBox3.Controls.Add(this.tbExchangeName4);
+            this.groupBox3.Controls.Add(this.tbExchangeID4);
             this.groupBox3.Controls.Add(this.pictureBox6);
-            this.groupBox3.Controls.Add(this.textBox12);
+            this.groupBox3.Controls.Add(this.tbExchange3Cnt);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.textBox13);
-            this.groupBox3.Controls.Add(this.r_t_id3);
+            this.groupBox3.Controls.Add(this.tbExchangeName3);
+            this.groupBox3.Controls.Add(this.tbExchangeID3);
             this.groupBox3.Controls.Add(this.pictureBox5);
-            this.groupBox3.Controls.Add(this.textBox9);
+            this.groupBox3.Controls.Add(this.tbExchange2Cnt);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.textBox10);
-            this.groupBox3.Controls.Add(this.r_t_id2);
+            this.groupBox3.Controls.Add(this.tbExchangeName2);
+            this.groupBox3.Controls.Add(this.tbExchangeID2);
             this.groupBox3.Controls.Add(this.pictureBox4);
-            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.tbExchange1Cnt);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.textBox7);
-            this.groupBox3.Controls.Add(this.r_t_id1);
+            this.groupBox3.Controls.Add(this.tbExchangeName1);
+            this.groupBox3.Controls.Add(this.tbExchangeID1);
             this.groupBox3.Controls.Add(this.pictureBox3);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label20);
@@ -374,13 +374,13 @@
             this.checkBox1.Text = "Item Require No. 1";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // textBox18
+            // tbExchange5Cnt
             // 
-            this.textBox18.Location = new System.Drawing.Point(225, 197);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(66, 21);
-            this.textBox18.TabIndex = 59;
-            this.textBox18.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_textbox_KeyPress);
+            this.tbExchange5Cnt.Location = new System.Drawing.Point(225, 197);
+            this.tbExchange5Cnt.Name = "tbExchange5Cnt";
+            this.tbExchange5Cnt.Size = new System.Drawing.Size(66, 21);
+            this.tbExchange5Cnt.TabIndex = 59;
+            this.tbExchange5Cnt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_textbox_KeyPress);
             // 
             // label18
             // 
@@ -401,22 +401,22 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // textBox19
+            // tbExchangeName5
             // 
-            this.textBox19.Enabled = false;
-            this.textBox19.Location = new System.Drawing.Point(111, 226);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(224, 21);
-            this.textBox19.TabIndex = 55;
+            this.tbExchangeName5.Enabled = false;
+            this.tbExchangeName5.Location = new System.Drawing.Point(111, 226);
+            this.tbExchangeName5.Name = "tbExchangeName5";
+            this.tbExchangeName5.Size = new System.Drawing.Size(224, 21);
+            this.tbExchangeName5.TabIndex = 55;
             // 
-            // r_t_id5
+            // tbExchangeID5
             // 
-            this.r_t_id5.Enabled = false;
-            this.r_t_id5.Location = new System.Drawing.Point(111, 197);
-            this.r_t_id5.Name = "r_t_id5";
-            this.r_t_id5.Size = new System.Drawing.Size(66, 21);
-            this.r_t_id5.TabIndex = 54;
-            this.r_t_id5.TextChanged += new System.EventHandler(this.r_t_id5_TextChanged);
+            this.tbExchangeID5.Enabled = false;
+            this.tbExchangeID5.Location = new System.Drawing.Point(111, 197);
+            this.tbExchangeID5.Name = "tbExchangeID5";
+            this.tbExchangeID5.Size = new System.Drawing.Size(66, 21);
+            this.tbExchangeID5.TabIndex = 54;
+            this.tbExchangeID5.TextChanged += new System.EventHandler(this.r_t_id5_TextChanged);
             // 
             // pictureBox7
             // 
@@ -429,13 +429,13 @@
             this.pictureBox7.TabIndex = 52;
             this.pictureBox7.TabStop = false;
             // 
-            // textBox15
+            // tbExchange4Cnt
             // 
-            this.textBox15.Location = new System.Drawing.Point(599, 113);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(66, 21);
-            this.textBox15.TabIndex = 51;
-            this.textBox15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_textbox_KeyPress);
+            this.tbExchange4Cnt.Location = new System.Drawing.Point(599, 113);
+            this.tbExchange4Cnt.Name = "tbExchange4Cnt";
+            this.tbExchange4Cnt.Size = new System.Drawing.Size(66, 21);
+            this.tbExchange4Cnt.TabIndex = 51;
+            this.tbExchange4Cnt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_textbox_KeyPress);
             // 
             // label15
             // 
@@ -456,22 +456,22 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // textBox16
+            // tbExchangeName4
             // 
-            this.textBox16.Enabled = false;
-            this.textBox16.Location = new System.Drawing.Point(485, 142);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(224, 21);
-            this.textBox16.TabIndex = 47;
+            this.tbExchangeName4.Enabled = false;
+            this.tbExchangeName4.Location = new System.Drawing.Point(485, 142);
+            this.tbExchangeName4.Name = "tbExchangeName4";
+            this.tbExchangeName4.Size = new System.Drawing.Size(224, 21);
+            this.tbExchangeName4.TabIndex = 47;
             // 
-            // r_t_id4
+            // tbExchangeID4
             // 
-            this.r_t_id4.Enabled = false;
-            this.r_t_id4.Location = new System.Drawing.Point(485, 113);
-            this.r_t_id4.Name = "r_t_id4";
-            this.r_t_id4.Size = new System.Drawing.Size(66, 21);
-            this.r_t_id4.TabIndex = 46;
-            this.r_t_id4.TextChanged += new System.EventHandler(this.r_t_id4_TextChanged);
+            this.tbExchangeID4.Enabled = false;
+            this.tbExchangeID4.Location = new System.Drawing.Point(485, 113);
+            this.tbExchangeID4.Name = "tbExchangeID4";
+            this.tbExchangeID4.Size = new System.Drawing.Size(66, 21);
+            this.tbExchangeID4.TabIndex = 46;
+            this.tbExchangeID4.TextChanged += new System.EventHandler(this.r_t_id4_TextChanged);
             // 
             // pictureBox6
             // 
@@ -484,13 +484,13 @@
             this.pictureBox6.TabIndex = 44;
             this.pictureBox6.TabStop = false;
             // 
-            // textBox12
+            // tbExchange3Cnt
             // 
-            this.textBox12.Location = new System.Drawing.Point(225, 113);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(66, 21);
-            this.textBox12.TabIndex = 43;
-            this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_textbox_KeyPress);
+            this.tbExchange3Cnt.Location = new System.Drawing.Point(225, 113);
+            this.tbExchange3Cnt.Name = "tbExchange3Cnt";
+            this.tbExchange3Cnt.Size = new System.Drawing.Size(66, 21);
+            this.tbExchange3Cnt.TabIndex = 43;
+            this.tbExchange3Cnt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_textbox_KeyPress);
             // 
             // label12
             // 
@@ -511,22 +511,22 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // textBox13
+            // tbExchangeName3
             // 
-            this.textBox13.Enabled = false;
-            this.textBox13.Location = new System.Drawing.Point(111, 142);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(224, 21);
-            this.textBox13.TabIndex = 39;
+            this.tbExchangeName3.Enabled = false;
+            this.tbExchangeName3.Location = new System.Drawing.Point(111, 142);
+            this.tbExchangeName3.Name = "tbExchangeName3";
+            this.tbExchangeName3.Size = new System.Drawing.Size(224, 21);
+            this.tbExchangeName3.TabIndex = 39;
             // 
-            // r_t_id3
+            // tbExchangeID3
             // 
-            this.r_t_id3.Enabled = false;
-            this.r_t_id3.Location = new System.Drawing.Point(111, 113);
-            this.r_t_id3.Name = "r_t_id3";
-            this.r_t_id3.Size = new System.Drawing.Size(66, 21);
-            this.r_t_id3.TabIndex = 38;
-            this.r_t_id3.TextChanged += new System.EventHandler(this.r_t_id3_TextChanged);
+            this.tbExchangeID3.Enabled = false;
+            this.tbExchangeID3.Location = new System.Drawing.Point(111, 113);
+            this.tbExchangeID3.Name = "tbExchangeID3";
+            this.tbExchangeID3.Size = new System.Drawing.Size(66, 21);
+            this.tbExchangeID3.TabIndex = 38;
+            this.tbExchangeID3.TextChanged += new System.EventHandler(this.r_t_id3_TextChanged);
             // 
             // pictureBox5
             // 
@@ -539,13 +539,13 @@
             this.pictureBox5.TabIndex = 36;
             this.pictureBox5.TabStop = false;
             // 
-            // textBox9
+            // tbExchange2Cnt
             // 
-            this.textBox9.Location = new System.Drawing.Point(599, 35);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(66, 21);
-            this.textBox9.TabIndex = 35;
-            this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_textbox_KeyPress);
+            this.tbExchange2Cnt.Location = new System.Drawing.Point(599, 35);
+            this.tbExchange2Cnt.Name = "tbExchange2Cnt";
+            this.tbExchange2Cnt.Size = new System.Drawing.Size(66, 21);
+            this.tbExchange2Cnt.TabIndex = 35;
+            this.tbExchange2Cnt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_textbox_KeyPress);
             // 
             // label9
             // 
@@ -566,22 +566,22 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // textBox10
+            // tbExchangeName2
             // 
-            this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(485, 64);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(224, 21);
-            this.textBox10.TabIndex = 31;
+            this.tbExchangeName2.Enabled = false;
+            this.tbExchangeName2.Location = new System.Drawing.Point(485, 64);
+            this.tbExchangeName2.Name = "tbExchangeName2";
+            this.tbExchangeName2.Size = new System.Drawing.Size(224, 21);
+            this.tbExchangeName2.TabIndex = 31;
             // 
-            // r_t_id2
+            // tbExchangeID2
             // 
-            this.r_t_id2.Enabled = false;
-            this.r_t_id2.Location = new System.Drawing.Point(485, 35);
-            this.r_t_id2.Name = "r_t_id2";
-            this.r_t_id2.Size = new System.Drawing.Size(66, 21);
-            this.r_t_id2.TabIndex = 30;
-            this.r_t_id2.TextChanged += new System.EventHandler(this.r_t_id2_TextChanged);
+            this.tbExchangeID2.Enabled = false;
+            this.tbExchangeID2.Location = new System.Drawing.Point(485, 35);
+            this.tbExchangeID2.Name = "tbExchangeID2";
+            this.tbExchangeID2.Size = new System.Drawing.Size(66, 21);
+            this.tbExchangeID2.TabIndex = 30;
+            this.tbExchangeID2.TextChanged += new System.EventHandler(this.r_t_id2_TextChanged);
             // 
             // pictureBox4
             // 
@@ -594,13 +594,13 @@
             this.pictureBox4.TabIndex = 28;
             this.pictureBox4.TabStop = false;
             // 
-            // textBox6
+            // tbExchange1Cnt
             // 
-            this.textBox6.Location = new System.Drawing.Point(225, 35);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(66, 21);
-            this.textBox6.TabIndex = 27;
-            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_textbox_KeyPress);
+            this.tbExchange1Cnt.Location = new System.Drawing.Point(225, 35);
+            this.tbExchange1Cnt.Name = "tbExchange1Cnt";
+            this.tbExchange1Cnt.Size = new System.Drawing.Size(66, 21);
+            this.tbExchange1Cnt.TabIndex = 27;
+            this.tbExchange1Cnt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_textbox_KeyPress);
             // 
             // label6
             // 
@@ -621,22 +621,22 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox7
+            // tbExchangeName1
             // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(111, 64);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(224, 21);
-            this.textBox7.TabIndex = 23;
+            this.tbExchangeName1.Enabled = false;
+            this.tbExchangeName1.Location = new System.Drawing.Point(111, 64);
+            this.tbExchangeName1.Name = "tbExchangeName1";
+            this.tbExchangeName1.Size = new System.Drawing.Size(224, 21);
+            this.tbExchangeName1.TabIndex = 23;
             // 
-            // r_t_id1
+            // tbExchangeID1
             // 
-            this.r_t_id1.Enabled = false;
-            this.r_t_id1.Location = new System.Drawing.Point(111, 35);
-            this.r_t_id1.Name = "r_t_id1";
-            this.r_t_id1.Size = new System.Drawing.Size(66, 21);
-            this.r_t_id1.TabIndex = 22;
-            this.r_t_id1.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.tbExchangeID1.Enabled = false;
+            this.tbExchangeID1.Location = new System.Drawing.Point(111, 35);
+            this.tbExchangeID1.Name = "tbExchangeID1";
+            this.tbExchangeID1.Size = new System.Drawing.Size(66, 21);
+            this.tbExchangeID1.TabIndex = 22;
+            this.tbExchangeID1.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // pictureBox3
             // 
@@ -853,6 +853,32 @@
             this.dgItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgItems_CellClick);
             this.dgItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgItems_CellContentClick);
             // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "";
+            this.Column7.MinimumWidth = 20;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 20;
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // ItemName
+            // 
+            this.ItemName.HeaderText = "ItemName";
+            this.ItemName.Name = "ItemName";
+            this.ItemName.ReadOnly = true;
+            this.ItemName.Width = 81;
+            // 
+            // NpcName
+            // 
+            this.NpcName.HeaderText = "NpcName";
+            this.NpcName.Name = "NpcName";
+            this.NpcName.Width = 77;
+            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.button1);
@@ -986,32 +1012,6 @@
             this.label21.TabIndex = 20;
             this.label21.Text = "Exc. ID : ";
             // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "";
-            this.Column7.MinimumWidth = 20;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 20;
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // ItemName
-            // 
-            this.ItemName.HeaderText = "ItemName";
-            this.ItemName.Name = "ItemName";
-            this.ItemName.ReadOnly = true;
-            this.ItemName.Width = 81;
-            // 
-            // NpcName
-            // 
-            this.NpcName.HeaderText = "NpcName";
-            this.NpcName.Name = "NpcName";
-            this.NpcName.Width = 77;
-            // 
             // ExchangeExport_cHaR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1072,45 +1072,45 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tb_reward_qty;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox tbExchange5Cnt;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox r_t_id5;
+        private System.Windows.Forms.TextBox tbExchangeName5;
+        private System.Windows.Forms.TextBox tbExchangeID5;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox tbExchange4Cnt;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox r_t_id4;
+        private System.Windows.Forms.TextBox tbExchangeName4;
+        private System.Windows.Forms.TextBox tbExchangeID4;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox tbExchange3Cnt;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox r_t_id3;
+        private System.Windows.Forms.TextBox tbExchangeName3;
+        private System.Windows.Forms.TextBox tbExchangeID3;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox tbExchange2Cnt;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox r_t_id2;
+        private System.Windows.Forms.TextBox tbExchangeName2;
+        private System.Windows.Forms.TextBox tbExchangeID2;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbExchange1Cnt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox r_t_id1;
+        private System.Windows.Forms.TextBox tbExchangeName1;
+        private System.Windows.Forms.TextBox tbExchangeID1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;

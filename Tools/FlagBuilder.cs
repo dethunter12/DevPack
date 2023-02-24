@@ -71,20 +71,57 @@ namespace LcDevPack_TeamDamonA.Tools
                 clbFlagTest2.SetItemChecked(index, (flag & 1L << index) > 0L);
     }
 
-    private void ShowFlag(int flag)
+    private void ShowFlag(int flag) //its t
     {
       for (int index = 0; index < clbFlagTest2.Items.Count; ++index)
                 clbFlagTest2.SetItemChecked(index, (flag & 1 << index) > 0);
     }
 
-    private void clbFlagTest2_SelectedIndexChanged(object sender, EventArgs e)
+    int[] skillSorcFlag = new int[16]
+        {
+            1 << 0,
+            1 << 1,
+            1 << 2,
+            1 << 3,
+            1 << 4,
+            1 << 5,
+            1 << 6,
+            1 << 7,
+            1 << 16,
+            1 << 17,
+            1 << 18,
+            1 << 19,
+            1 << 20,
+            1 << 21,
+            1 << 22,
+            1 << 23
+        };
+
+        private void ShowFlagSkill(int flag) //its t
+        {
+            for (int index = 0; index < clbFlagTest2.Items.Count; ++index)
+                clbFlagTest2.SetItemChecked(index, (flag & skillSorcFlag[index]) > 0);
+        }
+
+        private void clbFlagTest2_SelectedIndexChanged(object sender, EventArgs e)
     {
-      long num = 0;
-      for (int index = 0; index < clbFlagTest2.Items.Count; ++index)
-      {
-        if (clbFlagTest2.GetItemChecked(index))
-          num += 1L << index;
-      }
+             long num = 0;
+            if (flagBuilderType != "skills2")
+            {
+                for (int index = 0; index < clbFlagTest2.Items.Count; ++index)
+                {
+                    if (clbFlagTest2.GetItemChecked(index))
+                        num += 1L << index;
+                }
+            }
+            else
+            {
+                for (int index = 0; index < clbFlagTest2.Items.Count; ++index)
+                {
+                    if (clbFlagTest2.GetItemChecked(index))
+                        num += skillSorcFlag[index];
+                }
+            }
             textBox2.Text = num.ToString();
       if (flagBuilderType == "items")
       {
@@ -122,9 +159,14 @@ namespace LcDevPack_TeamDamonA.Tools
                 ShowFlagLong(flagBig);
                 textBox2.Text = flagBig.ToString();
             }
+      else if (flagBuilderType == "skills2")
+            {
+                ShowFlagSkill(flagSmall);
+                textBox2.Text = flagSmall.ToString();
+            }
       else
       {
-                ShowFlag(flagSmall);
+                ShowFlag(flagSmall); //Reference here when opening skill flag
                 textBox2.Text = flagSmall.ToString();
       }
     }
@@ -163,12 +205,13 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             // clbFlagTest2
             // 
+            this.clbFlagTest2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.clbFlagTest2.CheckOnClick = true;
             this.clbFlagTest2.FormattingEnabled = true;
             this.clbFlagTest2.Location = new System.Drawing.Point(12, 10);
             this.clbFlagTest2.MultiColumn = true;
             this.clbFlagTest2.Name = "clbFlagTest2";
-            this.clbFlagTest2.Size = new System.Drawing.Size(280, 559);
+            this.clbFlagTest2.Size = new System.Drawing.Size(345, 527);
             this.clbFlagTest2.TabIndex = 4;
             this.clbFlagTest2.SelectedIndexChanged += new System.EventHandler(this.clbFlagTest2_SelectedIndexChanged);
             // 
@@ -177,7 +220,7 @@ namespace LcDevPack_TeamDamonA.Tools
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(192, 575);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.Size = new System.Drawing.Size(127, 23);
             this.button1.TabIndex = 7;
             this.button1.Text = "Save Flag";
             this.button1.UseVisualStyleBackColor = true;
@@ -185,7 +228,7 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             // FlagBuilder
             // 
-            this.ClientSize = new System.Drawing.Size(305, 610);
+            this.ClientSize = new System.Drawing.Size(374, 610);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.clbFlagTest2);
             this.Controls.Add(this.textBox2);

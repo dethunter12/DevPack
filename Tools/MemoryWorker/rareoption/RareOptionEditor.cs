@@ -567,18 +567,7 @@ namespace LcDevPack_TeamDamonA.Tools.MemoryWorker.rareoption
                     TbSeal8.Text = sSeal8;//dethunter12 add 6/3/2019
                     s8d.SelectedIndex = Convert.ToInt32(sSeal8);
                     TbSeal9.Text = sSeal9; //dethunter12 add 6/3/2019
-                    s9d.SelectedIndex = Convert.ToInt32(sSeal9);
-                    //s0d.Text = sSeal0;
-                    //s1d.Text = sSeal1;
-                    //s2d.Text = sSeal2;
-                    //s3d.Text = sSeal3;
-                    //s4d.Text = sSeal4;
-                    //s5d.Text = sSeal5;
-                    //s6d.Text = sSeal6;
-                    //s7d.Text = sSeal7;
-                    //s8d.Text = sSeal8;
-                    //s9d.Text = sSeal9;
-
+                    s9d.SelectedIndex = Convert.ToInt32(sSeal9);                 
                     //Seal Level
                     lvl0.Text = sLevel0;
                     lvl1.Text = sLevel1;

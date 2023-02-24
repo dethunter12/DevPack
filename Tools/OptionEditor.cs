@@ -173,6 +173,9 @@ namespace LcDevPack_TeamDamonA.Tools
     {
       int index1 = dgItems.CurrentRow.Index;
       DataGridViewRow row = dgItems.Rows[index1];
+
+      dgItems.EndEdit(); //end edit to save values correctly / commit
+
       string str1 = Convert.ToString(row.Cells["ID"].Value);
       string s = Convert.ToString(row.Cells["Count"].Value);
       string str2 = Convert.ToString(row.Cells["Level"].Value);

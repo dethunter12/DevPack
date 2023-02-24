@@ -25,9 +25,10 @@ namespace LcDevPack_TeamDamonA.Tools
     private string User = AffinityEditor.connection.ReadSettings("User");
     private string Password = AffinityEditor.connection.ReadSettings("Password");
     private string Database = AffinityEditor.connection.ReadSettings("Database");
+    private static string _connectionString;
     private DatabaseHandle databaseHandle = new DatabaseHandle();
-        private ExportLodHandle exportLodHandle = new ExportLodHandle();
-        public string rowName = "a_index";
+    private ExportLodHandle exportLodHandle = new ExportLodHandle();
+    public string rowName = "a_index";
     public string[] menuArray = new string[2]
     {
       "a_index",
@@ -95,12 +96,6 @@ namespace LcDevPack_TeamDamonA.Tools
     private DataGridView dataGridView2;
     private GroupBox groupBox7;
     private DataGridView dataGridView3;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
     private GroupBox groupBox8;
     private Button button2;
     private Button button1;
@@ -109,44 +104,22 @@ namespace LcDevPack_TeamDamonA.Tools
     private Label label13;
     private Button button3;
     private DataGridView dataGridView5;
-    private DataGridViewTextBoxColumn Column14;
-    private DataGridViewTextBoxColumn Column15;
-    private DataGridViewTextBoxColumn Column16;
-    private DataGridViewTextBoxColumn Column17;
-    private DataGridViewTextBoxColumn Column18;
-    private DataGridViewTextBoxColumn Column19;
-    private DataGridViewTextBoxColumn Column20;
-    private DataGridViewTextBoxColumn Column21;
-    private DataGridViewTextBoxColumn Column22;
-    private DataGridViewTextBoxColumn Column23;
     private ToolStrip toolStrip1;
-    private ToolStripButton toolStripButton1;
+    private ToolStripButton tsBtnAddMonster;
     private ToolStripSeparator toolStripSeparator1;
-    private ToolStripButton toolStripButton2;
+    private ToolStripButton tsBtnDeleteMonster;
     private ToolStrip toolStrip2;
-    private ToolStripButton toolStripButton3;
+    private ToolStripButton tsBtnAddItem;
     private ToolStripSeparator toolStripSeparator2;
-    private ToolStripButton toolStripButton4;
+    private ToolStripButton tsBtnDeleteItem;
     private ToolStrip toolStrip3;
-    private ToolStripButton toolStripButton5;
+    private ToolStripButton tsBtnAddQuest;
     private ToolStripSeparator toolStripSeparator3;
-    private ToolStripButton toolStripButton6;
+    private ToolStripButton tsBtnDeleteQuest;
     private ToolStrip toolStrip4;
-    private ToolStripButton toolStripButton7;
+    private ToolStripButton tsBtnAddNpc;
     private ToolStripSeparator toolStripSeparator4;
-    private ToolStripButton toolStripButton8;
-    private DataGridViewTextBoxColumn Column2;
-    private DataGridViewTextBoxColumn Column1;
-    private DataGridViewTextBoxColumn Column3;
-    private DataGridViewTextBoxColumn Column4;
-    private DataGridViewTextBoxColumn Column5;
-        private DataGridViewImageColumn dataGridViewImageColumn1;
-        private DataGridViewTextBoxColumn Work_Type;
-        private DataGridViewTextBoxColumn ItemID;
-        private DataGridViewTextBoxColumn ItemName;
-        private DataGridViewTextBoxColumn AffinityIdx;
-        private DataGridViewTextBoxColumn AffinityPoints;
-        private DataGridViewTextBoxColumn Enable;
+    private ToolStripButton tsBtnDeleteNpc;
         private ToolStripMenuItem usaToolStripMenuItem;
         private ToolStripMenuItem thaiToolStripMenuItem;
         private ToolStripMenuItem frenchToolStripMenuItem;
@@ -158,24 +131,58 @@ namespace LcDevPack_TeamDamonA.Tools
         private ToolStripMenuItem polandToolStripMenuItem;
         private TextBox tbNpcIndex;
         private DataGridView dataGridView4;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column13;
-        private DataGridViewTextBoxColumn Column9;
-        private DataGridViewTextBoxColumn Column10;
-        private DataGridViewTextBoxColumn Column11;
-        private DataGridViewTextBoxColumn Column12;
         private ToolStrip toolStrip5;
         private ToolStripButton tsBtnRewardAdd;
+        private DataGridViewTextBoxColumn workType;
+        private DataGridViewTextBoxColumn monsterID;
+        private DataGridViewTextBoxColumn monsterName;
+        private DataGridViewTextBoxColumn mAffinityIDx;
+        private DataGridViewTextBoxColumn mAffinityPoint;
+        private DataGridViewTextBoxColumn mEnable;
+        private DataGridViewImageColumn dataGridViewImageColumn1;
+        private DataGridViewTextBoxColumn IWorkType;
+        private DataGridViewTextBoxColumn iItemID;
+        private DataGridViewTextBoxColumn iItemName;
+        private DataGridViewTextBoxColumn iAffinityIdx;
+        private DataGridViewTextBoxColumn iAffinityPoint;
+        private DataGridViewTextBoxColumn iEnable;
+        private DataGridViewTextBoxColumn QWorkType;
+        private DataGridViewTextBoxColumn QuestID;
+        private DataGridViewTextBoxColumn QuestName;
+        private DataGridViewTextBoxColumn qAffinityIdx;
+        private DataGridViewTextBoxColumn qAffinityPoints;
+        private DataGridViewTextBoxColumn qEnable;
+        private DataGridViewTextBoxColumn npcIDx;
+        private DataGridViewTextBoxColumn allowPoint;
+        private DataGridViewTextBoxColumn ItemIdx;
+        private DataGridViewTextBoxColumn rFlag;
+        private DataGridViewTextBoxColumn rCount;
+        private DataGridViewTextBoxColumn rExp;
+        private DataGridViewTextBoxColumn rSp;
+        private DataGridViewTextBoxColumn rNeedPCLevel;
+        private DataGridViewTextBoxColumn rNeedItemId;
+        private DataGridViewTextBoxColumn rNeedItemCount;
+        private ToolStripButton tsBtnMonSave;
+        private ToolStripButton tsBtnItemSave;
+        private ToolStripButton tsBtnQuestSave;
+        private ToolStripButton tsBtnNpcSave;
+        private ToolStripButton tsBtnRewardSave;
+        private DataGridViewTextBoxColumn affinityID;
+        private DataGridViewTextBoxColumn npcID;
+        private DataGridViewTextBoxColumn npcName;
+        private DataGridViewTextBoxColumn usePoints;
+        private DataGridViewTextBoxColumn enablee;
+        private DataGridViewTextBoxColumn flag;
+        private DataGridViewTextBoxColumn stringID;
         private ToolStripButton tsBtnRewardDelete;
-        private DataGridViewTextBoxColumn Column6;
 
     public AffinityEditor()
     {
-            InitializeComponent();
+        InitializeComponent();
+        _connectionString = $"Server={Host};Database={Database};Uid={User};Pwd={Password};";
     }
 
-    public void LoadMisc()
+     public void LoadMisc()
     {
       if (textBox4.Text == "1")
       {
@@ -693,71 +700,76 @@ namespace LcDevPack_TeamDamonA.Tools
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnAddMonster = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnDeleteMonster = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnMonSave = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monsterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monsterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mAffinityIDx = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mAffinityPoint = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mEnable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnAddItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnItemSave = new System.Windows.Forms.ToolStripButton();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Work_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AffinityIdx = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AffinityPoints = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Enable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IWorkType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iAffinityIdx = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iAffinityPoint = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iEnable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnAddQuest = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnDeleteQuest = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnQuestSave = new System.Windows.Forms.ToolStripButton();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QWorkType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuestID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qAffinityIdx = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qAffinityPoints = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qEnable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnAddNpc = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnDeleteNpc = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnNpcSave = new System.Windows.Forms.ToolStripButton();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.toolStrip5 = new System.Windows.Forms.ToolStrip();
             this.tsBtnRewardAdd = new System.Windows.Forms.ToolStripButton();
             this.tsBtnRewardDelete = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnRewardSave = new System.Windows.Forms.ToolStripButton();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.npcIDx = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allowPoint = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemIdx = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rFlag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rExp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rSp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rNeedPCLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rNeedItemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rNeedItemCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
             this.tbNpcIndex = new System.Windows.Forms.TextBox();
+            this.affinityID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.npcID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.npcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usePoints = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enablee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stringID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -1382,37 +1394,48 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
+            this.tsBtnAddMonster,
             this.toolStripSeparator1,
-            this.toolStripButton2});
+            this.tsBtnDeleteMonster,
+            this.tsBtnMonSave});
             this.toolStrip1.Location = new System.Drawing.Point(3, 147);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(683, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // tsBtnAddMonster
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(80, 22);
-            this.toolStripButton1.Text = "Add Monster";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.tsBtnAddMonster.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnAddMonster.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnAddMonster.Name = "tsBtnAddMonster";
+            this.tsBtnAddMonster.Size = new System.Drawing.Size(80, 22);
+            this.tsBtnAddMonster.Text = "Add Monster";
+            this.tsBtnAddMonster.Click += new System.EventHandler(this.tsBtnAddMonster_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton2
+            // tsBtnDeleteMonster
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(90, 22);
-            this.toolStripButton2.Text = "Delete selected";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.tsBtnDeleteMonster.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnDeleteMonster.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnDeleteMonster.Name = "tsBtnDeleteMonster";
+            this.tsBtnDeleteMonster.Size = new System.Drawing.Size(90, 22);
+            this.tsBtnDeleteMonster.Text = "Delete selected";
+            this.tsBtnDeleteMonster.Click += new System.EventHandler(this.tsBtnDeleteMonster_Click);
+            // 
+            // tsBtnMonSave
+            // 
+            this.tsBtnMonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnMonSave.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnMonSave.Image")));
+            this.tsBtnMonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnMonSave.Name = "tsBtnMonSave";
+            this.tsBtnMonSave.Size = new System.Drawing.Size(35, 22);
+            this.tsBtnMonSave.Text = "Save";
+            this.tsBtnMonSave.Click += new System.EventHandler(this.tsBtnMonSave_Click);
             // 
             // dataGridView1
             // 
@@ -1422,12 +1445,12 @@ namespace LcDevPack_TeamDamonA.Tools
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column1,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
+            this.workType,
+            this.monsterID,
+            this.monsterName,
+            this.mAffinityIDx,
+            this.mAffinityPoint,
+            this.mEnable});
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(3, 16);
@@ -1438,37 +1461,37 @@ namespace LcDevPack_TeamDamonA.Tools
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dataGridView1_CellValidating);
             // 
-            // Column2
+            // workType
             // 
-            this.Column2.HeaderText = "a_work_type";
-            this.Column2.Name = "Column2";
+            this.workType.HeaderText = "a_work_type";
+            this.workType.Name = "workType";
             // 
-            // Column1
+            // monsterID
             // 
-            this.Column1.HeaderText = "Monster";
-            this.Column1.Name = "Column1";
+            this.monsterID.HeaderText = "Monster";
+            this.monsterID.Name = "monsterID";
             // 
-            // Column3
+            // monsterName
             // 
-            this.Column3.HeaderText = "Monster Name";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 230;
+            this.monsterName.HeaderText = "Monster Name";
+            this.monsterName.Name = "monsterName";
+            this.monsterName.ReadOnly = true;
+            this.monsterName.Width = 230;
             // 
-            // Column4
+            // mAffinityIDx
             // 
-            this.Column4.HeaderText = "a_affinity_idx";
-            this.Column4.Name = "Column4";
+            this.mAffinityIDx.HeaderText = "a_affinity_idx";
+            this.mAffinityIDx.Name = "mAffinityIDx";
             // 
-            // Column5
+            // mAffinityPoint
             // 
-            this.Column5.HeaderText = "Affinity Points";
-            this.Column5.Name = "Column5";
+            this.mAffinityPoint.HeaderText = "Affinity Points";
+            this.mAffinityPoint.Name = "mAffinityPoint";
             // 
-            // Column6
+            // mEnable
             // 
-            this.Column6.HeaderText = "a_enable";
-            this.Column6.Name = "Column6";
+            this.mEnable.HeaderText = "a_enable";
+            this.mEnable.Name = "mEnable";
             // 
             // groupBox6
             // 
@@ -1485,38 +1508,49 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton3,
+            this.tsBtnAddItem,
             this.toolStripSeparator2,
-            this.toolStripButton4});
+            this.tsBtnDeleteItem,
+            this.tsBtnItemSave});
             this.toolStrip2.Location = new System.Drawing.Point(3, 171);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(456, 25);
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
-            // toolStripButton3
+            // tsBtnAddItem
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(60, 22);
-            this.toolStripButton3.Text = "Add Item";
-            this.toolStripButton3.ToolTipText = "Add Item";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            this.tsBtnAddItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnAddItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnAddItem.Name = "tsBtnAddItem";
+            this.tsBtnAddItem.Size = new System.Drawing.Size(60, 22);
+            this.tsBtnAddItem.Text = "Add Item";
+            this.tsBtnAddItem.ToolTipText = "Add Item";
+            this.tsBtnAddItem.Click += new System.EventHandler(this.tsBtnAddItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton4
+            // tsBtnDeleteItem
             // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(44, 22);
-            this.toolStripButton4.Text = "Delete";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            this.tsBtnDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnDeleteItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnDeleteItem.Name = "tsBtnDeleteItem";
+            this.tsBtnDeleteItem.Size = new System.Drawing.Size(44, 22);
+            this.tsBtnDeleteItem.Text = "Delete";
+            this.tsBtnDeleteItem.Click += new System.EventHandler(this.tsBtnDeleteItem_Click);
+            // 
+            // tsBtnItemSave
+            // 
+            this.tsBtnItemSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnItemSave.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnItemSave.Image")));
+            this.tsBtnItemSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnItemSave.Name = "tsBtnItemSave";
+            this.tsBtnItemSave.Size = new System.Drawing.Size(35, 22);
+            this.tsBtnItemSave.Text = "Save";
+            this.tsBtnItemSave.Click += new System.EventHandler(this.tsBtnItemSave_Click);
             // 
             // dataGridView2
             // 
@@ -1528,12 +1562,12 @@ namespace LcDevPack_TeamDamonA.Tools
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn1,
-            this.Work_Type,
-            this.ItemID,
-            this.ItemName,
-            this.AffinityIdx,
-            this.AffinityPoints,
-            this.Enable});
+            this.IWorkType,
+            this.iItemID,
+            this.iItemName,
+            this.iAffinityIdx,
+            this.iAffinityPoint,
+            this.iEnable});
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView2.EnableHeadersVisualStyles = false;
@@ -1549,39 +1583,39 @@ namespace LcDevPack_TeamDamonA.Tools
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 32;
             // 
-            // Work_Type
+            // IWorkType
             // 
-            this.Work_Type.HeaderText = "a_work_type";
-            this.Work_Type.Name = "Work_Type";
-            this.Work_Type.Visible = false;
+            this.IWorkType.HeaderText = "a_work_type";
+            this.IWorkType.Name = "IWorkType";
+            this.IWorkType.Visible = false;
             // 
-            // ItemID
+            // iItemID
             // 
-            this.ItemID.HeaderText = "ItemID";
-            this.ItemID.Name = "ItemID";
+            this.iItemID.HeaderText = "ItemID";
+            this.iItemID.Name = "iItemID";
             // 
-            // ItemName
+            // iItemName
             // 
-            this.ItemName.HeaderText = "Item Name";
-            this.ItemName.Name = "ItemName";
-            this.ItemName.Width = 205;
+            this.iItemName.HeaderText = "Item Name";
+            this.iItemName.Name = "iItemName";
+            this.iItemName.Width = 205;
             // 
-            // AffinityIdx
+            // iAffinityIdx
             // 
-            this.AffinityIdx.HeaderText = "a_affinity_idx";
-            this.AffinityIdx.Name = "AffinityIdx";
-            this.AffinityIdx.Visible = false;
+            this.iAffinityIdx.HeaderText = "a_affinity_idx";
+            this.iAffinityIdx.Name = "iAffinityIdx";
+            this.iAffinityIdx.Visible = false;
             // 
-            // AffinityPoints
+            // iAffinityPoint
             // 
-            this.AffinityPoints.HeaderText = "Affinity Points";
-            this.AffinityPoints.Name = "AffinityPoints";
+            this.iAffinityPoint.HeaderText = "Affinity Points";
+            this.iAffinityPoint.Name = "iAffinityPoint";
             // 
-            // Enable
+            // iEnable
             // 
-            this.Enable.HeaderText = "a_enable";
-            this.Enable.Name = "Enable";
-            this.Enable.Visible = false;
+            this.iEnable.HeaderText = "a_enable";
+            this.iEnable.Name = "iEnable";
+            this.iEnable.Visible = false;
             // 
             // groupBox7
             // 
@@ -1598,37 +1632,48 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             this.toolStrip3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton5,
+            this.tsBtnAddQuest,
             this.toolStripSeparator3,
-            this.toolStripButton6});
+            this.tsBtnDeleteQuest,
+            this.tsBtnQuestSave});
             this.toolStrip3.Location = new System.Drawing.Point(3, 147);
             this.toolStrip3.Name = "toolStrip3";
             this.toolStrip3.Size = new System.Drawing.Size(456, 25);
             this.toolStrip3.TabIndex = 2;
             this.toolStrip3.Text = "toolStrip3";
             // 
-            // toolStripButton5
+            // tsBtnAddQuest
             // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(67, 22);
-            this.toolStripButton5.Text = "Add Quest";
-            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            this.tsBtnAddQuest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnAddQuest.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnAddQuest.Name = "tsBtnAddQuest";
+            this.tsBtnAddQuest.Size = new System.Drawing.Size(67, 22);
+            this.tsBtnAddQuest.Text = "Add Quest";
+            this.tsBtnAddQuest.Click += new System.EventHandler(this.tsBtnAddQuest_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton6
+            // tsBtnDeleteQuest
             // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(44, 22);
-            this.toolStripButton6.Text = "Delete";
-            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
+            this.tsBtnDeleteQuest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnDeleteQuest.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnDeleteQuest.Name = "tsBtnDeleteQuest";
+            this.tsBtnDeleteQuest.Size = new System.Drawing.Size(44, 22);
+            this.tsBtnDeleteQuest.Text = "Delete";
+            this.tsBtnDeleteQuest.Click += new System.EventHandler(this.tsBtnDeleteQuest_Click);
+            // 
+            // tsBtnQuestSave
+            // 
+            this.tsBtnQuestSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnQuestSave.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnQuestSave.Image")));
+            this.tsBtnQuestSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnQuestSave.Name = "tsBtnQuestSave";
+            this.tsBtnQuestSave.Size = new System.Drawing.Size(35, 22);
+            this.tsBtnQuestSave.Text = "Save";
+            this.tsBtnQuestSave.Click += new System.EventHandler(this.tsBtnQuestSave_Click);
             // 
             // dataGridView3
             // 
@@ -1638,12 +1683,12 @@ namespace LcDevPack_TeamDamonA.Tools
             this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12});
+            this.QWorkType,
+            this.QuestID,
+            this.QuestName,
+            this.qAffinityIdx,
+            this.qAffinityPoints,
+            this.qEnable});
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView3.EnableHeadersVisualStyles = false;
@@ -1654,39 +1699,39 @@ namespace LcDevPack_TeamDamonA.Tools
             this.dataGridView3.Size = new System.Drawing.Size(456, 156);
             this.dataGridView3.TabIndex = 1;
             // 
-            // dataGridViewTextBoxColumn7
+            // QWorkType
             // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "a_work_type";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Visible = false;
+            this.QWorkType.HeaderText = "a_work_type";
+            this.QWorkType.Name = "QWorkType";
+            this.QWorkType.Visible = false;
             // 
-            // dataGridViewTextBoxColumn8
+            // QuestID
             // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "QuestID";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.QuestID.HeaderText = "QuestID";
+            this.QuestID.Name = "QuestID";
             // 
-            // dataGridViewTextBoxColumn9
+            // QuestName
             // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "Quest Name";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 230;
+            this.QuestName.HeaderText = "Quest Name";
+            this.QuestName.Name = "QuestName";
+            this.QuestName.Width = 230;
             // 
-            // dataGridViewTextBoxColumn10
+            // qAffinityIdx
             // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "a_affinity_idx";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Visible = false;
+            this.qAffinityIdx.HeaderText = "a_affinity_idx";
+            this.qAffinityIdx.Name = "qAffinityIdx";
+            this.qAffinityIdx.Visible = false;
             // 
-            // dataGridViewTextBoxColumn11
+            // qAffinityPoints
             // 
-            this.dataGridViewTextBoxColumn11.HeaderText = "Affinity Points";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.qAffinityPoints.HeaderText = "Affinity Points";
+            this.qAffinityPoints.Name = "qAffinityPoints";
             // 
-            // dataGridViewTextBoxColumn12
+            // qEnable
             // 
-            this.dataGridViewTextBoxColumn12.HeaderText = "a_enable";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Visible = false;
+            this.qEnable.HeaderText = "a_enable";
+            this.qEnable.Name = "qEnable";
+            this.qEnable.Visible = false;
             // 
             // groupBox8
             // 
@@ -1703,9 +1748,10 @@ namespace LcDevPack_TeamDamonA.Tools
             // 
             this.toolStrip4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton7,
+            this.tsBtnAddNpc,
             this.toolStripSeparator4,
-            this.toolStripButton8});
+            this.tsBtnDeleteNpc,
+            this.tsBtnNpcSave});
             this.toolStrip4.Location = new System.Drawing.Point(3, 86);
             this.toolStrip4.Name = "toolStrip4";
             this.toolStrip4.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -1713,28 +1759,38 @@ namespace LcDevPack_TeamDamonA.Tools
             this.toolStrip4.TabIndex = 1;
             this.toolStrip4.Text = "toolStrip4";
             // 
-            // toolStripButton7
+            // tsBtnAddNpc
             // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(60, 22);
-            this.toolStripButton7.Text = "Add NPC";
-            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
+            this.tsBtnAddNpc.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnAddNpc.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnAddNpc.Name = "tsBtnAddNpc";
+            this.tsBtnAddNpc.Size = new System.Drawing.Size(60, 22);
+            this.tsBtnAddNpc.Text = "Add NPC";
+            this.tsBtnAddNpc.Click += new System.EventHandler(this.tsBtnAddNpc_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton8
+            // tsBtnDeleteNpc
             // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(44, 22);
-            this.toolStripButton8.Text = "Delete";
-            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
+            this.tsBtnDeleteNpc.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnDeleteNpc.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnDeleteNpc.Name = "tsBtnDeleteNpc";
+            this.tsBtnDeleteNpc.Size = new System.Drawing.Size(44, 22);
+            this.tsBtnDeleteNpc.Text = "Delete";
+            this.tsBtnDeleteNpc.Click += new System.EventHandler(this.tsBtnDeleteNpc_Click);
+            // 
+            // tsBtnNpcSave
+            // 
+            this.tsBtnNpcSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnNpcSave.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnNpcSave.Image")));
+            this.tsBtnNpcSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnNpcSave.Name = "tsBtnNpcSave";
+            this.tsBtnNpcSave.Size = new System.Drawing.Size(35, 22);
+            this.tsBtnNpcSave.Text = "Save";
+            this.tsBtnNpcSave.Click += new System.EventHandler(this.tsBtnNpcSave_Click);
             // 
             // dataGridView4
             // 
@@ -1744,13 +1800,13 @@ namespace LcDevPack_TeamDamonA.Tools
             this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column7,
-            this.Column8,
-            this.Column13,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12});
+            this.affinityID,
+            this.npcID,
+            this.npcName,
+            this.usePoints,
+            this.enablee,
+            this.flag,
+            this.stringID});
             this.dataGridView4.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView4.EnableHeadersVisualStyles = false;
             this.dataGridView4.Location = new System.Drawing.Point(3, 16);
@@ -1760,53 +1816,13 @@ namespace LcDevPack_TeamDamonA.Tools
             this.dataGridView4.Size = new System.Drawing.Size(424, 65);
             this.dataGridView4.TabIndex = 0;
             // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "a_affinity_idx";
-            this.Column7.Name = "Column7";
-            this.Column7.Visible = false;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "NPC ID";
-            this.Column8.Name = "Column8";
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Npc Name";
-            this.Column13.Name = "Column13";
-            this.Column13.Width = 140;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Use Points";
-            this.Column9.Name = "Column9";
-            this.Column9.Visible = false;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "a_enable";
-            this.Column10.Name = "Column10";
-            this.Column10.Visible = false;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Flag";
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 60;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "String ID";
-            this.Column12.Name = "Column12";
-            // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.toolStrip5);
             this.groupBox9.Controls.Add(this.dataGridView5);
-            this.groupBox9.Location = new System.Drawing.Point(240, 523);
+            this.groupBox9.Location = new System.Drawing.Point(240, 592);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(424, 146);
+            this.groupBox9.Size = new System.Drawing.Size(1011, 146);
             this.groupBox9.TabIndex = 16;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Affinity Reward";
@@ -1816,10 +1832,11 @@ namespace LcDevPack_TeamDamonA.Tools
             this.toolStrip5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsBtnRewardAdd,
-            this.tsBtnRewardDelete});
+            this.tsBtnRewardDelete,
+            this.tsBtnRewardSave});
             this.toolStrip5.Location = new System.Drawing.Point(3, 118);
             this.toolStrip5.Name = "toolStrip5";
-            this.toolStrip5.Size = new System.Drawing.Size(418, 25);
+            this.toolStrip5.Size = new System.Drawing.Size(1005, 25);
             this.toolStrip5.TabIndex = 1;
             this.toolStrip5.Text = "toolStrip5";
             // 
@@ -1843,6 +1860,16 @@ namespace LcDevPack_TeamDamonA.Tools
             this.tsBtnRewardDelete.Text = "Delete Reward";
             this.tsBtnRewardDelete.Click += new System.EventHandler(this.tsBtnRewardDelete_Click);
             // 
+            // tsBtnRewardSave
+            // 
+            this.tsBtnRewardSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsBtnRewardSave.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnRewardSave.Image")));
+            this.tsBtnRewardSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnRewardSave.Name = "tsBtnRewardSave";
+            this.tsBtnRewardSave.Size = new System.Drawing.Size(35, 22);
+            this.tsBtnRewardSave.Text = "Save";
+            this.tsBtnRewardSave.Click += new System.EventHandler(this.tsBtnRewardSave_Click);
+            // 
             // dataGridView5
             // 
             this.dataGridView5.AllowUserToAddRows = false;
@@ -1851,79 +1878,79 @@ namespace LcDevPack_TeamDamonA.Tools
             this.dataGridView5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17,
-            this.Column18,
-            this.Column19,
-            this.Column20,
-            this.Column21,
-            this.Column22,
-            this.Column23});
+            this.npcIDx,
+            this.allowPoint,
+            this.ItemIdx,
+            this.rFlag,
+            this.rCount,
+            this.rExp,
+            this.rSp,
+            this.rNeedPCLevel,
+            this.rNeedItemId,
+            this.rNeedItemCount});
             this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView5.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView5.EnableHeadersVisualStyles = false;
             this.dataGridView5.Location = new System.Drawing.Point(3, 16);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.RowHeadersVisible = false;
-            this.dataGridView5.Size = new System.Drawing.Size(418, 127);
+            this.dataGridView5.Size = new System.Drawing.Size(1005, 127);
             this.dataGridView5.TabIndex = 0;
             // 
-            // Column14
+            // npcIDx
             // 
-            this.Column14.HeaderText = "a_npcidx";
-            this.Column14.Name = "Column14";
+            this.npcIDx.HeaderText = "a_npcidx";
+            this.npcIDx.Name = "npcIDx";
             // 
-            // Column15
+            // allowPoint
             // 
-            this.Column15.HeaderText = "a_allow_point";
-            this.Column15.Name = "Column15";
+            this.allowPoint.HeaderText = "a_allow_point";
+            this.allowPoint.Name = "allowPoint";
             // 
-            // Column16
+            // ItemIdx
             // 
-            this.Column16.HeaderText = "a_itemidx";
-            this.Column16.Name = "Column16";
+            this.ItemIdx.HeaderText = "a_itemidx";
+            this.ItemIdx.Name = "ItemIdx";
             // 
-            // Column17
+            // rFlag
             // 
-            this.Column17.HeaderText = "a_flag";
-            this.Column17.Name = "Column17";
+            this.rFlag.HeaderText = "a_flag";
+            this.rFlag.Name = "rFlag";
             // 
-            // Column18
+            // rCount
             // 
-            this.Column18.HeaderText = "a_count";
-            this.Column18.Name = "Column18";
+            this.rCount.HeaderText = "a_count";
+            this.rCount.Name = "rCount";
             // 
-            // Column19
+            // rExp
             // 
-            this.Column19.HeaderText = "a_exp";
-            this.Column19.Name = "Column19";
+            this.rExp.HeaderText = "a_exp";
+            this.rExp.Name = "rExp";
             // 
-            // Column20
+            // rSp
             // 
-            this.Column20.HeaderText = "a_sp";
-            this.Column20.Name = "Column20";
+            this.rSp.HeaderText = "a_sp";
+            this.rSp.Name = "rSp";
             // 
-            // Column21
+            // rNeedPCLevel
             // 
-            this.Column21.HeaderText = "a_needpclevle";
-            this.Column21.Name = "Column21";
+            this.rNeedPCLevel.HeaderText = "a_needpclevle";
+            this.rNeedPCLevel.Name = "rNeedPCLevel";
             // 
-            // Column22
+            // rNeedItemId
             // 
-            this.Column22.HeaderText = "a_needitemidx";
-            this.Column22.Name = "Column22";
+            this.rNeedItemId.HeaderText = "a_needitemidx";
+            this.rNeedItemId.Name = "rNeedItemId";
             // 
-            // Column23
+            // rNeedItemCount
             // 
-            this.Column23.HeaderText = "a_needitemcount";
-            this.Column23.Name = "Column23";
+            this.rNeedItemCount.HeaderText = "a_needitemcount";
+            this.rNeedItemCount.Name = "rNeedItemCount";
             // 
             // button3
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(1040, 656);
+            this.button3.Location = new System.Drawing.Point(133, 633);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(89, 28);
             this.button3.TabIndex = 17;
@@ -1939,11 +1966,51 @@ namespace LcDevPack_TeamDamonA.Tools
             this.tbNpcIndex.TabIndex = 18;
             this.tbNpcIndex.Visible = false;
             // 
+            // affinityID
+            // 
+            this.affinityID.HeaderText = "a_affinity_idx";
+            this.affinityID.Name = "affinityID";
+            this.affinityID.Visible = false;
+            // 
+            // npcID
+            // 
+            this.npcID.HeaderText = "NPC ID";
+            this.npcID.Name = "npcID";
+            // 
+            // npcName
+            // 
+            this.npcName.HeaderText = "Npc Name";
+            this.npcName.Name = "npcName";
+            this.npcName.Width = 140;
+            // 
+            // usePoints
+            // 
+            this.usePoints.HeaderText = "Use Points";
+            this.usePoints.Name = "usePoints";
+            this.usePoints.Visible = false;
+            // 
+            // enablee
+            // 
+            this.enablee.HeaderText = "a_enable";
+            this.enablee.Name = "enablee";
+            this.enablee.Visible = false;
+            // 
+            // flag
+            // 
+            this.flag.HeaderText = "Flag";
+            this.flag.Name = "flag";
+            this.flag.Width = 60;
+            // 
+            // stringID
+            // 
+            this.stringID.HeaderText = "String ID";
+            this.stringID.Name = "stringID";
+            // 
             // AffinityEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1391, 716);
+            this.ClientSize = new System.Drawing.Size(1391, 774);
             this.Controls.Add(this.tbNpcIndex);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox9);
@@ -2013,21 +2080,6 @@ namespace LcDevPack_TeamDamonA.Tools
             
         }
 
-        private void toolStripButton7_Click(object sender, EventArgs e) //Add NPC dethunter12
-        {
-
-        }
-
-        private void toolStripButton5_Click(object sender, EventArgs e) // Add Quest dethunter12
-        {
-
-        }
-
-        private void toolStripButton3_Click(object sender, EventArgs e) //Add item dethunter12
-        {
-
-        }
-
         private void toolStripButton6_Click(object sender, EventArgs e) //Delete Quest dethunter12
         {
             DataGridViewRow row = dataGridView3.Rows[dataGridView3.CurrentRow.Index]; // to get the information of the current row.
@@ -2037,16 +2089,6 @@ namespace LcDevPack_TeamDamonA.Tools
             databaseHandle.SendQueryMySql(Host, User, Password, Database, "DELETE FROM t_magicLevel WHERE a_index ='" + Convert.ToString(row.Cells["index"].Value) + "' AND a_level = '" + Convert.ToString(row.Cells["Level"].Value) + "'");
             dataGridView3.Rows.Clear();
             LoadDG3(); //dethunter12 add
-        }
-
-        private void toolStripButton4_Click(object sender, EventArgs e)//Delete Donate Item dethunter12
-        {
-
-        }
-
-        private void toolStripButton8_Click(object sender, EventArgs e) //Delete manager npc dethunter12
-        {
-
         }
 
         private void gToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2170,17 +2212,489 @@ namespace LcDevPack_TeamDamonA.Tools
 
         private void tsBtnRewardAdd_Click(object sender, EventArgs e)
         {
-
+            //TODO:::
         }
 
         private void tsBtnRewardDelete_Click(object sender, EventArgs e)
         {
+            DataGridViewRow row = dataGridView5.Rows[dataGridView5.CurrentRow.Index];
 
+            int index = Convert.ToInt32(row.Cells["allowPoint"].Value);
+            int npcID = Convert.ToInt32(row.Cells["npcIDx"].Value);
+            // Build the update query
+            string query = $"DELETE FROM t_affinity_reward_item WHERE a_allow_point = '{index}' AND a_npcidx = '{npcID}' ";
+
+            // Execute the query
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+                var cmd = new MySqlCommand(query, conn);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception here
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            // Refresh the DataGridView
+            dataGridView5.Rows.Clear();
+            LoadDG5(npcID.ToString());
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tsBtnAddNpc_Click(object sender, EventArgs e)
+        {
+            MobPicker mobPicker = new MobPicker();
+            if (mobPicker.ShowDialog() != DialogResult.OK)
+                return;
+           
+            int mobIdx = mobPicker.MobIndex;
+
+            DataGridViewRow row = dataGridView4.Rows[dataGridView4.CurrentRow.Index];
+
+            //assigning some default values..
+            int affinityID = int.Parse(textBox1.Text);
+            int usePoint = 1000000;
+            int enable = 1;
+            int strIdx = 1000;
+            int flag = 15;
+            //TODO::
+            //get flag based on mob id? check the flag if merchant and afinity assign if not shop assign 11
+            //otherwise assign 4 / unless its multi purpouse(shop and befriend) then assign 15;
+            //
+
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = $"INSERT INTO t_affinity_npc (a_affinity_idx, a_npcidx, a_use_point, a_enable, a_flag,a_string_idx) VALUES ({affinityID}, {mobIdx}, {usePoint}, {enable}, {flag}, {strIdx})";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            dataGridView4.Rows.Clear();
+            LoadDG4();
+        }
+
+        private void tsBtnAddQuest_Click(object sender, EventArgs e)
+        {
+            //MobPicker mobPicker = new MobPicker();
+            //if (mobPicker.ShowDialog() != DialogResult.OK)
+            //    return;
+            //Todo Create Quest Picker :o
+            //assign value based on quest picker like others.
+
+            //int mobIdx = mobPicker.MobIndex;
+
+            DataGridViewRow row = dataGridView3.Rows[dataGridView3.CurrentRow.Index];
+
+            int questIDx = 100;
+            int affinityID = int.Parse(textBox1.Text);
+            int affPoint = 100;
+            int enable = 1;
+            int workType = 2;
+
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = $"INSERT INTO t_affinity_work (a_work_type, a_type_idx, a_affinity_idx, a_value, a_enable) VALUES ({workType}, {questIDx}, {affinityID}, {affPoint}, {enable})";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            dataGridView3.Rows.Clear();
+            LoadDG3();
+
+        }
+
+        private void tsBtnAddItem_Click(object sender, EventArgs e)
+        {
+            ItemPicker itemPicker = new ItemPicker();
+            if (itemPicker.ShowDialog() != DialogResult.OK)
+                return;
+
+            int itemIdx = itemPicker.ItemIndex;
+
+            DataGridViewRow row = dataGridView2.Rows[dataGridView2.CurrentRow.Index];
+
+            int workType = 0;
+            int affinityID = int.Parse(textBox1.Text);
+            int affPoint = 100;
+            int enable = 1;
+
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = $"INSERT INTO t_affinity_work (a_work_type, a_type_idx, a_affinity_idx, a_value, a_enable) VALUES ({workType}, {itemIdx}, {affinityID}, {affPoint}, {enable})";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            dataGridView2.Rows.Clear();
+            LoadDG2();
+
+        }
+
+        private void tsBtnAddMonster_Click(object sender, EventArgs e)
+        {
+            MobPicker mobPicker = new MobPicker();
+            if (mobPicker.ShowDialog() != DialogResult.OK)
+                return;
+
+            int mobIdx = mobPicker.MobIndex;
+
+            DataGridViewRow row = dataGridView1.Rows[dataGridView1.CurrentRow.Index];
+
+            int workType = 1;
+            int affinityID = int.Parse(textBox1.Text);
+            int affPoint = 100;
+            int enable = 1;
+
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = $"INSERT INTO t_affinity_work (a_work_type, a_type_idx, a_affinity_idx, a_value, a_enable) VALUES ({workType}, {mobIdx}, {affinityID}, {affPoint}, {enable})";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            dataGridView1.Rows.Clear();
+            LoadDG();
+
+        }
+
+        private void tsBtnDeleteMonster_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.Rows[dataGridView1.CurrentRow.Index];
+
+            int workType = Convert.ToInt32(row.Cells["workType"].Value);
+            int mobID = Convert.ToInt32(row.Cells["monsterID"].Value);
+            int affinityID = Convert.ToInt32(row.Cells["mAffinityIDx"].Value);
+            // Build the update query
+            string query = $"DELETE FROM t_affinity_work WHERE a_work_type = '{workType}' AND a_affinity_idx = '{affinityID}' AND a_type_idx = '{mobID}' ";
+
+            // Execute the query
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+                var cmd = new MySqlCommand(query, conn);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception here
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            // Refresh the DataGridView
+            dataGridView1.Rows.Clear();
+            LoadDG();
+        }
+
+        private void tsBtnDeleteItem_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridView2.Rows[dataGridView2.CurrentRow.Index];
+
+            int workType = Convert.ToInt32(row.Cells["IWorkType"].Value);
+            int itemID = Convert.ToInt32(row.Cells["iItemID"].Value);
+            int affinityID = Convert.ToInt32(row.Cells["iAffinityIdx"].Value);
+            // Build the update query
+            string query = $"DELETE FROM t_affinity_work WHERE a_work_type = '{workType}' AND a_affinity_idx = '{affinityID}' AND a_type_idx = '{itemID}' ";
+
+            // Execute the query
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+                var cmd = new MySqlCommand(query, conn);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception here
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            // Refresh the DataGridView
+            dataGridView2.Rows.Clear();
+            LoadDG2();
+        }
+
+        private void tsBtnDeleteQuest_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridView3.Rows[dataGridView3.CurrentRow.Index];
+
+            int workType = Convert.ToInt32(row.Cells["QWorkType"].Value);
+            int questID = Convert.ToInt32(row.Cells["QuestID"].Value);
+            int affinityID = Convert.ToInt32(row.Cells["qAffinityIdx"].Value);
+            // Build the update query
+            string query = $"DELETE FROM t_affinity_work WHERE a_work_type = '{workType}' AND a_affinity_idx = '{affinityID}' AND a_type_idx = '{questID}' ";
+
+            // Execute the query
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+                var cmd = new MySqlCommand(query, conn);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception here
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            // Refresh the DataGridView
+            dataGridView3.Rows.Clear();
+            LoadDG3();
+        }
+
+        private void tsBtnDeleteNpc_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridView4.Rows[dataGridView4.CurrentRow.Index];
+
+            int npcID = Convert.ToInt32(row.Cells["npcID"].Value);
+
+            string query = $"DELETE FROM t_affinity_npc WHERE a_npcidx = '{npcID}'";
+
+            // Execute the query
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+                var cmd = new MySqlCommand(query, conn);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception here
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            dataGridView4.Rows.Clear();
+            LoadDG4();
+        }
+
+        private void tsBtnMonSave_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.Rows[dataGridView1.CurrentRow.Index];
+            int oldmonsterID = Convert.ToInt32(row.Cells["monsterID"].Value);
+            int oldaffIdx = Convert.ToInt32(row.Cells["mAffinityIDx"].Value);
+
+            dataGridView1.EndEdit();
+            
+            int workType = Convert.ToInt32(row.Cells["workType"].Value);
+            int monsterID = Convert.ToInt32(row.Cells["monsterID"].Value);
+            int affIdx = Convert.ToInt32(row.Cells["mAffinityIDx"].Value);
+            int affPts = Convert.ToInt32(row.Cells["mAffinityPoint"].Value);
+            int enable = Convert.ToInt32(row.Cells["mEnable"].Value);
+
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+
+                // First check if the row already exists
+                var checkCmd = new MySqlCommand($"SELECT COUNT(*) FROM t_affinity_work WHERE a_affinity_idx = {affIdx} AND a_type_idx = {monsterID}", conn);
+                int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                if (count > 0)
+                {
+                    // The row already exists, so use an UPDATE query
+                    var cmd = new MySqlCommand($"UPDATE t_affinity_work SET a_work_type = {workType}, a_value = {affPts}, a_enable = {enable} WHERE a_affinity_idx = {affIdx} AND a_type_idx = {monsterID}", conn);
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    // The row doesn't exist, so use an INSERT query
+                    var cmd = new MySqlCommand($"INSERT INTO t_affinity_work (a_work_type, a_type_idx, a_affinity_idx, a_value, a_enable) VALUES ({workType}, {monsterID}, {affIdx}, {affPts}, {enable})", conn);
+                    cmd.ExecuteNonQuery();
+                }
+                // Now delete the current record.
+                var deleteQuery = $"DELETE FROM t_affinity_work WHERE a_type_idx = {oldmonsterID} and a_affinity_idx = {oldaffIdx}";
+                var cmd2 = new MySqlCommand(deleteQuery, conn);
+                cmd2.ExecuteNonQuery();
+            }
+            dataGridView1.Rows.Clear();
+            LoadDG();
+        }
+
+        private void tsBtnRewardSave_Click(object sender, EventArgs e)
+        {
+            dataGridView5.EndEdit();
+            DataGridViewRow row = dataGridView5.Rows[dataGridView5.CurrentRow.Index];
+
+            int npcID = Convert.ToInt32(row.Cells["npcIDx"].Value);
+            int allowPts = Convert.ToInt32(row.Cells["allowPoint"].Value);
+            int rewardItem = Convert.ToInt32(row.Cells["ItemIdx"].Value);
+            int flag = Convert.ToInt32(row.Cells["rFlag"].Value);
+            int rewardCount = Convert.ToInt32(row.Cells["rCount"].Value);
+            int exp = Convert.ToInt32(row.Cells["rExp"].Value);
+            int sp = Convert.ToInt32(row.Cells["rSp"].Value);
+            int needPlayerLvl = Convert.ToInt32(row.Cells["rNeedPCLevel"].Value);
+            int needItemID = Convert.ToInt32(row.Cells["rNeedItemId"].Value);
+            int needItemCnt = Convert.ToInt32(row.Cells["rNeedItemCount"].Value);
+
+            // Execute the query
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+
+                // First check if the row already exists
+                var checkCmd = new MySqlCommand($"SELECT COUNT(*) FROM t_affinity_reward_item WHERE a_npcidx = {npcID} AND a_allow_point = {allowPts}", conn);
+                int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                if (count > 0)
+                {
+                    // The row already exists, so use an UPDATE query
+                    var cmd = new MySqlCommand($"UPDATE t_affinity_reward_item SET a_npcidx = {npcID}, a_allow_point = {allowPts}, a_itemidx = {rewardItem}, a_flag = {flag}, a_count = {rewardCount}, a_exp = {exp}, a_sp = {sp}, a_needpclevel = {needPlayerLvl}, a_needitemidx = {needItemID}, a_needitemcount = {needItemCnt} WHERE a_npc_idx = {npcID} AND a_allow_point = {allowPts} ", conn);
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    // The row doesn't exist, so use an INSERT query
+                    var cmd = new MySqlCommand($"INSERT INTO t_affinity_reward_item (a_npcidx, a_allow_point, a_itemidx, a_flag, a_count, a_exp, a_sp, a_needpclevel, a_needitemidx,a_needitemcount ) VALUES ({npcID}, {allowPts}, {rewardItem}, {flag}, {rewardCount}, {exp}, {sp}, {needPlayerLvl}, {needItemID},{needItemCnt} )", conn);
+                    cmd.ExecuteNonQuery();
+                }
+
+                //what are we doing with the old query? that you originally edited? are we deleting it? no i think we should instead overwrite it?
+            }
+            dataGridView5.Rows.Clear();
+            LoadDG5(npcID.ToString());
+        }
+
+        private void tsBtnNpcSave_Click(object sender, EventArgs e)
+        {
+            
+            dataGridView4.EndEdit();
+            DataGridViewRow row = dataGridView4.Rows[dataGridView4.CurrentRow.Index];
+
+            int npcID = Convert.ToInt32(row.Cells["npcID"].Value);
+            int affID = Convert.ToInt32(row.Cells["affinityID"].Value);
+            int enable = Convert.ToInt32(row.Cells["enablee"].Value);
+            int flag = Convert.ToInt32(row.Cells["flag"].Value);
+            int strID = Convert.ToInt32(row.Cells["stringID"].Value);
+            int usePts = Convert.ToInt32(row.Cells["usePoints"].Value);
+
+            // Execute the query
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+
+                // First check if the row already exists
+                var checkCmd = new MySqlCommand($"SELECT COUNT(*) FROM t_affinity_npc WHERE a_affinity_idx = {affID} AND a_npcidx = {npcID}", conn);
+                int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                if (count > 0)
+                {
+                    // The row already exists, so use an UPDATE query
+                    var cmd = new MySqlCommand($"UPDATE t_affinity_npc SET a_affinity_idx = {affID}, a_npcidx = {npcID}, a_use_point = {usePts}, a_enable = {enable}, a_flag = {flag}, a_string_idx = {strID} WHERE a_affinity_idx = {affID} AND a_npcidx = {npcID}", conn);
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    // The row doesn't exist, so use an INSERT query
+                    var cmd = new MySqlCommand($"INSERT INTO t_affinity_npc (a_affinity_idx, a_npcidx, a_use_point, a_enable, a_flag, a_string_idx) VALUES ({affID}, {npcID}, {usePts}, {enable}, {flag}, {strID})", conn);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            dataGridView4.Rows.Clear();
+            LoadDG4();
+        }
+
+        private void tsBtnItemSave_Click(object sender, EventArgs e)
+        {
+            dataGridView2.EndEdit();
+            DataGridViewRow row = dataGridView2.Rows[dataGridView2.CurrentRow.Index];
+           
+            int workType = Convert.ToInt32(row.Cells["IWorkType"].Value);
+            int itemID = Convert.ToInt32(row.Cells["iItemID"].Value);
+            int affIdx = Convert.ToInt32(row.Cells["iAffinityIdx"].Value);
+            int affPts = Convert.ToInt32(row.Cells["iAffinityPoint"].Value);
+            int enable = Convert.ToInt32(row.Cells["iEnable"].Value);
+
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+
+                // First check if the row already exists
+                var checkCmd = new MySqlCommand($"SELECT COUNT(*) FROM t_affinity_work WHERE a_affinity_idx = {affIdx} AND a_type_idx = {itemID}", conn);
+                int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                if (count > 0)
+                {
+                    // The row already exists, so use an UPDATE query
+                    var cmd = new MySqlCommand($"UPDATE t_affinity_work SET a_work_type = {workType}, a_value = {affPts}, a_enable = {enable} WHERE a_affinity_idx = {affIdx} AND a_type_idx = {itemID}", conn);
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    // The row doesn't exist, so use an INSERT query
+                    var cmd = new MySqlCommand($"INSERT INTO t_affinity_work (a_work_type, a_type_idx, a_affinity_idx, a_value, a_enable) VALUES ({workType}, {itemID}, {affIdx}, {affPts}, {enable})", conn);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            dataGridView2.Rows.Clear();
+            LoadDG2();
+
+        }
+
+        private void tsBtnQuestSave_Click(object sender, EventArgs e)
+        {
+            dataGridView3.EndEdit();
+            DataGridViewRow row = dataGridView3.Rows[dataGridView3.CurrentRow.Index];
+           
+            int workType = Convert.ToInt32(row.Cells["QWorkType"].Value);
+            int questID = Convert.ToInt32(row.Cells["QuestID"].Value);
+            int affIdx = Convert.ToInt32(row.Cells["qAffinityIdx"].Value);
+            int affPts = Convert.ToInt32(row.Cells["qAffinityPoints"].Value);
+            int enable = Convert.ToInt32(row.Cells["qEnable"].Value);
+
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+
+                // First check if the row already exists
+                var checkCmd = new MySqlCommand($"SELECT COUNT(*) FROM t_affinity_work WHERE a_affinity_idx = {affIdx} AND a_type_idx = {questID}", conn);
+                int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                if (count > 0)
+                {
+                    // The row already exists, so use an UPDATE query
+                    var cmd = new MySqlCommand($"UPDATE t_affinity_work SET a_work_type = {workType}, a_value = {affPts}, a_enable = {enable} WHERE a_affinity_idx = {affIdx} AND a_type_idx = {questID}", conn);
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    // The row doesn't exist, so use an INSERT query
+                    var cmd = new MySqlCommand($"INSERT INTO t_affinity_work (a_work_type, a_type_idx, a_affinity_idx, a_value, a_enable) VALUES ({workType}, {questID}, {affIdx}, {affPts}, {enable})", conn);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            dataGridView3.Rows.Clear();
+            LoadDG3();
         }
     }
 }

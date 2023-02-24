@@ -41,6 +41,16 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblProb10 = new System.Windows.Forms.Label();
+            this.lblProb9 = new System.Windows.Forms.Label();
+            this.lblProb8 = new System.Windows.Forms.Label();
+            this.lblProb7 = new System.Windows.Forms.Label();
+            this.lblProb6 = new System.Windows.Forms.Label();
+            this.lblProb5 = new System.Windows.Forms.Label();
+            this.lblProb4 = new System.Windows.Forms.Label();
+            this.lblProb3 = new System.Windows.Forms.Label();
+            this.lblProb2 = new System.Windows.Forms.Label();
+            this.lblProb1 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -132,16 +142,6 @@
             this.UpdateButton = new System.Windows.Forms.Button();
             this.remove = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.lblProb1 = new System.Windows.Forms.Label();
-            this.lblProb2 = new System.Windows.Forms.Label();
-            this.lblProb3 = new System.Windows.Forms.Label();
-            this.lblProb4 = new System.Windows.Forms.Label();
-            this.lblProb5 = new System.Windows.Forms.Label();
-            this.lblProb6 = new System.Windows.Forms.Label();
-            this.lblProb7 = new System.Windows.Forms.Label();
-            this.lblProb8 = new System.Windows.Forms.Label();
-            this.lblProb9 = new System.Windows.Forms.Label();
-            this.lblProb10 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -320,6 +320,96 @@
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Seals";
+            // 
+            // lblProb10
+            // 
+            this.lblProb10.AutoSize = true;
+            this.lblProb10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProb10.Location = new System.Drawing.Point(458, 289);
+            this.lblProb10.Name = "lblProb10";
+            this.lblProb10.Size = new System.Drawing.Size(0, 15);
+            this.lblProb10.TabIndex = 56;
+            // 
+            // lblProb9
+            // 
+            this.lblProb9.AutoSize = true;
+            this.lblProb9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProb9.Location = new System.Drawing.Point(458, 261);
+            this.lblProb9.Name = "lblProb9";
+            this.lblProb9.Size = new System.Drawing.Size(0, 15);
+            this.lblProb9.TabIndex = 55;
+            // 
+            // lblProb8
+            // 
+            this.lblProb8.AutoSize = true;
+            this.lblProb8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProb8.Location = new System.Drawing.Point(458, 234);
+            this.lblProb8.Name = "lblProb8";
+            this.lblProb8.Size = new System.Drawing.Size(0, 15);
+            this.lblProb8.TabIndex = 54;
+            // 
+            // lblProb7
+            // 
+            this.lblProb7.AutoSize = true;
+            this.lblProb7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProb7.Location = new System.Drawing.Point(458, 207);
+            this.lblProb7.Name = "lblProb7";
+            this.lblProb7.Size = new System.Drawing.Size(0, 15);
+            this.lblProb7.TabIndex = 53;
+            // 
+            // lblProb6
+            // 
+            this.lblProb6.AutoSize = true;
+            this.lblProb6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProb6.Location = new System.Drawing.Point(458, 181);
+            this.lblProb6.Name = "lblProb6";
+            this.lblProb6.Size = new System.Drawing.Size(0, 15);
+            this.lblProb6.TabIndex = 52;
+            // 
+            // lblProb5
+            // 
+            this.lblProb5.AutoSize = true;
+            this.lblProb5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProb5.Location = new System.Drawing.Point(458, 154);
+            this.lblProb5.Name = "lblProb5";
+            this.lblProb5.Size = new System.Drawing.Size(0, 15);
+            this.lblProb5.TabIndex = 51;
+            // 
+            // lblProb4
+            // 
+            this.lblProb4.AutoSize = true;
+            this.lblProb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProb4.Location = new System.Drawing.Point(458, 127);
+            this.lblProb4.Name = "lblProb4";
+            this.lblProb4.Size = new System.Drawing.Size(0, 15);
+            this.lblProb4.TabIndex = 50;
+            // 
+            // lblProb3
+            // 
+            this.lblProb3.AutoSize = true;
+            this.lblProb3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProb3.Location = new System.Drawing.Point(458, 99);
+            this.lblProb3.Name = "lblProb3";
+            this.lblProb3.Size = new System.Drawing.Size(0, 15);
+            this.lblProb3.TabIndex = 49;
+            // 
+            // lblProb2
+            // 
+            this.lblProb2.AutoSize = true;
+            this.lblProb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProb2.Location = new System.Drawing.Point(458, 73);
+            this.lblProb2.Name = "lblProb2";
+            this.lblProb2.Size = new System.Drawing.Size(0, 15);
+            this.lblProb2.TabIndex = 48;
+            // 
+            // lblProb1
+            // 
+            this.lblProb1.AutoSize = true;
+            this.lblProb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProb1.Location = new System.Drawing.Point(458, 46);
+            this.lblProb1.Name = "lblProb1";
+            this.lblProb1.Size = new System.Drawing.Size(0, 15);
+            this.lblProb1.TabIndex = 47;
             // 
             // label23
             // 
@@ -1702,96 +1792,6 @@
             this.listBox1.Size = new System.Drawing.Size(172, 381);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.ListBox1_SelectedIndexChanged);
-            // 
-            // lblProb1
-            // 
-            this.lblProb1.AutoSize = true;
-            this.lblProb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProb1.Location = new System.Drawing.Point(458, 46);
-            this.lblProb1.Name = "lblProb1";
-            this.lblProb1.Size = new System.Drawing.Size(0, 15);
-            this.lblProb1.TabIndex = 47;
-            // 
-            // lblProb2
-            // 
-            this.lblProb2.AutoSize = true;
-            this.lblProb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProb2.Location = new System.Drawing.Point(458, 73);
-            this.lblProb2.Name = "lblProb2";
-            this.lblProb2.Size = new System.Drawing.Size(0, 15);
-            this.lblProb2.TabIndex = 48;
-            // 
-            // lblProb3
-            // 
-            this.lblProb3.AutoSize = true;
-            this.lblProb3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProb3.Location = new System.Drawing.Point(458, 99);
-            this.lblProb3.Name = "lblProb3";
-            this.lblProb3.Size = new System.Drawing.Size(0, 15);
-            this.lblProb3.TabIndex = 49;
-            // 
-            // lblProb4
-            // 
-            this.lblProb4.AutoSize = true;
-            this.lblProb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProb4.Location = new System.Drawing.Point(458, 127);
-            this.lblProb4.Name = "lblProb4";
-            this.lblProb4.Size = new System.Drawing.Size(0, 15);
-            this.lblProb4.TabIndex = 50;
-            // 
-            // lblProb5
-            // 
-            this.lblProb5.AutoSize = true;
-            this.lblProb5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProb5.Location = new System.Drawing.Point(458, 154);
-            this.lblProb5.Name = "lblProb5";
-            this.lblProb5.Size = new System.Drawing.Size(0, 15);
-            this.lblProb5.TabIndex = 51;
-            // 
-            // lblProb6
-            // 
-            this.lblProb6.AutoSize = true;
-            this.lblProb6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProb6.Location = new System.Drawing.Point(458, 181);
-            this.lblProb6.Name = "lblProb6";
-            this.lblProb6.Size = new System.Drawing.Size(0, 15);
-            this.lblProb6.TabIndex = 52;
-            // 
-            // lblProb7
-            // 
-            this.lblProb7.AutoSize = true;
-            this.lblProb7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProb7.Location = new System.Drawing.Point(458, 207);
-            this.lblProb7.Name = "lblProb7";
-            this.lblProb7.Size = new System.Drawing.Size(0, 15);
-            this.lblProb7.TabIndex = 53;
-            // 
-            // lblProb8
-            // 
-            this.lblProb8.AutoSize = true;
-            this.lblProb8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProb8.Location = new System.Drawing.Point(458, 234);
-            this.lblProb8.Name = "lblProb8";
-            this.lblProb8.Size = new System.Drawing.Size(0, 15);
-            this.lblProb8.TabIndex = 54;
-            // 
-            // lblProb9
-            // 
-            this.lblProb9.AutoSize = true;
-            this.lblProb9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProb9.Location = new System.Drawing.Point(458, 261);
-            this.lblProb9.Name = "lblProb9";
-            this.lblProb9.Size = new System.Drawing.Size(0, 15);
-            this.lblProb9.TabIndex = 55;
-            // 
-            // lblProb10
-            // 
-            this.lblProb10.AutoSize = true;
-            this.lblProb10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProb10.Location = new System.Drawing.Point(458, 289);
-            this.lblProb10.Name = "lblProb10";
-            this.lblProb10.Size = new System.Drawing.Size(0, 15);
-            this.lblProb10.TabIndex = 56;
             // 
             // RareOptionEditor
             // 

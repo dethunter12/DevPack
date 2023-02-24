@@ -20,6 +20,7 @@ namespace LcDevPack_TeamDamonA.Tools
     private string User = MagicEditor.connection.ReadSettings("User");
     private string Password = MagicEditor.connection.ReadSettings("Password");
     private string Database = MagicEditor.connection.ReadSettings("Database");
+    private static string _connectionString;
     private DatabaseHandle databaseHandle = new DatabaseHandle();
     public string[] menuArray = new string[2]
     {
@@ -96,9 +97,11 @@ namespace LcDevPack_TeamDamonA.Tools
     public MagicEditor()
     {
             InitializeComponent();
-    }
+            _connectionString = $"Server={Host};Database={Database};Uid={User};Pwd={Password};";
 
-    private void LoadListBox()
+        }
+
+        private void LoadListBox()
     {
             listBox1.DataSource = databaseHandle.SelectMySqlReturnList(menuArray, Host, User, Password, Database, "select a_index, a_name, a_maxlevel, a_type, a_subtype, a_damagetype, a_hittype, a_attribute, a_psp, a_ptp, a_hsp, a_htp, a_togle from t_magic ORDER BY a_index;");
     }
@@ -268,21 +271,45 @@ namespace LcDevPack_TeamDamonA.Tools
     {
     }
 
-    private void btnDeleteSelected_Click(object sender, EventArgs e) //saveitem
-    {
-      DataGridViewRow row = dgItems.Rows[dgItems.CurrentRow.Index];
+        private void btnDeleteSelected_Click(object sender, EventArgs e)
+        {
+            // Get the selected row
+            DataGridViewRow row = dgItems.Rows[dgItems.CurrentRow.Index];
 
-            string str1 = Convert.ToString(row.Cells["index"].Value);
-      string str2 = Convert.ToString(row.Cells["Level"].Value);
-            string str3 = Convert.ToString(row.Cells["Power"].Value);
-            databaseHandle.SendQueryMySql(Host, User, Password, Database, "UPDATE t_magicLevel SET " + "a_power = '" + Convert.ToString(row.Cells["Power"].Value) + "', " + "a_hitrate = '" + Convert.ToString(row.Cells["HitRate"].Value) + "' " + "WHERE a_index = '" + str1 + "' AND a_level = '" + str2 + "'");
-            
-            row.SetValues(str1, str2, str3);
+            dgItems.EndEdit(); //we want to ensure all the values are not editable anymore when doing the save method.
+
+            // Get the values from the row
+            int index = Convert.ToInt32(row.Cells["index"].Value);
+            int level = Convert.ToInt32(row.Cells["Level"].Value);
+            int power = Convert.ToInt32(row.Cells["Power"].Value);
+            int hitrate = Convert.ToInt32(row.Cells["HitRate"].Value);
+
+            // Build the update query
+            string query = $"UPDATE t_magicLevel SET a_power = '{power}', a_hitrate = '{hitrate}' WHERE a_index = '{index}' AND a_level = '{level}'";
+
+            // Execute the query
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+                var cmd = new MySqlCommand(query, conn);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception here
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            // Refresh the DataGridView
             dgItems.Rows.Clear();
             LoadDG(tbIndex.Text);
-    }
+        }
 
-    private void btnAddItems_Click(object sender, EventArgs e)
+
+        private void btnAddItems_Click(object sender, EventArgs e)
     {
       int num1 = databaseHandle.CountByRow(Host, User, Password, Database, "SELECT COUNT(*) FROM t_magicLevel WHERE a_index = '" + tbIndex.Text + "' ") + 1;
       try

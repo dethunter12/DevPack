@@ -76,7 +76,7 @@ namespace LcDevPack_TeamDamonA.Tools
               "63 "
         };
 
-        public static string[] Skills = new string[18]
+        public static string[] Skills = new string[19]
     {
       "Singlemode",
       "Help",
@@ -95,7 +95,8 @@ namespace LcDevPack_TeamDamonA.Tools
       "ItemSkill",
       "Not Boss",
       "Not Single",
-      "Toggle"
+      "Toggle",
+      "PVP Remove"
     };
     public static string[] Skills2 = new string[8] //dethunter12 add
     {
@@ -108,26 +109,24 @@ namespace LcDevPack_TeamDamonA.Tools
       "DARKNESS",
       "NO_COOL_TIME"  
     };
-    public static string[] Skills3 = new string[18] //dethunter12 add
+    public static string[] Skills3 = new string[16] //dethunter12 add
     {
-      "APP_CHARACTER",
-      "APP_FIRE",
-      "APP_WIND",
-      "APP_EARTH",
-      "APP_WATER",
-      "APP_HELLOUND",
-      "APP_ELENEN",
-      "APP_APET",
-      "APP_ALL",
-      "USE_CHARACTER",
-      "USE_FIRE",
-      "USE_WIND",
-      "USE_EARTH",
-      "USE_WATER",
-      "USE_HELLOUND",
-      "USE_ELENEN",
-      "USE_APET",
-      "USE_ALL"
+        "APP_CHARACTER",
+        "APP_FIRE",
+        "APP_WIND",
+        "APP_EARTH",
+        "APP_WATER",
+        "APP_HELLOUND",
+        "APP_ELENEN",
+        "APP_APET",
+        "USE_CHARACTER",
+        "USE_FIRE",
+        "USE_WIND",
+        "USE_EARTH",
+        "USE_WATER",
+        "USE_HELLOUND",
+        "USE_ELENEN",
+        "USE_APET"
     };
     public static string[] Npcs = new string[31]
     {

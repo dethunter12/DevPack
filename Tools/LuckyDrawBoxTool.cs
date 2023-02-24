@@ -20,6 +20,7 @@ namespace LcDevPack_TeamDamonA.Tools
     private string User = LuckyDrawBoxTool.connection.ReadSettings("User");
     private string Password = LuckyDrawBoxTool.connection.ReadSettings("Password");
     private string Database = LuckyDrawBoxTool.connection.ReadSettings("Database");
+    private static string _connectionString;
     private DatabaseHandle databaseHandle = new DatabaseHandle();
     public string rowName = "a_index";
     public string[] menuArray = new string[2]
@@ -87,9 +88,10 @@ namespace LcDevPack_TeamDamonA.Tools
     public LuckyDrawBoxTool()
     {
             InitializeComponent();
-    }
+            _connectionString = $"Server={Host};Database={Database};Uid={User};Pwd={Password};";
+     }
 
-    private void LoadListBox()
+        private void LoadListBox()
     {
             listBox1.DataSource = databaseHandle.SelectMySqlReturnList(menuArray, Host, User, Password, Database, "select * from t_luckydrawbox ORDER BY a_index;");
     }
@@ -349,14 +351,32 @@ namespace LcDevPack_TeamDamonA.Tools
 
     private void toolStripButton2_Click(object sender, EventArgs e) //save1 Result
     {
-            //column 12 = item id
-      DataGridViewRow row = dgItems2.Rows[dgItems2.CurrentRow.Index];
-      string str = Convert.ToString(row.Cells["Column10"].Value);
-      Convert.ToString(row.Cells["Column11"].Value);
-            databaseHandle.SendQueryMySql(Host, User, Password, Database, "UPDATE t_luckydrawResult SET " + "a_item_idx = '" + Convert.ToString(row.Cells["Column12"].Value) + "', " + "a_count = '" + Convert.ToString(row.Cells["Column14"].Value) + "', " + "a_upgrade = '" + Convert.ToString(row.Cells["Column15"].Value) + "', " + "a_prob = '" + Convert.ToString(row.Cells["Column16"].Value) + "', " + "a_flag = '" + Convert.ToString(row.Cells["Column17"].Value) + "' " + "WHERE a_index = '" + str + "' ");
+            dgItems2.EndEdit();//commit all changes then save
+
+            DataGridViewRow row = dgItems2.Rows[dgItems2.CurrentRow.Index];
+            // Get the values from the row
+            string index = Convert.ToString(row.Cells["Column10"].Value);
+            int itemIdx = Convert.ToInt32(row.Cells["Column12"].Value);
+            int count = Convert.ToInt32(row.Cells["Column14"].Value);
+            int upgrade = Convert.ToInt32(row.Cells["Column15"].Value);
+            int prob = Convert.ToInt32(row.Cells["Column16"].Value);
+            int flag = Convert.ToInt32(row.Cells["Column17"].Value);
+
+            // Build the update query
+            string query = $"UPDATE t_luckydrawResult SET a_item_idx = '{itemIdx}', a_count = '{count}', a_upgrade = '{upgrade}', a_prob = '{prob}', a_flag = '{flag}' WHERE a_index = '{index}'";
+
+            // Execute the query
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+                var cmd = new MySqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+            }
+
+            // Refresh the DataGridView
             dgItems2.Rows.Clear();
             LoadDG2();
-    }
+        }
 
     private void button1_Click(object sender, EventArgs e)
     {

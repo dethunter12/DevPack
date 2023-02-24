@@ -196,20 +196,20 @@ namespace ExchangeExport
 
         private void button3_Click(object sender, EventArgs e)
         {
-            r_t_id1.Text = "0";
+            tbExchangeID1.Text = "0";
 
             ItemPicker itemPicker = new ItemPicker();
             if (itemPicker.ShowDialog() != DialogResult.OK)
                 return;
 
-            r_t_id1.Text = Convert.ToString(itemPicker.ItemIndex);
+            tbExchangeID1.Text = Convert.ToString(itemPicker.ItemIndex);
             //textBox7.Text = databaseHandle.ItemNameFast(Convert.ToInt32(r_t_id1.Text)); 
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
-            pictureBox3.Image = databaseHandle.IconFast(Int32.Parse(r_t_id1.Text.Trim()));
-            textBox7.Text = databaseHandle.ItemNameFast(int.Parse(r_t_id1.Text.Trim()));
+            pictureBox3.Image = databaseHandle.IconFast(Int32.Parse(tbExchangeID1.Text.Trim()));
+            tbExchangeName1.Text = databaseHandle.ItemNameFast(int.Parse(tbExchangeID1.Text.Trim()));
         }
 
         private void dgItems_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -231,41 +231,25 @@ namespace ExchangeExport
                 while (mySqlDataReader.Read())
                 {
                     tbl_exchange exchange = new tbl_exchange();
-                    t_exchange_id.Text = mySqlDataReader.GetValue(0).ToString();
-                    //exchange.index = Convert.ToInt32(mySqlDataReader.GetValue(0).ToString()); //dethunter12 add 
-                    tx_npc_id.Text = mySqlDataReader.GetValue(2).ToString();
-                    //exchange.npcidx = Convert.ToInt32(mySqlDataReader.GetValue(2).ToString()); //dethunter12 add
-                    tb_reward_id.Text = mySqlDataReader.GetValue(3).ToString();
-                    //exchange.result_itemIndex = Convert.ToInt32(mySqlDataReader.GetValue(3).ToString());
-                    tb_reward_qty.Text = mySqlDataReader.GetValue(4).ToString();
-                    //exchange.result_itemCount = Convert.ToInt32(mySqlDataReader.GetValue(4).ToString());
-                    r_t_id1.Text = mySqlDataReader.GetValue(5).ToString();
-                    //exchange.source_itemIndex0 = Convert.ToInt32(mySqlDataReader.GetValue(5).ToString()); //item index 1
-                    textBox6.Text = mySqlDataReader.GetValue(6).ToString();
-                    //exchange.source_itemCount0 = Convert.ToInt32(mySqlDataReader.GetValue(6).ToString());
-                    r_t_id2.Text = mySqlDataReader.GetValue(7).ToString();
-                    //exchange.source_itemIndex1 = Convert.ToInt32(mySqlDataReader.GetValue(7).ToString());
-                    textBox9.Text = mySqlDataReader.GetValue(8).ToString();
-                    //exchange.source_itemCount1 = Convert.ToInt32(mySqlDataReader.GetValue(8).ToString());
-                    r_t_id3.Text = mySqlDataReader.GetValue(9).ToString();
-                    //exchange.source_itemIndex2 = Convert.ToInt32(mySqlDataReader.GetValue(9).ToString());
-                    textBox12.Text = mySqlDataReader.GetValue(10).ToString();
-                    //exchange.source_itemCount2 = Convert.ToInt32(mySqlDataReader.GetValue(10).ToString());
-                    r_t_id4.Text = mySqlDataReader.GetValue(11).ToString();
-                    //exchange.source_itemIndex3 = Convert.ToInt32(mySqlDataReader.GetValue(11).ToString());
-                    textBox15.Text = mySqlDataReader.GetValue(12).ToString();
-                    //exchange.source_itemCount3 = Convert.ToInt32(mySqlDataReader.GetValue(12).ToString());
-                    r_t_id5.Text = mySqlDataReader.GetValue(13).ToString();
-                    //exchange.source_item_Index4 = Convert.ToInt32(mySqlDataReader.GetValue(13).ToString());
-                    textBox18.Text = mySqlDataReader.GetValue(14).ToString();
-                    //exchange.source_itemCount4 = Convert.ToInt32(mySqlDataReader.GetValue(14).ToString());
-                    a_name.Text = mySqlDataReader.GetValue(15).ToString();
-
-                    a_desc.Text = mySqlDataReader.GetValue(16).ToString();
-                    ExChangeList.Add(exchange); //add all the values to the list  box
+                    t_exchange_id.Text = mySqlDataReader["a_index"].ToString();
+                    tx_npc_id.Text = mySqlDataReader["a_npc_index"].ToString();
+                    tb_reward_id.Text = mySqlDataReader["result_itemIndex"].ToString();
+                    tb_reward_qty.Text = mySqlDataReader["result_itemCount"].ToString();
+                    tbExchangeID1.Text = mySqlDataReader["source_itemIndex0"].ToString();
+                    tbExchangeID2.Text = mySqlDataReader["source_itemIndex1"].ToString();
+                    tbExchangeID3.Text = mySqlDataReader["source_itemIndex2"].ToString();
+                    tbExchangeID4.Text = mySqlDataReader["source_itemIndex3"].ToString();
+                    tbExchangeID5.Text = mySqlDataReader["source_itemIndex4"].ToString();
+                    tbExchange1Cnt.Text = mySqlDataReader["source_itemCount0"].ToString();
+                    tbExchange2Cnt.Text = mySqlDataReader["source_itemCount1"].ToString();
+                    tbExchange3Cnt.Text = mySqlDataReader["source_itemCount2"].ToString();
+                    tbExchange4Cnt.Text = mySqlDataReader["source_itemCount3"].ToString();
+                    tbExchange5Cnt.Text = mySqlDataReader["source_itemCount4"].ToString();
+                    a_name.Text = mySqlDataReader["a_name"].ToString();
+                    a_desc.Text = mySqlDataReader["a_desc"].ToString();
+                    ExChangeList.Add(exchange);
                 }
                 mySqlConnection.Close();
-                //stopwatch.Stop();
             }
         }
 
@@ -277,27 +261,27 @@ namespace ExchangeExport
 
         private void r_t_id4_TextChanged(object sender, EventArgs e)
         {
-            pictureBox6.Image = databaseHandle.IconFast(Int32.Parse(r_t_id4.Text.Trim()));
-            textBox16.Text = databaseHandle.ItemNameFast(int.Parse(r_t_id4.Text.Trim()));
+            pictureBox6.Image = databaseHandle.IconFast(Int32.Parse(tbExchangeID4.Text.Trim()));
+            tbExchangeName4.Text = databaseHandle.ItemNameFast(int.Parse(tbExchangeID4.Text.Trim()));
         }
 
         private void r_t_id5_TextChanged(object sender, EventArgs e)
         {
-            pictureBox7.Image = databaseHandle.IconFast(Int32.Parse(r_t_id5.Text.Trim()));
-            textBox19.Text = databaseHandle.ItemNameFast(int.Parse(r_t_id5.Text.Trim()));
+            pictureBox7.Image = databaseHandle.IconFast(Int32.Parse(tbExchangeID5.Text.Trim()));
+            tbExchangeName5.Text = databaseHandle.ItemNameFast(int.Parse(tbExchangeID5.Text.Trim()));
         }
 
         private void r_t_id3_TextChanged(object sender, EventArgs e)
         {
-            pictureBox5.Image = databaseHandle.IconFast(Int32.Parse(r_t_id3.Text.Trim()));
-            textBox13.Text = databaseHandle.ItemNameFast(int.Parse(r_t_id3.Text.Trim()));
+            pictureBox5.Image = databaseHandle.IconFast(Int32.Parse(tbExchangeID3.Text.Trim()));
+            tbExchangeName3.Text = databaseHandle.ItemNameFast(int.Parse(tbExchangeID3.Text.Trim()));
         }
 
         private void r_t_id2_TextChanged(object sender, EventArgs e)
         {
 
-            pictureBox4.Image = databaseHandle.IconFast(Int32.Parse(r_t_id2.Text.Trim()));
-            textBox10.Text = databaseHandle.ItemNameFast(int.Parse(r_t_id2.Text.Trim()));
+            pictureBox4.Image = databaseHandle.IconFast(Int32.Parse(tbExchangeID2.Text.Trim()));
+            tbExchangeName2.Text = databaseHandle.ItemNameFast(int.Parse(tbExchangeID2.Text.Trim()));
         }
 
 
@@ -372,46 +356,46 @@ namespace ExchangeExport
 
         private void button4_Click(object sender, EventArgs e)
         {
-            r_t_id2.Text = "0";
+            tbExchangeID2.Text = "0";
 
             ItemPicker itemPicker = new ItemPicker();
             if (itemPicker.ShowDialog() != DialogResult.OK)
                 return;
 
-            r_t_id2.Text = Convert.ToString(itemPicker.ItemIndex);
+            tbExchangeID2.Text = Convert.ToString(itemPicker.ItemIndex);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            r_t_id3.Text = "0";
+            tbExchangeID3.Text = "0";
 
             ItemPicker itemPicker = new ItemPicker();
             if (itemPicker.ShowDialog() != DialogResult.OK)
                 return;
 
-            r_t_id3.Text = Convert.ToString(itemPicker.ItemIndex);
+            tbExchangeID3.Text = Convert.ToString(itemPicker.ItemIndex);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            r_t_id4.Text = "0";
+            tbExchangeID4.Text = "0";
 
             ItemPicker itemPicker = new ItemPicker();
             if (itemPicker.ShowDialog() != DialogResult.OK)
                 return;
 
-            r_t_id4.Text = Convert.ToString(itemPicker.ItemIndex);
+            tbExchangeID4.Text = Convert.ToString(itemPicker.ItemIndex);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            r_t_id5.Text = "0";
+            tbExchangeID5.Text = "0";
 
             ItemPicker itemPicker = new ItemPicker();
             if (itemPicker.ShowDialog() != DialogResult.OK)
                 return;
 
-            r_t_id5.Text = Convert.ToString(itemPicker.ItemIndex);
+            tbExchangeID5.Text = Convert.ToString(itemPicker.ItemIndex);
         }
 
         private void t_exchange_id_TextChanged(object sender, EventArgs e)
@@ -456,20 +440,20 @@ namespace ExchangeExport
             tb_reward_id.Text = "0";
             tb_reward_qty.Text = "0";
 
-            r_t_id1.Text = "0";
-            textBox6.Text = "0";
+            tbExchangeID1.Text = "0";
+            tbExchange1Cnt.Text = "0";
 
-            r_t_id2.Text = "0";
-            textBox9.Text = "0";
+            tbExchangeID2.Text = "0";
+            tbExchange2Cnt.Text = "0";
 
-            r_t_id3.Text = "0";
-            textBox12.Text = "0";
+            tbExchangeID3.Text = "0";
+            tbExchange3Cnt.Text = "0";
 
-            r_t_id4.Text = "0";
-            textBox15.Text = "0";
+            tbExchangeID4.Text = "0";
+            tbExchange4Cnt.Text = "0";
 
-            r_t_id5.Text = "0";
-            textBox18.Text = "0";
+            tbExchangeID5.Text = "0";
+            tbExchange5Cnt.Text = "0";
 
             a_name.Text = "";
             a_desc.Text = "";
@@ -502,16 +486,16 @@ namespace ExchangeExport
                         + tx_npc_id.Text.Trim() + ", "
                         + (tb_reward_id.Text.Trim().Length == 0 ? "0" : tb_reward_id.Text.Trim()) + ", "
                         + (tb_reward_qty.Text.Trim().Length == 0 ? "0" : tb_reward_qty.Text.Trim()) + ", "
-                        + (r_t_id1.Text.Trim().Length == 0 ? "0" : r_t_id1.Text.Trim()) + ", " //source_itemIndex0
-                        + (textBox6.Text.Trim().Length == 0 ? "0" : textBox6.Text.Trim()) + ", " //source_itemCount0
-                        + (r_t_id2.Text.Trim().Length == 0 ? "0" : r_t_id2.Text.Trim()) + ", " //source_itemIndex1
-                        + (textBox9.Text.Trim().Length == 0 ? "0" : textBox9.Text.Trim()) + ", " //source_itemCount1
-                        + (r_t_id3.Text.Trim().Length == 0 ? "0" : r_t_id3.Text.Trim()) + ", " //source_itemIndex2
-                        + (textBox12.Text.Trim().Length == 0 ? "0" : textBox12.Text.Trim()) + ", " //source_itemCount2
-                        + (r_t_id4.Text.Trim().Length == 0 ? "0" : r_t_id4.Text.Trim()) + ", " //source_itemIndex3
-                        + (textBox15.Text.Trim().Length == 0 ? "0" : textBox15.Text.Trim()) + ", " //source_itemCount3
-                        + (r_t_id5.Text.Trim().Length == 0 ? "0" : r_t_id5.Text.Trim()) + ", " //source_itemIndex4
-                        + (textBox18.Text.Trim().Length == 0 ? "0" : textBox18.Text.Trim()) + ", '" //source_itemCount4
+                        + (tbExchangeID1.Text.Trim().Length == 0 ? "0" : tbExchangeID1.Text.Trim()) + ", " //source_itemIndex0
+                        + (tbExchange1Cnt.Text.Trim().Length == 0 ? "0" : tbExchange1Cnt.Text.Trim()) + ", " //source_itemCount0
+                        + (tbExchangeID2.Text.Trim().Length == 0 ? "0" : tbExchangeID2.Text.Trim()) + ", " //source_itemIndex1
+                        + (tbExchange2Cnt.Text.Trim().Length == 0 ? "0" : tbExchange2Cnt.Text.Trim()) + ", " //source_itemCount1
+                        + (tbExchangeID3.Text.Trim().Length == 0 ? "0" : tbExchangeID3.Text.Trim()) + ", " //source_itemIndex2
+                        + (tbExchange3Cnt.Text.Trim().Length == 0 ? "0" : tbExchange3Cnt.Text.Trim()) + ", " //source_itemCount2
+                        + (tbExchangeID4.Text.Trim().Length == 0 ? "0" : tbExchangeID4.Text.Trim()) + ", " //source_itemIndex3
+                        + (tbExchange4Cnt.Text.Trim().Length == 0 ? "0" : tbExchange4Cnt.Text.Trim()) + ", " //source_itemCount3
+                        + (tbExchangeID5.Text.Trim().Length == 0 ? "0" : tbExchangeID5.Text.Trim()) + ", " //source_itemIndex4
+                        + (tbExchange5Cnt.Text.Trim().Length == 0 ? "0" : tbExchange5Cnt.Text.Trim()) + ", '" //source_itemCount4
                         + a_name.Text.Trim() + "', '" + a_desc.Text.Trim() + "' from t_item_exchange a";
 
             databaseHandle.SendQueryMySql(Host, User, Password, Database, strSQL);
@@ -550,34 +534,34 @@ namespace ExchangeExport
             ExChangeList[num].npcidx = Convert.ToInt32(tx_npc_id.Text);
             ExChangeList[num].result_itemIndex = Convert.ToInt32(tb_reward_id.Text);
             ExChangeList[num].result_itemCount = Convert.ToInt32(tb_reward_qty.Text);
-            ExChangeList[num].source_itemIndex0 = Convert.ToInt32(r_t_id1.Text);
-            ExChangeList[num].source_itemCount0 = Convert.ToInt32(textBox6.Text);
-            ExChangeList[num].source_itemIndex1 = Convert.ToInt32(r_t_id2.Text);
-            ExChangeList[num].source_itemCount1 = Convert.ToInt32(textBox9.Text);
-            ExChangeList[num].source_itemIndex2 = Convert.ToInt32(r_t_id3.Text);
-            ExChangeList[num].source_itemCount2 = Convert.ToInt32(textBox12.Text);
-            ExChangeList[num].source_itemIndex3 = Convert.ToInt32(r_t_id4.Text);
-            ExChangeList[num].source_itemCount3 = Convert.ToInt32(textBox15.Text);
-            ExChangeList[num].source_item_Index4 = Convert.ToInt32(r_t_id5.Text);
-            ExChangeList[num].source_itemCount4 = Convert.ToInt32(textBox18.Text);
+            ExChangeList[num].source_itemIndex0 = Convert.ToInt32(tbExchangeID1.Text);
+            ExChangeList[num].source_itemCount0 = Convert.ToInt32(tbExchange1Cnt.Text);
+            ExChangeList[num].source_itemIndex1 = Convert.ToInt32(tbExchangeID2.Text);
+            ExChangeList[num].source_itemCount1 = Convert.ToInt32(tbExchange2Cnt.Text);
+            ExChangeList[num].source_itemIndex2 = Convert.ToInt32(tbExchangeID3.Text);
+            ExChangeList[num].source_itemCount2 = Convert.ToInt32(tbExchange3Cnt.Text);
+            ExChangeList[num].source_itemIndex3 = Convert.ToInt32(tbExchangeID4.Text);
+            ExChangeList[num].source_itemCount3 = Convert.ToInt32(tbExchange4Cnt.Text);
+            ExChangeList[num].source_item_Index4 = Convert.ToInt32(tbExchangeID5.Text);
+            ExChangeList[num].source_itemCount4 = Convert.ToInt32(tbExchange5Cnt.Text);
             ExChangeList[num].npcidx = Convert.ToInt32(tx_npc_id.Text);
             ExChangeList[num].npcidx = Convert.ToInt32(tx_npc_id.Text);
             string strSQL = "update t_item_exchange set "
                         + "a_npc_index = " + tx_npc_id.Text.Trim()
                         + ", result_itemIndex = " + (tb_reward_id.Text.Trim().Length == 0 ? "0" : tb_reward_id.Text.Trim())
                         + ", result_itemCount = " + (tb_reward_qty.Text.Trim().Length == 0 ? "0" : tb_reward_qty.Text.Trim())
-                        + ", source_itemIndex0 = " + (r_t_id1.Text.Trim().Length == 0 ? "0" : r_t_id1.Text.Trim())  //source_itemIndex0
-                        + ", source_itemCount0 = " + (textBox6.Text.Trim().Length == 0 ? "0" : textBox6.Text.Trim())    //source_itemCount0
-                        + ", source_itemIndex1 = " + (r_t_id2.Text.Trim().Length == 0 ? "0" : r_t_id2.Text.Trim())  //source_itemIndex1
-                        + ", source_itemCount1 = " + (textBox9.Text.Trim().Length == 0 ? "0" : textBox9.Text.Trim())    //source_itemCount1
-                        + ", source_itemIndex2 = " + (r_t_id3.Text.Trim().Length == 0 ? "0" : r_t_id3.Text.Trim())  //source_itemIndex2
-                        + ", source_itemCount2 = " + (textBox12.Text.Trim().Length == 0 ? "0" : textBox12.Text.Trim())  //source_itemCount2
-                        + ", source_itemIndex3 = " + (r_t_id4.Text.Trim().Length == 0 ? "0" : r_t_id4.Text.Trim())  //source_itemIndex3
-                        + ", source_itemCount3 = " + (textBox15.Text.Trim().Length == 0 ? "0" : textBox15.Text.Trim())  //source_itemCount3
-                        + ", source_itemIndex4 = " + (r_t_id5.Text.Trim().Length == 0 ? "0" : r_t_id5.Text.Trim())  //source_itemIndex4
-                        + ", source_itemCount4  = " + (textBox18.Text.Trim().Length == 0 ? "0" : textBox18.Text.Trim())  //source_itemCount4
-                        + ", a_name = '" + (r_t_id5.Text.Trim().Length == 0 ? "0" : r_t_id5.Text.Trim()) +"'" //a_name
-                        + ", a_desc  = '" + (textBox18.Text.Trim().Length == 0 ? "0" : textBox18.Text.Trim())  //a_desc
+                        + ", source_itemIndex0 = " + (tbExchangeID1.Text.Trim().Length == 0 ? "0" : tbExchangeID1.Text.Trim())  //source_itemIndex0
+                        + ", source_itemCount0 = " + (tbExchange1Cnt.Text.Trim().Length == 0 ? "0" : tbExchange1Cnt.Text.Trim())    //source_itemCount0
+                        + ", source_itemIndex1 = " + (tbExchangeID2.Text.Trim().Length == 0 ? "0" : tbExchangeID2.Text.Trim())  //source_itemIndex1
+                        + ", source_itemCount1 = " + (tbExchange2Cnt.Text.Trim().Length == 0 ? "0" : tbExchange2Cnt.Text.Trim())    //source_itemCount1
+                        + ", source_itemIndex2 = " + (tbExchangeID3.Text.Trim().Length == 0 ? "0" : tbExchangeID3.Text.Trim())  //source_itemIndex2
+                        + ", source_itemCount2 = " + (tbExchange3Cnt.Text.Trim().Length == 0 ? "0" : tbExchange3Cnt.Text.Trim())  //source_itemCount2
+                        + ", source_itemIndex3 = " + (tbExchangeID4.Text.Trim().Length == 0 ? "0" : tbExchangeID4.Text.Trim())  //source_itemIndex3
+                        + ", source_itemCount3 = " + (tbExchange4Cnt.Text.Trim().Length == 0 ? "0" : tbExchange4Cnt.Text.Trim())  //source_itemCount3
+                        + ", source_itemIndex4 = " + (tbExchangeID5.Text.Trim().Length == 0 ? "0" : tbExchangeID5.Text.Trim())  //source_itemIndex4
+                        + ", source_itemCount4  = " + (tbExchange5Cnt.Text.Trim().Length == 0 ? "0" : tbExchange5Cnt.Text.Trim())  //source_itemCount4
+                        + ", a_name = '" + (tbExchangeID5.Text.Trim().Length == 0 ? "0" : tbExchangeID5.Text.Trim()) +"'" //a_name
+                        + ", a_desc  = '" + (tbExchange5Cnt.Text.Trim().Length == 0 ? "0" : tbExchange5Cnt.Text.Trim())  //a_desc
                         + "' where a_index = " + t_exchange_id.Text.Trim();
 
             databaseHandle.SendQueryMySql(Host, User, Password, Database, strSQL);
