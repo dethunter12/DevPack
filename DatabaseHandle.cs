@@ -29,54 +29,6 @@ namespace LcDevPack_TeamDamonA
         {
             return value.Replace("\\", "\\\\").Replace("'", "\\'");
         }
-        public string StringFromLanguage() //dethunter12 4/11/2018
-        {
-
-            if (language == "GER")
-            {
-                return "a_name_ger";
-            }
-            else if (language == "POL")
-            {
-                return "a_name_pld";
-            }
-            else if (language == "BRA")
-            {
-                return "a_name_brz";
-            }
-            else if (language == "RUS")
-            {
-                return "a_name_rus";
-            }
-            else if (language == "FRA")
-            {
-                return "a_name_frc";
-            }
-            else if (language == "ESP")
-            {
-                return "a_name_spn";
-            }
-            else if (language == "MEX")
-            {
-                return "a_name_mex";
-            }
-            else if (language == "THA")
-            {
-                return "a_name_thai";
-            }
-            else if (language == "ITA")
-            {
-                return "a_name_ita";
-            }
-            else if (language == "USA")
-            {
-                return "a_name_usa";
-            }
-            else
-            {
-                return null;
-            }
-        }
         public List<string> SearchList(string searchString, string[] rowName, string tableName)
         {
             searchString = searchString.Replace("\\", "\\\\").Replace("'", "\\'");
@@ -84,11 +36,9 @@ namespace LcDevPack_TeamDamonA
             string upper = searchString.ToUpper();
             string str1 = "";
             string namee = ""; // set the string equal to empty so it can be filled.
-            //namee is grabed from the stringfromlanguage function
-            namee = StringFromLanguage();
-            //test to see that it actually is grabbing the name correctly.
-            // MessageBox.Show(name);
-
+           
+            namee = LanguageHelper.StringFromLanguage();
+            
             if (searchString.Length > 1)
                 str1 = char.ToUpper(searchString[0]).ToString() + searchString.Substring(1);
             //dethunter12 4/11/2018 language change

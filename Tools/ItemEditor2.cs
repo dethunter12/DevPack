@@ -149,102 +149,7 @@ namespace LcDevPack_TeamDamonA.Tools
         private Label lblProb3;
         private Label lblProb2;
         private ProgressBar pb_loading;
-        public string descrr;
-        public string StringFromLanguage() //dethunter12 4/11/2018
-        {
-
-            if (language == "GER")
-            {
-                return "a_name_ger";
-            }
-            else if (language == "POL")
-            {
-                return "a_name_pld";
-            }
-            else if (language == "BRA")
-            {
-                return "a_name_brz";
-            }
-            else if (language == "RUS")
-            {
-                return "a_name_rus";
-            }
-            else if (language == "FRA")
-            {
-                return "a_name_frc";
-            }
-            else if (language == "ESP")
-            {
-                return "a_name_spn";
-            }
-            else if (language == "MEX")
-            {
-                return "a_name_mex";
-            }
-            else if (language == "THA")
-            {
-                return "a_name_thai";
-            }
-            else if (language == "ITA")
-            {
-                return "a_name_ita";
-            }
-            else if (language == "USA")
-            {
-                return "a_name_usa";
-            }
-            else
-            {
-                return null;
-            }
-        }
-        public string DescrFromLanguage() //dethunter12 4/11/2018
-        {
-            if (language == "GER")
-            {
-                return "a_descr_ger";
-            }
-            else if (language == "POL")
-            {
-                return "a_descr_pld";
-            }
-            else if (language == "BRA")
-            {
-                return "a_descr_brz";
-            }
-            else if (language == "RUS")
-            {
-                return "a_descr_rus";
-            }
-            else if (language == "FRA")
-            {
-                return "a_descr_frc";
-            }
-            else if (language == "ESP")
-            {
-                return "a_descr_spn";
-            }
-            else if (language == "MEX")
-            {
-                return "a_descr_mex";
-            }
-            else if (language == "THA")
-            {
-                return "a_descr_thai";
-            }
-            else if (language == "ITA")
-            {
-                return "a_descr_ita";
-            }
-            else if (language == "USA")
-            {
-                return "a_descr_usa";
-            }
-            else
-            {
-                return null;
-            }
-        }
+        public string descrr;        
         public string[] menuArray2 = new string[2]
         {
       "a_type",
@@ -632,7 +537,7 @@ namespace LcDevPack_TeamDamonA.Tools
         {
             listBox1.SelectedIndex = -1;
             MenuList.Clear();
-            namee = StringFromLanguage(); //dethunter12 modify language
+            namee = LanguageHelper.StringFromLanguage(); //dethunter12 modify language
       
             string Query = "SELECT a_index, " + namee +" " + "FROM" + " t_item WHERE a_job_flag ='" + mSortJob + "' ORDER BY a_index;";
             if (mSortJob == "-1")
@@ -1513,8 +1418,8 @@ namespace LcDevPack_TeamDamonA.Tools
 
         private void button2_Click(object sender, EventArgs e)
         {
-            descrr = DescrFromLanguage(); // description 
-            namee = StringFromLanguage(); // language name (to simplify the query without having to add alot of if elseif)
+            descrr = LanguageHelper.DescrFromLanguage(); // description 
+            namee = LanguageHelper.StringFromLanguage(); // language name (to simplify the query without having to add alot of if elseif)
             string str1 = "UPDATE t_item SET " + "a_type_idx = '" + TbType.Text + "', " + "a_subtype_idx = '" + TbSubtype.Text + "', " + "a_enable = '" + TbEnable.Text + "', ";
             string str2 = TbName.Text.Replace("'", "\\'").Replace("\"", "\\\"");
             string str3 = TbDescr.Text.Replace("'", "\\'").Replace("\"", "\\\"");
@@ -8706,8 +8611,8 @@ namespace LcDevPack_TeamDamonA.Tools
         private void button5_Click(object sender, EventArgs e)
         {
            // int itemID = GetID();
-            descrr = DescrFromLanguage(); // description 
-            namee = StringFromLanguage(); // language name (to simplify the query without having to add alot of if elseif)
+            descrr = LanguageHelper.DescrFromLanguage(); // description 
+            namee = LanguageHelper.StringFromLanguage(); // language name (to simplify the query without having to add alot of if elseif)
             string str1 = "UPDATE t_item SET " + "a_type_idx = '" + TbType.Text + "', " + "a_subtype_idx = '" + TbSubtype.Text + "', " + "a_enable = '" + TbEnable.Text + "', ";
             string str2 = TbName.Text.Replace("'", "\\'").Replace("\"", "\\\"");
             string str3 = TbDescr.Text.Replace("'", "\\'").Replace("\"", "\\\"");

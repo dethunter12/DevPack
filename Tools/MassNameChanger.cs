@@ -23,53 +23,6 @@ namespace LcDevPack_TeamDamonA.Tools //dethunter12 10/3/2019 add
         public string aname = ""; //dehtunter12 add
         private DatabaseHandle databaseHandle = new DatabaseHandle();
 
-        public string StringFromLanguage() //dethunter12 10/3/2019
-        {
-            if (language == "GER")
-            {
-                return "a_name_ger";
-            }
-            else if (language == "POL")
-            {
-                return "a_name_pld";
-            }
-            else if (language == "BRA")
-            {
-                return "a_name_brz";
-            }
-            else if (language == "RUS")
-            {
-                return "a_name_rus";
-            }
-            else if (language == "FRA")
-            {
-                return "a_name_frc";
-            }
-            else if (language == "ESP")
-            {
-                return "a_name_spn";
-            }
-            else if (language == "MEX")
-            {
-                return "a_name_mex";
-            }
-            else if (language == "THA")
-            {
-                return "a_name_thai";
-            }
-            else if (language == "ITA")
-            {
-                return "a_name_ita";
-            }
-            else if (language == "USA")
-            {
-                return "a_name_usa";
-            }
-            else
-            {
-                return null;
-            }
-        }
         public MassNameChanger()
         {
             InitializeComponent();
@@ -77,7 +30,7 @@ namespace LcDevPack_TeamDamonA.Tools //dethunter12 10/3/2019 add
 
         private void BtnUpdateSelectedRange_Click(object sender, EventArgs e) //dethunter12 10/3/2019
         {
-            namee = StringFromLanguage();
+            namee = LanguageHelper.StringFromLanguage();
             if (cbAddBefore.Checked == true || cbRemoveBefore.Checked == true)
             {
                 if (tbItemName.Text != "" && tbRange1.Text != "" && tbRange2.Text != "" && cbRemoveBefore.Checked == true) //done

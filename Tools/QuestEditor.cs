@@ -202,196 +202,6 @@ namespace LcDevPack_TeamDamonA.Tools
         private PictureBox pbObj3;
         public string nameholder1; //dethunter12 test
         
-        public string StringFromLanguage() //dethunter12 4/11/2018
-        {
-
-            if (language == "GER")
-            {
-                return "a_name_ger";
-            }
-            else if (language == "POL")
-            {
-                return "a_name_pld";
-            }
-            else if (language == "BRA")
-            {
-                return "a_name_brz";
-            }
-            else if (language == "RUS")
-            {
-                return "a_name_rus";
-            }
-            else if (language == "FRA")
-            {
-                return "a_name_frc";
-            }
-            else if (language == "ESP")
-            {
-                return "a_name_spn";
-            }
-            else if (language == "MEX")
-            {
-                return "a_name_mex";
-            }
-            else if (language == "THA")
-            {
-                return "a_name_thai";
-            }
-            else if (language == "ITA")
-            {
-                return "a_name_ita";
-            }
-            else if (language == "USA")
-            {
-                return "a_name_usa";
-            }
-            else
-            {
-                return null;
-            }
-        }
-        public string DescrFromLanguage() //dethunter12 4/11/2018
-        {
-            if (language == "GER")
-            {
-                return "a_desc_ger";
-            }
-            else if (language == "POL")
-            {
-                return "a_desc_pld";
-            }
-            else if (language == "BRA")
-            {
-                return "a_desc_brz";
-            }
-            else if (language == "RUS")
-            {
-                return "a_desc_rus";
-            }
-            else if (language == "FRA")
-            {
-                return "a_desc_frc";
-            }
-            else if (language == "ESP")
-            {
-                return "a_desc_spn";
-            }
-            else if (language == "MEX")
-            {
-                return "a_desc_mex";
-            }
-            else if (language == "THA")
-            {
-                return "a_desc_thai";
-            }
-            else if (language == "ITA")
-            {
-                return "a_desc_ita";
-            }
-            else if (language == "USA")
-            {
-                return "a_desc_usa";
-            }
-            else
-            {
-                return null;
-            }
-        }
-        public string Descr2FromLanguage() //dethunter12 4/11/2018
-        {
-            if (language == "GER")
-            {
-                return "a_desc2_ger";
-            }
-            else if (language == "POL")
-            {
-                return "a_desc2_pld";
-            }
-            else if (language == "BRA")
-            {
-                return "a_desc2_brz";
-            }
-            else if (language == "RUS")
-            {
-                return "a_desc2_rus";
-            }
-            else if (language == "FRA")
-            {
-                return "a_desc2_frc";
-            }
-            else if (language == "ESP")
-            {
-                return "a_desc2_spn";;
-            }
-            else if (language == "MEX")
-            {
-                return "a_desc2_mex";
-            }
-            else if (language == "THA")
-            {
-                return "a_desc2_thai";
-            }
-            else if (language == "ITA")
-            {
-                return "a_desc2_ita";
-            }
-            else if (language == "USA")
-            {
-                return "a_desc2_usa";
-            }
-            else
-            {
-                return null;
-            }
-        }
-        public string Descr3FromLanguage() //dethunter12 4/11/2018
-        {
-            if (language == "GER")
-            {
-                return "a_desc3_ger";
-            }
-            else if (language == "POL")
-            {
-                return "a_desc3_pld";
-            }
-            else if (language == "BRA")
-            {
-                return "a_desc3_brz";
-            }
-            else if (language == "RUS")
-            {
-                return "a_desc3_rus";
-            }
-            else if (language == "FRA")
-            {
-                return "a_desc3_frc";
-            }
-            else if (language == "ESP")
-            {
-                return "a_desc3_spn";
-            }
-            else if (language == "MEX")
-            {
-                return "a_desc3_mex";
-            }
-            else if (language == "THA")
-            {
-                return "a_desc3_thai";
-            }
-            else if (language == "ITA")
-            {
-                return "a_desc3_ita";
-            }
-            else if (language == "USA")
-            {
-                return "a_desc3_usa";
-            }
-            else
-            {
-                return null;
-            }
-        }
-        //dethunter12 4/11/2018 language system end
         private ExportLodHandle exportLodhandle = new ExportLodHandle();
         private IContainer components = (IContainer)null;
         public string name;
@@ -2256,10 +2066,10 @@ namespace LcDevPack_TeamDamonA.Tools
     private void button7_Click(object sender, EventArgs e)
     {
             //dethunter12 language i
-            namee = StringFromLanguage();
-            desc = DescrFromLanguage();
-            desc2 = Descr2FromLanguage();
-            desc3 = Descr3FromLanguage();
+            namee = LanguageHelper.StringFromLanguage();
+            desc = LanguageHelper.QDescFromLanguage();
+            desc2 = LanguageHelper.QDesc2FromLanguage();
+            desc3 = LanguageHelper.QDesc3FromLanguage();
       string str1 = "UPDATE t_quest SET " + "a_index = '" + TbIndex.Text + "', ";
       string str2 = TbQuestName.Text.Replace("'", "\\'").Replace("\"", "\\\"");
       string str3 = str1 + "a_name = '" + str2 + "', " + namee + "=" + " " + "'" + str2 + "', " + "a_type1 = '" + TbType1.Text + "', " + "a_type2 = '" + TbType2.Text + "', " + "a_enable = '" + TbEnable.Text + "', " + "a_prequest_num = '" + TbNeedQuestId.Text + "', " + "a_start_type = '" + textBox7.Text + "', " + "a_start_data = '" + TbStartNpc.Text + "', " + "a_start_npc_zone_num = '" + textBox9.Text + "', " + "a_prize_npc = '" + TbEndNpc.Text + "', " + "a_prize_npc_zone_num = '" + textBox11.Text + "', " + "a_need_exp = '" + textBox12.Text + "', " + "a_need_min_level = '" + TbMinLvl.Text + "', " + "a_need_max_level = '" + TbMaxLvl.Text + "', " + "a_need_job = '" + textBox15.Text + "', " + "a_need_item0 = '" + TbNeedItm1.Text + "', " + "a_need_item1 = '" + TbNeedItm2.Text + "', " + "a_need_item2 = '" + TbNeedItm3.Text + "', " + "a_need_item3 = '" + TbNeedItm4.Text + "', " + "a_need_item4 = '" + TbNeedItm5.Text + "', " + "a_need_item_count0 = '" + tbNeedAmnt1.Text + "', " + "a_need_item_count1 = '" + tbNeedAmnt2.Text + "', " + "a_need_item_count2 = '" + tbNeedAmnt3.Text + "', " + "a_need_item_count3 = '" + tbNeedAmnt4.Text + "', " + "a_need_item_count4 = '" + tbNeedAmnt5.Text + "', " + "a_need_rvr_type = '" + TbRvrType.Text + "', " + "a_need_rvr_grade = '" + TbRvrGrade.Text + "', " + "a_condition0_type = '" + TbObj1Type.Text + "', " + "a_condition1_type = '" + TbObj2Type.Text + "', " + "a_condition2_type = '" + TbObj3Type.Text + "', " + "a_condition0_index = '" + TbObj1Id.Text + "', " + "a_condition1_index = '" + TbObj2Id.Text + "', " + "a_condition2_index = '" + TbObj3Id.Text + "', " + "a_condition0_num = '" + TbObjcAmount1.Text + "', " + "a_condition1_num = '" + TbObjcAmount2.Text + "', " + "a_condition2_num = '" + TbObjcAmount3.Text + "', " + "a_condition0_data0 = '" + TbObj1Npc1.Text + "', " + "a_condition0_data1 = '" + TbObj1Npc2.Text + "', " + "a_condition0_data2 = '" + TbObj1Npc3.Text + "', " + "a_condition0_data3 = '" + TbObj1Ptg.Text + "', " + "a_condition1_data0 = '" + TbObj2Npc1.Text + "', " + "a_condition1_data1 = '" + TbObj2Npc2.Text + "', " + "a_condition1_data2 = '" + TbObj2Npc3.Text + "', " + "a_condition1_data3 = '" + TbObj2Ptg.Text + "', " + "a_condition2_data0 = '" + TbObj3Npc1.Text + "', " + "a_condition2_data1 = '" + TbObj3Npc2.Text + "', " + "a_condition2_data2 = '" + TbObj3Npc3.Text + "', " + "a_condition2_data3 = '" + TbObj3Ptg.Text + "', " + "a_prize_type0 = '" + textBox49.Text + "', " + "a_prize_type1 = '" + textBox50.Text + "', " + "a_prize_type2 = '" + textBox51.Text + "', " + "a_prize_type3 = '" + textBox52.Text + "', " + "a_prize_type4 = '" + textBox53.Text + "', " + "a_prize_index0 = '" + TbPrizeItm1.Text + "', " + "a_prize_index1 = '" + TbPrizeItm2.Text + "', " + "a_prize_index2 = '" + TbPrizeItm3.Text + "', " + "a_prize_index3 = '" + TbPrizeItm4.Text + "', " + "a_prize_index4 = '" + TbPrizeItm5.Text + "', " + "a_prize_data0 = '" + TbPrizeAmount1.Text + "', " + "a_prize_data1 = '" + TbPrizeAmount2.Text + "', " + "a_prize_data2 = '" + TbPrizeAmount3.Text + "', " + "a_prize_data3 = '" + TbPrizeAmount4.Text + "', " + "a_prize_data4 = '" + TbPrizeAmount5.Text + "', " + "a_option_prize = '" + textBox64.Text + "', " + "a_opt_prize_type0 = '" + textBox65.Text + "', " + "a_opt_prize_type1 = '" + textBox66.Text + "', " + "a_opt_prize_type2 = '" + textBox67.Text + "', " + "a_opt_prize_type3 = '" + textBox68.Text + "', " + "a_opt_prize_type4 = '" + textBox69.Text + "', " + "a_opt_prize_type5 = '" + textBox70.Text + "', " + "a_opt_prize_type6 = '" + textBox71.Text + "', " + "a_opt_prize_index0 = '" + TbOptPrizeItm1.Text + "', " + "a_opt_prize_index1 = '" + TbOptPrizeItm2.Text + "', " + "a_opt_prize_index2 = '" + TbOptPrizeItm3.Text + "', " + "a_opt_prize_index3 = '" + TbOptPrizeItm4.Text + "', " + "a_opt_prize_index4 = '" + TbOptPrizeItm5.Text + "', " + "a_opt_prize_index5 = '" + TbOptPrizeItm6.Text + "', " + "a_opt_prize_index6 = '" + TbOptPrizeItm7.Text + "', " + "a_opt_prize_data0 = '" + TbPrizeOptAmount1.Text + "', " + "a_opt_prize_data1 = '" + TbPrizeOptAmount2.Text + "', " + "a_opt_prize_data2 = '" + TbPrizeOptAmount3.Text + "', " + "a_opt_prize_data3 = '" + TbPrizeOptAmount4.Text + "', " + "a_opt_prize_data4 = '" + TbPrizeOptAmount5.Text + "', " + "a_opt_prize_data5 = '" + TbPrizeOptAmount6.Text + "', " + "a_opt_prize_data6 = '" + TbPrizeOptAmount7.Text + "', " + "a_opt_prize_plus0 = '" + textBox86.Text + "', " + "a_opt_prize_plus1 = '" + textBox87.Text + "', " + "a_opt_prize_plus2 = '" + textBox88.Text + "', " + "a_opt_prize_plus3 = '" + textBox89.Text + "', " + "a_opt_prize_plus4 = '" + textBox90.Text + "', " + "a_opt_prize_plus5 = '" + textBox91.Text + "', " + "a_opt_prize_plus6 = '" + textBox92.Text + "', " + "a_only_opt_prize = '" + textBox93.Text + "', ";
@@ -8092,10 +7902,10 @@ namespace LcDevPack_TeamDamonA.Tools
 
         private void btnSaveAndNext_Click(object sender, EventArgs e)
         {
-            namee = StringFromLanguage();
-            desc = DescrFromLanguage();
-            desc2 = Descr2FromLanguage();
-            desc3 = Descr3FromLanguage();
+            namee = LanguageHelper.StringFromLanguage();
+            desc  = LanguageHelper.QDescFromLanguage();
+            desc2 = LanguageHelper.QDesc2FromLanguage();
+            desc3 = LanguageHelper.QDesc3FromLanguage();
             string str1 = "UPDATE t_quest SET " + "a_index = '" + TbIndex.Text + "', ";
             string str2 = TbQuestName.Text.Replace("'", "\\'").Replace("\"", "\\\"");
             string str3 = str1 + "a_name = '" + str2 + "', " + namee + "=" + " " + "'" + str2 + "', " + "a_type1 = '" + TbType1.Text + "', " + "a_type2 = '" + TbType2.Text + "', " + "a_enable = '" + TbEnable.Text + "', " + "a_prequest_num = '" + TbNeedQuestId.Text + "', " + "a_start_type = '" + textBox7.Text + "', " + "a_start_data = '" + TbStartNpc.Text + "', " + "a_start_npc_zone_num = '" + textBox9.Text + "', " + "a_prize_npc = '" + TbEndNpc.Text + "', " + "a_prize_npc_zone_num = '" + textBox11.Text + "', " + "a_need_exp = '" + textBox12.Text + "', " + "a_need_min_level = '" + TbMinLvl.Text + "', " + "a_need_max_level = '" + TbMaxLvl.Text + "', " + "a_need_job = '" + textBox15.Text + "', " + "a_need_item0 = '" + TbNeedItm1.Text + "', " + "a_need_item1 = '" + TbNeedItm2.Text + "', " + "a_need_item2 = '" + TbNeedItm3.Text + "', " + "a_need_item3 = '" + TbNeedItm4.Text + "', " + "a_need_item4 = '" + TbNeedItm5.Text + "', " + "a_need_item_count0 = '" + tbNeedAmnt1.Text + "', " + "a_need_item_count1 = '" + tbNeedAmnt2.Text + "', " + "a_need_item_count2 = '" + tbNeedAmnt3.Text + "', " + "a_need_item_count3 = '" + tbNeedAmnt4.Text + "', " + "a_need_item_count4 = '" + tbNeedAmnt5.Text + "', " + "a_need_rvr_type = '" + TbRvrType.Text + "', " + "a_need_rvr_grade = '" + TbRvrGrade.Text + "', " + "a_condition0_type = '" + TbObj1Type.Text + "', " + "a_condition1_type = '" + TbObj2Type.Text + "', " + "a_condition2_type = '" + TbObj3Type.Text + "', " + "a_condition0_index = '" + TbObj1Id.Text + "', " + "a_condition1_index = '" + TbObj2Id.Text + "', " + "a_condition2_index = '" + TbObj3Id.Text + "', " + "a_condition0_num = '" + TbObjcAmount1.Text + "', " + "a_condition1_num = '" + TbObjcAmount2.Text + "', " + "a_condition2_num = '" + TbObjcAmount3.Text + "', " + "a_condition0_data0 = '" + TbObj1Npc1.Text + "', " + "a_condition0_data1 = '" + TbObj1Npc2.Text + "', " + "a_condition0_data2 = '" + TbObj1Npc3.Text + "', " + "a_condition0_data3 = '" + TbObj1Ptg.Text + "', " + "a_condition1_data0 = '" + TbObj2Npc1.Text + "', " + "a_condition1_data1 = '" + TbObj2Npc2.Text + "', " + "a_condition1_data2 = '" + TbObj2Npc3.Text + "', " + "a_condition1_data3 = '" + TbObj2Ptg.Text + "', " + "a_condition2_data0 = '" + TbObj3Npc1.Text + "', " + "a_condition2_data1 = '" + TbObj3Npc2.Text + "', " + "a_condition2_data2 = '" + TbObj3Npc3.Text + "', " + "a_condition2_data3 = '" + TbObj3Ptg.Text + "', " + "a_prize_type0 = '" + textBox49.Text + "', " + "a_prize_type1 = '" + textBox50.Text + "', " + "a_prize_type2 = '" + textBox51.Text + "', " + "a_prize_type3 = '" + textBox52.Text + "', " + "a_prize_type4 = '" + textBox53.Text + "', " + "a_prize_index0 = '" + TbPrizeItm1.Text + "', " + "a_prize_index1 = '" + TbPrizeItm2.Text + "', " + "a_prize_index2 = '" + TbPrizeItm3.Text + "', " + "a_prize_index3 = '" + TbPrizeItm4.Text + "', " + "a_prize_index4 = '" + TbPrizeItm5.Text + "', " + "a_prize_data0 = '" + TbPrizeAmount1.Text + "', " + "a_prize_data1 = '" + TbPrizeAmount2.Text + "', " + "a_prize_data2 = '" + TbPrizeAmount3.Text + "', " + "a_prize_data3 = '" + TbPrizeAmount4.Text + "', " + "a_prize_data4 = '" + TbPrizeAmount5.Text + "', " + "a_option_prize = '" + textBox64.Text + "', " + "a_opt_prize_type0 = '" + textBox65.Text + "', " + "a_opt_prize_type1 = '" + textBox66.Text + "', " + "a_opt_prize_type2 = '" + textBox67.Text + "', " + "a_opt_prize_type3 = '" + textBox68.Text + "', " + "a_opt_prize_type4 = '" + textBox69.Text + "', " + "a_opt_prize_type5 = '" + textBox70.Text + "', " + "a_opt_prize_type6 = '" + textBox71.Text + "', " + "a_opt_prize_index0 = '" + TbOptPrizeItm1.Text + "', " + "a_opt_prize_index1 = '" + TbOptPrizeItm2.Text + "', " + "a_opt_prize_index2 = '" + TbOptPrizeItm3.Text + "', " + "a_opt_prize_index3 = '" + TbOptPrizeItm4.Text + "', " + "a_opt_prize_index4 = '" + TbOptPrizeItm5.Text + "', " + "a_opt_prize_index5 = '" + TbOptPrizeItm6.Text + "', " + "a_opt_prize_index6 = '" + TbOptPrizeItm7.Text + "', " + "a_opt_prize_data0 = '" + TbPrizeOptAmount1.Text + "', " + "a_opt_prize_data1 = '" + TbPrizeOptAmount2.Text + "', " + "a_opt_prize_data2 = '" + TbPrizeOptAmount3.Text + "', " + "a_opt_prize_data3 = '" + TbPrizeOptAmount4.Text + "', " + "a_opt_prize_data4 = '" + TbPrizeOptAmount5.Text + "', " + "a_opt_prize_data5 = '" + TbPrizeOptAmount6.Text + "', " + "a_opt_prize_data6 = '" + TbPrizeOptAmount7.Text + "', " + "a_opt_prize_plus0 = '" + textBox86.Text + "', " + "a_opt_prize_plus1 = '" + textBox87.Text + "', " + "a_opt_prize_plus2 = '" + textBox88.Text + "', " + "a_opt_prize_plus3 = '" + textBox89.Text + "', " + "a_opt_prize_plus4 = '" + textBox90.Text + "', " + "a_opt_prize_plus5 = '" + textBox91.Text + "', " + "a_opt_prize_plus6 = '" + textBox92.Text + "', " + "a_only_opt_prize = '" + textBox93.Text + "', ";

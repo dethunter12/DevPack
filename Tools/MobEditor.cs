@@ -95,142 +95,46 @@ namespace LcDevPack_TeamDamonA.Tools
     private string namee; //dethunter12 stringfrom lang modify
     public string adescr = "";
     public string aname = ""; //dehtunter12 add
-        private Label label42;
-        private Label lblLang;
-        private CheckBox cbEnabled;
-        private Button btnSaveAndNext;
-        private Button BtnClearDrop;
-        private GroupBox groupBox22;
-        private DataGridView dataGridView4;
-        private DataGridViewImageColumn dataGridViewImageColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private GroupBox groupBox21;
-        private DataGridView dataGridView3;
-        private DataGridViewImageColumn dataGridViewImageColumn1;
-        private DataGridViewTextBoxColumn a_item_index;
-        private DataGridViewTextBoxColumn a_item_name;
-        private DataGridViewTextBoxColumn a_item_droprate;
-        private TextBox t_find_item;
-        private Label label95;
-        private Label label94;
-        private Label label43;
-        private TextBox textBox178;
-        private TextBox textBox177;
-        private Button button5;
-        private PictureBox pictureBox2;
-        private Button button6;
-        private Label label97;
-        private TextBox textBox179;
-        private Label label96;
-        private TextBox textBox1;
-        private Label label98;
-        private TextBox textBox180;
-        private Label label99;
-        private TextBox TbAttribute;
-        private Label label100;
-        private TextBox TbSskillMaster;
-        private PictureBox pictureBox3;
-        public string descrr;
+    private Label label42;
+    private Label lblLang;
+    private CheckBox cbEnabled;
+    private Button btnSaveAndNext;
+    private Button BtnClearDrop;
+    private GroupBox groupBox22;
+    private DataGridView dataGridView4;
+    private DataGridViewImageColumn dataGridViewImageColumn2;
+    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+    private GroupBox groupBox21;
+    private DataGridView dataGridView3;
+    private DataGridViewImageColumn dataGridViewImageColumn1;
+    private DataGridViewTextBoxColumn a_item_index;
+    private DataGridViewTextBoxColumn a_item_name;
+    private DataGridViewTextBoxColumn a_item_droprate;
+    private TextBox t_find_item;
+    private Label label95;
+    private Label label94;
+    private Label label43;
+    private TextBox textBox178;
+    private TextBox textBox177;
+    private Button button5;
+    private PictureBox pictureBox2;
+    private Button button6;
+    private Label label97;
+    private TextBox textBox179;
+    private Label label96;
+    private TextBox textBox1;
+    private Label label98;
+    private TextBox textBox180;
+    private Label label99;
+    private TextBox TbAttribute;
+    private Label label100;
+    private TextBox TbSskillMaster;
+    private PictureBox pictureBox3;
+    public string descrr;
 
-    public string StringFromLanguage() //dethunter12 4/11/2018
-        {
-            if (language == "GER")
-            {
-                return "a_name_ger";
-            }
-            else if (language == "POL")
-            {
-                return "a_name_pld";
-            }
-            else if (language == "BRA")
-            {
-                return "a_name_brz";
-            }
-            else if (language == "RUS")
-            {
-                return "a_name_rus";
-            }
-            else if (language == "FRA")
-            {
-                return "a_name_frc";
-            }
-            else if (language == "ESP")
-            {
-                return "a_name_spn";
-            }
-            else if (language == "MEX")
-            {
-                return "a_name_mex";
-            }
-            else if (language == "THA")
-            {
-                return "a_name_thai";
-            }
-            else if (language == "ITA")
-            {
-                return "a_name_ita";
-            }
-            else if (language == "USA")
-            {
-                return "a_name_usa";
-            }
-            else
-            {
-                return null;
-            }
-        }
-    public string DescrFromLanguage() //dethunter12 4/11/2018
-        {
-            if (language == "GER")
-            {
-                return "a_descr_ger";
-            }
-            else if (language == "POL")
-            {
-                return "a_descr_pld";
-            }
-            else if (language == "BRA")
-            {
-                return "a_descr_brz";
-            }
-            else if (language == "RUS")
-            {
-                return "a_descr_rus";
-            }
-            else if (language == "FRA")
-            {
-                return "a_descr_frc";
-            }
-            else if (language == "ESP")
-            {
-                return "a_descr_spn";
-            }
-            else if (language == "MEX")
-            {
-                return "a_descr_mex";
-            }
-            else if (language == "THA")
-            {
-                return "a_descr_thai";
-            }
-            else if (language == "ITA")
-            {
-                return "a_descr_ita";
-            }
-            else if (language == "USA")
-            {
-                return "a_descr_usa";
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        //dethunter12 language string end 4/11/2018
-        public float _UpDown = -1f;
+    public float _UpDown = -1f;
     private ASCIIEncoding _Enc = new ASCIIEncoding();
     public string _ClientPath = MobEditor.connection.ReadSettings("ClientPath");
     private IContainer components = (IContainer) null;
@@ -1691,8 +1595,8 @@ namespace LcDevPack_TeamDamonA.Tools
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string aname = StringFromLanguage(); //dethunter12 language a_name_
-            string adescr = DescrFromLanguage(); //dethunter12 language a_descr
+            string aname = LanguageHelper.StringFromLanguage(); //dethunter12 language a_name_
+            string adescr = LanguageHelper.DescrFromLanguage(); //dethunter12 language a_descr
             databaseHandle.SendQueryMySql(Host, User, Password, Database, "UPDATE t_npc SET " + "a_index = '" + t_a_index.Text + "', " + "a_enable = '" + textBox2.Text + "', " + aname + "=" + "'" + TbName.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', "  + adescr + "=" + "'" + textBox4.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_level = '" + TbLevel.Text + "', " + "a_family = '" + tbFamily.Text + "', " + "a_skillmaster = '" + TbSkillMaster.Text + "', " + "a_flag = '" + TbFlag1.Text + "', " + "a_flag1 = '" + TbFlag2.Text + "', " + "a_state_flag = '" + TbStateFlag.Text + "', " + "a_exp = '" + TbExp.Text + "', " + "a_prize = '" + TbGold.Text + "', " + "a_sight = '" + TbSight.Text + "', " + "a_size = '" + TbSize.Text.Replace(',', '.') + "', " + "a_move_area = '" + TbMoveArea.Text + "', " + "a_attack_area = '" + TbAttackArea.Text + "', " + "a_skill_point = '" + TbSP.Text + "', " + "a_sskill_master = '" + TbSskillMaster.Text + "', " + "a_str = '" + TbStrength.Text + "', " + "a_dex = '" + TbDex.Text + "', " + "a_int = '" + TbInt.Text + "', " + "a_con = '" + TbCon.Text + "', " + "a_attack = '" + TbAttk.Text + "', " + "a_magic = '" + TbMagic.Text + "', " + "a_defense = '" + TbDef.Text + "', " + "a_resist = '" + TbMDef.Text + "', " + "a_attacklevel = '" + TbAttkLvl.Text + "', " + "a_defenselevel = '" + TbDefLvl.Text + "', " + "a_hp = '" + TbHp.Text + "', " + "a_mp = '" + TbMp.Text + "', " + "a_attackType = '" + textBox31.Text + "', " + "a_attackSpeed = '" + tbAttkSpeed.Text + "', " + "a_recover_hp = '" + TbRecoverHp.Text + "', " + "a_recover_mp = '" + TbRecoverMp.Text + "', " + "a_walk_speed = '" + TbWalkSpeed.Text + "', " + "a_run_speed = '" + TbRunSpeed.Text + "', " + "a_skill0 = '" + TbSkill0.Text + "', " + "a_skill1 = '" + TbSkill1.Text + "', " + "a_skill2 = '" + TbSkill2.Text + "', " + "a_skill3 = '" + TbSkill3.Text + "', " + "a_item_0 = '" + textBox41.Text + "', " + "a_item_1 = '" + textBox42.Text + "', " + "a_item_2 = '" + textBox43.Text + "', " + "a_item_3 = '" + textBox44.Text + "', " + "a_item_4 = '" + textBox45.Text + "', " + "a_item_5 = '" + textBox46.Text + "', " + "a_item_6 = '" + textBox47.Text + "', " + "a_item_7 = '" + textBox48.Text + "', " + "a_item_8 = '" + textBox49.Text + "', " + "a_item_9 = '" + textBox50.Text + "', " + "a_item_10 = '" + textBox51.Text + "', " + "a_item_11 = '" + textBox52.Text + "', " + "a_item_12 = '" + textBox53.Text + "', " + "a_item_13 = '" + textBox54.Text + "', " + "a_item_14 = '" + textBox55.Text + "', " + "a_item_15 = '" + textBox56.Text + "', " + "a_item_16 = '" + textBox57.Text + "', " + "a_item_17 = '" + textBox58.Text + "', " + "a_item_18 = '" + textBox59.Text + "', " + "a_item_19 = '" + textBox60.Text + "', " + "a_item_percent_0 = '" + textBox61.Text + "', " + "a_item_percent_1 = '" + textBox62.Text + "', " + "a_item_percent_2 = '" + textBox63.Text + "', " + "a_item_percent_3 = '" + textBox64.Text + "', " + "a_item_percent_4 = '" + textBox65.Text + "', " + "a_item_percent_5 = '" + textBox66.Text + "', " + "a_item_percent_6 = '" + textBox67.Text + "', " + "a_item_percent_7 = '" + textBox68.Text + "', " + "a_item_percent_8 = '" + textBox69.Text + "', " + "a_item_percent_9 = '" + textBox70.Text + "', " + "a_item_percent_10 = '" + textBox71.Text + "', " + "a_item_percent_11 = '" + textBox72.Text + "', " + "a_item_percent_12 = '" + textBox73.Text + "', " + "a_item_percent_13 = '" + textBox74.Text + "', " + "a_item_percent_14 = '" + textBox75.Text + "', " + "a_item_percent_15 = '" + textBox76.Text + "', " + "a_item_percent_16 = '" + textBox77.Text + "', " + "a_item_percent_17 = '" + textBox78.Text + "', " + "a_item_percent_18 = '" + textBox79.Text + "', " + "a_item_percent_19 = '" + textBox80.Text + "', " + "a_minplus = '" + TbMinPlus.Text + "', " + "a_maxplus = '" + TbMaxPlus.Text + "', " + "a_probplus = '" + TbProbPlus.Text + "', " + "a_product0 = '" + TbProduct0.Text + "', " + "a_product1 = '" + TbProduct1.Text + "', " + "a_product2 = '" + TbProduct2.Text + "', " + "a_product3 = '" + TbProduct3.Text + "', " + "a_product4 = '" + TbProduct4.Text + "', " + "a_file_smc = '" + TbSmc.Text.Replace("'", "\\'").Replace("\\", "\\\\").Replace("'", "\\'") + "', " + "a_motion_walk = '" + TbAniWalk.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_motion_idle = '" + TbAniIdle.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_motion_dam = '" + TbAniDam.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_motion_attack = '" + TbAniAttack.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_motion_die = '" + TbAniDie.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_motion_run = '" + TbAniRun.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_motion_idle2 = '" + TbAniIdle2.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_motion_attack2 = '" + TbAniAttack2.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_scale = '" + TbScale.Text.Replace(',', '.') + "', " + "a_attribute = '" + TbAttribute.Text + "', " + "a_fireDelayCount = '" + TbDelayCount.Text + "', " + "a_fireDelay0 = '" + TbDelay0.Text + "', " + "a_fireDelay1 = '" + TbDelay1.Text + "', " + "a_fireDelay2 = '" + TbDelay2.Text + "', " + "a_fireDelay3 = '" + TbDelay3.Text + "', " + "a_fireEffect0 = '" + TbEffect.Text + "', " + "a_fireEffect1 = '" + textBox106.Text + "', " + "a_fireEffect2 = '" + textBox107.Text + "', " + "a_fireObject = '" + TbObject.Text + "', " + "a_fireSpeed = '" + TbSpeed.Text + "', " + "a_aitype = '" + TbAiType.Text + "', " + "a_aiflag = '" + TbAiFlag.Text + "', " + "a_aileader_flag = '" + TbLeaderFlag.Text + "', " + "a_ai_summonHp = '" + TbSummonHP.Text + "', " + "a_aileader_idx = '" + TbLeaderIDx.Text + "', " + "a_aileader_count = '" + TbLeaderCount.Text + "', " + "a_crafting_category = '" + TbCraftCategory.Text + "', " + "a_productIndex = '" + TbProductIndex.Text + "', " + "a_hit = '" + TbHit.Text + "', " + "a_dodge = '" + TbAvoid.Text + "', " + "a_magicavoid = '" + TbMAvoid.Text + "', " + "a_job_attribute = '" + TbJobAttribute.Text + "', " + "a_npc_choice_trigger_count = '" + TbNpcTriggerCnt.Text + "', " + "a_npc_choice_trigger_ids = '" + TbNpcTriggerID.Text + "', " + "a_npc_kill_trigger_count = '" + TbNpcKillTriggerCnt.Text + "', " + "a_npc_kill_trigger_ids = '" + TbNpcKillTriggerId.Text + "', " + "a_createprob = '" + TbCreatProb.Text + "', " + "a_socketprob_0 = '" + TbSocketProb0.Text + "', " + "a_socketprob_1 = '" + TbSocketProb1.Text + "', " + "a_socketprob_2 = '" + TbSocketProb2.Text + "', " + "a_socketprob_3 = '" + TbSocketProb3.Text + "', " + "a_jewel_0 = '" + textBox131.Text + "', " + "a_jewel_1 = '" + textBox132.Text + "', " + "a_jewel_2 = '" + textBox133.Text + "', " + "a_jewel_3 = '" + textBox134.Text + "', " + "a_jewel_4 = '" + textBox135.Text + "', " + "a_jewel_5 = '" + textBox136.Text + "', " + "a_jewel_6 = '" + textBox137.Text + "', " + "a_jewel_7 = '" + textBox138.Text + "', " + "a_jewel_8 = '" + textBox139.Text + "', " + "a_jewel_9 = '" + textBox140.Text + "', " + "a_jewel_10 = '" + textBox141.Text + "', " + "a_jewel_11 = '" + textBox142.Text + "', " + "a_jewel_12 = '" + textBox143.Text + "', " + "a_jewel_13 = '" + textBox144.Text + "', " + "a_jewel_14 = '" + textBox145.Text + "', " + "a_jewel_15 = '" + textBox146.Text + "', " + "a_jewel_16 = '" + textBox147.Text + "', " + "a_jewel_17 = '" + textBox148.Text + "', " + "a_jewel_18 = '" + textBox149.Text + "', " + "a_jewel_19 = '" + textBox150.Text + "', " + "a_jewel_percent_0 = '" + textBox151.Text + "', " + "a_jewel_percent_1 = '" + textBox152.Text + "', " + "a_jewel_percent_2 = '" + textBox153.Text + "', " + "a_jewel_percent_3 = '" + textBox154.Text + "', " + "a_jewel_percent_4 = '" + textBox155.Text + "', " + "a_jewel_percent_5 = '" + textBox156.Text + "', " + "a_jewel_percent_6 = '" + textBox157.Text + "', " + "a_jewel_percent_7 = '" + textBox158.Text + "', " + "a_jewel_percent_8 = '" + textBox159.Text + "', " + "a_jewel_percent_9 = '" + textBox160.Text + "', " + "a_jewel_percent_10 = '" + textBox161.Text + "', " + "a_jewel_percent_11 = '" + textBox162.Text + "', " + "a_jewel_percent_12 = '" + textBox163.Text + "', " + "a_jewel_percent_13 = '" + textBox164.Text + "', " + "a_jewel_percent_14 = '" + textBox165.Text + "', " + "a_jewel_percent_15 = '" + textBox166.Text + "', " + "a_jewel_percent_16 = '" + textBox167.Text + "', " + "a_jewel_percent_17 = '" + textBox168.Text + "', " + "a_jewel_percent_18 = '" + textBox169.Text + "', " + "a_jewel_percent_19 = '" + textBox170.Text + "', " + "a_rvr_value = '" + TbRvrValue.Text + "', " + "a_rvr_grade = '" + TbRvrGrade.Text + "', "  + "a_zone_flag = '" + tbZoneFlag.Text + "' " +  "WHERE a_index = '" + t_a_index.Text + "'"); //dethunter12 test
       int selectedIndex = listBox1.SelectedIndex;
       int num4 = (int)new CustomMessage("Done :)").ShowDialog();
@@ -6613,8 +6517,8 @@ namespace LcDevPack_TeamDamonA.Tools
 
         private void btnSaveAndNext_Click(object sender, EventArgs e)
         {
-            string aname = StringFromLanguage(); //dethunter12 language a_name_
-            string adescr = DescrFromLanguage(); //dethunter12 language a_descr
+            string aname = LanguageHelper.StringFromLanguage(); //dethunter12 language a_name_
+            string adescr = LanguageHelper.DescrFromLanguage(); //dethunter12 language a_descr
             databaseHandle.SendQueryMySql(Host, User, Password, Database, "UPDATE t_npc SET " + "a_index = '" + t_a_index.Text + "', " + "a_enable = '" + textBox2.Text + "', " + aname + "=" + "'" + TbName.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + adescr + "=" + "'" + textBox4.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_level = '" + TbLevel.Text + "', " + "a_family = '" + tbFamily.Text + "', " + "a_skillmaster = '" + TbSkillMaster.Text + "', " + "a_flag = '" + TbFlag1.Text + "', " + "a_flag1 = '" + TbFlag2.Text + "', " + "a_state_flag = '" + TbStateFlag.Text + "', " + "a_exp = '" + TbExp.Text + "', " + "a_prize = '" + TbGold.Text + "', " + "a_sight = '" + TbSight.Text + "', " + "a_size = '" + TbSize.Text.Replace(',', '.') + "', " + "a_move_area = '" + TbMoveArea.Text + "', " + "a_attack_area = '" + TbAttackArea.Text + "', " + "a_skill_point = '" + TbSP.Text + "', " + "a_sskill_master = '" + TbSskillMaster.Text + "', " + "a_str = '" + TbStrength.Text + "', " + "a_dex = '" + TbDex.Text + "', " + "a_int = '" + TbInt.Text + "', " + "a_con = '" + TbCon.Text + "', " + "a_attack = '" + TbAttk.Text + "', " + "a_magic = '" + TbMagic.Text + "', " + "a_defense = '" + TbDef.Text + "', " + "a_resist = '" + TbMDef.Text + "', " + "a_attacklevel = '" + TbAttkLvl.Text + "', " + "a_defenselevel = '" + TbDefLvl.Text + "', " + "a_hp = '" + TbHp.Text + "', " + "a_mp = '" + TbMp.Text + "', " + "a_attackType = '" + textBox31.Text + "', " + "a_attackSpeed = '" + tbAttkSpeed.Text + "', " + "a_recover_hp = '" + TbRecoverHp.Text + "', " + "a_recover_mp = '" + TbRecoverMp.Text + "', " + "a_walk_speed = '" + TbWalkSpeed.Text + "', " + "a_run_speed = '" + TbRunSpeed.Text + "', " + "a_skill0 = '" + TbSkill0.Text + "', " + "a_skill1 = '" + TbSkill1.Text + "', " + "a_skill2 = '" + TbSkill2.Text + "', " + "a_skill3 = '" + TbSkill3.Text + "', " + "a_item_0 = '" + textBox41.Text + "', " + "a_item_1 = '" + textBox42.Text + "', " + "a_item_2 = '" + textBox43.Text + "', " + "a_item_3 = '" + textBox44.Text + "', " + "a_item_4 = '" + textBox45.Text + "', " + "a_item_5 = '" + textBox46.Text + "', " + "a_item_6 = '" + textBox47.Text + "', " + "a_item_7 = '" + textBox48.Text + "', " + "a_item_8 = '" + textBox49.Text + "', " + "a_item_9 = '" + textBox50.Text + "', " + "a_item_10 = '" + textBox51.Text + "', " + "a_item_11 = '" + textBox52.Text + "', " + "a_item_12 = '" + textBox53.Text + "', " + "a_item_13 = '" + textBox54.Text + "', " + "a_item_14 = '" + textBox55.Text + "', " + "a_item_15 = '" + textBox56.Text + "', " + "a_item_16 = '" + textBox57.Text + "', " + "a_item_17 = '" + textBox58.Text + "', " + "a_item_18 = '" + textBox59.Text + "', " + "a_item_19 = '" + textBox60.Text + "', " + "a_item_percent_0 = '" + textBox61.Text + "', " + "a_item_percent_1 = '" + textBox62.Text + "', " + "a_item_percent_2 = '" + textBox63.Text + "', " + "a_item_percent_3 = '" + textBox64.Text + "', " + "a_item_percent_4 = '" + textBox65.Text + "', " + "a_item_percent_5 = '" + textBox66.Text + "', " + "a_item_percent_6 = '" + textBox67.Text + "', " + "a_item_percent_7 = '" + textBox68.Text + "', " + "a_item_percent_8 = '" + textBox69.Text + "', " + "a_item_percent_9 = '" + textBox70.Text + "', " + "a_item_percent_10 = '" + textBox71.Text + "', " + "a_item_percent_11 = '" + textBox72.Text + "', " + "a_item_percent_12 = '" + textBox73.Text + "', " + "a_item_percent_13 = '" + textBox74.Text + "', " + "a_item_percent_14 = '" + textBox75.Text + "', " + "a_item_percent_15 = '" + textBox76.Text + "', " + "a_item_percent_16 = '" + textBox77.Text + "', " + "a_item_percent_17 = '" + textBox78.Text + "', " + "a_item_percent_18 = '" + textBox79.Text + "', " + "a_item_percent_19 = '" + textBox80.Text + "', " + "a_minplus = '" + TbMinPlus.Text + "', " + "a_maxplus = '" + TbMaxPlus.Text + "', " + "a_probplus = '" + TbProbPlus.Text + "', " + "a_product0 = '" + TbProduct0.Text + "', " + "a_product1 = '" + TbProduct1.Text + "', " + "a_product2 = '" + TbProduct2.Text + "', " + "a_product3 = '" + TbProduct3.Text + "', " + "a_product4 = '" + TbProduct4.Text + "', " + "a_file_smc = '" + TbSmc.Text.Replace("'", "\\'").Replace("\\", "\\\\").Replace("'", "\\'") + "', " + "a_motion_walk = '" + TbAniWalk.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_motion_idle = '" + TbAniIdle.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_motion_dam = '" + TbAniDam.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_motion_attack = '" + TbAniAttack.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_motion_die = '" + TbAniDie.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_motion_run = '" + TbAniRun.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_motion_idle2 = '" + TbAniIdle2.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_motion_attack2 = '" + TbAniAttack2.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_scale = '" + TbScale.Text.Replace(',', '.') + "', " + "a_attribute = '" + TbAttribute.Text + "', " + "a_fireDelayCount = '" + TbDelayCount.Text + "', " + "a_fireDelay0 = '" + TbDelay0.Text + "', " + "a_fireDelay1 = '" + TbDelay1.Text + "', " + "a_fireDelay2 = '" + TbDelay2.Text + "', " + "a_fireDelay3 = '" + TbDelay3.Text + "', " + "a_fireEffect0 = '" + TbEffect.Text + "', " + "a_fireEffect1 = '" + textBox106.Text + "', " + "a_fireEffect2 = '" + textBox107.Text + "', " + "a_fireObject = '" + TbObject.Text + "', " + "a_fireSpeed = '" + TbSpeed.Text + "', " + "a_aitype = '" + TbAiType.Text + "', " + "a_aiflag = '" + TbAiFlag.Text + "', " + "a_aileader_flag = '" + TbLeaderFlag.Text + "', " + "a_ai_summonHp = '" + TbSummonHP.Text + "', " + "a_aileader_idx = '" + TbLeaderIDx.Text + "', " + "a_aileader_count = '" + TbLeaderCount.Text + "', " + "a_crafting_category = '" + TbCraftCategory.Text + "', " + "a_productIndex = '" + TbProductIndex.Text + "', " + "a_hit = '" + TbHit.Text + "', " + "a_dodge = '" + TbAvoid.Text + "', " + "a_magicavoid = '" + TbMAvoid.Text + "', " + "a_job_attribute = '" + TbJobAttribute.Text + "', " + "a_npc_choice_trigger_count = '" + TbNpcTriggerCnt.Text + "', " + "a_npc_choice_trigger_ids = '" + TbNpcTriggerID.Text + "', " + "a_npc_kill_trigger_count = '" + TbNpcKillTriggerCnt.Text + "', " + "a_npc_kill_trigger_ids = '" + TbNpcKillTriggerId.Text + "', " + "a_createprob = '" + TbCreatProb.Text + "', " + "a_socketprob_0 = '" + TbSocketProb0.Text + "', " + "a_socketprob_1 = '" + TbSocketProb1.Text + "', " + "a_socketprob_2 = '" + TbSocketProb2.Text + "', " + "a_socketprob_3 = '" + TbSocketProb3.Text + "', " + "a_jewel_0 = '" + textBox131.Text + "', " + "a_jewel_1 = '" + textBox132.Text + "', " + "a_jewel_2 = '" + textBox133.Text + "', " + "a_jewel_3 = '" + textBox134.Text + "', " + "a_jewel_4 = '" + textBox135.Text + "', " + "a_jewel_5 = '" + textBox136.Text + "', " + "a_jewel_6 = '" + textBox137.Text + "', " + "a_jewel_7 = '" + textBox138.Text + "', " + "a_jewel_8 = '" + textBox139.Text + "', " + "a_jewel_9 = '" + textBox140.Text + "', " + "a_jewel_10 = '" + textBox141.Text + "', " + "a_jewel_11 = '" + textBox142.Text + "', " + "a_jewel_12 = '" + textBox143.Text + "', " + "a_jewel_13 = '" + textBox144.Text + "', " + "a_jewel_14 = '" + textBox145.Text + "', " + "a_jewel_15 = '" + textBox146.Text + "', " + "a_jewel_16 = '" + textBox147.Text + "', " + "a_jewel_17 = '" + textBox148.Text + "', " + "a_jewel_18 = '" + textBox149.Text + "', " + "a_jewel_19 = '" + textBox150.Text + "', " + "a_jewel_percent_0 = '" + textBox151.Text + "', " + "a_jewel_percent_1 = '" + textBox152.Text + "', " + "a_jewel_percent_2 = '" + textBox153.Text + "', " + "a_jewel_percent_3 = '" + textBox154.Text + "', " + "a_jewel_percent_4 = '" + textBox155.Text + "', " + "a_jewel_percent_5 = '" + textBox156.Text + "', " + "a_jewel_percent_6 = '" + textBox157.Text + "', " + "a_jewel_percent_7 = '" + textBox158.Text + "', " + "a_jewel_percent_8 = '" + textBox159.Text + "', " + "a_jewel_percent_9 = '" + textBox160.Text + "', " + "a_jewel_percent_10 = '" + textBox161.Text + "', " + "a_jewel_percent_11 = '" + textBox162.Text + "', " + "a_jewel_percent_12 = '" + textBox163.Text + "', " + "a_jewel_percent_13 = '" + textBox164.Text + "', " + "a_jewel_percent_14 = '" + textBox165.Text + "', " + "a_jewel_percent_15 = '" + textBox166.Text + "', " + "a_jewel_percent_16 = '" + textBox167.Text + "', " + "a_jewel_percent_17 = '" + textBox168.Text + "', " + "a_jewel_percent_18 = '" + textBox169.Text + "', " + "a_jewel_percent_19 = '" + textBox170.Text + "', " + "a_rvr_value = '" + TbRvrValue.Text + "', " + "a_rvr_grade = '" + TbRvrGrade.Text + "', " + "a_zone_flag = '" + tbZoneFlag.Text + "' " + "WHERE a_index = '" + t_a_index.Text + "'"); //dethunter12 test
             int selectedIndex = listBox1.SelectedIndex;
             int nextselected = listBox1.SelectedIndex + 1;

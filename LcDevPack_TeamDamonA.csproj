@@ -101,6 +101,7 @@
     <Compile Include="LangSelect.Designer.cs">
       <DependentUpon>LangSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="LanguageHelper.cs" />
     <Compile Include="LCMeshReader.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

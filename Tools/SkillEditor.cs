@@ -182,159 +182,13 @@ namespace LcDevPack_TeamDamonA.Tools
       "a_index",
       "a_name_usa"
                       };
-        private string namee; //dethunter12 stringfrom lang modify
+
         public string aClientDescripton = "";
         public string aname = ""; //dehtunter12 add
         public string ClientDescription;
         public string aToolTip = "";
         public string ToolTip;
-
-        public string StringFromLanguage() //dethunter12 4/12/2018
-        {
-
-            if (language == "GER")
-            {
-                return "a_name_ger";
-            }
-            else if (language == "POL")
-            {
-                return "a_name_pld";
-            }
-            else if (language == "BRA")
-            {
-                return "a_name_brz";
-            }
-            else if (language == "RUS")
-            {
-                return "a_name_rus";
-            }
-            else if (language == "FRA")
-            {
-                return "a_name_frc";
-            }
-            else if (language == "ESP")
-            {
-                return "a_name_spn";
-            }
-            else if (language == "MEX")
-            {
-                return "a_name_mex";
-            }
-            else if (language == "THA")
-            {
-                return "a_name_thai";
-            }
-            else if (language == "ITA")
-            {
-                return "a_name_ita";
-            }
-            else if (language == "USA")
-            {
-                return "a_name_usa";
-            }
-            else
-            {
-                return null;
-            }
-        }
-        public string ClientDescrFromLanguage() //dethunter12 4/12/2018
-        {
-            if (language == "GER")
-            {
-                return "a_client_description_ger";
-            }
-            else if (language == "POL")
-            {
-                return "a_client_description_pld";
-            }
-            else if (language == "BRA")
-            {
-               return "a_client_description_brz";
-            }
-            else if (language == "RUS")
-            {
-                return "a_client_description_rus";
-            }
-            else if (language == "FRA")
-            {
-                return"a_client_description_frc";
-            }
-            else if (language == "ESP")
-            {
-                return "a_client_description_spn";
-            }
-            else if (language == "MEX")
-            {
-                return "a_client_description_mex";
-            }
-            else if (language == "THA")
-            {
-                return "a_client_description_thai";
-            }
-            else if (language == "ITA")
-            {
-                return "a_client_description_ita";
-            }
-            else if (language == "USA")
-            {
-                return "a_client_description_usa";
-            }
-            else
-            {
-                return null;
-            }
-        }
-        public string ToolTipFromLanguage() //dethunter12 4/12/2018
-        {
-
-            if (language == "GER")
-            {
-                return "a_client_tooltip_ger";
-            }
-            else if (language == "POL")
-            {
-                return "a_client_tooltip_pld";
-            }
-            else if (language == "BRA")
-            {
-                return "a_client_tooltip_brz";
-            }
-            else if (language == "RUS")
-            {
-                return "a_client_tooltip_rus";
-            }
-            else if (language == "FRA")
-            {
-                return "a_client_tooltip_frc";
-            }
-            else if (language == "ESP")
-            {
-                return "a_client_tooltip_spn";
-            }
-            else if (language == "MEX")
-            {
-                return "a_client_tooltip_mex";
-            }
-            else if (language == "THA")
-            {
-                return "a_client_tooltip_thai";
-            }
-            else if (language == "ITA")
-            {
-                return "a_client_tooltip_ita";
-            }
-            else if (language == "USA")
-            {
-                return "a_client_tooltip_usa";
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-
-        //dethunter12 4/12/2018 language system end
+                 
         public List<string> MenuList = new List<string>();
         public List<string> MenuListSearch = new List<string>();
         public List<string> MenuList2 = new List<string>();
@@ -745,7 +599,7 @@ namespace LcDevPack_TeamDamonA.Tools
 
         private void LoadListBox()
         {
-            aname = StringFromLanguage(); //dethunte12 4/12/2018
+            aname = LanguageHelper.StringFromLanguage(); //dethunte12 4/12/2018
             MenuList.Clear();
             string Query = "SELECT a_index," + " " + aname + " " + "FROM t_skill WHERE a_job ='" + mSortJob + "' AND a_job2 ='" + mSortJob2 + "' ORDER BY a_index;"; //dethunter12 4/12/2018
             if (mSortJob == "-1")
@@ -1225,7 +1079,6 @@ namespace LcDevPack_TeamDamonA.Tools
 
         private void IconSkill()
         {
-            //aname = StringFromLanguage(); //dethunter12 4/12/14 lang system
             string Query1 = "select a_index, a_client_icon_texid, a_client_icon_row, a_client_icon_col, a_name_usa from t_skill WHERE a_index ='" + textBox97.Text + "';";//dethunter12 4/12/2018 adjust
             string Query2 = "select a_index, a_client_icon_texid, a_client_icon_row, a_client_icon_col, a_name_usa from t_skill WHERE a_index ='" + textBox99.Text + "';"; //dethunter12 4/12/2018 adjust
             string Query3 = "select a_index, a_client_icon_texid, a_client_icon_row, a_client_icon_col, a_name_usa from t_skill WHERE a_index ='" + textBox101.Text + "';"; //dethunter12 4/12/2018 adjust
@@ -1390,9 +1243,9 @@ namespace LcDevPack_TeamDamonA.Tools
 
         private void button2_Click(object sender, EventArgs e)
         {
-            aname = StringFromLanguage(); //dethunter12 4/12/2018 language system modify
-            aClientDescripton = ClientDescrFromLanguage(); //dethunter12 4/12/2018 language system 
-            aToolTip = ToolTipFromLanguage(); //dethunter12 4/12/2018 modify 
+            aname = LanguageHelper.StringFromLanguage(); //dethunter12 2/26/2023 add
+            aClientDescripton = LanguageHelper.SkillDescFromLanguage(); //dethunter12 2/26/2023 add
+            aToolTip = LanguageHelper.SkillToolTipFromLanguage(); //dethunter12 2/26/2023 add
             string str1 = "UPDATE t_skill SET " + "a_index = '" + textBox1.Text + "', " + "a_job = '" + textBox2.Text + "', " + "a_job2 = '" + textBox3.Text + "', ";
             string str2 = textBox4.Text.Replace("'", "\\'").Replace("\"", "\\\"");
             string Query = str1 + "a_name = '" + str2 + "', " + aname + "=" + " " + "'" + str2 + "', " + aClientDescripton + "=" + " " + "'" + textBox5.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_client_description = '" + textBox5.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_type = '" + textBox6.Text + "'," + "a_flag= '" + textBox7.Text + "'," + "a_maxLevel = '" + tbmaxLevel.Text + "'," + "a_appRange = '" + textBox9.Text + "'," + "a_fireRange = '" + textBox10.Text + "'," + "a_fireRange2 = '" + textBox11.Text + "'," + "a_minRange = '" + textBox12.Text + "'," + "a_targetType = '" + textBox13.Text + "'," + "a_targetNum = '" + textBox14.Text + "'," + "a_useState = '" + textBox15.Text + "'," + "a_useWeaponType0 = '" + textBox16.Text + "'," + "a_useWeaponType1 = '" + textBox17.Text + "'," + "a_use_needWearingType = '" + textBox18.Text + "'," + "a_useMagicIndex1 = '" + textBox19.Text + "'," + "a_useMagicIndex2 = '" + textBox20.Text + "'," + "a_useMagicIndex3 = '" + textBox21.Text + "'," + "a_useMagicLevel1 = '" + textBox22.Text + "'," + "a_useMagicLevel2 = '" + textBox23.Text + "'," + "a_useMagicLevel3 = '" + textBox24.Text + "'," + "a_appState = '" + textBox25.Text + "'," + "a_appWeaponType0 = '" + textBox26.Text + "'," + "a_appWeaponType1 = '" + textBox27.Text + "'," + "a_app_needWearingType = '" + textBox28.Text + "'," + "a_readyTime = '" + textBox29.Text + "'," + "a_stillTime = '" + textBox30.Text + "'," + "a_fireTime = '" + textBox31.Text + "'," + "a_reuseTime = '" + textBox32.Text + "'," + "a_cd_ra = '" + textBox33.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_re = '" + textBox34.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_sa = '" + textBox35.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fa = '" + textBox36.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fe0 = '" + textBox37.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fe1 = '" + textBox38.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fe2 = '" + textBox39.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fot = '" + textBox40.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fos = '" + textBox41.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_ox = '" + textBox42.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_oz = '" + textBox43.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_oh = '" + textBox44.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_oc = '" + textBox45.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fdc = '" + textBox46.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fd0 = '" + textBox47.Text.Replace(",", ".") + "'," + "a_cd_fd1 = '" + textBox48.Text.Replace(",", ".") + "'," + "a_cd_fd2 = '" + textBox49.Text.Replace(",", ".") + "'," + "a_cd_fd3 = '" + textBox50.Text.Replace(",", ".") + "'," + "a_cd_dd = '" + textBox51.Text + "'," + "a_cd_fe_after = '" + textBox52.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fe_after2 = '" + textBox53.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_client_tooltip = '" + textBox54.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + " " + aToolTip + "='" + textBox54.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_client_icon_texid = '" + textBox55.Text + "'," + "a_client_icon_row = '" + textBox56.Text + "'," + "a_client_icon_col = '" + textBox57.Text + "'," + "a_cd_ra2 = '" + textBox58.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_re2 = '" + textBox59.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_sa2 = '" + textBox60.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fa2 = '" + textBox61.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fe3 = '" + textBox62.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fe4 = '" + textBox63.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fe5 = '" + textBox64.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fot2 = '" + textBox65.Text + "'," + "a_cd_fos2 = '" + textBox66.Text + "'," + "a_cd_ox2 = '" + textBox67.Text + "'," + "a_cd_oz2 = '" + textBox68.Text + "'," + "a_cd_oh2 = '" + textBox69.Text + "'," + "a_cd_oc2 = '" + textBox70.Text + "'," + "a_cd_fdc2 = '" + textBox71.Text + "'," + "a_cd_fd4 = '" + textBox72.Text.Replace(",", ".") + "'," + "a_cd_fd5 = '" + textBox73.Text.Replace(",", ".") + "'," + "a_cd_fd6 = '" + textBox74.Text.Replace(",", ".") + "'," + "a_cd_fd7 = '" + textBox75.Text.Replace(",", ".") + "'," + "a_cd_dd2 = '" + textBox76.Text + "'," + "a_selfparam = '" + textBox77.Text + "'," + "a_targetparam = '" + textBox78.Text + "'," + "a_soul_consum = '" + textBox79.Text + "'," + "a_summon_idx = '" + textBox80.Text + "'," + "a_sorcerer_flag = '" + textBox81.Text + "'," + "a_apet_index = '" + textBox82.Text + "'," + "a_allowzone = '" + textBox83.Text + "'" + " WHERE a_index = '" + textBox1.Text + "'"; //dethunter12 4/12/2018 modify
@@ -7099,9 +6952,9 @@ namespace LcDevPack_TeamDamonA.Tools
 
         private void btnSaveAndNext_Click(object sender, EventArgs e)
         {
-            aname = StringFromLanguage(); //dethunter12 4/12/2018 language system modify
-            aClientDescripton = ClientDescrFromLanguage(); //dethunter12 4/12/2018 language system 
-            aToolTip = ToolTipFromLanguage(); //dethunter12 4/12/2018 modify 
+            aname = LanguageHelper.StringFromLanguage(); //dethunter12 4/12/2018 language system modify
+            aClientDescripton = LanguageHelper.SkillDescFromLanguage(); //dethunter12 4/12/2018 language system 
+            aToolTip = LanguageHelper.SkillToolTipFromLanguage(); //dethunter12 4/12/2018 modify 
             string str1 = "UPDATE t_skill SET " + "a_index = '" + textBox1.Text + "', " + "a_job = '" + textBox2.Text + "', " + "a_job2 = '" + textBox3.Text + "', ";
             string str2 = textBox4.Text.Replace("'", "\\'").Replace("\"", "\\\"");
             string Query = str1 + "a_name = '" + str2 + "', " + aname + "=" + " " + "'" + str2 + "', " + aClientDescripton + "=" + " " + "'" + textBox5.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_client_description = '" + textBox5.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "', " + "a_type = '" + textBox6.Text + "'," + "a_flag= '" + textBox7.Text + "'," + "a_maxLevel = '" + tbmaxLevel.Text + "'," + "a_appRange = '" + textBox9.Text + "'," + "a_fireRange = '" + textBox10.Text + "'," + "a_fireRange2 = '" + textBox11.Text + "'," + "a_minRange = '" + textBox12.Text + "'," + "a_targetType = '" + textBox13.Text + "'," + "a_targetNum = '" + textBox14.Text + "'," + "a_useState = '" + textBox15.Text + "'," + "a_useWeaponType0 = '" + textBox16.Text + "'," + "a_useWeaponType1 = '" + textBox17.Text + "'," + "a_use_needWearingType = '" + textBox18.Text + "'," + "a_useMagicIndex1 = '" + textBox19.Text + "'," + "a_useMagicIndex2 = '" + textBox20.Text + "'," + "a_useMagicIndex3 = '" + textBox21.Text + "'," + "a_useMagicLevel1 = '" + textBox22.Text + "'," + "a_useMagicLevel2 = '" + textBox23.Text + "'," + "a_useMagicLevel3 = '" + textBox24.Text + "'," + "a_appState = '" + textBox25.Text + "'," + "a_appWeaponType0 = '" + textBox26.Text + "'," + "a_appWeaponType1 = '" + textBox27.Text + "'," + "a_app_needWearingType = '" + textBox28.Text + "'," + "a_readyTime = '" + textBox29.Text + "'," + "a_stillTime = '" + textBox30.Text + "'," + "a_fireTime = '" + textBox31.Text + "'," + "a_reuseTime = '" + textBox32.Text + "'," + "a_cd_ra = '" + textBox33.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_re = '" + textBox34.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_sa = '" + textBox35.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fa = '" + textBox36.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fe0 = '" + textBox37.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fe1 = '" + textBox38.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fe2 = '" + textBox39.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fot = '" + textBox40.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fos = '" + textBox41.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_ox = '" + textBox42.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_oz = '" + textBox43.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_oh = '" + textBox44.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_oc = '" + textBox45.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fdc = '" + textBox46.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fd0 = '" + textBox47.Text.Replace(",", ".") + "'," + "a_cd_fd1 = '" + textBox48.Text.Replace(",", ".") + "'," + "a_cd_fd2 = '" + textBox49.Text.Replace(",", ".") + "'," + "a_cd_fd3 = '" + textBox50.Text.Replace(",", ".") + "'," + "a_cd_dd = '" + textBox51.Text + "'," + "a_cd_fe_after = '" + textBox52.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fe_after2 = '" + textBox53.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_client_tooltip = '" + textBox54.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + " " + aToolTip + "='" + textBox54.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_client_icon_texid = '" + textBox55.Text + "'," + "a_client_icon_row = '" + textBox56.Text + "'," + "a_client_icon_col = '" + textBox57.Text + "'," + "a_cd_ra2 = '" + textBox58.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_re2 = '" + textBox59.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_sa2 = '" + textBox60.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fa2 = '" + textBox61.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fe3 = '" + textBox62.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fe4 = '" + textBox63.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fe5 = '" + textBox64.Text.Replace("'", "\\'").Replace("\"", "\\\"") + "'," + "a_cd_fot2 = '" + textBox65.Text + "'," + "a_cd_fos2 = '" + textBox66.Text + "'," + "a_cd_ox2 = '" + textBox67.Text + "'," + "a_cd_oz2 = '" + textBox68.Text + "'," + "a_cd_oh2 = '" + textBox69.Text + "'," + "a_cd_oc2 = '" + textBox70.Text + "'," + "a_cd_fdc2 = '" + textBox71.Text + "'," + "a_cd_fd4 = '" + textBox72.Text.Replace(",", ".") + "'," + "a_cd_fd5 = '" + textBox73.Text.Replace(",", ".") + "'," + "a_cd_fd6 = '" + textBox74.Text.Replace(",", ".") + "'," + "a_cd_fd7 = '" + textBox75.Text.Replace(",", ".") + "'," + "a_cd_dd2 = '" + textBox76.Text + "'," + "a_selfparam = '" + textBox77.Text + "'," + "a_targetparam = '" + textBox78.Text + "'," + "a_soul_consum = '" + textBox79.Text + "'," + "a_summon_idx = '" + textBox80.Text + "'," + "a_sorcerer_flag = '" + textBox81.Text + "'," + "a_apet_index = '" + textBox82.Text + "'," + "a_allowzone = '" + textBox83.Text + "'" + " WHERE a_index = '" + textBox1.Text + "'"; //dethunter12 4/12/2018 modify

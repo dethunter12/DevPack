@@ -22,101 +22,6 @@ namespace LcDevPack_TeamDamonA.Tools
         public static string ConnectionString;
         public static string name;
         public static string descr;
-        public  static string StringFromLanguage() 
-        {
-            if (language == "GER")
-            {
-                return "a_name_ger";
-            }
-            else if (language == "POL")
-            {
-                return "a_name_pld";
-            }
-            else if (language == "BRA")
-            {
-                return "a_name_brz";
-            }
-            else if (language == "RUS")
-            {
-                return "a_name_rus";
-            }
-            else if (language == "FRA")
-            {
-                return "a_name_frc";
-            }
-            else if (language == "ESP")
-            {
-                return "a_name_spn";
-            }
-            else if (language == "MEX")
-            {
-                return "a_name_mex";
-            }
-            else if (language == "THA")
-            {
-                return "a_name_thai";
-            }
-            else if (language == "ITA")
-            {
-                return "a_name_ita";
-            }
-            else if (language == "USA")
-            {
-                return "a_name_usa";
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        public static string DescripFromLanguage()
-        {
-            if (language == "GER")
-            {
-                return "a_client_description_ger";
-            }
-            else if (language == "POL")
-            {
-                return "a_client_description_pld";
-            }
-            else if (language == "BRA")
-            {
-                return "a_client_description_brz";
-            }
-            else if (language == "RUS")
-            {
-                return "a_client_description_rus";
-            }
-            else if (language == "FRA")
-            {
-                return "a_client_description_frc";
-            }
-            else if (language == "ESP")
-            {
-                return "a_client_description_spn";
-            }
-            else if (language == "MEX")
-            {
-                return "a_client_description_mex";
-            }
-            else if (language == "THA")
-            {
-                return "a_client_description_thai";
-            }
-            else if (language == "ITA")
-            {
-                return "a_client_description_ita";
-            }
-            else if (language == "USA")
-            {
-                return "a_client_description_usa";
-            }
-            else
-            {
-                return null;
-            }
-        }
 
         public static bool SetConnection()
         {
@@ -138,8 +43,8 @@ namespace LcDevPack_TeamDamonA.Tools
         }
         public static void Import()
         {
-            name = StringFromLanguage();
-            descr = DescripFromLanguage();
+            name = LanguageHelper.StringFromLanguage();
+            descr = LanguageHelper.ActionDescFromLanguage();
 
             foreach (DataRow row in (InternalDataCollectionBase)GetFromQuery(LoadFromDatabaseSQL).Rows)
                 IconAction.List.Add(new ActionIcon()
